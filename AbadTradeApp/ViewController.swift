@@ -8,9 +8,15 @@
 
 import UIKit
 import SideMenu
+import SwiftyJSON
 
 class ViewController: UIViewController {
 
+    
+    var categoriesArray = [Category]()
+    var imagesArray = [Image]()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
