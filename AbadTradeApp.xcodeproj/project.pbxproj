@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4073372F2058330A00299A0F /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4073372E2058330A00299A0F /* ServerManager.swift */; };
+		407337322058333E00299A0F /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407337312058333E00299A0F /* Category.swift */; };
+		407337342058336600299A0F /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407337332058336600299A0F /* Image.swift */; };
 		7DC92218205809EE00C1705F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC92217205809EE00C1705F /* AppDelegate.swift */; };
 		7DC9221A205809EE00C1705F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC92219205809EE00C1705F /* ViewController.swift */; };
 		7DC9221D205809EE00C1705F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DC9221B205809EE00C1705F /* Main.storyboard */; };
@@ -18,6 +21,9 @@
 
 /* Begin PBXFileReference section */
 		11BA69E58BAC6CD88A2058D2 /* Pods-AbadTradeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AbadTradeApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AbadTradeApp/Pods-AbadTradeApp.debug.xcconfig"; sourceTree = "<group>"; };
+		4073372E2058330A00299A0F /* ServerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
+		407337312058333E00299A0F /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		407337332058336600299A0F /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		7DC92214205809EE00C1705F /* AbadTradeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AbadTradeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DC92217205809EE00C1705F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DC92219205809EE00C1705F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +57,23 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		4073372D205832F100299A0F /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				4073372E2058330A00299A0F /* ServerManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		407337302058332900299A0F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				407337312058333E00299A0F /* Category.swift */,
+				407337332058336600299A0F /* Image.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		7B299313159BD27410446862 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +103,8 @@
 		7DC92216205809EE00C1705F /* AbadTradeApp */ = {
 			isa = PBXGroup;
 			children = (
+				407337302058332900299A0F /* Models */,
+				4073372D205832F100299A0F /* Networking */,
 				7DC9222D20581A6900C1705F /* Views */,
 				7DC92217205809EE00C1705F /* AppDelegate.swift */,
 				7DC92219205809EE00C1705F /* ViewController.swift */,
@@ -242,7 +267,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DC9221A205809EE00C1705F /* ViewController.swift in Sources */,
+				4073372F2058330A00299A0F /* ServerManager.swift in Sources */,
 				7DC92218205809EE00C1705F /* AppDelegate.swift in Sources */,
+				407337322058333E00299A0F /* Category.swift in Sources */,
+				407337342058336600299A0F /* Image.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
