@@ -43,6 +43,15 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func sideMenuButton(_ sender: Any) {
+        
+        let storyboard = UIStoryboard.init(name: "sideMenu", bundle: nil)
+        let sideMenuVC = storyboard.instantiateViewController(withIdentifier: "LeftMenuNavigationController")
+        show(sideMenuVC, sender: self)
+    }
+    
+    
     func customizeNavigationBar ()
     {
         UINavigationBar.appearance().barTintColor = UIColor.red
@@ -50,6 +59,8 @@ class ViewController: UIViewController {
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
 
     }
+    
+    
 
 
 }
