@@ -15,11 +15,12 @@ class ViewController: UIViewController {
     @IBAction func sideMenuButton(_ sender: Any) {
         
         let storyboard = UIStoryboard.init(name: "sideMenu", bundle: nil)
-        let sideMenuVC = storyboard.instantiateViewController(withIdentifier: "LeftMenuNavigationController")
-        show(sideMenuVC, sender: self)
+        storyboard.instantiateViewController(withIdentifier: "LeftMenuNavigationController")
+       // show(sideMenuVC, sender: self)
     }
-    var categoriesArray = [Category]()
-    var imagesArray = [Image]()
+    var categories = [Category]()
+    var images = [Image]()
+    var apisInstance = apiRequests()
     
     
     override func viewDidLoad() {
@@ -31,13 +32,12 @@ class ViewController: UIViewController {
         }
         
         customizeNavigationBar ()
-        SideMenuManager.default.menuLeftNavigationController = storyboard!.instantiateViewController(withIdentifier: "LeftMenuNavigationController") as? UISideMenuNavigationController
-        
-        // to control the slide menu by touch
-        SideMenuManager.default.menuAddPanGestureToPresent(toView: self.navigationController!.navigationBar)
-        SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
+       // SideMenuManager.default.menuLeftNavigationController =
 
-    }
+        // to control the slide menu by touch
+//        SideMenuManager.default.menuAddPanGestureToPresent(toView: self.navigationController!.navigationBar)
+//        SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
+ }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

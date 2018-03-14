@@ -30,7 +30,7 @@ class Brand : NSObject, NSCoding{
      */
     func toDictionary() -> [String:Any]
     {
-        let dictionary = [String:Any]()
+        var dictionary = [String:Any]()
         if id != nil{
             dictionary["id"] = id
         }
