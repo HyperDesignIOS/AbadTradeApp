@@ -11,7 +11,6 @@ import SideMenu
 import SwiftyJSON
 
 class ViewController: UIViewController {
-
     
     @IBAction func sideMenuButton(_ sender: Any) {
         
@@ -26,8 +25,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        apisInstance.loadCategoriesAndImages { (categories, images) in
+            self.categories = categories
+            self.images = images
+        }
+        
         customizeNavigationBar ()
-      SideMenuManager.default.menuLeftNavigationController = storyboard!.instantiateViewController(withIdentifier: "LeftMenuNavigationController") as? UISideMenuNavigationController
+        SideMenuManager.default.menuLeftNavigationController = storyboard!.instantiateViewController(withIdentifier: "LeftMenuNavigationController") as? UISideMenuNavigationController
         
         // to control the slide menu by touch
         SideMenuManager.default.menuAddPanGestureToPresent(toView: self.navigationController!.navigationBar)
