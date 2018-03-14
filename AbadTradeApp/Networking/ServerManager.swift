@@ -32,13 +32,13 @@ class serverManager {
             { response in
                 if response.result.error != nil{
                     DispatchQueue.main.async{
-                        if let errorEnum = ErrorCode(rawValue: (response.result.error?._code)!)
+                        if let errorEnum = ErrorCode(rawValue: (response.error?._code)!)
                         {
-                            errorHandler(errorEnum, response.result.error)
+                            errorHandler(errorEnum, response.error)
                         }
                         else
                         {
-                            errorHandler(ErrorCode(rawValue: 000)!, response.result.error)
+                            errorHandler(ErrorCode(rawValue: 000)!, response.error)
                         }
                     }
                     return
@@ -46,9 +46,9 @@ class serverManager {
                 
                 if response.data?.count == 0{
                     DispatchQueue.main.async{
-                        if let errorEnum = ErrorCode(rawValue: (response.result.error?._code)!)
+                        if let errorEnum = ErrorCode(rawValue: (response.error?._code)!)
                         {
-                            errorHandler(errorEnum, response.result.error)
+                            errorHandler(errorEnum, response.error)
                         }
                         else
                         {
