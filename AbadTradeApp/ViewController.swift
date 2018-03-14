@@ -12,14 +12,10 @@ import SwiftyJSON
 
 class ViewController: UIViewController {
     
-    @IBAction func sideMenuButton(_ sender: Any) {
-        
-        let storyboard = UIStoryboard.init(name: "sideMenu", bundle: nil)
-        let sideMenuVC = storyboard.instantiateViewController(withIdentifier: "LeftMenuNavigationController")
-        show(sideMenuVC, sender: self)
-    }
-    var categoriesArray = [Category]()
-    var imagesArray = [Image]()
+    var categories = [Category]()
+    var images = [Image]()
+    var apisInstance = apiRequests()
+    
     
     
     override func viewDidLoad() {
@@ -31,11 +27,12 @@ class ViewController: UIViewController {
         }
         
         customizeNavigationBar ()
-        SideMenuManager.default.menuLeftNavigationController = storyboard!.instantiateViewController(withIdentifier: "LeftMenuNavigationController") as? UISideMenuNavigationController
+        
+        /*SideMenuManager.default.menuLeftNavigationController = storyboard!.instantiateViewController(withIdentifier: "LeftMenuNavigationController") as? UISideMenuNavigationController
         
         // to control the slide menu by touch
         SideMenuManager.default.menuAddPanGestureToPresent(toView: self.navigationController!.navigationBar)
-        SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
+        SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)*/
 
     }
 
@@ -43,6 +40,15 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func sideMenuButton(_ sender: Any) {
+        
+        let storyboard = UIStoryboard.init(name: "sideMenu", bundle: nil)
+        let sideMenuVC = storyboard.instantiateViewController(withIdentifier: "LeftMenuNavigationController")
+        show(sideMenuVC, sender: self)
+    }
+    
+    
     func customizeNavigationBar ()
     {
         UINavigationBar.appearance().barTintColor = UIColor.red
@@ -50,6 +56,8 @@ class ViewController: UIViewController {
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
 
     }
+    
+    
 
 
 }
