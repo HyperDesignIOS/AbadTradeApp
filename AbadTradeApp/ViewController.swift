@@ -31,6 +31,7 @@ class ViewController: UIViewController {
 //            self.images = images
 //        }
 //        apisInstance.getBrands(vehicleId: 5)
+//        apisInstance.getModels(brandId: 2)
         customizeNavigationBar ()
        // SideMenuManager.default.menuLeftNavigationController =
 

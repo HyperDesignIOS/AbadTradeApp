@@ -14,6 +14,7 @@ class apiRequests {
     var categoriesArray = [Category]()
     var imagesArray = [Image]()
     var brandsArray = [Brand]()
+    var modelsArray = [Model]()
     let sm = serverManager()
     
     func loadCategoriesAndImages(didDataReady : @escaping ([Category],[Image]) -> ()) {
@@ -63,6 +64,27 @@ class apiRequests {
         })
         
         return self.brandsArray
+    }
+    
+    func getModels(brandId : Int) -> [Model] {
+        
+        sm.connectForApiWith(url: "http://hyper-design.com/Abad/api/getModel", mType: HTTPServerMethod.post, params: ["id" : brandId], complation: { (json) in
+            
+            if let obj = json {
+                print (obj)
+                let dictionaryOfJson = JSON(json!).dictionaryObject
+                let models = dictionaryOfJson!["models"] as! [[String : Any]]
+                for model in models {
+                    let model = Model.init(fromJson: model)
+                    self.modelsArray.append(model)
+                    print(model.nameEn)
+                }
+            }
+        }, errorHandler: { (error, msg) in
+            print("\(String(describing: msg))")
+        })
+        
+        return self.modelsArray
     }
     
 }
