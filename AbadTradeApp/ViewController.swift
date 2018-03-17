@@ -26,11 +26,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        apisInstance.loadCategoriesAndImages { (categories, images) in
-            self.categories = categories
-            self.images = images
-        }
-        
+//        apisInstance.loadCategoriesAndImages { (categories, images) in
+//            self.categories = categories
+//            self.images = images
+//        }
+//        apisInstance.getBrands(vehicleId: 5)
+//        apisInstance.getModels(brandId: 2)
         customizeNavigationBar ()
        // SideMenuManager.default.menuLeftNavigationController =
 

@@ -16,13 +16,13 @@ class Brand : NSObject, NSCoding{
     /**
      * Instantiate the instance using the passed json values to set the properties values
      */
-    init(fromJson json: JSON!){
+    init(fromJson json: [String : Any]!){
         if json.isEmpty{
             return
         }
-        id = json["id"].stringValue
-        nameAr = json["name_ar"].stringValue
-        nameEn = json["name_en"].stringValue
+        id = json["id"] as! String
+        nameAr = json["name_ar"] as! String
+        nameEn = json["name_en"] as! String
     }
     
     /**
