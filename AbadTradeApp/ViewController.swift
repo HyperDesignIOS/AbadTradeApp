@@ -12,12 +12,12 @@ import SwiftyJSON
 
 class ViewController: UIViewController {
     
-    @IBAction func sideMenuButton(_ sender: Any) {
-        
-        let storyboard = UIStoryboard.init(name: "sideMenu", bundle: nil)
-        storyboard.instantiateViewController(withIdentifier: "LeftMenuNavigationController")
-       // show(sideMenuVC, sender: self)
-    }
+//    @IBAction func sideMenuButton(_ sender: Any) {
+//
+//        let storyboard = UIStoryboard.init(name: "sideMenu", bundle: nil)
+//        storyboard.instantiateViewController(withIdentifier: "LeftMenuNavigationController")
+//       // show(sideMenuVC, sender: self)
+//    }
     var categories = [Category]()
     var images = [Image]()
     var apisInstance = apiRequests()
