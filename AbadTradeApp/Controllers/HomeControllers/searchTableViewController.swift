@@ -57,6 +57,10 @@ class searchTableViewController: UITableViewController {
         {
             cell.searchResultLabel.text = brands[indexPath.row].nameEn
         }
+        else if let models = searchResultData as? [Model]
+        {
+            cell.searchResultLabel.text = models[indexPath.row].nameEn
+        }
         // Configure the cell...
 
         return cell

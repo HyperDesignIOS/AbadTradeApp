@@ -14,7 +14,7 @@ class apiRequests {
     var categoriesArray = [Category]()
     var imagesArray = [Image]()
     var brandsArray = [Brand]()
-//    var modelsArray = [Model]()
+    var modelsArray = [Model]()
     let sm = serverManager()
     
     func loadCategoriesAndImages(didDataReady : @escaping ([Category],[Image]) -> ()) {
@@ -66,25 +66,25 @@ class apiRequests {
         })
     }
     
-//    func getModels(brandId : Int) -> [Model] {
-//        
-//        sm.connectForApiWith(url: "http://hyper-design.com/Abad/api/getModel", mType: HTTPServerMethod.post, params: ["id" : brandId], complation: { (json) in
-//            
-//            if let obj = json {
-//                print (obj)
-//                let dictionaryOfJson = JSON(json!).dictionaryObject
-//                let models = dictionaryOfJson!["models"] as! [[String : Any]]
-//                for model in models {
-//                    let model = Model.init(fromJson: model)
-//                    self.modelsArray.append(model)
-//                    print(model.nameEn)
-//                }
-//            }
-//        }, errorHandler: { (error, msg) in
-//            print("\(String(describing: msg))")
-//        })
-//        
-//        return self.modelsArray
-//    }
+    func getModels(brandId : Int , didDataReady : @escaping ([Model]) -> ()) -> () {
+        
+        sm.connectForApiWith(url: "http://hyper-design.com/Abad/api/getModel", mType: HTTPServerMethod.post, params: ["id" : brandId], complation: { (json) in
+            
+            if let obj = json {
+                print (obj)
+                let dictionaryOfJson = JSON(json!).dictionaryObject
+                let models = dictionaryOfJson!["models"] as! [[String : Any]]
+                for model in models {
+                    let model = Model.init(fromJson: model)
+                    self.modelsArray.append(model)
+                    print(model.nameEn)
+                }
+            }
+            didDataReady(self.modelsArray)
+        }, errorHandler: { (error, msg) in
+            print("\(String(describing: msg))")
+            didDataReady([])
+        })
+    }
     
 }

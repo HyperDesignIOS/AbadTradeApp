@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     var categories = [Category]()
     var images = [Image]()
     var brands = [Brand]()
+    var models = [Model]()
     var apisInstance = apiRequests()
     
     
@@ -36,7 +37,9 @@ class ViewController: UIViewController {
         apisInstance.getBrands(vehicleId: 5) { (brands) in
             self.brands = brands
         }
-//        apisInstance.getModels(brandId: 2)
+        apisInstance.getModels(brandId: 2) { (models) in
+            self.models = models
+        }
         customizeNavigationBar ()
        // SideMenuManager.default.menuLeftNavigationController =
 
@@ -105,9 +108,9 @@ class ViewController: UIViewController {
                
                     destination.searchResultData = brands
 
-                }else if (sender as! UIButton).tag == 
-                    2{//model
-
+                }else if (sender as! UIButton).tag == 2{//model
+                    
+                    destination.searchResultData = models
 
 
                 }else if (sender as! UIButton).tag == 3 {//year
