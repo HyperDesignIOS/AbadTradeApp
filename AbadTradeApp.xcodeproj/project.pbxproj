@@ -12,9 +12,6 @@
 		407337342058336600299A0F /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407337332058336600299A0F /* Image.swift */; };
 		40B039C820594A1000AAD62A /* ApiRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B039C720594A1000AAD62A /* ApiRequests.swift */; };
 		40B039CC20595D0A00AAD62A /* Brand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B039CB20595D0A00AAD62A /* Brand.swift */; };
-		40FCE0DC205D3BB8002F2291 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FCE0DB205D3BB8002F2291 /* Model.swift */; };
-		40FCE0DF205D7114002F2291 /* searchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FCE0DE205D7114002F2291 /* searchTableViewController.swift */; };
-		40FCE0E1205D72BE002F2291 /* searchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FCE0E0205D72BE002F2291 /* searchTableViewCell.swift */; };
 		7DC92218205809EE00C1705F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC92217205809EE00C1705F /* AppDelegate.swift */; };
 		7DC9221A205809EE00C1705F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC92219205809EE00C1705F /* ViewController.swift */; };
 		7DC9221D205809EE00C1705F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DC9221B205809EE00C1705F /* Main.storyboard */; };
@@ -31,9 +28,6 @@
 		407337332058336600299A0F /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		40B039C720594A1000AAD62A /* ApiRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequests.swift; sourceTree = "<group>"; };
 		40B039CB20595D0A00AAD62A /* Brand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brand.swift; sourceTree = "<group>"; };
-		40FCE0DB205D3BB8002F2291 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Model.swift; path = "../../../../../../../Volumes/Hyper Design/Model.swift"; sourceTree = "<group>"; };
-		40FCE0DE205D7114002F2291 /* searchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = searchTableViewController.swift; path = "../../../../../../../Volumes/Hyper Design/searchTableViewController.swift"; sourceTree = "<group>"; };
-		40FCE0E0205D72BE002F2291 /* searchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = searchTableViewCell.swift; path = "../../../../../../../Volumes/Hyper Design/searchTableViewCell.swift"; sourceTree = "<group>"; };
 		7DC92214205809EE00C1705F /* AbadTradeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AbadTradeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DC92217205809EE00C1705F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DC92219205809EE00C1705F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -79,7 +73,6 @@
 		407337302058332900299A0F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				40FCE0DA205D3B82002F2291 /* Model */,
 				40B039CA20595CC900AAD62A /* Brand */,
 				40B039C920595C7200AAD62A /* Vehicle */,
 			);
@@ -111,20 +104,10 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		40FCE0DA205D3B82002F2291 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				40FCE0DB205D3BB8002F2291 /* Model.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		40FCE0DD205D70BA002F2291 /* HomeController */ = {
 			isa = PBXGroup;
 			children = (
 				7DC92219205809EE00C1705F /* ViewController.swift */,
-				40FCE0DE205D7114002F2291 /* searchTableViewController.swift */,
-				40FCE0E0205D72BE002F2291 /* searchTableViewCell.swift */,
 			);
 			path = HomeController;
 			sourceTree = "<group>";
@@ -326,11 +309,8 @@
 				40B039C820594A1000AAD62A /* ApiRequests.swift in Sources */,
 				7DC92218205809EE00C1705F /* AppDelegate.swift in Sources */,
 				40B039CC20595D0A00AAD62A /* Brand.swift in Sources */,
-				40FCE0E1205D72BE002F2291 /* searchTableViewCell.swift in Sources */,
 				407337322058333E00299A0F /* Category.swift in Sources */,
 				407337342058336600299A0F /* Image.swift in Sources */,
-				40FCE0DF205D7114002F2291 /* searchTableViewController.swift in Sources */,
-				40FCE0DC205D3BB8002F2291 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

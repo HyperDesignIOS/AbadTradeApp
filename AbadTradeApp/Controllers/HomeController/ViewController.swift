@@ -82,51 +82,51 @@ class ViewController: UIViewController {
     @IBAction func statusButton(_ sender: Any) {
         performSegue(withIdentifier: "categoySegue", sender: self)
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == "categorySegue" {
-            
-            if let destination = segue.destination as? searchTableViewController{
-                
-                if (sender as! UIButton).tag == 0 {//category
-                    
-//                    des.data = categories
-//                    des.selectedValue = self.selectedCat
-//                    des.filterType = filterType
-//                    destination.delegate = self
-                    destination.categories = categories
-                    
-                }else if (sender as! UIButton).tag == 1 {//brand
-                    
-                    
-                    
-                }else if (sender as! UIButton).tag ==
-                    2{//model
-                    
-                    
-                    
-                }else if (sender as! UIButton).tag == 3 {//year
-                    
-                    
-                }
-                else if (sender as! UIButton).tag == 4 {//status
-                    
-                    
-                    
-                }
-            }
-//        }else if segue.identifier == "SearchSegue"{
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //
-////            if let des = segue.destination as? ResultViewController{
-////
-////                des.selectedCat = self.selectedCat
-////                des.selectedReg = self.selectedReg
-////                des.selectedSpec = self.selectedSpec
-////                des.selectedArea = self.selectedArea
-////                des.doctorName = self.lblDoctorName.text ?? ""
+//        if segue.identifier == "categorySegue" {
 //
+//            if let destination = segue.destination as? searchTableViewController{
+//
+//                if (sender as! UIButton).tag == 0 {//category
+//
+////                    des.data = categories
+////                    des.selectedValue = self.selectedCat
+////                    des.filterType = filterType
+////                    destination.delegate = self
+//                    destination.categories = categories
+//
+//                }else if (sender as! UIButton).tag == 1 {//brand
+//
+//
+//
+//                }else if (sender as! UIButton).tag ==
+//                    2{//model
+//
+//
+//
+//                }else if (sender as! UIButton).tag == 3 {//year
+//
+//
+//                }
+//                else if (sender as! UIButton).tag == 4 {//status
+//
+//
+//
+//                }
 //            }
-        }
-    }
+////        }else if segue.identifier == "SearchSegue"{
+////
+//////            if let des = segue.destination as? ResultViewController{
+//////
+//////                des.selectedCat = self.selectedCat
+//////                des.selectedReg = self.selectedReg
+//////                des.selectedSpec = self.selectedSpec
+//////                des.selectedArea = self.selectedArea
+//////                des.doctorName = self.lblDoctorName.text ?? ""
+////
+////            }
+//        }
+//    }
 }
 
