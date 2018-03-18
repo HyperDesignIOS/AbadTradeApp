@@ -17,6 +17,7 @@ class searchTableViewController: UITableViewController {
     
     var searchResultData = [AnyObject]()
 
+    var selectedObject : AnyObject!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,6 +65,11 @@ class searchTableViewController: UITableViewController {
         // Configure the cell...
 
         return cell
+    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        selectedObject = searchResultData[indexPath.row]
+        self.navigationController?.popViewController(animated: true)
     }
   
     
