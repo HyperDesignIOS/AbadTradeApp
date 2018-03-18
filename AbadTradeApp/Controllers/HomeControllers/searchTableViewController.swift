@@ -8,9 +8,15 @@
 
 import UIKit
 
-class searchTableViewController: UITableViewController {
+//enum Type : String {
+//    case Category = "Category"
+//    case Brand = "Brand"
+//}
 
-     var categories = [Category]()
+class searchTableViewController: UITableViewController {
+    
+    var searchResultData = [AnyObject]()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +26,7 @@ class searchTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+       // searchResultData = [type.rawValue]
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,18 +43,25 @@ class searchTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return categories.count
+        return searchResultData.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "searchResultCell", for: indexPath) as! searchTableViewCell
 
-        cell.searchResultLabel.text = categories[indexPath.row].nameEn
+        if let categories = searchResultData as? [Category] {
+            cell.searchResultLabel.text = categories[indexPath.row].nameEn
+        }
+        else if let brands = searchResultData as? [Brand]
+        {
+            cell.searchResultLabel.text = brands[indexPath.row].nameEn
+        }
         // Configure the cell...
 
         return cell
     }
+  
     
 
     /*

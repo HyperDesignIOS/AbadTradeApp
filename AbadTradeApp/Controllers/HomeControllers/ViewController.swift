@@ -21,6 +21,7 @@ class ViewController: UIViewController {
 //    }
     var categories = [Category]()
     var images = [Image]()
+    var brands = [Brand]()
     var apisInstance = apiRequests()
     
     
@@ -32,7 +33,9 @@ class ViewController: UIViewController {
             print(categories.count)
             self.images = images
         }
-//        apisInstance.getBrands(vehicleId: 5)
+        apisInstance.getBrands(vehicleId: 5) { (brands) in
+            self.brands = brands
+        }
 //        apisInstance.getModels(brandId: 2)
         customizeNavigationBar ()
        // SideMenuManager.default.menuLeftNavigationController =
@@ -64,17 +67,17 @@ class ViewController: UIViewController {
     }
     
     
-    @IBAction func categoryBurron(_ sender: UIButton) {
+    @IBAction func categoryButton(_ sender: UIButton) {
         performSegue(withIdentifier: "categorySegue", sender: sender)
     }
     
 
-    @IBAction func brandButton(_ sender: Any) {
-        performSegue(withIdentifier: "categorySegue", sender: self)
+    @IBAction func brandButton(_ sender:UIButton) {
+        performSegue(withIdentifier: "categorySegue", sender: sender)
     }
     
-    @IBAction func modelButton(_ sender: Any) {
-        performSegue(withIdentifier: "categorySegue", sender: self)
+    @IBAction func modelButton(_ sender: UIButton) {
+        performSegue(withIdentifier: "categorySegue", sender: sender)
     }
     @IBAction func yearButton(_ sender: Any) {
         performSegue(withIdentifier: "categorySegue", sender: self)
@@ -94,13 +97,15 @@ class ViewController: UIViewController {
 //                    des.selectedValue = self.selectedCat
 //                    des.filterType = filterType
 //                    destination.delegate = self
-                    destination.categories = categories
+//                    destination.type = .Category
+                    
+                    destination.searchResultData = categories
 
                 }else if (sender as! UIButton).tag == 1 {//brand
+               
+                    destination.searchResultData = brands
 
-
-
-                }else if (sender as! UIButton).tag ==
+                }else if (sender as! UIButton).tag == 
                     2{//model
 
 

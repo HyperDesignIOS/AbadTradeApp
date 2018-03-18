@@ -45,7 +45,7 @@ class apiRequests {
         })
     }
     
-    func getBrands(vehicleId : Int) -> [Brand] {
+    func getBrands(vehicleId : Int , didDataReady : @escaping ([Brand]) -> ()) -> () {
         
         sm.connectForApiWith(url: "http://hyper-design.com/Abad/api/getBrand", mType: HTTPServerMethod.post, params: ["id" : vehicleId], complation: { (json) in
             
@@ -59,11 +59,11 @@ class apiRequests {
                     print(brand.nameEn)
                 }
             }
+            didDataReady(self.brandsArray)
         }, errorHandler: { (error, msg) in
             print("\(String(describing: msg))")
+            didDataReady([])
         })
-        
-        return self.brandsArray
     }
     
 //    func getModels(brandId : Int) -> [Model] {
