@@ -483,7 +483,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="searchResultLabel" destination="aea-CK-MNe" id="Y3m-w1-hUt"/>
+                                    <outlet property="searchResultLabel" destination="aea-CK-MNe" id="dVn-He-QOY"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
