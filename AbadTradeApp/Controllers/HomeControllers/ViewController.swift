@@ -11,8 +11,35 @@ import SideMenu
 import SwiftyJSON
 
 class ViewController: UIViewController {
+
     
-   
+    var statusOfVehicle = ""
+    
+    @IBAction func changeRadioButton(_ sender: UIButton) {
+        switch sender.tag{
+        case 5:
+            imageSwap(forfirstimage: newRadioButton, andSecondImage: usedRdioButton)
+                        statusOfVehicle = "new"
+            
+        case 6:
+            imageSwap(forfirstimage: usedRdioButton, andSecondImage: newRadioButton)
+            statusOfVehicle = "used"
+            
+            
+        default:
+            break
+        }
+        print (statusOfVehicle)
+        
+        
+    }
+    func imageSwap(forfirstimage firstImageView: UIImageView,andSecondImage secondImageView: UIImageView)
+    {
+        firstImageView.image = UIImage(named: "radio-on-button")
+        secondImageView.image = UIImage(named: "empty")
+        
+    }
+    
     //    @IBAction func sideMenuButton(_ sender: Any) {
 //
 //        let storyboard = UIStoryboard.init(name: "sideMenu", bundle: nil)
@@ -30,6 +57,11 @@ class ViewController: UIViewController {
     
     var apisInstance = apiRequests()
     
+   
+   
+    @IBOutlet weak var newRadioButton: UIImageView!
+    
+    @IBOutlet weak var usedRdioButton: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
