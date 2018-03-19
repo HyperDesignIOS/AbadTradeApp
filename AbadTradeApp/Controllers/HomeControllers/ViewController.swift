@@ -24,6 +24,9 @@ class ViewController: UIViewController {
     var brands = [Brand]()
     var models = [Model]()
     var years = [Year]()
+    let statuses = [Status(name: "Used"),Status(name: "New")]
+    
+   
     
     var apisInstance = apiRequests()
     
@@ -46,6 +49,7 @@ class ViewController: UIViewController {
         apisInstance.getYears(modelId: 1) { (years) in
             self.years = years
         }
+        
         customizeNavigationBar ()
        // SideMenuManager.default.menuLeftNavigationController =
 
@@ -91,9 +95,11 @@ class ViewController: UIViewController {
     @IBAction func yearButton(_ sender: UIButton) {
         performSegue(withIdentifier: "categorySegue", sender: sender)
     }
-    @IBAction func statusButton(_ sender: Any) {
-        performSegue(withIdentifier: "categoySegue", sender: self)
+    @IBAction func statusButton(_ sender: UIButton) {
+        performSegue(withIdentifier: "categorySegue", sender: sender)
     }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
         if segue.identifier == "categorySegue" {
@@ -124,10 +130,10 @@ class ViewController: UIViewController {
                     destination.searchResultData = years
                 }
                 else if (sender as! UIButton).tag == 4 {//status
-
-
-
+                    
+                    destination.searchResultData = statuses
                 }
+               
             }
 //        }else if segue.identifier == "SearchSegue"{
 //
