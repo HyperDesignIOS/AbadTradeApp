@@ -15,6 +15,7 @@ class apiRequests {
     var imagesArray = [Image]()
     var brandsArray = [Brand]()
     var modelsArray = [Model]()
+    var yearsArray = [Year]()
     let sm = serverManager()
     
     func loadCategoriesAndImages(didDataReady : @escaping ([Category],[Image]) -> ()) {
@@ -86,5 +87,36 @@ class apiRequests {
             didDataReady([])
         })
     }
+    
+   //****************
+    
+    func getYears(modelId : Int , didDataReady : @escaping ([Year]) -> ()) -> () {
+        
+        sm.connectForApiWith(url: "http://hyper-design.com/Abad/api/getYear", mType: HTTPServerMethod.post, params: ["id" : modelId], complation: { (json) in
+            
+            if let obj = json {
+                print (obj)
+                let dictionaryOfJson = JSON(json!).dictionaryObject
+                let years = dictionaryOfJson!["years"] as! [[String : Any]]
+                for year in years {
+                    let year = Year.init(fromDictionary: year)
+                    self.yearsArray.append(year)
+                    print(year.id)
+                }
+            }
+            didDataReady(self.yearsArray)
+        }, errorHandler: { (error, msg) in
+            print("\(String(describing: msg))")
+            didDataReady([])
+        })
+    }
+    
+    
+    
+    
+    
+    
+    
+    
     
 }

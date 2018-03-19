@@ -62,6 +62,11 @@ class searchTableViewController: UITableViewController {
         {
             cell.searchResultLabel.text = models[indexPath.row].nameEn
         }
+        //******
+        else if let years = searchResultData as? [Year]
+        {
+            cell.searchResultLabel.text = years[indexPath.row].year
+        }
         // Configure the cell...
 
         return cell
