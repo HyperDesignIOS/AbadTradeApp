@@ -10,6 +10,8 @@ import UIKit
 
 class VehicleResultTableViewController: UITableViewController {
 
+    var searchResults = [SearchResultItem]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

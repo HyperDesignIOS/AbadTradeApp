@@ -105,6 +105,11 @@ class ViewController: UIViewController , searchVCProtocol{
     
     
     @IBAction func searchButton(_ sender: Any) {
+        
+        apisInstance.getSearchResults(categoryId: selectedCategory.id, brandId: selectedBrand.id, modelId: selectedModel.id, yearId: selectedYear.id, status: statusOfVehicle) { (searchResults) in
+            
+        }
+        
         let storyboard = UIStoryboard.init(name: "VehicleResult", bundle: nil)
         let vehicleResultVC = storyboard.instantiateViewController(withIdentifier: "VehicleResultViewController")
         show(vehicleResultVC, sender: self)
