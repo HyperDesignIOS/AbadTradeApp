@@ -10,49 +10,26 @@ import UIKit
 import SideMenu
 import SwiftyJSON
 
-class ViewController: UIViewController {
+class ViewController: UIViewController , searchVCProtocol{
+    
 
+    @IBOutlet weak var categoryTextField: UITextField!
+    @IBOutlet weak var brandTextField: UITextField!
+    @IBOutlet weak var modelTextField: UITextField!
+    @IBOutlet weak var yearTextField: UITextField!
     
     var statusOfVehicle = ""
-    
-    @IBAction func changeRadioButton(_ sender: UIButton) {
-        switch sender.tag{
-        case 5:
-            imageSwap(forfirstimage: newRadioButton, andSecondImage: usedRdioButton)
-                        statusOfVehicle = "new"
-            
-        case 6:
-            imageSwap(forfirstimage: usedRdioButton, andSecondImage: newRadioButton)
-            statusOfVehicle = "used"
-            
-            
-        default:
-            break
-        }
-        print (statusOfVehicle)
-        
-        
-    }
-    func imageSwap(forfirstimage firstImageView: UIImageView,andSecondImage secondImageView: UIImageView)
-    {
-        firstImageView.image = UIImage(named: "radio-on-button")
-        secondImageView.image = UIImage(named: "empty")
-        
-    }
-    
-    //    @IBAction func sideMenuButton(_ sender: Any) {
-//
-//        let storyboard = UIStoryboard.init(name: "sideMenu", bundle: nil)
-//        storyboard.instantiateViewController(withIdentifier: "LeftMenuNavigationController")
-//       // show(sideMenuVC, sender: self)
-//    }
     var categories = [Category]()
     var images = [Image]()
     var brands = [Brand]()
     var models = [Model]()
     var years = [Year]()
     let statuses = [Status(name: "Used"),Status(name: "New")]
-    
+    var filterType : FilterType!
+    var selectedCategory : Category!
+    var selectedBrand : Brand!
+    var selectedModel : Model!
+    var selectedYear : Year!
    
     
     var apisInstance = apiRequests()
@@ -70,16 +47,6 @@ class ViewController: UIViewController {
             self.categories = categories
             print(categories.count)
             self.images = images
-        }
-        apisInstance.getBrands(vehicleId: 5) { (brands) in
-            self.brands = brands
-        }
-        apisInstance.getModels(brandId: 2) { (models) in
-            self.models = models
-        }
-        //*****
-        apisInstance.getYears(modelId: 1) { (years) in
-            self.years = years
         }
         
         customizeNavigationBar ()
@@ -113,21 +80,26 @@ class ViewController: UIViewController {
     
     
     @IBAction func categoryButton(_ sender: UIButton) {
+        
+        filterType = FilterType.Category
         performSegue(withIdentifier: "categorySegue", sender: sender)
     }
     
 
     @IBAction func brandButton(_ sender:UIButton) {
+        filterType = FilterType.Brand
+
         performSegue(withIdentifier: "categorySegue", sender: sender)
     }
     
     @IBAction func modelButton(_ sender: UIButton) {
+        
+        filterType = FilterType.Model
         performSegue(withIdentifier: "categorySegue", sender: sender)
     }
     @IBAction func yearButton(_ sender: UIButton) {
-        performSegue(withIdentifier: "categorySegue", sender: sender)
-    }
-    @IBAction func statusButton(_ sender: UIButton) {
+        
+        filterType = FilterType.Year
         performSegue(withIdentifier: "categorySegue", sender: sender)
     }
     
@@ -140,29 +112,28 @@ class ViewController: UIViewController {
 
                 if (sender as! UIButton).tag == 0 {//category
 
-//                    des.data = categories
 //                    des.selectedValue = self.selectedCat
 //                    des.filterType = filterType
-//                    destination.delegate = self
-//                    destination.type = .Category
-                    
+                    destination.delegate = self
                     destination.searchResultData = categories
 
                 }else if (sender as! UIButton).tag == 1 {//brand
                
+                    destination.delegate = self
                     destination.searchResultData = brands
 
                 }else if (sender as! UIButton).tag == 2{//model
-                    
+                    destination.delegate = self
                     destination.searchResultData = models
 
 
                 }else if (sender as! UIButton).tag == 3 {//year
 
+                    destination.delegate = self
                     destination.searchResultData = years
                 }
                 else if (sender as! UIButton).tag == 4 {//status
-                    
+                    destination.delegate = self
                     destination.searchResultData = statuses
                 }
                
@@ -178,6 +149,73 @@ class ViewController: UIViewController {
 ////                des.doctorName = self.lblDoctorName.text ?? ""
 //
 //            }
+        }
+    }
+    
+    @IBAction func changeRadioButton(_ sender: UIButton) {
+        switch sender.tag{
+        case 5:
+            imageSwap(forfirstimage: newRadioButton, andSecondImage: usedRdioButton)
+            statusOfVehicle = "new"
+            
+        case 6:
+            imageSwap(forfirstimage: usedRdioButton, andSecondImage: newRadioButton)
+            statusOfVehicle = "used"
+            
+            
+        default:
+            break
+        }
+        print (statusOfVehicle)
+        
+        
+    }
+    func imageSwap(forfirstimage firstImageView: UIImageView,andSecondImage secondImageView: UIImageView)
+    {
+        firstImageView.image = UIImage(named: "radio-on-button")
+        secondImageView.image = UIImage(named: "empty")
+        
+    }
+    
+    func handelSelection(selectedValue: AnyObject) {
+        
+        if let ft = filterType{
+            
+            if ft == FilterType.Category{
+                
+                selectedCategory = selectedValue as! Category
+                categoryTextField.text = selectedCategory.nameEn
+                /*(Localize.currentLanguage() == "en" ? selectedCat?.nameEn : selectedCat?.nameAr)*/
+                brandTextField.text = ""
+                modelTextField.text = ""
+                yearTextField.text = ""
+                self.selectedBrand = nil
+                apisInstance.getBrands(vehicleId:  selectedCategory.id, didDataReady: { (brands) in
+                    self.brands = brands
+                })
+                
+            }else if ft == FilterType.Brand{
+                
+                selectedBrand = selectedValue as! Brand
+                brandTextField.text = selectedBrand.nameEn
+                modelTextField.text = ""
+                self.selectedModel = nil
+                apisInstance.getModels(brandId: Int(selectedBrand.id)!, didDataReady: { (models) in
+                    self.models = models
+                })
+            }else if ft == FilterType.Model{
+                
+                selectedModel = selectedValue as! Model
+                modelTextField.text = selectedModel.nameEn
+                apisInstance.getYears(modelId: Int(selectedModel.id)!, didDataReady: { (years) in
+                    self.years = years
+                })
+                
+            }else if ft == FilterType.Year{
+                
+                selectedYear = selectedValue as! Year
+                yearTextField.text = selectedYear.year
+            }
         }
     }
 }

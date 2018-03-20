@@ -49,7 +49,7 @@ class apiRequests {
     func getBrands(vehicleId : Int , didDataReady : @escaping ([Brand]) -> ()) -> () {
         
         sm.connectForApiWith(url: "http://hyper-design.com/Abad/api/getBrand", mType: HTTPServerMethod.post, params: ["id" : vehicleId], complation: { (json) in
-            
+            self.brandsArray.removeAll()
             if let obj = json {
                 print (obj)
                 let dictionaryOfJson = JSON(json!).dictionaryObject
@@ -71,6 +71,7 @@ class apiRequests {
         
         sm.connectForApiWith(url: "http://hyper-design.com/Abad/api/getModel", mType: HTTPServerMethod.post, params: ["id" : brandId], complation: { (json) in
             
+            self.modelsArray.removeAll()
             if let obj = json {
                 print (obj)
                 let dictionaryOfJson = JSON(json!).dictionaryObject
@@ -94,6 +95,7 @@ class apiRequests {
         
         sm.connectForApiWith(url: "http://hyper-design.com/Abad/api/getYear", mType: HTTPServerMethod.post, params: ["id" : modelId], complation: { (json) in
             
+            self.yearsArray.removeAll()
             if let obj = json {
                 print (obj)
                 let dictionaryOfJson = JSON(json!).dictionaryObject

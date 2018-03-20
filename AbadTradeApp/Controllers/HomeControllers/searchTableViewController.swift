@@ -16,6 +16,7 @@ import UIKit
 class searchTableViewController: UITableViewController {
     
     var searchResultData = [AnyObject]()
+    var delegate : searchVCProtocol!
 
     var selectedObject : AnyObject!
     
@@ -80,7 +81,14 @@ class searchTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         selectedObject = searchResultData[indexPath.row]
-        self.navigationController?.popViewController(animated: true)
+        if selectedObject != nil{
+            
+            if let parent = delegate{
+                
+                parent.handelSelection(selectedValue: selectedObject!)
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
     }
   
     
