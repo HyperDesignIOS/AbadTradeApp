@@ -25,6 +25,7 @@ class ViewController: UIViewController , searchVCProtocol{
     var models = [Model]()
     var years = [Year]()
     let statuses = [Status(name: "Used"),Status(name: "New")]
+    
     var filterType : FilterType!
     var selectedCategory : Category!
     var selectedBrand : Brand!
@@ -50,10 +51,9 @@ class ViewController: UIViewController , searchVCProtocol{
         }
         
         customizeNavigationBar ()
-       // SideMenuManager.default.menuLeftNavigationController =
-
+       // SideMenuManager.default.menuLeftNavigationController
         // to control the slide menu by touch
-//        SideMenuManager.default.menuAddPanGestureToPresent(toView: self.navigationController!.navigationBar)
+      //  SideMenuManager.default.menuAddPanGestureToPresent(toView: self.navigationController!.navigationBar)
 //        SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
  }
 
@@ -112,8 +112,7 @@ class ViewController: UIViewController , searchVCProtocol{
 
                 if (sender as! UIButton).tag == 0 {//category
 
-//                    des.selectedValue = self.selectedCat
-//                    des.filterType = filterType
+
                     destination.delegate = self
                     destination.searchResultData = categories
 
@@ -138,17 +137,6 @@ class ViewController: UIViewController , searchVCProtocol{
                 }
                
             }
-//        }else if segue.identifier == "SearchSegue"{
-//
-////            if let des = segue.destination as? ResultViewController{
-////
-////                des.selectedCat = self.selectedCat
-////                des.selectedReg = self.selectedReg
-////                des.selectedSpec = self.selectedSpec
-////                des.selectedArea = self.selectedArea
-////                des.doctorName = self.lblDoctorName.text ?? ""
-//
-//            }
         }
     }
     

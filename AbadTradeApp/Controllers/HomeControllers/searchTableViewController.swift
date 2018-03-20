@@ -16,8 +16,8 @@ import UIKit
 class searchTableViewController: UITableViewController {
     
     var searchResultData = [AnyObject]()
+    
     var delegate : searchVCProtocol!
-
     var selectedObject : AnyObject!
     
     override func viewDidLoad() {

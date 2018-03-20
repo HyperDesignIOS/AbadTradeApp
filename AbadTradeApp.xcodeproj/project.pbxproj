@@ -26,6 +26,7 @@
 		7DC9221F205809EE00C1705F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DC9221E205809EE00C1705F /* Assets.xcassets */; };
 		7DC92222205809EE00C1705F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DC92220205809EE00C1705F /* LaunchScreen.storyboard */; };
 		7DC9223020581AAE00C1705F /* sideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DC9222F20581AAE00C1705F /* sideMenu.storyboard */; };
+		7DE7EB31206162F20014D569 /* VehicleResult.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DE7EB30206162F20014D569 /* VehicleResult.storyboard */; };
 		906140AD261CF4A657737AD8 /* Pods_AbadTradeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83DC198F3043453F98950711 /* Pods_AbadTradeApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		7DC92221205809EE00C1705F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7DC92223205809EE00C1705F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DC9222F20581AAE00C1705F /* sideMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = sideMenu.storyboard; sourceTree = "<group>"; };
+		7DE7EB30206162F20014D569 /* VehicleResult.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VehicleResult.storyboard; sourceTree = "<group>"; };
 		83DC198F3043453F98950711 /* Pods_AbadTradeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AbadTradeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD47109169BA93C4F5E2E21 /* Pods-AbadTradeApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AbadTradeApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-AbadTradeApp/Pods-AbadTradeApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -212,6 +214,7 @@
 		7DC9222D20581A6900C1705F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7DE7EB2F2061627A0014D569 /* VehicleResult */,
 				7D51DC4A2060145E00D5E107 /* Vehicles */,
 				7DC9222E20581A7600C1705F /* Sidemenu */,
 			);
@@ -224,6 +227,14 @@
 				7DC9222F20581AAE00C1705F /* sideMenu.storyboard */,
 			);
 			path = Sidemenu;
+			sourceTree = "<group>";
+		};
+		7DE7EB2F2061627A0014D569 /* VehicleResult */ = {
+			isa = PBXGroup;
+			children = (
+				7DE7EB30206162F20014D569 /* VehicleResult.storyboard */,
+			);
+			path = VehicleResult;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,6 +301,7 @@
 			files = (
 				7DC9223020581AAE00C1705F /* sideMenu.storyboard in Resources */,
 				7DC92222205809EE00C1705F /* LaunchScreen.storyboard in Resources */,
+				7DE7EB31206162F20014D569 /* VehicleResult.storyboard in Resources */,
 				7DC9221F205809EE00C1705F /* Assets.xcassets in Resources */,
 				7D51DC4C2060149E00D5E107 /* Vehicle.storyboard in Resources */,
 				7DC9221D205809EE00C1705F /* Main.storyboard in Resources */,
