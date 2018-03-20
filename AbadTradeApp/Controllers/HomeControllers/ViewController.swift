@@ -104,6 +104,13 @@ class ViewController: UIViewController , searchVCProtocol{
     }
     
     
+    @IBAction func searchButton(_ sender: Any) {
+        let storyboard = UIStoryboard.init(name: "VehicleResult", bundle: nil)
+        let vehicleResultVC = storyboard.instantiateViewController(withIdentifier: "VehicleResultViewController")
+        show(vehicleResultVC, sender: self)
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
         if segue.identifier == "categorySegue" {
@@ -164,6 +171,8 @@ class ViewController: UIViewController , searchVCProtocol{
         secondImageView.image = UIImage(named: "empty")
         
     }
+    
+    
     
     func handelSelection(selectedValue: AnyObject) {
         
