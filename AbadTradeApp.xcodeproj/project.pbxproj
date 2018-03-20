@@ -161,12 +161,12 @@
 			path = Status;
 			sourceTree = "<group>";
 		};
-		7D51DC4A2060145E00D5E107 /* vehicles */ = {
+		7D51DC4A2060145E00D5E107 /* Vehicles */ = {
 			isa = PBXGroup;
 			children = (
 				7D51DC4B2060149E00D5E107 /* Vehicle.storyboard */,
 			);
-			path = vehicles;
+			path = Vehicles;
 			sourceTree = "<group>";
 		};
 		7DC9220B205809EE00C1705F = {
@@ -206,7 +206,7 @@
 		7DC9222D20581A6900C1705F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				7D51DC4A2060145E00D5E107 /* vehicles */,
+				7D51DC4A2060145E00D5E107 /* Vehicles */,
 				7DC9222E20581A7600C1705F /* Sidemenu */,
 			);
 			path = Views;
