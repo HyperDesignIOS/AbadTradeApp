@@ -16,6 +16,7 @@ class apiRequests {
     var brandsArray = [Brand]()
     var modelsArray = [Model]()
     var yearsArray = [Year]()
+    var searchResultItems = [SearchResultItem]()
     let sm = serverManager()
     
     func loadCategoriesAndImages(didDataReady : @escaping ([Category],[Image]) -> ()) {
@@ -113,12 +114,25 @@ class apiRequests {
         })
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
+    func getSearchResults(categoryId : Int, brandId : String , modelId : String ,yearId : String , status : String , didDataReady : @escaping ([SearchResultItem]) -> ()) -> () {
+        
+        sm.connectForApiWith(url: "http://hyper-design.com/Abad/api/search", mType: HTTPServerMethod.post, params: ["cat" : categoryId, "brand" : brandId , "model" : modelId, "year" : yearId , "name" : "" , "case" : status], complation: { (json) in
+            
+            self.searchResultItems.removeAll()
+            if let obj = json {
+                print (obj)
+                let dictionaryOfJson = JSON(json!).dictionaryObject
+                let items = dictionaryOfJson!["item"] as! [[String : Any]]
+                for item in items {
+                    let item = SearchResultItem.init(fromDictionary: item)
+                    self.searchResultItems.append(item)
+                    print(item.id)
+                }
+            }
+            didDataReady(self.searchResultItems)
+        }, errorHandler: { (error, msg) in
+            print("\(String(describing: msg))")
+            didDataReady([])
+        })
+    }
 }
