@@ -73,7 +73,6 @@ class ViewController: UIViewController , searchVCProtocol{
     func customizeNavigationBar ()
     {
         UINavigationBar.appearance().barTintColor = UIColor.red
-        //UINavigationBar.appearance().tintColor = UIColor.white
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
 
     }
