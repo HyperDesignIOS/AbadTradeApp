@@ -18,11 +18,15 @@ class Year : NSObject, NSCoding{
     var year : String!
     
     
+    override init() {
+        id = "0"
+        year = ""
+    }
     /**
      * Instantiate the instance using the passed dictionary values to set the properties values
      */
     init(fromDictionary dictionary: [String:Any]){
-        id = dictionary["id"] as? String
+        id = String(describing: dictionary["id"])
         year = dictionary["year"] as? String
     }
     

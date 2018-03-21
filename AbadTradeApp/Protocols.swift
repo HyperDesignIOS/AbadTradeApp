@@ -9,4 +9,5 @@
 import Foundation
 protocol searchVCProtocol {
     func handelSelection(selectedValue : AnyObject)
+    func handleSearchApiResponse(searchResults : [SearchResultItem])
 }

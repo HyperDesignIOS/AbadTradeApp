@@ -12,37 +12,29 @@ import SwiftyJSON
 
 class ViewController: UIViewController , searchVCProtocol{
     
-
     @IBOutlet weak var categoryTextField: UITextField!
     @IBOutlet weak var brandTextField: UITextField!
     @IBOutlet weak var modelTextField: UITextField!
     @IBOutlet weak var yearTextField: UITextField!
     
-    var statusOfVehicle = ""
+    let statuses = [Status(name: "Used"),Status(name: "New")]
+    var statusOfVehicle : String = ""
     var categories = [Category]()
     var images = [Image]()
     var brands = [Brand]()
     var models = [Model]()
     var years = [Year]()
-    let statuses = [Status(name: "Used"),Status(name: "New")]
-    
     var filterType : FilterType!
     var selectedCategory : Category!
-    var selectedBrand : Brand!
-    var selectedModel : Model!
-    var selectedYear : Year!
+    var selectedBrand = Brand()
+    var selectedModel = Model()
+    var selectedYear = Year()
    
-    
     var apisInstance = apiRequests()
-    
     var showAlert = GeneralMethod()
+    var delegate : searchVCProtocol!
     
-    
-    
-   
-   
     @IBOutlet weak var newRadioButton: UIImageView!
-    
     @IBOutlet weak var usedRdioButton: UIImageView!
     
     override func viewDidLoad() {
@@ -103,7 +95,7 @@ class ViewController: UIViewController , searchVCProtocol{
         
         filterType = FilterType.Model
         if selectedCategory != nil{
-            if selectedBrand != nil {
+            if selectedBrand.id != "0" {
                 performSegue(withIdentifier: "categorySegue", sender: sender)
             }
             else
@@ -122,8 +114,8 @@ class ViewController: UIViewController , searchVCProtocol{
         filterType = FilterType.Year
        
         if selectedCategory != nil{
-            if selectedBrand != nil {
-                if selectedModel != nil {
+            if selectedBrand.id != "0" {
+                if selectedModel.id != "0" {
                 performSegue(withIdentifier: "categorySegue", sender: sender)
                 }else{
                     showAlert.showAlert(title: "", message: "Select model first", vc: self, closure: nil)
@@ -139,15 +131,18 @@ class ViewController: UIViewController , searchVCProtocol{
             showAlert.showAlert(title: "", message: "Select category first", vc: self, closure: nil)
             
         }
-        
-        
     }
-    
     
     @IBAction func searchButton(_ sender: Any) {
         
-        apisInstance.getSearchResults(categoryId: selectedCategory.id, brandId: selectedBrand.id, modelId: selectedModel.id, yearId: selectedYear.id, status: statusOfVehicle) { (searchResults) in
+        if selectedCategory
+            != nil {
             
+            apisInstance.getSearchResults(categoryId: selectedCategory.id, brandId: selectedBrand.id, modelId: selectedModel.id, yearId: selectedYear.id, status: statusOfVehicle) { (searchResults) in
+                self.delegate.handleSearchApiResponse(searchResults: searchResults)
+            }
+        }else{
+            showAlert.showAlert(title: "", message: "Please select search data", vc: self, closure: nil)
         }
         
         let storyboard = UIStoryboard.init(name: "VehicleResult", bundle: nil)
@@ -164,12 +159,13 @@ class ViewController: UIViewController , searchVCProtocol{
 
                 if (sender as! UIButton).tag == 0 {//category
 
-
+                    
                     destination.delegate = self
                     destination.searchResultData = categories
 
                 }else if (sender as! UIButton).tag == 1 {//brand
                
+                    destination.selectedObject = self.selectedBrand
                     destination.delegate = self
                     destination.searchResultData = brands
 
@@ -231,7 +227,7 @@ class ViewController: UIViewController , searchVCProtocol{
                 brandTextField.text = ""
                 modelTextField.text = ""
                 yearTextField.text = ""
-                self.selectedBrand = nil
+                //self.selectedBrand = nil
                 apisInstance.getBrands(vehicleId:  selectedCategory.id, didDataReady: { (brands) in
                     self.brands = brands
                 })
@@ -241,7 +237,7 @@ class ViewController: UIViewController , searchVCProtocol{
                 selectedBrand = selectedValue as! Brand
                 brandTextField.text = selectedBrand.nameEn
                 modelTextField.text = ""
-                self.selectedModel = nil
+                //self.selectedModel = nil
                 apisInstance.getModels(brandId: Int(selectedBrand.id)!, didDataReady: { (models) in
                     self.models = models
                 })
@@ -260,5 +256,9 @@ class ViewController: UIViewController , searchVCProtocol{
             }
         }
     }
+    
+    func handleSearchApiResponse(searchResults: [SearchResultItem]) {
+    }
+    
 }
 

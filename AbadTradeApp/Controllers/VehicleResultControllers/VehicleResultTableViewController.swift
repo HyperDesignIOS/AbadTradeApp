@@ -8,13 +8,14 @@
 
 import UIKit
 
-class VehicleResultTableViewController: UITableViewController {
-
+class VehicleResultTableViewController: UITableViewController , searchVCProtocol{
+    
     var searchResults = [SearchResultItem]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -31,23 +32,26 @@ class VehicleResultTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return searchResults.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "searchResultCell", for: indexPath) as! VehicleResultTableViewCell
 
+        cell.vehicleBrand.text = searchResults[indexPath.row].brand.nameEn
+        cell.vehicleModel.text = searchResults[indexPath.row].model.nameEn
+        cell.vehicleShowRoom.text = searchResults[indexPath.row].dealer.nameEn
+        cell.vehiclePrice.text = searchResults[indexPath.row].price
         // Configure the cell...
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -93,5 +97,13 @@ class VehicleResultTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func handelSelection(selectedValue: AnyObject) {
+        
+    }
+    
+    func handleSearchApiResponse(searchResults: [SearchResultItem]) {
+        self.searchResults = searchResults
+    }
 
 }

@@ -12,7 +12,11 @@ class Model : NSObject, NSCoding{
     var nameAr : String!
     var nameEn : String!
     
-    
+    override init() {
+        id = "0"
+        nameEn = ""
+        nameAr = ""
+    }
     /**
      * Instantiate the instance using the passed json values to set the properties values
      */
@@ -20,7 +24,7 @@ class Model : NSObject, NSCoding{
         if json.isEmpty{
             return
         }
-        id = json["id"] as! String
+        id = String(describing: json["id"])
         nameAr = json["name_ar"] as! String
         nameEn = json["name_en"] as! String
     }
