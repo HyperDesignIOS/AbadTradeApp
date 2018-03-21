@@ -44,8 +44,8 @@ class ShowRoom : NSObject, NSCoding{
         lat = dictionary["lat"] as? String
         logo = dictionary["logo"] as? String
         longField = dictionary["long"] as? String
-        metaDesc = dictionary["meta_desc"] as? AnyObject
-        metaKey = dictionary["meta_key"] as? AnyObject
+        metaDesc = dictionary["meta_desc"] as AnyObject
+        metaKey = dictionary["meta_key"] as AnyObject
         nameAr = dictionary["name_ar"] as? String
         nameEn = dictionary["name_en"] as? String
         phone = dictionary["phone"] as? String
@@ -141,8 +141,8 @@ class ShowRoom : NSObject, NSCoding{
         lat = aDecoder.decodeObject(forKey: "lat") as? String
         logo = aDecoder.decodeObject(forKey: "logo") as? String
         longField = aDecoder.decodeObject(forKey: "long") as? String
-        metaDesc = aDecoder.decodeObject(forKey: "meta_desc") as? AnyObject
-        metaKey = aDecoder.decodeObject(forKey: "meta_key") as? AnyObject
+        metaDesc = aDecoder.decodeObject(forKey: "meta_desc") as AnyObject
+        metaKey = aDecoder.decodeObject(forKey: "meta_key") as AnyObject
         nameAr = aDecoder.decodeObject(forKey: "name_ar") as? String
         nameEn = aDecoder.decodeObject(forKey: "name_en") as? String
         phone = aDecoder.decodeObject(forKey: "phone") as? String

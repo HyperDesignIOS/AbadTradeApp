@@ -58,8 +58,8 @@ class SearchResultItem : NSObject, NSCoding{
         linkAr = dictionary["link_ar"] as? String
         linkEn = dictionary["link_en"] as? String
         luxury = dictionary["luxury"] as? String
-        metaDesc = dictionary["meta_desc"] as? AnyObject
-        metaKey = dictionary["meta_key"] as? AnyObject
+        metaDesc = dictionary["meta_desc"] as AnyObject
+        metaKey = dictionary["meta_key"] as AnyObject
         if let modelData = dictionary["model"] as? [String:Any]{
             model = Model(fromJson: modelData)
         }
@@ -69,12 +69,12 @@ class SearchResultItem : NSObject, NSCoding{
         nameEn = dictionary["name_en"] as? String
         price = dictionary["price"] as? String
         priceType = dictionary["price_type"] as? String
-        review = dictionary["review"] as? AnyObject
+        review = dictionary["review"] as AnyObject
         status = dictionary["status"] as? String
         type = dictionary["type"] as? String
         updatedAt = dictionary["updated_at"] as? String
         userId = dictionary["user_id"] as? String
-        visites = dictionary["visites"] as? AnyObject
+        visites = dictionary["visites"] as AnyObject
     }
     
     /**
@@ -189,8 +189,8 @@ class SearchResultItem : NSObject, NSCoding{
         linkAr = aDecoder.decodeObject(forKey: "link_ar") as? String
         linkEn = aDecoder.decodeObject(forKey: "link_en") as? String
         luxury = aDecoder.decodeObject(forKey: "luxury") as? String
-        metaDesc = aDecoder.decodeObject(forKey: "meta_desc") as? AnyObject
-        metaKey = aDecoder.decodeObject(forKey: "meta_key") as? AnyObject
+        metaDesc = aDecoder.decodeObject(forKey: "meta_desc") as AnyObject
+        metaKey = aDecoder.decodeObject(forKey: "meta_key") as AnyObject
         model = aDecoder.decodeObject(forKey: "model") as? Model
         modelId = aDecoder.decodeObject(forKey: "model_id") as? String
         modelYearId = aDecoder.decodeObject(forKey: "model_year_id") as? String
@@ -198,12 +198,12 @@ class SearchResultItem : NSObject, NSCoding{
         nameEn = aDecoder.decodeObject(forKey: "name_en") as? String
         price = aDecoder.decodeObject(forKey: "price") as? String
         priceType = aDecoder.decodeObject(forKey: "price_type") as? String
-        review = aDecoder.decodeObject(forKey: "review") as? AnyObject
+        review = aDecoder.decodeObject(forKey: "review") as AnyObject
         status = aDecoder.decodeObject(forKey: "status") as? String
         type = aDecoder.decodeObject(forKey: "type") as? String
         updatedAt = aDecoder.decodeObject(forKey: "updated_at") as? String
-        userId = aDecoder.decodeObject(forKey: "user_id") as? String
-        visites = aDecoder.decodeObject(forKey: "visites") as? AnyObject
+        userId = aDecoder.decodeObject(forKey: "user_id") as! String
+        visites = aDecoder.decodeObject(forKey: "visites") as AnyObject
         
     }
     
