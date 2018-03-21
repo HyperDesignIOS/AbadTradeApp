@@ -35,6 +35,10 @@ class ViewController: UIViewController , searchVCProtocol{
     
     var apisInstance = apiRequests()
     
+    var showAlert = GeneralMethod()
+    
+    
+    
    
    
     @IBOutlet weak var newRadioButton: UIImageView!
@@ -74,7 +78,6 @@ class ViewController: UIViewController , searchVCProtocol{
     {
         UINavigationBar.appearance().barTintColor = UIColor.red
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
-
     }
     
     
@@ -87,19 +90,57 @@ class ViewController: UIViewController , searchVCProtocol{
 
     @IBAction func brandButton(_ sender:UIButton) {
         filterType = FilterType.Brand
-
-        performSegue(withIdentifier: "categorySegue", sender: sender)
+        if selectedCategory != nil {
+            performSegue(withIdentifier: "categorySegue", sender: sender)
+        }
+        else
+        {
+            showAlert.showAlert(title: "", message: "Select category first", vc: self, closure: nil)
+        }
     }
     
     @IBAction func modelButton(_ sender: UIButton) {
         
         filterType = FilterType.Model
-        performSegue(withIdentifier: "categorySegue", sender: sender)
+        if selectedCategory != nil{
+            if selectedBrand != nil {
+                performSegue(withIdentifier: "categorySegue", sender: sender)
+            }
+            else
+            {
+                showAlert.showAlert(title: "", message: "Select brand first", vc: self, closure: nil)
+            }
+            
+        }
+        else{
+              showAlert.showAlert(title: "", message: "Select category first", vc: self, closure: nil)
+        }
+        
     }
     @IBAction func yearButton(_ sender: UIButton) {
         
         filterType = FilterType.Year
-        performSegue(withIdentifier: "categorySegue", sender: sender)
+       
+        if selectedCategory != nil{
+            if selectedBrand != nil {
+                if selectedModel != nil {
+                performSegue(withIdentifier: "categorySegue", sender: sender)
+                }else{
+                    showAlert.showAlert(title: "", message: "Select model first", vc: self, closure: nil)
+                }
+            }
+            else
+            {
+                showAlert.showAlert(title: "", message: "Select brand first", vc: self, closure: nil)
+            }
+            
+        }
+        else{
+            showAlert.showAlert(title: "", message: "Select category first", vc: self, closure: nil)
+            
+        }
+        
+        
     }
     
     

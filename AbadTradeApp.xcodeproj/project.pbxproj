@@ -22,6 +22,7 @@
 		7D51DC46205FC88000D5E107 /* Year.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D51DC45205FC88000D5E107 /* Year.swift */; };
 		7D51DC49205FDF1400D5E107 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D51DC48205FDF1400D5E107 /* Status.swift */; };
 		7D51DC4C2060149E00D5E107 /* Vehicle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D51DC4B2060149E00D5E107 /* Vehicle.storyboard */; };
+		7D6D5F3220626F660038F4E0 /* GeneralMethod .swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6D5F3120626F660038F4E0 /* GeneralMethod .swift */; };
 		7DC92218205809EE00C1705F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC92217205809EE00C1705F /* AppDelegate.swift */; };
 		7DC9221A205809EE00C1705F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC92219205809EE00C1705F /* ViewController.swift */; };
 		7DC9221D205809EE00C1705F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DC9221B205809EE00C1705F /* Main.storyboard */; };
@@ -51,6 +52,7 @@
 		7D51DC45205FC88000D5E107 /* Year.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Year.swift; sourceTree = "<group>"; };
 		7D51DC48205FDF1400D5E107 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		7D51DC4B2060149E00D5E107 /* Vehicle.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Vehicle.storyboard; sourceTree = "<group>"; };
+		7D6D5F3120626F660038F4E0 /* GeneralMethod .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GeneralMethod .swift"; sourceTree = "<group>"; };
 		7DC92214205809EE00C1705F /* AbadTradeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AbadTradeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DC92217205809EE00C1705F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DC92219205809EE00C1705F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 				7DC92223205809EE00C1705F /* Info.plist */,
 				40FB0009206135F50095E4A9 /* Protocols.swift */,
 				40FB000B2061373A0095E4A9 /* Enumerations.swift */,
+				7D6D5F3120626F660038F4E0 /* GeneralMethod .swift */,
 			);
 			path = AbadTradeApp;
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 				40B24A96205ED0C100FE00BF /* Model.swift in Sources */,
 				40FB000C2061373A0095E4A9 /* Enumerations.swift in Sources */,
 				407337322058333E00299A0F /* Category.swift in Sources */,
+				7D6D5F3220626F660038F4E0 /* GeneralMethod .swift in Sources */,
 				407337342058336600299A0F /* Image.swift in Sources */,
 				7DE7EB35206176440014D569 /* SearchResultItem.swift in Sources */,
 				40FB0011206168B20095E4A9 /* VehicleResultTableViewCell.swift in Sources */,
