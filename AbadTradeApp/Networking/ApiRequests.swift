@@ -21,7 +21,7 @@ class apiRequests {
     
     func loadCategoriesAndImages(didDataReady : @escaping ([Category],[Image]) -> ()) {
         
-        sm.connectForApiWith(url: "http://hyper-design.com/Abad/api", mType: HTTPServerMethod.get, params: [:], complation: { (json) in
+        sm.connectForApiWith(url: CategoriesAndImagesURL, mType: HTTPServerMethod.get, params: [:], complation: { (json) in
             
             if let obj = json {
                 print (obj)
@@ -49,7 +49,7 @@ class apiRequests {
     
     func getBrands(vehicleId : Int , didDataReady : @escaping ([Brand]) -> ()) -> () {
         
-        sm.connectForApiWith(url: "http://hyper-design.com/Abad/api/getBrand", mType: HTTPServerMethod.post, params: ["id" : vehicleId], complation: { (json) in
+        sm.connectForApiWith(url: BrandsURL, mType: HTTPServerMethod.post, params: ["id" : vehicleId], complation: { (json) in
             self.brandsArray.removeAll()
             if let obj = json {
                 print (obj)
@@ -70,7 +70,7 @@ class apiRequests {
     
     func getModels(brandId : Int , didDataReady : @escaping ([Model]) -> ()) -> () {
         
-        sm.connectForApiWith(url: "http://hyper-design.com/Abad/api/getModel", mType: HTTPServerMethod.post, params: ["id" : brandId], complation: { (json) in
+        sm.connectForApiWith(url: ModelsURL, mType: HTTPServerMethod.post, params: ["id" : brandId], complation: { (json) in
             
             self.modelsArray.removeAll()
             if let obj = json {
@@ -94,7 +94,7 @@ class apiRequests {
     
     func getYears(modelId : Int , didDataReady : @escaping ([Year]) -> ()) -> () {
         
-        sm.connectForApiWith(url: "http://hyper-design.com/Abad/api/getYear", mType: HTTPServerMethod.post, params: ["id" : modelId], complation: { (json) in
+        sm.connectForApiWith(url: YearsURL, mType: HTTPServerMethod.post, params: ["id" : modelId], complation: { (json) in
             
             self.yearsArray.removeAll()
             if let obj = json {
@@ -116,7 +116,7 @@ class apiRequests {
     
     func getSearchResults(categoryId : Int, brandId : String , modelId : String ,yearId : String , status : String , didDataReady : @escaping ([SearchResultItem]) -> ()) -> () {
         
-        sm.connectForApiWith(url: "http://hyper-design.com/Abad/api/search", mType: HTTPServerMethod.post, params: ["cat" : categoryId, "brand" : brandId , "model" : modelId, "year" : yearId , "name" : "" , "case" : status], complation: { (json) in
+        sm.connectForApiWith(url: SearchURL, mType: HTTPServerMethod.post, params: ["cat" : categoryId, "brand" : brandId , "model" : modelId, "year" : yearId , "name" : "" , "case" : status], complation: { (json) in
             
             self.searchResultItems.removeAll()
             if let obj = json {

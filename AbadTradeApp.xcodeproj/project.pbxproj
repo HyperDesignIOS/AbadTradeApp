@@ -19,6 +19,7 @@
 		40FB000C2061373A0095E4A9 /* Enumerations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FB000B2061373A0095E4A9 /* Enumerations.swift */; };
 		40FB000F206168970095E4A9 /* VehicleResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FB000E206168970095E4A9 /* VehicleResultTableViewController.swift */; };
 		40FB0011206168B20095E4A9 /* VehicleResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FB0010206168B20095E4A9 /* VehicleResultTableViewCell.swift */; };
+		40FB26D52062C51E00FE2F31 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FB26D42062C51E00FE2F31 /* AppConstants.swift */; };
 		7D51DC46205FC88000D5E107 /* Year.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D51DC45205FC88000D5E107 /* Year.swift */; };
 		7D51DC49205FDF1400D5E107 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D51DC48205FDF1400D5E107 /* Status.swift */; };
 		7D51DC4C2060149E00D5E107 /* Vehicle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D51DC4B2060149E00D5E107 /* Vehicle.storyboard */; };
@@ -49,6 +50,7 @@
 		40FB000B2061373A0095E4A9 /* Enumerations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enumerations.swift; sourceTree = "<group>"; };
 		40FB000E206168970095E4A9 /* VehicleResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleResultTableViewController.swift; sourceTree = "<group>"; };
 		40FB0010206168B20095E4A9 /* VehicleResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleResultTableViewCell.swift; sourceTree = "<group>"; };
+		40FB26D42062C51E00FE2F31 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		7D51DC45205FC88000D5E107 /* Year.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Year.swift; sourceTree = "<group>"; };
 		7D51DC48205FDF1400D5E107 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		7D51DC4B2060149E00D5E107 /* Vehicle.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Vehicle.storyboard; sourceTree = "<group>"; };
@@ -218,6 +220,10 @@
 		7DC92216205809EE00C1705F /* AbadTradeApp */ = {
 			isa = PBXGroup;
 			children = (
+				40FB26D42062C51E00FE2F31 /* AppConstants.swift */,
+				7D6D5F3120626F660038F4E0 /* GeneralMethod .swift */,
+				40FB000B2061373A0095E4A9 /* Enumerations.swift */,
+				40FB0009206135F50095E4A9 /* Protocols.swift */,
 				40B039CD2059765A00AAD62A /* Controllers */,
 				407337302058332900299A0F /* Models */,
 				4073372D205832F100299A0F /* Networking */,
@@ -227,9 +233,6 @@
 				7DC9221E205809EE00C1705F /* Assets.xcassets */,
 				7DC92220205809EE00C1705F /* LaunchScreen.storyboard */,
 				7DC92223205809EE00C1705F /* Info.plist */,
-				40FB0009206135F50095E4A9 /* Protocols.swift */,
-				40FB000B2061373A0095E4A9 /* Enumerations.swift */,
-				7D6D5F3120626F660038F4E0 /* GeneralMethod .swift */,
 			);
 			path = AbadTradeApp;
 			sourceTree = "<group>";
@@ -391,12 +394,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-AbadTradeApp/Pods-AbadTradeApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
@@ -431,6 +436,7 @@
 				40B24A93205E8C1200FE00BF /* searchTableViewCell.swift in Sources */,
 				7D51DC49205FDF1400D5E107 /* Status.swift in Sources */,
 				40FB000F206168970095E4A9 /* VehicleResultTableViewController.swift in Sources */,
+				40FB26D52062C51E00FE2F31 /* AppConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

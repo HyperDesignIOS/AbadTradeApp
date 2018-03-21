@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import AlamofireImage
 
-class VehicleResultTableViewController: UITableViewController , searchVCProtocol{
+class VehicleResultTableViewController: UITableViewController{
     
     var searchResults = [SearchResultItem]()
     
@@ -48,6 +49,7 @@ class VehicleResultTableViewController: UITableViewController , searchVCProtocol
         cell.vehicleModel.text = searchResults[indexPath.row].model.nameEn
         cell.vehicleShowRoom.text = searchResults[indexPath.row].dealer.nameEn
         cell.vehiclePrice.text = searchResults[indexPath.row].price
+        cell.vehicleImage.af_setImage(withURL: URL(string: "\(ItemImageURL)\(searchResults[indexPath.row].image)")!)
         // Configure the cell...
 
         return cell
@@ -97,13 +99,5 @@ class VehicleResultTableViewController: UITableViewController , searchVCProtocol
         // Pass the selected object to the new view controller.
     }
     */
-    
-    func handelSelection(selectedValue: AnyObject) {
-        
-    }
-    
-    func handleSearchApiResponse(searchResults: [SearchResultItem]) {
-        self.searchResults = searchResults
-    }
 
 }

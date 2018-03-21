@@ -24,6 +24,7 @@ class ViewController: UIViewController , searchVCProtocol{
     var brands = [Brand]()
     var models = [Model]()
     var years = [Year]()
+    var searchResults = [SearchResultItem]()
     var filterType : FilterType!
     var selectedCategory : Category!
     var selectedBrand = Brand()
@@ -137,17 +138,16 @@ class ViewController: UIViewController , searchVCProtocol{
         
         if selectedCategory
             != nil {
-            
             apisInstance.getSearchResults(categoryId: selectedCategory.id, brandId: selectedBrand.id, modelId: selectedModel.id, yearId: selectedYear.id, status: statusOfVehicle) { (searchResults) in
-                self.delegate.handleSearchApiResponse(searchResults: searchResults)
+                self.searchResults = searchResults
+                self.performSegue(withIdentifier: "vehicleResultSegue", sender: self)
             }
         }else{
             showAlert.showAlert(title: "", message: "Please select search data", vc: self, closure: nil)
         }
-        
-        let storyboard = UIStoryboard.init(name: "VehicleResult", bundle: nil)
-        let vehicleResultVC = storyboard.instantiateViewController(withIdentifier: "VehicleResultViewController")
-        show(vehicleResultVC, sender: self)
+//        let storyboard = UIStoryboard.init(name: "VehicleResult", bundle: nil)
+//        let vehicleResultVC = storyboard.instantiateViewController(withIdentifier: "VehicleResultViewController")
+//        show(vehicleResultVC, sender: self)
     }
     
     
@@ -184,6 +184,12 @@ class ViewController: UIViewController , searchVCProtocol{
                     destination.searchResultData = statuses
                 }
                
+            }
+        }else if segue.identifier == "vehicleResultSegue"
+        {
+            if let destination = segue.destination as? VehicleResultTableViewController{
+                
+                destination.searchResults = self.searchResults
             }
         }
     }
@@ -256,9 +262,5 @@ class ViewController: UIViewController , searchVCProtocol{
             }
         }
     }
-    
-    func handleSearchApiResponse(searchResults: [SearchResultItem]) {
-    }
-    
 }
 
