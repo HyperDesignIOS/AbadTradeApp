@@ -355,7 +355,6 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="searchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KLS-tB-kbs"/>
-                                                    <segue destination="nyD-OO-H2L" kind="show" identifier="vehicleResultSegue" id="rPi-wn-dLf"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -408,11 +407,12 @@
                         <outlet property="usedRdioButton" destination="Nvs-zf-l7t" id="Ikz-rS-wXu"/>
                         <outlet property="yearTextField" destination="N3x-ic-yUn" id="wdR-Ik-Kzo"/>
                         <segue destination="GN2-oe-ueG" kind="show" identifier="categorySegue" id="xM4-zo-8vF"/>
+                        <segue destination="nyD-OO-H2L" kind="show" identifier="vehicleResultSegue" id="RGz-1i-HTw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="160.80000000000001" y="115.59220389805098"/>
+            <point key="canvasLocation" x="-91" y="117"/>
         </scene>
         <!--VehicleResult-->
         <scene sceneID="IJF-qr-iS8">
@@ -422,7 +422,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w5F-rQ-X0J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="161" y="673"/>
+            <point key="canvasLocation" x="-92" y="693"/>
         </scene>
         <!--Search Table View Controller-->
         <scene sceneID="lc4-iV-DtX">
@@ -467,7 +467,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5ze-YS-Nwy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1150" y="116"/>
+            <point key="canvasLocation" x="509" y="117"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LE7-BR-Vku">

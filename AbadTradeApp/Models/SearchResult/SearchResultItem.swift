@@ -11,7 +11,7 @@ class SearchResultItem : NSObject, NSCoding{
     var brandId : String!
     var categoryId : String!
     var createdAt : String!
-    var dealer : ShowRoom!
+    var dealer : ShowRoom?
     var dealerId : String!
     var descriptionAr : String!
     var descriptionEn : String!
@@ -96,7 +96,7 @@ class SearchResultItem : NSObject, NSCoding{
             dictionary["created_at"] = createdAt
         }
         if dealer != nil{
-            dictionary["dealer"] = dealer.toDictionary()
+            dictionary["dealer"] = dealer?.toDictionary()
         }
         if dealerId != nil{
             dictionary["dealer_id"] = dealerId

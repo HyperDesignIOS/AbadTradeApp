@@ -12,11 +12,17 @@ import AlamofireImage
 class VehicleResultTableViewController: UITableViewController{
     
     var searchResults = [SearchResultItem]()
+    var selectedCategory : Category!
+    var selectedBrand : Brand?
+    var selectedModel : Model?
+    var selectedYear : Year?
+    var statusOfVehicle = String()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        search()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -43,13 +49,14 @@ class VehicleResultTableViewController: UITableViewController{
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "searchResultCell", for: indexPath) as! VehicleResultTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "vehicleResultCell", for: indexPath) as! VehicleResultTableViewCell
 
+        let currentCellImageUrl = "\(ItemImageURL)\(searchResults[indexPath.row].image!)"
         cell.vehicleBrand.text = searchResults[indexPath.row].brand.nameEn
         cell.vehicleModel.text = searchResults[indexPath.row].model.nameEn
-        cell.vehicleShowRoom.text = searchResults[indexPath.row].dealer.nameEn
+        cell.vehicleShowRoom.text = searchResults[indexPath.row].dealer?.nameEn
         cell.vehiclePrice.text = searchResults[indexPath.row].price
-        cell.vehicleImage.af_setImage(withURL: URL(string: "\(ItemImageURL)\(searchResults[indexPath.row].image)")!)
+        cell.vehicleImage.af_setImage(withURL: URL(string: currentCellImageUrl)!)
         // Configure the cell...
 
         return cell
@@ -99,5 +106,12 @@ class VehicleResultTableViewController: UITableViewController{
         // Pass the selected object to the new view controller.
     }
     */
+    func search() {
+    apiRequests.apisInstance.getSearchResults(categoryId: selectedCategory.id, brandId: selectedBrand?.id ?? "0", modelId: selectedModel?.id ?? "0", yearId: selectedYear?.id ?? "0", status: statusOfVehicle) { (searchResults) in
+            self.searchResults = searchResults
+            self.tableView.reloadData()
+        }
+//        self.noResultsLabel.text = (self.searchResults.count > 0 ? "" : "NO_RESULTS")
+    }
 
 }

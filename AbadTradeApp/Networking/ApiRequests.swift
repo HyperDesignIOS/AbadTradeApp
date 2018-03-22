@@ -11,6 +11,8 @@ import SwiftyJSON
 
 class apiRequests {
     
+    static let apisInstance = apiRequests()
+    
     var categoriesArray = [Category]()
     var imagesArray = [Image]()
     var brandsArray = [Brand]()

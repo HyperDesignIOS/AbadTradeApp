@@ -18,20 +18,20 @@ class ViewController: UIViewController , searchVCProtocol{
     @IBOutlet weak var yearTextField: UITextField!
     
     let statuses = [Status(name: "Used"),Status(name: "New")]
-    var statusOfVehicle : String = ""
+    var statusOfVehicle = String()
     var categories = [Category]()
     var images = [Image]()
     var brands = [Brand]()
     var models = [Model]()
     var years = [Year]()
-    var searchResults = [SearchResultItem]()
+//    var searchResults = [SearchResultItem]()
     var filterType : FilterType!
     var selectedCategory : Category!
     var selectedBrand = Brand()
     var selectedModel = Model()
     var selectedYear = Year()
    
-    var apisInstance = apiRequests()
+    //var apisInstance = apiRequests()
     var showAlert = GeneralMethod()
     var delegate : searchVCProtocol!
     
@@ -41,7 +41,7 @@ class ViewController: UIViewController , searchVCProtocol{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        apisInstance.loadCategoriesAndImages { (categories, images) in
+        apiRequests.apisInstance.loadCategoriesAndImages { (categories, images) in
             self.categories = categories
             print(categories.count)
             self.images = images
@@ -138,10 +138,7 @@ class ViewController: UIViewController , searchVCProtocol{
         
         if selectedCategory
             != nil {
-            apisInstance.getSearchResults(categoryId: selectedCategory.id, brandId: selectedBrand.id, modelId: selectedModel.id, yearId: selectedYear.id, status: statusOfVehicle) { (searchResults) in
-                self.searchResults = searchResults
                 self.performSegue(withIdentifier: "vehicleResultSegue", sender: self)
-            }
         }else{
             showAlert.showAlert(title: "", message: "Please select search data", vc: self, closure: nil)
         }
@@ -189,7 +186,19 @@ class ViewController: UIViewController , searchVCProtocol{
         {
             if let destination = segue.destination as? VehicleResultTableViewController{
                 
-                destination.searchResults = self.searchResults
+//                destination.popToRootViewController(animated: true)
+//                if let vehicleResultVC = destination.topViewController as? VehicleResultTableViewController{
+//                    vehicleResultVC.selectedCategory = selectedCategory
+//                    vehicleResultVC.selectedBrand = selectedBrand
+//                    vehicleResultVC.selectedModel = selectedModel
+//                    vehicleResultVC.selectedYear = selectedYear
+//                    vehicleResultVC.statusOfVehicle = statusOfVehicle
+//                }
+                destination.selectedCategory = selectedCategory
+                destination.selectedBrand = selectedBrand
+                destination.selectedModel = selectedModel
+                destination.selectedYear = selectedYear
+                destination.statusOfVehicle = statusOfVehicle
             }
         }
     }
@@ -209,8 +218,6 @@ class ViewController: UIViewController , searchVCProtocol{
             break
         }
         print (statusOfVehicle)
-        
-        
     }
     func imageSwap(forfirstimage firstImageView: UIImageView,andSecondImage secondImageView: UIImageView)
     {
@@ -234,7 +241,7 @@ class ViewController: UIViewController , searchVCProtocol{
                 modelTextField.text = ""
                 yearTextField.text = ""
                 //self.selectedBrand = nil
-                apisInstance.getBrands(vehicleId:  selectedCategory.id, didDataReady: { (brands) in
+                apiRequests.apisInstance.getBrands(vehicleId:  selectedCategory.id, didDataReady: { (brands) in
                     self.brands = brands
                 })
                 
@@ -244,14 +251,14 @@ class ViewController: UIViewController , searchVCProtocol{
                 brandTextField.text = selectedBrand.nameEn
                 modelTextField.text = ""
                 //self.selectedModel = nil
-                apisInstance.getModels(brandId: Int(selectedBrand.id)!, didDataReady: { (models) in
+                apiRequests.apisInstance.getModels(brandId: Int(selectedBrand.id)!, didDataReady: { (models) in
                     self.models = models
                 })
             }else if ft == FilterType.Model{
                 
                 selectedModel = selectedValue as! Model
                 modelTextField.text = selectedModel.nameEn
-                apisInstance.getYears(modelId: Int(selectedModel.id)!, didDataReady: { (years) in
+                apiRequests.apisInstance.getYears(modelId: Int(selectedModel.id)!, didDataReady: { (years) in
                     self.years = years
                 })
                 
