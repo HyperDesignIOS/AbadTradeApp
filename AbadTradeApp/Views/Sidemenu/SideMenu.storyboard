@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hdO-me-gM2">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Side Menu Table View Controller-->
+        <scene sceneID="SBq-eK-Tra">
+            <objects>
+                <tableViewController id="d76-jh-rN8" customClass="SideMenuTableViewController" customModule="AbadTradeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" sectionIndexMinimumDisplayRowCount="1" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9OY-UT-TPO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="sideMenuItemCell" rowHeight="70" id="vRW-ok-g4y" customClass="SideMenuTableViewCell" customModule="AbadTradeApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="70"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vRW-ok-g4y" id="2dM-Su-0mz">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HLF-z0-3ta">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h75-Hc-YmY">
+                                                    <rect key="frame" x="5" y="5" width="35" height="59.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="35" id="RxV-Oq-CqS"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dkv-RF-KH3" userLabel="Home">
+                                                    <rect key="frame" x="70" y="5" width="41.5" height="59.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="h75-Hc-YmY" secondAttribute="bottom" constant="5" id="0T7-db-AOB"/>
+                                                <constraint firstItem="dkv-RF-KH3" firstAttribute="leading" secondItem="h75-Hc-YmY" secondAttribute="trailing" constant="30" id="ICi-OY-fhs"/>
+                                                <constraint firstItem="h75-Hc-YmY" firstAttribute="top" secondItem="HLF-z0-3ta" secondAttribute="top" constant="5" id="Ka5-87-Gt4"/>
+                                                <constraint firstItem="dkv-RF-KH3" firstAttribute="top" secondItem="HLF-z0-3ta" secondAttribute="top" constant="5" id="YIt-TD-OMy"/>
+                                                <constraint firstAttribute="bottom" secondItem="dkv-RF-KH3" secondAttribute="bottom" constant="5" id="Zdk-yw-kE9"/>
+                                                <constraint firstItem="h75-Hc-YmY" firstAttribute="leading" secondItem="HLF-z0-3ta" secondAttribute="leading" constant="5" id="q8P-iu-VrN"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dkv-RF-KH3" secondAttribute="trailing" constant="50" id="rIh-NX-zre"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="HLF-z0-3ta" secondAttribute="trailing" id="A6V-Vy-LFm"/>
+                                        <constraint firstItem="HLF-z0-3ta" firstAttribute="top" secondItem="2dM-Su-0mz" secondAttribute="top" id="BO4-OI-gr3"/>
+                                        <constraint firstItem="HLF-z0-3ta" firstAttribute="leading" secondItem="2dM-Su-0mz" secondAttribute="leading" id="C6c-TW-Fqa"/>
+                                        <constraint firstAttribute="trailing" secondItem="HLF-z0-3ta" secondAttribute="trailing" id="DGS-Ez-431"/>
+                                        <constraint firstItem="HLF-z0-3ta" firstAttribute="top" secondItem="2dM-Su-0mz" secondAttribute="top" id="F6Y-Dv-BjK"/>
+                                        <constraint firstAttribute="bottom" secondItem="HLF-z0-3ta" secondAttribute="bottom" id="Sva-PK-G8P"/>
+                                        <constraint firstAttribute="bottom" secondItem="HLF-z0-3ta" secondAttribute="bottom" id="klI-6R-Fnj"/>
+                                        <constraint firstItem="HLF-z0-3ta" firstAttribute="leading" secondItem="2dM-Su-0mz" secondAttribute="leading" id="vN7-4c-Erj"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="sideMenuItemImage" destination="h75-Hc-YmY" id="WjP-Dl-aFi"/>
+                                    <outlet property="sideMenuItemName" destination="dkv-RF-KH3" id="cEs-xL-15A"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="d76-jh-rN8" id="Hx6-dg-ddF"/>
+                            <outlet property="delegate" destination="d76-jh-rN8" id="vwj-fJ-OZZ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Dp3-7X-u2J"/>
+                    <connections>
+                        <segue destination="nFe-uJ-4LF" kind="show" identifier="VehiclesFromSideMenuSegue" id="4L4-3n-FYG"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jWP-RO-wlo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2316" y="348.57571214392806"/>
+        </scene>
+        <!--Vehicle-->
+        <scene sceneID="Rf0-bn-8Ds">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Vehicle" id="nFe-uJ-4LF" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WYf-gb-xfg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3529" y="556"/>
+        </scene>
+        <!--Side Menu Navigation Controller-->
+        <scene sceneID="bZj-DJ-gUV">
+            <objects>
+                <navigationController storyboardIdentifier="LeftMenuNavigationController" id="hdO-me-gM2" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QOg-7x-oD5">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="leftSide" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="d76-jh-rN8" kind="relationship" relationship="rootViewController" id="Jrx-sX-gmR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xgm-B6-h6q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1348" y="348.57571214392806"/>
+        </scene>
+    </scenes>
+</document>

@@ -408,11 +408,20 @@
                         <outlet property="yearTextField" destination="N3x-ic-yUn" id="wdR-Ik-Kzo"/>
                         <segue destination="GN2-oe-ueG" kind="show" identifier="categorySegue" id="xM4-zo-8vF"/>
                         <segue destination="nyD-OO-H2L" kind="show" identifier="vehicleResultSegue" id="RGz-1i-HTw"/>
+                        <segue destination="aa0-kZ-WV9" kind="show" identifier="sideMenuSegue" id="pPl-B5-tDs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-91" y="117"/>
+            <point key="canvasLocation" x="222" y="116"/>
+        </scene>
+        <!--SideMenu-->
+        <scene sceneID="nPi-2p-G73">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SideMenu" id="aa0-kZ-WV9" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6yg-xu-L9z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-266" y="695"/>
         </scene>
         <!--VehicleResult-->
         <scene sceneID="IJF-qr-iS8">
@@ -422,7 +431,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w5F-rQ-X0J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-92" y="693"/>
+            <point key="canvasLocation" x="222" y="696"/>
         </scene>
         <!--Search Table View Controller-->
         <scene sceneID="lc4-iV-DtX">
@@ -467,7 +476,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5ze-YS-Nwy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="509" y="117"/>
+            <point key="canvasLocation" x="1158" y="116"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LE7-BR-Vku">

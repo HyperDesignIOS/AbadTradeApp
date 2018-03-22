@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Mmj-Xc-Use">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,7 +12,7 @@
         <!--Vehicles-->
         <scene sceneID="dze-en-gkR">
             <objects>
-                <collectionViewController id="Mmj-Xc-Use" sceneMemberID="viewController">
+                <collectionViewController id="Mmj-Xc-Use" customClass="VehiclesCollectionViewController" customModule="AbadTradeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="5g5-fM-5Zl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,7 +24,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Ehd-QF-dkX">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="VehicleCell" id="Ehd-QF-dkX" customClass="VehicleCollectionViewCell" customModule="AbadTradeApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="161" height="190"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -35,7 +35,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="161" height="190"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7cE-ku-PRn">
-                                                    <rect key="frame" x="0.0" y="8" width="161" height="153.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="161" height="161.5"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mgb-yj-Rmy">
                                                     <rect key="frame" x="30" y="169.5" width="101" height="20.5"/>
@@ -52,7 +52,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="Mgb-yj-Rmy" secondAttribute="bottom" id="mhu-Kv-ayh"/>
                                                 <constraint firstItem="7cE-ku-PRn" firstAttribute="leading" secondItem="A4C-Io-cSz" secondAttribute="leading" id="nTD-P8-IcN"/>
                                                 <constraint firstAttribute="trailing" secondItem="7cE-ku-PRn" secondAttribute="trailing" id="pGL-vy-Mxh"/>
-                                                <constraint firstItem="7cE-ku-PRn" firstAttribute="top" secondItem="A4C-Io-cSz" secondAttribute="top" constant="8" id="yJD-7b-4Ir"/>
+                                                <constraint firstItem="7cE-ku-PRn" firstAttribute="top" secondItem="A4C-Io-cSz" secondAttribute="top" id="yJD-7b-4Ir"/>
                                             </constraints>
                                         </view>
                                     </subviews>
@@ -63,6 +63,10 @@
                                     <constraint firstItem="A4C-Io-cSz" firstAttribute="top" secondItem="Ehd-QF-dkX" secondAttribute="top" id="YRk-84-x90"/>
                                     <constraint firstAttribute="trailing" secondItem="A4C-Io-cSz" secondAttribute="trailing" id="aXl-91-gJR"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="vehicleImage" destination="7cE-ku-PRn" id="JUb-wF-pwz"/>
+                                    <outlet property="vehicleName" destination="Mgb-yj-Rmy" id="fR1-hG-VBM"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>

@@ -59,20 +59,16 @@ class ViewController: UIViewController , searchVCProtocol{
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func sideMenuButton(_ sender: Any) {
-        
-        let storyboard = UIStoryboard.init(name: "sideMenu", bundle: nil)
-        let sideMenuVC = storyboard.instantiateViewController(withIdentifier: "LeftMenuNavigationController")
-        show(sideMenuVC, sender: self)
-    }
-    
-    
     func customizeNavigationBar ()
     {
         UINavigationBar.appearance().barTintColor = UIColor.red
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
     }
     
+    @IBAction func sideMenuButton(_ sender: Any) {
+        
+        performSegue(withIdentifier: "sideMenuSegue", sender: self)
+    }
     
     @IBAction func categoryButton(_ sender: UIButton) {
         
@@ -142,11 +138,7 @@ class ViewController: UIViewController , searchVCProtocol{
         }else{
             showAlert.showAlert(title: "", message: "Please select search data", vc: self, closure: nil)
         }
-//        let storyboard = UIStoryboard.init(name: "VehicleResult", bundle: nil)
-//        let vehicleResultVC = storyboard.instantiateViewController(withIdentifier: "VehicleResultViewController")
-//        show(vehicleResultVC, sender: self)
     }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
@@ -185,20 +177,16 @@ class ViewController: UIViewController , searchVCProtocol{
         }else if segue.identifier == "vehicleResultSegue"
         {
             if let destination = segue.destination as? VehicleResultTableViewController{
-                
-//                destination.popToRootViewController(animated: true)
-//                if let vehicleResultVC = destination.topViewController as? VehicleResultTableViewController{
-//                    vehicleResultVC.selectedCategory = selectedCategory
-//                    vehicleResultVC.selectedBrand = selectedBrand
-//                    vehicleResultVC.selectedModel = selectedModel
-//                    vehicleResultVC.selectedYear = selectedYear
-//                    vehicleResultVC.statusOfVehicle = statusOfVehicle
-//                }
                 destination.selectedCategory = selectedCategory
                 destination.selectedBrand = selectedBrand
                 destination.selectedModel = selectedModel
                 destination.selectedYear = selectedYear
                 destination.statusOfVehicle = statusOfVehicle
+            }
+        }
+        else if segue.identifier == "sideMenuSegue"{
+            if let destination = segue.destination as? SideMenuTableViewController {
+                destination.vehicles = self.categories
             }
         }
     }

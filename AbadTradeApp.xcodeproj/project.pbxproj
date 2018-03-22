@@ -15,6 +15,10 @@
 		40B24A91205E8BF700FE00BF /* searchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B24A90205E8BF700FE00BF /* searchTableViewController.swift */; };
 		40B24A93205E8C1200FE00BF /* searchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B24A92205E8C1200FE00BF /* searchTableViewCell.swift */; };
 		40B24A96205ED0C100FE00BF /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B24A95205ED0C100FE00BF /* Model.swift */; };
+		40F39B82206402F3000FE5A2 /* SideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F39B81206402F3000FE5A2 /* SideMenuTableViewController.swift */; };
+		40F39B8520640559000FE5A2 /* VehiclesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F39B8420640559000FE5A2 /* VehiclesCollectionViewController.swift */; };
+		40F39B8720640D65000FE5A2 /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F39B8620640D65000FE5A2 /* SideMenuTableViewCell.swift */; };
+		40F39B89206411DC000FE5A2 /* VehicleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F39B88206411DC000FE5A2 /* VehicleCollectionViewCell.swift */; };
 		40FB000A206135F50095E4A9 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FB0009206135F50095E4A9 /* Protocols.swift */; };
 		40FB000C2061373A0095E4A9 /* Enumerations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FB000B2061373A0095E4A9 /* Enumerations.swift */; };
 		40FB000F206168970095E4A9 /* VehicleResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FB000E206168970095E4A9 /* VehicleResultTableViewController.swift */; };
@@ -29,7 +33,7 @@
 		7DC9221D205809EE00C1705F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DC9221B205809EE00C1705F /* Main.storyboard */; };
 		7DC9221F205809EE00C1705F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DC9221E205809EE00C1705F /* Assets.xcassets */; };
 		7DC92222205809EE00C1705F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DC92220205809EE00C1705F /* LaunchScreen.storyboard */; };
-		7DC9223020581AAE00C1705F /* sideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DC9222F20581AAE00C1705F /* sideMenu.storyboard */; };
+		7DC9223020581AAE00C1705F /* SideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DC9222F20581AAE00C1705F /* SideMenu.storyboard */; };
 		7DE7EB31206162F20014D569 /* VehicleResult.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DE7EB30206162F20014D569 /* VehicleResult.storyboard */; };
 		7DE7EB35206176440014D569 /* SearchResultItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE7EB34206176440014D569 /* SearchResultItem.swift */; };
 		7DE7EB37206176580014D569 /* ShowRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE7EB36206176580014D569 /* ShowRoom.swift */; };
@@ -46,6 +50,10 @@
 		40B24A90205E8BF700FE00BF /* searchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchTableViewController.swift; sourceTree = "<group>"; };
 		40B24A92205E8C1200FE00BF /* searchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchTableViewCell.swift; sourceTree = "<group>"; };
 		40B24A95205ED0C100FE00BF /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		40F39B81206402F3000FE5A2 /* SideMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewController.swift; sourceTree = "<group>"; };
+		40F39B8420640559000FE5A2 /* VehiclesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesCollectionViewController.swift; sourceTree = "<group>"; };
+		40F39B8620640D65000FE5A2 /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
+		40F39B88206411DC000FE5A2 /* VehicleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleCollectionViewCell.swift; sourceTree = "<group>"; };
 		40FB0009206135F50095E4A9 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		40FB000B2061373A0095E4A9 /* Enumerations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enumerations.swift; sourceTree = "<group>"; };
 		40FB000E206168970095E4A9 /* VehicleResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleResultTableViewController.swift; sourceTree = "<group>"; };
@@ -62,7 +70,7 @@
 		7DC9221E205809EE00C1705F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7DC92221205809EE00C1705F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7DC92223205809EE00C1705F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7DC9222F20581AAE00C1705F /* sideMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = sideMenu.storyboard; sourceTree = "<group>"; };
+		7DC9222F20581AAE00C1705F /* SideMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SideMenu.storyboard; sourceTree = "<group>"; };
 		7DE7EB30206162F20014D569 /* VehicleResult.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VehicleResult.storyboard; sourceTree = "<group>"; };
 		7DE7EB34206176440014D569 /* SearchResultItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultItem.swift; sourceTree = "<group>"; };
 		7DE7EB36206176580014D569 /* ShowRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowRoom.swift; sourceTree = "<group>"; };
@@ -134,8 +142,10 @@
 		40B039CD2059765A00AAD62A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				40FB000D206168580095E4A9 /* VehicleResultControllers */,
-				40FCE0DD205D70BA002F2291 /* HomeControllers */,
+				40F39B8320640516000FE5A2 /* Vehicles */,
+				40F39B8020640255000FE5A2 /* SideMenu */,
+				40FB000D206168580095E4A9 /* VehicleResult */,
+				40FCE0DD205D70BA002F2291 /* Home */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -148,23 +158,41 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		40FB000D206168580095E4A9 /* VehicleResultControllers */ = {
+		40F39B8020640255000FE5A2 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				40F39B81206402F3000FE5A2 /* SideMenuTableViewController.swift */,
+				40F39B8620640D65000FE5A2 /* SideMenuTableViewCell.swift */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		40F39B8320640516000FE5A2 /* Vehicles */ = {
+			isa = PBXGroup;
+			children = (
+				40F39B8420640559000FE5A2 /* VehiclesCollectionViewController.swift */,
+				40F39B88206411DC000FE5A2 /* VehicleCollectionViewCell.swift */,
+			);
+			path = Vehicles;
+			sourceTree = "<group>";
+		};
+		40FB000D206168580095E4A9 /* VehicleResult */ = {
 			isa = PBXGroup;
 			children = (
 				40FB000E206168970095E4A9 /* VehicleResultTableViewController.swift */,
 				40FB0010206168B20095E4A9 /* VehicleResultTableViewCell.swift */,
 			);
-			path = VehicleResultControllers;
+			path = VehicleResult;
 			sourceTree = "<group>";
 		};
-		40FCE0DD205D70BA002F2291 /* HomeControllers */ = {
+		40FCE0DD205D70BA002F2291 /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				7DC92219205809EE00C1705F /* ViewController.swift */,
 				40B24A90205E8BF700FE00BF /* searchTableViewController.swift */,
 				40B24A92205E8C1200FE00BF /* searchTableViewCell.swift */,
 			);
-			path = HomeControllers;
+			path = Home;
 			sourceTree = "<group>";
 		};
 		7B299313159BD27410446862 /* Frameworks */ = {
@@ -250,7 +278,7 @@
 		7DC9222E20581A7600C1705F /* Sidemenu */ = {
 			isa = PBXGroup;
 			children = (
-				7DC9222F20581AAE00C1705F /* sideMenu.storyboard */,
+				7DC9222F20581AAE00C1705F /* SideMenu.storyboard */,
 			);
 			path = Sidemenu;
 			sourceTree = "<group>";
@@ -341,7 +369,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DC9223020581AAE00C1705F /* sideMenu.storyboard in Resources */,
+				7DC9223020581AAE00C1705F /* SideMenu.storyboard in Resources */,
 				7DC92222205809EE00C1705F /* LaunchScreen.storyboard in Resources */,
 				7DE7EB31206162F20014D569 /* VehicleResult.storyboard in Resources */,
 				7DC9221F205809EE00C1705F /* Assets.xcassets in Resources */,
@@ -426,17 +454,21 @@
 				7DC92218205809EE00C1705F /* AppDelegate.swift in Sources */,
 				40B039CC20595D0A00AAD62A /* Brand.swift in Sources */,
 				40B24A96205ED0C100FE00BF /* Model.swift in Sources */,
+				40F39B8720640D65000FE5A2 /* SideMenuTableViewCell.swift in Sources */,
 				40FB000C2061373A0095E4A9 /* Enumerations.swift in Sources */,
+				40F39B89206411DC000FE5A2 /* VehicleCollectionViewCell.swift in Sources */,
 				407337322058333E00299A0F /* Category.swift in Sources */,
 				7D6D5F3220626F660038F4E0 /* GeneralMethod .swift in Sources */,
 				407337342058336600299A0F /* Image.swift in Sources */,
 				7DE7EB35206176440014D569 /* SearchResultItem.swift in Sources */,
 				40FB0011206168B20095E4A9 /* VehicleResultTableViewCell.swift in Sources */,
+				40F39B82206402F3000FE5A2 /* SideMenuTableViewController.swift in Sources */,
 				40FB000A206135F50095E4A9 /* Protocols.swift in Sources */,
 				7DE7EB37206176580014D569 /* ShowRoom.swift in Sources */,
 				40B24A91205E8BF700FE00BF /* searchTableViewController.swift in Sources */,
 				40B24A93205E8C1200FE00BF /* searchTableViewCell.swift in Sources */,
 				7D51DC49205FDF1400D5E107 /* Status.swift in Sources */,
+				40F39B8520640559000FE5A2 /* VehiclesCollectionViewController.swift in Sources */,
 				40FB000F206168970095E4A9 /* VehicleResultTableViewController.swift in Sources */,
 				40FB26D52062C51E00FE2F31 /* AppConstants.swift in Sources */,
 			);
