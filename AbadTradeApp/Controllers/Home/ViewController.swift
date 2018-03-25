@@ -9,9 +9,14 @@
 import UIKit
 import SideMenu
 import SwiftyJSON
+import Alamofire
+import ImageSlideshow
+import AlamofireImage
 
 class ViewController: UIViewController , searchVCProtocol{
     
+    
+    @IBOutlet weak var slideShow: ImageSlideshow!
     @IBOutlet weak var categoryTextField: UITextField!
     @IBOutlet weak var brandTextField: UITextField!
     @IBOutlet weak var modelTextField: UITextField!
@@ -41,12 +46,14 @@ class ViewController: UIViewController , searchVCProtocol{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+       
         apiRequests.apisInstance.loadCategoriesAndImages { (categories, images) in
             self.categories = categories
             print(categories.count)
             self.images = images
+            self.slider()
         }
-        
+   
         customizeNavigationBar ()
        // SideMenuManager.default.menuLeftNavigationController
         // to control the slide menu by touch
@@ -138,6 +145,17 @@ class ViewController: UIViewController , searchVCProtocol{
         }else{
             showAlert.showAlert(title: "", message: "Please select search data", vc: self, closure: nil)
         }
+    }
+    func slider(){
+        slideShow.setImageInputs([
+//            ImageSource(image: UIImage(named: "home-icon-silhouette")!),
+//            ImageSource(image: UIImage(named: "radio-on-button")!)
+            AlamofireSource(urlString: "\(SliderImagesURL)\(images[0].headerPhoto1!)")!,AlamofireSource(urlString: "\(SliderImagesURL)\(images[0].headerPhoto2!)")!,AlamofireSource(urlString: "\(SliderImagesURL)\(images[0].headerPhoto3!)")!
+          
+            ])
+        slideShow.slideshowInterval = 0.7
+//        slideShow.zoomEnabled = true
+   //    slideShow.activityIndicator = DefaultActivityIndicator(style: .white, color: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
