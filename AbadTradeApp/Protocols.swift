@@ -10,8 +10,8 @@ import Foundation
 protocol searchVCProtocol {
     func handelSelection(selectedValue : AnyObject)
 }
+protocol vehiclesVCProtocol {
+    func handelOpenViewFromSideMenu(vehicles : [Category])
+}
 
-//protocol vehicleResultsVCProtocol {
-//    func handelSearchRequest(searchResults : [SearchResultItem])
-//}
 

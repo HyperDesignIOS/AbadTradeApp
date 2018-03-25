@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SideMenu
 
-class SideMenuTableViewController: UITableViewController {
+class SideMenuTableViewController: UITableViewController{
     
     var vehicles : [Category]!
     var sideMenuItemImages = ["home-icon-silhouette","sports-car","car-insurance","sports-car"]
@@ -107,6 +108,7 @@ class SideMenuTableViewController: UITableViewController {
             if let destination = segue.destination as? VehiclesCollectionViewController{
                 destination.vehicles = self
                 .vehicles
+                destination.collectionView?.reloadData()
             }
         }
     }

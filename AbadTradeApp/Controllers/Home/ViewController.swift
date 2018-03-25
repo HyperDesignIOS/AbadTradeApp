@@ -199,8 +199,10 @@ class ViewController: UIViewController , searchVCProtocol{
             }
         }
         else if segue.identifier == "sideMenuSegue"{
-            if let destination = segue.destination as? SideMenuTableViewController {
-                destination.vehicles = self.categories
+            if let navigation = segue.destination as? UISideMenuNavigationController {
+                if let destination = navigation.topViewController as? SideMenuTableViewController{
+                    destination.vehicles = self.categories
+                }
             }
         }
     }
