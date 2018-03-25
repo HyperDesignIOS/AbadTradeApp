@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SideMenu
 
-class SideMenuTableViewController: UITableViewController {
+class SideMenuTableViewController: UITableViewController{
     
     var vehicles : [Category]!
     var sideMenuItemImages = ["home-icon-silhouette","sports-car","car-insurance","sports-car"]
