@@ -12,7 +12,7 @@ private let reuseIdentifier = "VehicleCell"
 
 class VehiclesCollectionViewController: UICollectionViewController {
     
-    var vehicles : [Category]!
+    var vehicles : [Category] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +24,7 @@ class VehiclesCollectionViewController: UICollectionViewController {
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
+        collectionView?.reloadData()
     }
 
     override func didReceiveMemoryWarning() {

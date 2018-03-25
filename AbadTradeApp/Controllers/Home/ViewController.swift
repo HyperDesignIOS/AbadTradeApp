@@ -223,6 +223,7 @@ class ViewController: UIViewController , searchVCProtocol{
             if ft == FilterType.Category{
                 
                 selectedCategory = selectedValue as! Category
+                print(selectedCategory.id)
                 categoryTextField.text = selectedCategory.nameEn
                 /*(Localize.currentLanguage() == "en" ? selectedCat?.nameEn : selectedCat?.nameAr)*/
                 brandTextField.text = ""

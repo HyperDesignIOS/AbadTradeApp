@@ -25,7 +25,7 @@ class Brand : NSObject, NSCoding{
         if json.isEmpty{
             return
         }
-        id = String(describing: json["id"])
+        id = json["id"] as! String
         nameAr = json["name_ar"] as! String
         nameEn = json["name_en"] as! String
     }

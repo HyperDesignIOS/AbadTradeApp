@@ -26,7 +26,7 @@ class Year : NSObject, NSCoding{
      * Instantiate the instance using the passed dictionary values to set the properties values
      */
     init(fromDictionary dictionary: [String:Any]){
-        id = String(describing: dictionary["id"])
+        id = dictionary["id"] as! String
         year = dictionary["year"] as? String
     }
     
