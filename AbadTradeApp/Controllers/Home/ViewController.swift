@@ -148,13 +148,10 @@ class ViewController: UIViewController , searchVCProtocol{
     }
     func slider(){
         slideShow.setImageInputs([
-//            ImageSource(image: UIImage(named: "home-icon-silhouette")!),
-//            ImageSource(image: UIImage(named: "radio-on-button")!)
             AlamofireSource(urlString: "\(SliderImagesURL)\(images[0].headerPhoto1!)")!,AlamofireSource(urlString: "\(SliderImagesURL)\(images[0].headerPhoto2!)")!,AlamofireSource(urlString: "\(SliderImagesURL)\(images[0].headerPhoto3!)")!
-          
             ])
         slideShow.slideshowInterval = 0.7
-//        slideShow.zoomEnabled = true
+    //        slideShow.zoomEnabled = true
    //    slideShow.activityIndicator = DefaultActivityIndicator(style: .white, color: nil)
     }
     
@@ -165,7 +162,6 @@ class ViewController: UIViewController , searchVCProtocol{
             if let destination = segue.destination as? searchTableViewController{
 
                 if (sender as! UIButton).tag == 0 {//category
-
                     
                     destination.delegate = self
                     destination.searchResultData = categories
@@ -231,9 +227,7 @@ class ViewController: UIViewController , searchVCProtocol{
         secondImageView.image = UIImage(named: "empty")
         
     }
-    
-    
-    
+ 
     func handelSelection(selectedValue: AnyObject) {
         
         if let ft = filterType{
