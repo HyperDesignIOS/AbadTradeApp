@@ -7,8 +7,7 @@
 //
 
 import UIKit
-
-private let reuseIdentifier = "VehicleCell"
+import AlamofireImage
 
 class VehiclesCollectionViewController: UICollectionViewController {
     
@@ -21,10 +20,10 @@ class VehiclesCollectionViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+//        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
-        collectionView?.reloadData()
+//        collectionView?.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -56,10 +55,10 @@ class VehiclesCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! VehicleCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "VehicleCell", for: indexPath) as! VehicleCollectionViewCell
     
         // Configure the cell
-        cell.vehicleImage.image = #imageLiteral(resourceName: "sports-car")
+        cell.vehicleImage.af_setImage(withURL: URL(string: "\(CategoryImageURL)\(vehicles[indexPath.row].categoryImage!)")!)
         cell.vehicleName.text = vehicles[indexPath.row].nameEn
         return cell
     }

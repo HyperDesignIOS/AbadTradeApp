@@ -14,6 +14,7 @@ class Category : NSObject, NSCoding{
     var id : Int!
     var nameAr : String!
     var nameEn : String!
+    var categoryImage : String!
     
     
   
@@ -21,6 +22,7 @@ class Category : NSObject, NSCoding{
         id = dictionary["id"] as! Int
         nameAr = dictionary["name_ar"] as! String
         nameEn = dictionary["name_en"] as! String
+        categoryImage = dictionary["image"] as! String
     }
     
 
