@@ -27,6 +27,8 @@
 		7D51DC46205FC88000D5E107 /* Year.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D51DC45205FC88000D5E107 /* Year.swift */; };
 		7D51DC49205FDF1400D5E107 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D51DC48205FDF1400D5E107 /* Status.swift */; };
 		7D51DC4C2060149E00D5E107 /* Vehicle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D51DC4B2060149E00D5E107 /* Vehicle.storyboard */; };
+		7D637E1F2067BB9100D87672 /* InsuranceCompanyCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D637E1E2067BB9100D87672 /* InsuranceCompanyCollectionViewController.swift */; };
+		7D637E212067BBEB00D87672 /* InsuranceCompanyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D637E202067BBEB00D87672 /* InsuranceCompanyCollectionViewCell.swift */; };
 		7D6D5F3220626F660038F4E0 /* GeneralMethod .swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6D5F3120626F660038F4E0 /* GeneralMethod .swift */; };
 		7DC92218205809EE00C1705F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC92217205809EE00C1705F /* AppDelegate.swift */; };
 		7DC9221A205809EE00C1705F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC92219205809EE00C1705F /* ViewController.swift */; };
@@ -62,6 +64,8 @@
 		7D51DC45205FC88000D5E107 /* Year.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Year.swift; sourceTree = "<group>"; };
 		7D51DC48205FDF1400D5E107 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		7D51DC4B2060149E00D5E107 /* Vehicle.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Vehicle.storyboard; sourceTree = "<group>"; };
+		7D637E1E2067BB9100D87672 /* InsuranceCompanyCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceCompanyCollectionViewController.swift; sourceTree = "<group>"; };
+		7D637E202067BBEB00D87672 /* InsuranceCompanyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceCompanyCollectionViewCell.swift; sourceTree = "<group>"; };
 		7D6D5F3120626F660038F4E0 /* GeneralMethod .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GeneralMethod .swift"; sourceTree = "<group>"; };
 		7DC92214205809EE00C1705F /* AbadTradeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AbadTradeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DC92217205809EE00C1705F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -142,6 +146,7 @@
 		40B039CD2059765A00AAD62A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				7D637E1D2067BAC900D87672 /* InsuranceCompany  */,
 				40F39B8320640516000FE5A2 /* Vehicles */,
 				40F39B8020640255000FE5A2 /* SideMenu */,
 				40FB000D206168580095E4A9 /* VehicleResult */,
@@ -225,6 +230,15 @@
 				7D51DC4B2060149E00D5E107 /* Vehicle.storyboard */,
 			);
 			path = Vehicles;
+			sourceTree = "<group>";
+		};
+		7D637E1D2067BAC900D87672 /* InsuranceCompany  */ = {
+			isa = PBXGroup;
+			children = (
+				7D637E1E2067BB9100D87672 /* InsuranceCompanyCollectionViewController.swift */,
+				7D637E202067BBEB00D87672 /* InsuranceCompanyCollectionViewCell.swift */,
+			);
+			path = "InsuranceCompany ";
 			sourceTree = "<group>";
 		};
 		7DC9220B205809EE00C1705F = {
@@ -424,7 +438,6 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
-				"${BUILT_PRODUCTS_DIR}/SpinKit/SpinKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -432,7 +445,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SpinKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -449,12 +461,14 @@
 			files = (
 				7D51DC46205FC88000D5E107 /* Year.swift in Sources */,
 				7DC9221A205809EE00C1705F /* ViewController.swift in Sources */,
+				7D637E1F2067BB9100D87672 /* InsuranceCompanyCollectionViewController.swift in Sources */,
 				4073372F2058330A00299A0F /* ServerManager.swift in Sources */,
 				40B039C820594A1000AAD62A /* ApiRequests.swift in Sources */,
 				7DC92218205809EE00C1705F /* AppDelegate.swift in Sources */,
 				40B039CC20595D0A00AAD62A /* Brand.swift in Sources */,
 				40B24A96205ED0C100FE00BF /* Model.swift in Sources */,
 				40F39B8720640D65000FE5A2 /* SideMenuTableViewCell.swift in Sources */,
+				7D637E212067BBEB00D87672 /* InsuranceCompanyCollectionViewCell.swift in Sources */,
 				40FB000C2061373A0095E4A9 /* Enumerations.swift in Sources */,
 				40F39B89206411DC000FE5A2 /* VehicleCollectionViewCell.swift in Sources */,
 				407337322058333E00299A0F /* Category.swift in Sources */,
