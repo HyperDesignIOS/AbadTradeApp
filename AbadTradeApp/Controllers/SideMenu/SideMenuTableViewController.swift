@@ -108,7 +108,7 @@ class SideMenuTableViewController: UITableViewController{
             if let destination = segue.destination as? VehiclesCollectionViewController{
                 destination.vehicles = self
                 .vehicles
-                destination.collectionView?.reloadData()
+                //destination.collectionView?.reloadData()
             }
         }
     }

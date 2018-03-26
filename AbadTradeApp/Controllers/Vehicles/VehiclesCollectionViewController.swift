@@ -9,9 +9,10 @@
 import UIKit
 import AlamofireImage
 
-class VehiclesCollectionViewController: UICollectionViewController {
+class VehiclesCollectionViewController: UICollectionViewController ,UICollectionViewDelegateFlowLayout{
     
     var vehicles : [Category] = []
+    var brands : [Brand]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,13 +56,37 @@ class VehiclesCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "VehicleCell", for: indexPath) as! VehicleCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionCell", for: indexPath) as! CollectionViewCell
     
         // Configure the cell
-        cell.vehicleImage.af_setImage(withURL: URL(string: "\(CategoryImageURL)\(vehicles[indexPath.row].categoryImage!)")!)
-        cell.vehicleName.text = vehicles[indexPath.row].nameEn
+        cell.cellImage.af_setImage(withURL: URL(string: "\(CategoryImageURL)\(vehicles[indexPath.row].categoryImage!)")!)
+        cell.cellName.text = vehicles[indexPath.row].nameEn
         return cell
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let selectedCategory = vehicles[indexPath.row]
+        apiRequests.apisInstance.getBrands(vehicleId: selectedCategory.id) { (brands) in
+            self.brands = brands
+            
+            let storyboard = UIStoryboard.init(name: "Vehicle", bundle: nil)
+            let destinationViewController = storyboard.instantiateViewController(withIdentifier: "BrandModelCollectionController") as! BrandModelCollectionViewController
+            
+            destinationViewController.brands = brands
+            self.show(destinationViewController, sender: self)
+            
+        }
+    }
+    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        let screenSize = UIScreen.main.bounds
+//        let cellWidth = screenSize.width / 3.0
+//        var cellSize = CGSize()
+//        cellSize.width = cellWidth
+//        cellSize.height = cellWidth
+//        return cellSize
+//    }
 
     // MARK: UICollectionViewDelegate
 

@@ -8,10 +8,10 @@
 
 import UIKit
 
-class VehicleCollectionViewCell: UICollectionViewCell {
+class CollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var vehicleImage: UIImageView!
+    @IBOutlet weak var cellImage: UIImageView!
     
-    @IBOutlet weak var vehicleName: UILabel!
+    @IBOutlet weak var cellName: UILabel!
     
 }

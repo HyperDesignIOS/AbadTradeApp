@@ -11,6 +11,7 @@ class Brand : NSObject, NSCoding{
     var id : String!
     var nameAr : String!
     var nameEn : String!
+    var brandImage : String!
     
     override init() {
         id = "0"
@@ -28,6 +29,7 @@ class Brand : NSObject, NSCoding{
         id = json["id"] as! String
         nameAr = json["name_ar"] as! String
         nameEn = json["name_en"] as! String
+        brandImage = json["logo"] as! String
     }
     
     /**
