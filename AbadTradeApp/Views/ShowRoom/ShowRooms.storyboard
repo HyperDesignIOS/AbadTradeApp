@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4Im-D1-zx4">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--ShowRoom-->
+        <scene sceneID="Y2w-gc-Tju">
+            <objects>
+                <collectionViewController storyboardIdentifier="showRoomVC" title="ShowRoom" id="4Im-D1-zx4" customClass="showRoomCollectionViewController" customModule="AbadTradeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="hWd-p9-gF3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="MEk-eS-Fv2">
+                            <size key="itemSize" width="187" height="200"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ShowRoomCell" id="HBF-oJ-Y8e" customClass="showRoomCollectionViewCell" customModule="AbadTradeApp" customModuleProvider="target">
+                                <rect key="frame" x="94" y="0.0" width="187" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="187" height="200"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="C7M-37-KOO">
+                                            <rect key="frame" x="0.0" y="0.0" width="187" height="149"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24w-iF-pHH">
+                                            <rect key="frame" x="0.0" y="154" width="187" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edc-Se-bJh">
+                                            <rect key="frame" x="0.0" y="179.5" width="187" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="C7M-37-KOO" firstAttribute="top" secondItem="HBF-oJ-Y8e" secondAttribute="top" id="DY8-Df-Usj"/>
+                                    <constraint firstAttribute="bottom" secondItem="edc-Se-bJh" secondAttribute="bottom" id="WGw-DF-jmh"/>
+                                    <constraint firstItem="24w-iF-pHH" firstAttribute="top" secondItem="C7M-37-KOO" secondAttribute="bottom" constant="5" id="Ygl-Ej-INr"/>
+                                    <constraint firstItem="edc-Se-bJh" firstAttribute="top" secondItem="24w-iF-pHH" secondAttribute="bottom" constant="5" id="cwn-Ff-1Jj"/>
+                                    <constraint firstItem="edc-Se-bJh" firstAttribute="leading" secondItem="HBF-oJ-Y8e" secondAttribute="leading" id="eyS-Yj-fqD"/>
+                                    <constraint firstItem="C7M-37-KOO" firstAttribute="leading" secondItem="HBF-oJ-Y8e" secondAttribute="leading" id="gnt-HD-taf"/>
+                                    <constraint firstItem="24w-iF-pHH" firstAttribute="leading" secondItem="HBF-oJ-Y8e" secondAttribute="leading" id="hMV-9G-z2b"/>
+                                    <constraint firstAttribute="trailing" secondItem="edc-Se-bJh" secondAttribute="trailing" id="vwn-Pc-v8e"/>
+                                    <constraint firstAttribute="trailing" secondItem="C7M-37-KOO" secondAttribute="trailing" id="ySF-4Y-UDR"/>
+                                    <constraint firstAttribute="trailing" secondItem="24w-iF-pHH" secondAttribute="trailing" id="zV9-Hp-vMA"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="roomImage" destination="C7M-37-KOO" id="WTz-Ug-2Ky"/>
+                                    <outlet property="roomName" destination="24w-iF-pHH" id="ctu-0A-Q6p"/>
+                                    <outlet property="roomNumberOfVehicles" destination="edc-Se-bJh" id="4kU-WF-MXW"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="4Im-D1-zx4" id="RMP-Nl-AqW"/>
+                            <outlet property="delegate" destination="4Im-D1-zx4" id="6rl-rv-tFa"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="ShowRoom" id="PvE-lh-uxG"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sqy-Gl-GKk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="369" y="83"/>
+        </scene>
+    </scenes>
+</document>
