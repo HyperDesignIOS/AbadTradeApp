@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Insurance Company Collection View Controller-->
+        <scene sceneID="BY5-pW-7Bl">
+            <objects>
+                <collectionViewController id="440-Ef-Yhr" customClass="InsuranceCompanyCollectionViewController" customModule="AbadTradeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="yul-5O-vvk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="k2O-w5-C97">
+                            <size key="itemSize" width="190" height="218"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="insuranceCell" id="ofJ-Q7-8xP" customClass="InsuranceCompanyCollectionViewCell" customModule="AbadTradeApp" customModuleProvider="target">
+                                <rect key="frame" x="92.5" y="0.0" width="190" height="218"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="190" height="218"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3en-4t-s7A">
+                                            <rect key="frame" x="0.0" y="0.0" width="190" height="154"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvv-XR-U0F">
+                                            <rect key="frame" x="8" y="159" width="174" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wp4-g4-6xS">
+                                            <rect key="frame" x="8" y="184.5" width="174" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="bottomMargin" secondItem="wp4-g4-6xS" secondAttribute="bottom" constant="5" id="Efs-BX-vIw"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="gvv-XR-U0F" secondAttribute="trailing" id="GH8-Bd-xxb"/>
+                                    <constraint firstItem="wp4-g4-6xS" firstAttribute="top" secondItem="gvv-XR-U0F" secondAttribute="bottom" constant="5" id="KMV-jR-Gzj"/>
+                                    <constraint firstItem="wp4-g4-6xS" firstAttribute="leading" secondItem="ofJ-Q7-8xP" secondAttribute="leadingMargin" id="W85-fL-6zJ"/>
+                                    <constraint firstItem="3en-4t-s7A" firstAttribute="top" secondItem="ofJ-Q7-8xP" secondAttribute="top" id="XGy-31-wl0"/>
+                                    <constraint firstAttribute="trailing" secondItem="3en-4t-s7A" secondAttribute="trailing" id="dmw-xR-PZi"/>
+                                    <constraint firstItem="3en-4t-s7A" firstAttribute="leading" secondItem="ofJ-Q7-8xP" secondAttribute="leading" id="oz7-QN-0VD"/>
+                                    <constraint firstItem="gvv-XR-U0F" firstAttribute="leading" secondItem="ofJ-Q7-8xP" secondAttribute="leadingMargin" id="rQH-pe-40u"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="wp4-g4-6xS" secondAttribute="trailing" id="rZ5-Op-F7W"/>
+                                    <constraint firstItem="gvv-XR-U0F" firstAttribute="top" secondItem="3en-4t-s7A" secondAttribute="bottom" constant="5" id="t6s-5z-aiH"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="InsuranceImage" destination="3en-4t-s7A" id="GxV-J5-fOb"/>
+                                    <outlet property="insuranceAddress" destination="wp4-g4-6xS" id="M8a-Yx-sMu"/>
+                                    <outlet property="insuranceName" destination="gvv-XR-U0F" id="eOE-fz-YTS"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="440-Ef-Yhr" id="UHI-hA-ijX"/>
+                            <outlet property="delegate" destination="440-Ef-Yhr" id="RnY-XT-RAH"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QTI-4c-BUA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="20" y="-80.50974512743629"/>
+        </scene>
+    </scenes>
+</document>
