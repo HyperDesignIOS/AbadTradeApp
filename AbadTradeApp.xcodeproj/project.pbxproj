@@ -40,6 +40,7 @@
 		7D637E1F2067BB9100D87672 /* InsuranceCompanyCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D637E1E2067BB9100D87672 /* InsuranceCompanyCollectionViewController.swift */; };
 		7D637E212067BBEB00D87672 /* InsuranceCompanyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D637E202067BBEB00D87672 /* InsuranceCompanyCollectionViewCell.swift */; };
 		7D6D5F3220626F660038F4E0 /* GeneralMethod .swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6D5F3120626F660038F4E0 /* GeneralMethod .swift */; };
+		7D88C467206A814200774D5A /* insuranceDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D88C466206A814200774D5A /* insuranceDetailsTableViewCell.swift */; };
 		7DC92218205809EE00C1705F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC92217205809EE00C1705F /* AppDelegate.swift */; };
 		7DC9221A205809EE00C1705F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC92219205809EE00C1705F /* ViewController.swift */; };
 		7DC9221D205809EE00C1705F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DC9221B205809EE00C1705F /* Main.storyboard */; };
@@ -87,6 +88,7 @@
 		7D637E1E2067BB9100D87672 /* InsuranceCompanyCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceCompanyCollectionViewController.swift; sourceTree = "<group>"; };
 		7D637E202067BBEB00D87672 /* InsuranceCompanyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceCompanyCollectionViewCell.swift; sourceTree = "<group>"; };
 		7D6D5F3120626F660038F4E0 /* GeneralMethod .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GeneralMethod .swift"; sourceTree = "<group>"; };
+		7D88C466206A814200774D5A /* insuranceDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = insuranceDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		7DC92214205809EE00C1705F /* AbadTradeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AbadTradeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DC92217205809EE00C1705F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DC92219205809EE00C1705F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				40E79F60206A6B6600DBDCA6 /* InsuranceDetailsViewController.swift */,
+				7D88C466206A814200774D5A /* insuranceDetailsTableViewCell.swift */,
 			);
 			path = "Insurance Details";
 			sourceTree = "<group>";
@@ -549,6 +552,7 @@
 				40F39B89206411DC000FE5A2 /* CollectionViewCell.swift in Sources */,
 				407337322058333E00299A0F /* Category.swift in Sources */,
 				7D6D5F3220626F660038F4E0 /* GeneralMethod .swift in Sources */,
+				7D88C467206A814200774D5A /* insuranceDetailsTableViewCell.swift in Sources */,
 				407337342058336600299A0F /* Image.swift in Sources */,
 				7DE7EB35206176440014D569 /* SearchResultItem.swift in Sources */,
 				40E79F56206A684900DBDCA6 /* InsuranceCompany.swift in Sources */,
