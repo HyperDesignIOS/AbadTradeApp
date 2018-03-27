@@ -14,7 +14,7 @@ class ShowRoom : NSObject, NSCoding{
     var areaId : String!
     var countryId : String!
     var createdAt : String!
-    var id : Int!
+    var id : String!
     var lat : String!
     var logo : String!
     var longField : String!
@@ -40,7 +40,7 @@ class ShowRoom : NSObject, NSCoding{
         areaId = dictionary["area_id"] as? String
         countryId = dictionary["country_id"] as? String
         createdAt = dictionary["created_at"] as? String
-        id = dictionary["id"] as? Int
+        id = dictionary["id"] as? String
         lat = dictionary["lat"] as? String
         logo = dictionary["logo"] as? String
         longField = dictionary["long"] as? String
@@ -137,7 +137,7 @@ class ShowRoom : NSObject, NSCoding{
         areaId = aDecoder.decodeObject(forKey: "area_id") as? String
         countryId = aDecoder.decodeObject(forKey: "country_id") as? String
         createdAt = aDecoder.decodeObject(forKey: "created_at") as? String
-        id = aDecoder.decodeObject(forKey: "id") as? Int
+        id = aDecoder.decodeObject(forKey: "id") as? String
         lat = aDecoder.decodeObject(forKey: "lat") as? String
         logo = aDecoder.decodeObject(forKey: "logo") as? String
         longField = aDecoder.decodeObject(forKey: "long") as? String
@@ -223,3 +223,4 @@ class ShowRoom : NSObject, NSCoding{
     }
     
 }
+

@@ -8,6 +8,14 @@
 
 import UIKit
 
-class ShowRoomCollectionViewCell: UICollectionViewCell {
+class showRoomCollectionViewCell: UICollectionViewCell {
     
+    
+    @IBOutlet weak var roomImage: UIImageView!
+    
+    @IBOutlet weak var roomName: UILabel!
+    
+    @IBOutlet weak var roomNumberOfVehicles: UILabel!
 }
+
+

@@ -19,6 +19,10 @@ class apiRequests {
     var modelsArray = [Model]()
     var yearsArray = [Year]()
     var searchResultItems = [SearchResultItem]()
+    var showRooms = [ShowRoom]()
+    var insuranceCompanies = [Insurance]()
+    var insuranceDetails =  [Insurance]()
+    //var insuranceCompnies = []()
     let sm = serverManager()
     
     func loadCategoriesAndImages(didDataReady : @escaping ([Category],[Image]) -> ()) {
@@ -39,7 +43,7 @@ class apiRequests {
                     let image = Image.init(fromDictionary: img)
                     self.imagesArray.append(image)
                     print(image.headerPhoto1)
-                
+                    
                 }
             }
             didDataReady(self.categoriesArray,self.imagesArray)
@@ -92,7 +96,7 @@ class apiRequests {
         })
     }
     
-   //****************
+    //****************
     
     func getYears(modelId : Int , didDataReady : @escaping ([Year]) -> ()) -> () {
         
@@ -137,4 +141,71 @@ class apiRequests {
             didDataReady([])
         })
     }
+    func getShowRooms(didDataReady : @escaping([ShowRoom])->())->(){
+        
+        sm.connectForApiWith(url: ShowRoomsURL , mType: HTTPServerMethod.get, params: [:], complation: { (json) in
+            
+            self.showRooms.removeAll()
+            
+            if let obj = json {
+                print (obj)
+                let dictionaryOfJson = JSON(json!).dictionaryObject
+                print(dictionaryOfJson)
+                let items = dictionaryOfJson!["dealers"] as! [[String : Any]]
+                for item in items {
+                    let item = ShowRoom.init(fromDictionary: item)
+                    self.showRooms.append(item)
+                    print(item.id)
+                }
+            }
+            didDataReady(self.showRooms)
+        }, errorHandler: { (error, msg) in
+            print("\(String(describing: msg))")
+            didDataReady([])
+        })
+    }
+    func getInsuranceCompany(didDataReady : @escaping([Insurance])->())->(){
+        
+        sm.connectForApiWith(url: InsuranceCompanyURL  , mType: HTTPServerMethod.get, params: [:], complation: { (json) in
+            self.insuranceCompanies.removeAll()
+            if let obj = json {
+                print (obj)
+                let dictionaryOfJson = JSON(json!).dictionaryObject
+                print(dictionaryOfJson)
+                let items = dictionaryOfJson!["insurances"] as! [[String : Any]]
+                for item in items {
+                    let item = Insurance.init(fromDictionary: item)
+                    self.insuranceCompanies.append(item)
+                    print(item.id)
+                }
+            }
+            didDataReady(self.insuranceCompanies)
+        }, errorHandler: { (error, msg) in
+            print("\(String(describing: msg))")
+            didDataReady([])
+        })
+    }
+    func getInsuranceDetails(insuranceId : String ,didDataReady : @escaping([Insurance])->())->(){
+        
+        sm.connectForApiWith(url: ShowInsuranceDetails  , mType: HTTPServerMethod.post, params: ["id":insuranceId], complation: { (json) in
+            self.insuranceDetails.removeAll()
+            if let obj = json {
+                print (obj)
+                let dictionaryOfJson = JSON(json!).dictionaryObject
+                print(dictionaryOfJson)
+                let items = dictionaryOfJson!["insurance"] as! [[String : Any]]
+                for item in items {
+                    let item = Insurance.init(fromDictionary: item)
+                    self.insuranceDetails.append(item)
+                    print(item.id)
+                }
+            }
+            didDataReady(self.insuranceDetails)
+        }, errorHandler: { (error, msg) in
+            print("\(String(describing: msg))")
+            didDataReady([])
+        })
+    }
+    
+    
 }

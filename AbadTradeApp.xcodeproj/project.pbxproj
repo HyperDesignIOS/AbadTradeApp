@@ -16,6 +16,15 @@
 		40B24A93205E8C1200FE00BF /* searchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B24A92205E8C1200FE00BF /* searchTableViewCell.swift */; };
 		40B24A96205ED0C100FE00BF /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B24A95205ED0C100FE00BF /* Model.swift */; };
 		40C9E557206917E900516157 /* BrandModelCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C9E556206917E900516157 /* BrandModelCollectionViewController.swift */; };
+		40E79F4B206A675600DBDCA6 /* ShowRooms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40E79F4A206A675600DBDCA6 /* ShowRooms.storyboard */; };
+		40E79F4E206A681900DBDCA6 /* Insurance.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40E79F4D206A681900DBDCA6 /* Insurance.storyboard */; };
+		40E79F54206A684900DBDCA6 /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E79F50206A684900DBDCA6 /* Area.swift */; };
+		40E79F55206A684900DBDCA6 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E79F51206A684900DBDCA6 /* Country.swift */; };
+		40E79F56206A684900DBDCA6 /* InsuranceCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E79F52206A684900DBDCA6 /* InsuranceCompany.swift */; };
+		40E79F57206A684900DBDCA6 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E79F53206A684900DBDCA6 /* Region.swift */; };
+		40E79F5B206A685D00DBDCA6 /* ShowRoomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E79F59206A685D00DBDCA6 /* ShowRoomCollectionViewCell.swift */; };
+		40E79F5C206A685D00DBDCA6 /* ShowRoomCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E79F5A206A685D00DBDCA6 /* ShowRoomCollectionViewController.swift */; };
+		40E79F61206A6B6600DBDCA6 /* InsuranceDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E79F60206A6B6600DBDCA6 /* InsuranceDetailsViewController.swift */; };
 		40F39B82206402F3000FE5A2 /* SideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F39B81206402F3000FE5A2 /* SideMenuTableViewController.swift */; };
 		40F39B8520640559000FE5A2 /* VehiclesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F39B8420640559000FE5A2 /* VehiclesCollectionViewController.swift */; };
 		40F39B8720640D65000FE5A2 /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F39B8620640D65000FE5A2 /* SideMenuTableViewCell.swift */; };
@@ -54,6 +63,15 @@
 		40B24A92205E8C1200FE00BF /* searchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchTableViewCell.swift; sourceTree = "<group>"; };
 		40B24A95205ED0C100FE00BF /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		40C9E556206917E900516157 /* BrandModelCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandModelCollectionViewController.swift; sourceTree = "<group>"; };
+		40E79F4A206A675600DBDCA6 /* ShowRooms.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ShowRooms.storyboard; sourceTree = "<group>"; };
+		40E79F4D206A681900DBDCA6 /* Insurance.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Insurance.storyboard; sourceTree = "<group>"; };
+		40E79F50206A684900DBDCA6 /* Area.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Area.swift; sourceTree = "<group>"; };
+		40E79F51206A684900DBDCA6 /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		40E79F52206A684900DBDCA6 /* InsuranceCompany.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceCompany.swift; sourceTree = "<group>"; };
+		40E79F53206A684900DBDCA6 /* Region.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
+		40E79F59206A685D00DBDCA6 /* ShowRoomCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowRoomCollectionViewCell.swift; sourceTree = "<group>"; };
+		40E79F5A206A685D00DBDCA6 /* ShowRoomCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowRoomCollectionViewController.swift; sourceTree = "<group>"; };
+		40E79F60206A6B6600DBDCA6 /* InsuranceDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceDetailsViewController.swift; sourceTree = "<group>"; };
 		40F39B81206402F3000FE5A2 /* SideMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewController.swift; sourceTree = "<group>"; };
 		40F39B8420640559000FE5A2 /* VehiclesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesCollectionViewController.swift; sourceTree = "<group>"; };
 		40F39B8620640D65000FE5A2 /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
@@ -117,6 +135,7 @@
 		407337302058332900299A0F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				40E79F4F206A684900DBDCA6 /* Insurance */,
 				7DE7EB33206175F40014D569 /* SearchResult */,
 				7DE7EB32206175D40014D569 /* ShowRoom */,
 				7D51DC47205FDEEE00D5E107 /* Status */,
@@ -148,6 +167,8 @@
 		40B039CD2059765A00AAD62A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				40E79F5D206A6AFB00DBDCA6 /* Insurance Details */,
+				40E79F58206A685D00DBDCA6 /* ShowRoom */,
 				7D637E1D2067BAC900D87672 /* InsuranceCompany  */,
 				40F39B8320640516000FE5A2 /* Vehicles */,
 				40F39B8020640255000FE5A2 /* SideMenu */,
@@ -163,6 +184,50 @@
 				40B24A95205ED0C100FE00BF /* Model.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		40E79F49206A675600DBDCA6 /* ShowRoom */ = {
+			isa = PBXGroup;
+			children = (
+				40E79F4A206A675600DBDCA6 /* ShowRooms.storyboard */,
+			);
+			path = ShowRoom;
+			sourceTree = "<group>";
+		};
+		40E79F4C206A681900DBDCA6 /* InsuranceCompany */ = {
+			isa = PBXGroup;
+			children = (
+				40E79F4D206A681900DBDCA6 /* Insurance.storyboard */,
+			);
+			path = InsuranceCompany;
+			sourceTree = "<group>";
+		};
+		40E79F4F206A684900DBDCA6 /* Insurance */ = {
+			isa = PBXGroup;
+			children = (
+				40E79F50206A684900DBDCA6 /* Area.swift */,
+				40E79F51206A684900DBDCA6 /* Country.swift */,
+				40E79F52206A684900DBDCA6 /* InsuranceCompany.swift */,
+				40E79F53206A684900DBDCA6 /* Region.swift */,
+			);
+			path = Insurance;
+			sourceTree = "<group>";
+		};
+		40E79F58206A685D00DBDCA6 /* ShowRoom */ = {
+			isa = PBXGroup;
+			children = (
+				40E79F59206A685D00DBDCA6 /* ShowRoomCollectionViewCell.swift */,
+				40E79F5A206A685D00DBDCA6 /* ShowRoomCollectionViewController.swift */,
+			);
+			path = ShowRoom;
+			sourceTree = "<group>";
+		};
+		40E79F5D206A6AFB00DBDCA6 /* Insurance Details */ = {
+			isa = PBXGroup;
+			children = (
+				40E79F60206A6B6600DBDCA6 /* InsuranceDetailsViewController.swift */,
+			);
+			path = "Insurance Details";
 			sourceTree = "<group>";
 		};
 		40F39B8020640255000FE5A2 /* SideMenu */ = {
@@ -285,6 +350,8 @@
 		7DC9222D20581A6900C1705F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				40E79F4C206A681900DBDCA6 /* InsuranceCompany */,
+				40E79F49206A675600DBDCA6 /* ShowRoom */,
 				7DE7EB2F2061627A0014D569 /* VehicleResult */,
 				7D51DC4A2060145E00D5E107 /* Vehicles */,
 				7DC9222E20581A7600C1705F /* Sidemenu */,
@@ -389,7 +456,9 @@
 				7DC9223020581AAE00C1705F /* SideMenu.storyboard in Resources */,
 				7DC92222205809EE00C1705F /* LaunchScreen.storyboard in Resources */,
 				7DE7EB31206162F20014D569 /* VehicleResult.storyboard in Resources */,
+				40E79F4E206A681900DBDCA6 /* Insurance.storyboard in Resources */,
 				7DC9221F205809EE00C1705F /* Assets.xcassets in Resources */,
+				40E79F4B206A675600DBDCA6 /* ShowRooms.storyboard in Resources */,
 				7D51DC4C2060149E00D5E107 /* Vehicle.storyboard in Resources */,
 				7DC9221D205809EE00C1705F /* Main.storyboard in Resources */,
 			);
@@ -464,9 +533,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40E79F5B206A685D00DBDCA6 /* ShowRoomCollectionViewCell.swift in Sources */,
 				7D51DC46205FC88000D5E107 /* Year.swift in Sources */,
 				7DC9221A205809EE00C1705F /* ViewController.swift in Sources */,
 				7D637E1F2067BB9100D87672 /* InsuranceCompanyCollectionViewController.swift in Sources */,
+				40E79F57206A684900DBDCA6 /* Region.swift in Sources */,
 				4073372F2058330A00299A0F /* ServerManager.swift in Sources */,
 				40B039C820594A1000AAD62A /* ApiRequests.swift in Sources */,
 				7DC92218205809EE00C1705F /* AppDelegate.swift in Sources */,
@@ -480,12 +551,17 @@
 				7D6D5F3220626F660038F4E0 /* GeneralMethod .swift in Sources */,
 				407337342058336600299A0F /* Image.swift in Sources */,
 				7DE7EB35206176440014D569 /* SearchResultItem.swift in Sources */,
+				40E79F56206A684900DBDCA6 /* InsuranceCompany.swift in Sources */,
 				40FB0011206168B20095E4A9 /* VehicleResultTableViewCell.swift in Sources */,
 				40F39B82206402F3000FE5A2 /* SideMenuTableViewController.swift in Sources */,
 				40C9E557206917E900516157 /* BrandModelCollectionViewController.swift in Sources */,
+				40E79F55206A684900DBDCA6 /* Country.swift in Sources */,
 				40FB000A206135F50095E4A9 /* Protocols.swift in Sources */,
 				7DE7EB37206176580014D569 /* ShowRoom.swift in Sources */,
+				40E79F5C206A685D00DBDCA6 /* ShowRoomCollectionViewController.swift in Sources */,
 				40B24A91205E8BF700FE00BF /* searchTableViewController.swift in Sources */,
+				40E79F54206A684900DBDCA6 /* Area.swift in Sources */,
+				40E79F61206A6B6600DBDCA6 /* InsuranceDetailsViewController.swift in Sources */,
 				40B24A93205E8C1200FE00BF /* searchTableViewCell.swift in Sources */,
 				7D51DC49205FDF1400D5E107 /* Status.swift in Sources */,
 				40F39B8520640559000FE5A2 /* VehiclesCollectionViewController.swift in Sources */,

@@ -10,4 +10,10 @@ import UIKit
 
 class InsuranceCompanyCollectionViewCell: UICollectionViewCell {
     
+    
+    @IBOutlet weak var InsuranceImage: UIImageView!
+    
+    @IBOutlet weak var insuranceName: UILabel!
+    @IBOutlet weak var insuranceAddress: UILabel!
 }
+
