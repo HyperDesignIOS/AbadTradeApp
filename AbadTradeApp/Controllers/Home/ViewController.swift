@@ -150,7 +150,7 @@ class ViewController: UIViewController , searchVCProtocol{
         slideShow.setImageInputs([
             AlamofireSource(urlString: "\(SliderImagesURL)\(images[0].headerPhoto1!)")!,AlamofireSource(urlString: "\(SliderImagesURL)\(images[0].headerPhoto2!)")!,AlamofireSource(urlString: "\(SliderImagesURL)\(images[0].headerPhoto3!)")!
             ])
-        slideShow.slideshowInterval = 0.7
+        slideShow.slideshowInterval = 2
     //        slideShow.zoomEnabled = true
    //    slideShow.activityIndicator = DefaultActivityIndicator(style: .white, color: nil)
     }

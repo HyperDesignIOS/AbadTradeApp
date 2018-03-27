@@ -167,7 +167,6 @@
 		40B039CD2059765A00AAD62A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				40E79F5D206A6AFB00DBDCA6 /* Insurance Details */,
 				40E79F58206A685D00DBDCA6 /* ShowRoom */,
 				7D637E1D2067BAC900D87672 /* InsuranceCompany  */,
 				40F39B8320640516000FE5A2 /* Vehicles */,
@@ -303,6 +302,7 @@
 		7D637E1D2067BAC900D87672 /* InsuranceCompany  */ = {
 			isa = PBXGroup;
 			children = (
+				40E79F5D206A6AFB00DBDCA6 /* Insurance Details */,
 				7D637E1E2067BB9100D87672 /* InsuranceCompanyCollectionViewController.swift */,
 				7D637E202067BBEB00D87672 /* InsuranceCompanyCollectionViewCell.swift */,
 			);
