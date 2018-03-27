@@ -9,7 +9,10 @@
 import UIKit
 
 class insuranceDetailsTableViewCell: UITableViewCell {
-
+    
+    
+    @IBOutlet weak var insuranceDetailsLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

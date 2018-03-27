@@ -7,14 +7,41 @@
 //
 
 import UIKit
+import AlamofireImage
 
-class InsuranceDetailsViewController: UIViewController {
+class InsuranceDetailsViewController: UIViewController{
     
+    
+    var insuranceDetails = [Insurance]()
+    
+  
+    
+    @IBOutlet weak var insuranceDetailsImage: UIImageView!
+    
+    @IBOutlet weak var insuranceName: UILabel!
+    @IBOutlet weak var insuranceAddress: UILabel!
+    @IBOutlet weak var insuranceCountry: UILabel!
+    @IBOutlet weak var insuranceRegion: UILabel!
+    @IBOutlet weak var insuranceArea: UILabel!
+    @IBOutlet weak var insuranceWorkTime: UILabel!
+    @IBOutlet weak var insuranceAbout: UILabel!
+    
+    @IBAction func sendRequestButton(_ sender: Any) {
+    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        insuranceDetailsImage.af_setImage(withURL: URL(string: "\(InsuranceImageURL)\(insuranceDetails[0].logo!)")!)
+         insuranceName.text = insuranceDetails[0].nameEn
+        insuranceAddress.text = insuranceDetails[0].addressEn
+        insuranceArea.text = insuranceDetails[0].area.nameEn
+        insuranceCountry.text = insuranceDetails[0].country.nameEn
+        insuranceRegion.text = insuranceDetails[0].region.nameEn
+        insuranceWorkTime.text = insuranceDetails[0].workTimes
+        insuranceAbout.text = insuranceDetails[0].aboutEn
+
         // Do any additional setup after loading the view.
     }
     
@@ -22,6 +49,9 @@ class InsuranceDetailsViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+  
     
     
     /*

@@ -13,6 +13,7 @@ import AlamofireImage
 class InsuranceCompanyCollectionViewController: UICollectionViewController {
     
     var insuranceCompanies = [Insurance] ()
+    var insuranceDetails = [Insurance]()
     override func viewDidLoad() {
         super.viewDidLoad()
         getInsurances()
@@ -69,9 +70,30 @@ class InsuranceCompanyCollectionViewController: UICollectionViewController {
         return cell
     }
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedInsuranceId = String(insuranceCompanies[indexPath.row].id)
+        apiRequests.apisInstance.getInsuranceDetails(insuranceId: selectedInsuranceId) { (selectedInsuranceDetails) in
+            
+            self.insuranceDetails = selectedInsuranceDetails
+            
+           self.performSegue(withIdentifier: "insuranceDetailsSegue", sender: self)
+        }
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "insuranceDetailsSegue"
+        {
+            if let destination = segue.destination as? InsuranceDetailsViewController {
+                destination.insuranceDetails = self.insuranceDetails
+                
+            }
+        }
         
         
     }
+    
+    
     
     // MARK: UICollectionViewDelegate
     
@@ -103,6 +125,7 @@ class InsuranceCompanyCollectionViewController: UICollectionViewController {
      
      }
      */
+    
     func getInsurances(){
         apiRequests.apisInstance.getInsuranceCompany { (insuranceCO) in
             self.insuranceCompanies = insuranceCO

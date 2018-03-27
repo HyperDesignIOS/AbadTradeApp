@@ -193,12 +193,12 @@ class apiRequests {
                 print (obj)
                 let dictionaryOfJson = JSON(json!).dictionaryObject
                 print(dictionaryOfJson)
-                let items = dictionaryOfJson!["insurance"] as! [[String : Any]]
-                for item in items {
-                    let item = Insurance.init(fromDictionary: item)
+                let items = dictionaryOfJson!["insurance"] as! [String : Any]
+//                for item in items {
+                    let item = Insurance.init(fromDictionary: items)
                     self.insuranceDetails.append(item)
                     print(item.id)
-                }
+//                }
             }
             didDataReady(self.insuranceDetails)
         }, errorHandler: { (error, msg) in
