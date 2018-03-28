@@ -23,6 +23,7 @@ class apiRequests {
     var insuranceCompanies = [Insurance]()
     var insuranceDetails =  [Insurance]()
     var showRoomDetailsArray = [showRoomDetail]()
+    
     //var insuranceCompnies = []()
     let sm = serverManager()
     
