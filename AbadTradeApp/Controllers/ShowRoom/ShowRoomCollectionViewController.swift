@@ -13,7 +13,8 @@ class showRoomCollectionViewController: UICollectionViewController {
     
     
     var ShowRooms = [ShowRoom]()
-    var showRoomsDetailsArr = [showRoomDetail]()
+    var showRoomDetailsArr = [showRoomDetail]()
+    var showRoomitems = [ShowRoomItem]()
     override func viewDidLoad() {
         super.viewDidLoad()
         getRooms ()
@@ -70,9 +71,10 @@ class showRoomCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedShowRoomId = String(ShowRooms[indexPath.row].id)
-        apiRequests.apisInstance.getShowRoomDetails(showRoomId: selectedShowRoomId, didDataReady: { (showRoomsDetails) in
+        apiRequests.apisInstance.getShowRoomDetails(showRoomId: selectedShowRoomId, didDataReady: { (showRoomDetails, items) in
             
-            self.showRoomsDetailsArr = showRoomsDetails
+            self.showRoomDetailsArr = showRoomDetails
+            self.showRoomitems = items
             
             self.performSegue(withIdentifier: "showRoomDetailsSegue", sender: self)
             
@@ -87,7 +89,8 @@ class showRoomCollectionViewController: UICollectionViewController {
         if segue.identifier == "showRoomDetailsSegue"
         {
             if let destination = segue.destination as? showRoomDetailsViewController {
-                destination.showRoomsDetails = self.showRoomsDetailsArr
+                destination.showRoomsDetails = self.showRoomDetailsArr
+                destination.showRoomItems = self.showRoomitems
                 
             }
         }

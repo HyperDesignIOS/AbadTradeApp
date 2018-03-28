@@ -23,6 +23,7 @@ class apiRequests {
     var insuranceCompanies = [Insurance]()
     var insuranceDetails =  [Insurance]()
     var showRoomDetailsArray = [showRoomDetail]()
+    var showRoomItemArray = [ShowRoomItem]()
     
     //var insuranceCompnies = []()
     let sm = serverManager()
@@ -211,8 +212,7 @@ class apiRequests {
     
     
     
-    func getShowRoomDetails(showRoomId : String ,didDataReady : @escaping([showRoomDetail])->())->(){
-        
+    func getShowRoomDetails(showRoomId : String ,didDataReady : @escaping([showRoomDetail],[ShowRoomItem])->())->(){
         sm.connectForApiWith(url: ShowRoomDetailsURL  , mType: HTTPServerMethod.post, params: ["id":showRoomId], complation: { (json) in
             self.showRoomDetailsArray.removeAll()
             if let obj = json {
@@ -220,16 +220,19 @@ class apiRequests {
                 let dictionaryOfJson = JSON(json!).dictionaryObject
                 print(dictionaryOfJson)
                 let items = dictionaryOfJson!["dealer"] as! [String : Any]
-                //                for item in items {
                 let item = showRoomDetail.init(fromDictionary: items)
                 self.showRoomDetailsArray.append(item)
                 print(item.id)
-                //                }
+                let secondItems = dictionaryOfJson!["items"] as! [[String : Any]]
+                for i in secondItems {
+                    let secondItem = ShowRoomItem.init(fromDictionary:i)
+                    self.showRoomItemArray.append(secondItem)
+                }
             }
-            didDataReady(self.showRoomDetailsArray)
+            didDataReady(self.showRoomDetailsArray,self.showRoomItemArray)
         }, errorHandler: { (error, msg) in
             print("\(String(describing: msg))")
-            didDataReady([])
+            didDataReady([],[])
         })
     }
     
