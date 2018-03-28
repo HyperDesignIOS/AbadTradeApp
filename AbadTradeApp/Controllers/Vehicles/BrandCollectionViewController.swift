@@ -32,6 +32,18 @@ class BrandCollectionViewController :  UICollectionViewController {
         return cell
     }
     
-    
-    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let selectedBrand = brands[indexPath.row]
+        apiRequests.apisInstance.getModels(brandId: selectedBrand.id) { (models) in
+            
+            let storyboard = UIStoryboard.init(name: "Vehicle", bundle: nil)
+            let destinationViewController = storyboard.instantiateViewController(withIdentifier: "ModelsCollectionController") as! ModelsCollectionViewController
+            
+            destinationViewController.models = models
+            destinationViewController.selectedBrandImageName = selectedBrand.brandImage
+            self.show(destinationViewController, sender: self)
+        }
+        
+    }
 }

@@ -74,7 +74,7 @@ class apiRequests {
         })
     }
     
-    func getModels(brandId : Int , didDataReady : @escaping ([Model]) -> ()) -> () {
+    func getModels(brandId : String , didDataReady : @escaping ([Model]) -> ()) -> () {
         
         sm.connectForApiWith(url: ModelsURL, mType: HTTPServerMethod.post, params: ["id" : brandId], complation: { (json) in
             
