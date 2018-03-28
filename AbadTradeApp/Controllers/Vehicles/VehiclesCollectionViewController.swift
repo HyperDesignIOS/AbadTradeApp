@@ -71,7 +71,7 @@ class VehiclesCollectionViewController: UICollectionViewController ,UICollection
             self.brands = brands
             
             let storyboard = UIStoryboard.init(name: "Vehicle", bundle: nil)
-            let destinationViewController = storyboard.instantiateViewController(withIdentifier: "BrandModelCollectionController") as! BrandModelCollectionViewController
+            let destinationViewController = storyboard.instantiateViewController(withIdentifier: "BrandModelCollectionController") as! BrandCollectionViewController
             
             destinationViewController.brands = brands
             self.show(destinationViewController, sender: self)
