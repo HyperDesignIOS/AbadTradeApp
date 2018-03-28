@@ -14,7 +14,8 @@ class InsuranceDetailsViewController: UIViewController{
     
     var insuranceDetails = [Insurance]()
     
-  
+    
+    
     
     @IBOutlet weak var insuranceDetailsImage: UIImageView!
     
