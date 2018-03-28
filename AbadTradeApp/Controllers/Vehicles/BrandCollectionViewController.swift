@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import AlamofireImage
 
-class BrandModelCollectionViewController :  UICollectionViewController {
+class BrandCollectionViewController :  UICollectionViewController {
     
     var brands : [Brand]!
     
