@@ -13,6 +13,7 @@ class showRoomCollectionViewController: UICollectionViewController {
     
     
     var ShowRooms = [ShowRoom]()
+    var showRoomsDetailsArr = [showRoomDetail]()
     override func viewDidLoad() {
         super.viewDidLoad()
         getRooms ()
@@ -65,6 +66,36 @@ class showRoomCollectionViewController: UICollectionViewController {
         
         return cell
     }
+    
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedShowRoomId = String(ShowRooms[indexPath.row].id)
+        apiRequests.apisInstance.getShowRoomDetails(showRoomId: selectedShowRoomId, didDataReady: { (showRoomsDetails) in
+            
+            self.showRoomsDetailsArr = showRoomsDetails
+            
+            self.performSegue(withIdentifier: "showRoomDetailsSegue", sender: self)
+            
+        })
+            
+        
+        }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "showRoomDetailsSegue"
+        {
+            if let destination = segue.destination as? showRoomDetailsViewController {
+                destination.showRoomsDetails = self.showRoomsDetailsArr
+                
+            }
+        }
+        
+        
+    }
+        
+    
     
     // MARK: UICollectionViewDelegate
     
