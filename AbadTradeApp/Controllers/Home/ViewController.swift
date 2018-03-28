@@ -196,6 +196,7 @@ class ViewController: UIViewController , searchVCProtocol{
                 destination.selectedModel = selectedModel
                 destination.selectedYear = selectedYear
                 destination.statusOfVehicle = statusOfVehicle
+                destination.search()
             }
         }
         else if segue.identifier == "sideMenuSegue"{

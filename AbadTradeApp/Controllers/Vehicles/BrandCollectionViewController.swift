@@ -13,6 +13,7 @@ import AlamofireImage
 class BrandCollectionViewController :  UICollectionViewController {
     
     var brands : [Brand]!
+    var selectedCategory : Category!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,8 +43,9 @@ class BrandCollectionViewController :  UICollectionViewController {
             
             destinationViewController.models = models
             destinationViewController.selectedBrandImageName = selectedBrand.brandImage
+            destinationViewController.selectedCategory = self.selectedCategory
+            destinationViewController.selectedBrand = selectedBrand
             self.show(destinationViewController, sender: self)
         }
-        
     }
 }
