@@ -62,6 +62,12 @@ class VehicleResultTableViewController: UITableViewController{
 
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard.init(name: "VehicleResult", bundle: nil)
+        let destinationViewController = storyboard.instantiateViewController(withIdentifier: "SelectedVehicleData")
+        self.show(destinationViewController, sender: self)
+    }
 
     /*
     // Override to support conditional editing of the table view.
