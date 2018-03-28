@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class showRoomDetailsViewController: UIViewController {
     
@@ -20,7 +21,12 @@ class showRoomDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+         showRoomImage.af_setImage(withURL: URL(string: "\(ShowRoomImageURL)\(showRoomsDetails[0].logo!)")!)
         showRoomName.text = showRoomsDetails[0].nameEn
+        showRoomAddess.text = showRoomsDetails[0].addressEn
+        showRoomphone.text = showRoomsDetails[0].phone
+        showRoomWorkTimes.text = showRoomsDetails[0].workTimes
 
         // Do any additional setup after loading the view.
     }

@@ -225,7 +225,7 @@
 		40E79F58206A685D00DBDCA6 /* ShowRoom */ = {
 			isa = PBXGroup;
 			children = (
-				7D2067A1206BAF060048452A /* ishow rooms details */,
+				7D2067A1206BAF060048452A /* Show rooms details */,
 				40E79F59206A685D00DBDCA6 /* ShowRoomCollectionViewCell.swift */,
 				40E79F5A206A685D00DBDCA6 /* ShowRoomCollectionViewController.swift */,
 			);
@@ -288,12 +288,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		7D2067A1206BAF060048452A /* ishow rooms details */ = {
+		7D2067A1206BAF060048452A /* Show rooms details */ = {
 			isa = PBXGroup;
 			children = (
 				7D2067A2206BAF890048452A /* showRoomDetailsViewController.swift */,
 			);
-			path = "ishow rooms details";
+			path = "Show rooms details";
 			sourceTree = "<group>";
 		};
 		7D51DC44205FC7B000D5E107 /* Year */ = {
