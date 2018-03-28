@@ -17,7 +17,6 @@ class VehicleResultTableViewController: UITableViewController{
     var selectedModel : Model?
     var selectedYear : Year?
     var statusOfVehicle = String()
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
