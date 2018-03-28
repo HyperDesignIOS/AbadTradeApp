@@ -12,6 +12,8 @@ class ModelsCollectionViewController: UICollectionViewController {
 
     var models : [Model]!
     var selectedBrandImageName : String!
+    var selectedCategory : Category!
+    var selectedBrand : Brand!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +63,19 @@ class ModelsCollectionViewController: UICollectionViewController {
         // Configure the cell
     
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let selectedModel = models[indexPath.row]
+        
+        apiRequests.apisInstance.getSearchResults(categoryId: selectedCategory.id, brandId: selectedBrand.id, modelId: selectedModel.id, yearId: "0", status: "") { (searchResults) in
+            let storyboard = UIStoryboard.init(name: "VehicleResult", bundle: nil)
+            let destinationViewController = storyboard.instantiateViewController(withIdentifier: "SearchResultViewController") as! VehicleResultTableViewController
+            destinationViewController.searchResults = searchResults
+            self.show(destinationViewController, sender: self)
+        }
+        
     }
 
     // MARK: UICollectionViewDelegate

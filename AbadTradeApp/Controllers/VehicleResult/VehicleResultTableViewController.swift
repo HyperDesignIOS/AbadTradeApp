@@ -21,8 +21,8 @@ class VehicleResultTableViewController: UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
       
-        tableView.reloadData()
-        search()
+//        tableView.reloadData()
+//        search()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

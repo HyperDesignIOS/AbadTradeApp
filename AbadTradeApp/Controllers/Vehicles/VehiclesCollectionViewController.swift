@@ -74,8 +74,8 @@ class VehiclesCollectionViewController: UICollectionViewController ,UICollection
             let destinationViewController = storyboard.instantiateViewController(withIdentifier: "BrandCollectionController") as! BrandCollectionViewController
             
             destinationViewController.brands = brands
+            destinationViewController.selectedCategory = selectedCategory
             self.show(destinationViewController, sender: self)
-            
         }
     }
     
