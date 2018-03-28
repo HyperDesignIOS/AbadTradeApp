@@ -254,7 +254,7 @@ class ViewController: UIViewController , searchVCProtocol{
                 brandTextField.text = selectedBrand.nameEn
                 modelTextField.text = ""
                 //self.selectedModel = nil
-                apiRequests.apisInstance.getModels(brandId: Int(selectedBrand.id)!, didDataReady: { (models) in
+                apiRequests.apisInstance.getModels(brandId: selectedBrand.id, didDataReady: { (models) in
                     self.models = models
                 })
             }else if ft == FilterType.Model{

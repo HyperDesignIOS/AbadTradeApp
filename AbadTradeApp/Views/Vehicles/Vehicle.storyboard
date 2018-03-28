@@ -83,7 +83,7 @@
         <!--Brands-->
         <scene sceneID="y9P-pO-7MC">
             <objects>
-                <collectionViewController storyboardIdentifier="BrandModelCollectionController" id="G7v-e0-AqW" customClass="BrandModelCollectionViewController" customModule="AbadTradeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="BrandCollectionController" id="G7v-e0-AqW" customClass="BrandCollectionViewController" customModule="AbadTradeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="TZB-nV-a3F">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -171,7 +171,7 @@
         <!--Models-->
         <scene sceneID="X8Y-2U-yuC">
             <objects>
-                <collectionViewController storyboardIdentifier="ModelsCollectionController" id="8Rf-3Z-AjD" userLabel="Models" customClass="BrandModelCollectionViewController" customModule="AbadTradeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="ModelsCollectionController" id="8Rf-3Z-AjD" userLabel="Models" customClass="ModelsCollectionViewController" customModule="AbadTradeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="fm1-Yh-twu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -199,18 +199,18 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BfU-jE-82f">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="azt-Zz-Uhb">
                                                     <rect key="frame" x="0.0" y="0.0" width="196" height="219.5"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
+                                                <constraint firstItem="4h4-Sm-TWd" firstAttribute="top" secondItem="azt-Zz-Uhb" secondAttribute="bottom" constant="10" id="3L1-gj-bfw"/>
                                                 <constraint firstAttribute="bottom" secondItem="4h4-Sm-TWd" secondAttribute="bottom" id="M9T-Jh-9UJ"/>
-                                                <constraint firstItem="BfU-jE-82f" firstAttribute="leading" secondItem="A06-ye-Zgs" secondAttribute="leading" id="P7V-7p-YYB"/>
-                                                <constraint firstItem="4h4-Sm-TWd" firstAttribute="top" secondItem="BfU-jE-82f" secondAttribute="bottom" constant="10" id="cMm-4y-D0u"/>
-                                                <constraint firstItem="BfU-jE-82f" firstAttribute="top" secondItem="A06-ye-Zgs" secondAttribute="top" id="f02-dM-RNc"/>
-                                                <constraint firstAttribute="trailing" secondItem="BfU-jE-82f" secondAttribute="trailing" id="ng4-TT-fdG"/>
-                                                <constraint firstItem="4h4-Sm-TWd" firstAttribute="centerX" secondItem="BfU-jE-82f" secondAttribute="centerX" id="xl4-6o-ta2"/>
+                                                <constraint firstAttribute="trailing" secondItem="azt-Zz-Uhb" secondAttribute="trailing" id="Von-LG-Q6o"/>
+                                                <constraint firstItem="azt-Zz-Uhb" firstAttribute="top" secondItem="A06-ye-Zgs" secondAttribute="top" id="axx-eQ-Fji"/>
+                                                <constraint firstItem="4h4-Sm-TWd" firstAttribute="centerX" secondItem="azt-Zz-Uhb" secondAttribute="centerX" id="oHF-Cm-NcM"/>
+                                                <constraint firstItem="azt-Zz-Uhb" firstAttribute="leading" secondItem="A06-ye-Zgs" secondAttribute="leading" id="x24-rd-BKD"/>
                                             </constraints>
                                         </view>
                                     </subviews>
@@ -222,7 +222,7 @@
                                     <constraint firstAttribute="bottom" secondItem="A06-ye-Zgs" secondAttribute="bottom" id="e4q-Qc-KiS"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="cellImage" destination="BfU-jE-82f" id="SPD-qM-vs4"/>
+                                    <outlet property="cellImage" destination="azt-Zz-Uhb" id="o54-Rd-uuB"/>
                                     <outlet property="cellName" destination="4h4-Sm-TWd" id="mEl-Lh-JL6"/>
                                 </connections>
                             </collectionViewCell>
@@ -236,7 +236,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3DI-WG-gAv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3442" y="-161"/>
+            <point key="canvasLocation" x="3440.8000000000002" y="-161.46926536731635"/>
         </scene>
     </scenes>
 </document>

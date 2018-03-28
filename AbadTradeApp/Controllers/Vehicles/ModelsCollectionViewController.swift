@@ -10,6 +10,9 @@ import UIKit
 
 class ModelsCollectionViewController: UICollectionViewController {
 
+    var models : [Model]!
+    var selectedBrandImageName : String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -41,18 +44,20 @@ class ModelsCollectionViewController: UICollectionViewController {
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return models.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionCell", for: indexPath) as! CollectionViewCell
     
+        cell.cellImage.af_setImage(withURL: URL(string: "\(BrandImageURL)\(selectedBrandImageName!)")!)
+        cell.cellName.text = models[indexPath.row].nameEn
         // Configure the cell
     
         return cell
