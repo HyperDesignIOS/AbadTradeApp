@@ -21,7 +21,8 @@ class VehiclesCollectionViewController: UICollectionViewController ,UICollection
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        getVehicles()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -123,5 +124,11 @@ class VehiclesCollectionViewController: UICollectionViewController ,UICollection
     
     }
     */
-
+    func getVehicles (){
+        
+        apiRequests.apisInstance.loadCategoriesAndImages { (vehicles, images) in
+            self.vehicles = vehicles
+            self.collectionView?.reloadData()
+        }
+    }
 }

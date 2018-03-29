@@ -142,9 +142,6 @@ class showRoomCollectionViewController: UICollectionViewController {
             self.ShowRooms = showRooms
             self.collectionView?.reloadData()
         }
-        
-        
-        
     }
     
 }

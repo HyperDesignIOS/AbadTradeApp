@@ -205,13 +205,13 @@ class ViewController: UIViewController , searchVCProtocol{
                 destination.search()
             }
         }
-        else if segue.identifier == "sideMenuSegue"{
-            if let navigation = segue.destination as? UISideMenuNavigationController {
-                if let destination = navigation.topViewController as? SideMenuTableViewController{
-                    destination.vehicles = self.categories
-                }
-            }
-        }
+//        else if segue.identifier == "sideMenuSegue"{
+//            if let navigation = segue.destination as? UISideMenuNavigationController {
+//                if let destination = navigation.topViewController as? SideMenuTableViewController{
+//                    //destination.vehicles = self.categories
+//                }
+//            }
+//        }
     }
     
     @IBAction func changeRadioButton(_ sender: UIButton) {

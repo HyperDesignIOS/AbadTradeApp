@@ -58,7 +58,7 @@ class SideMenuTableViewController: UITableViewController{
         if sideMenuItemNames[indexPath.row] == "Vehicles"{
             let storyboard = UIStoryboard(name: "Vehicle", bundle: nil)
             let controller = storyboard.instantiateViewController(withIdentifier: "vehicleVC") as! VehiclesCollectionViewController
-            controller.vehicles = vehicles
+            //controller.vehicles = vehicles
             
             //self.present(controller, animated: true, completion: nil)
             show(controller, sender: self)
