@@ -37,6 +37,9 @@ class apiRequests {
         
         sm.connectForApiWith(url: CategoriesAndImagesURL, mType: HTTPServerMethod.get, params: [:], complation: { (json) in
             
+            self.categoriesArray.removeAll()
+            self.imagesArray.removeAll()
+
             if let obj = json {
                 print (obj)
                 let dictionaryOfJson = JSON(json!).dictionaryObject

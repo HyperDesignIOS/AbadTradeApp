@@ -81,6 +81,12 @@ class ViewController: UIViewController , searchVCProtocol{
         
         filterType = FilterType.Category
         performSegue(withIdentifier: "categorySegue", sender: sender)
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let controller = storyboard.instantiateViewController(withIdentifier: "homeTableVC") as! searchTableViewController
+//        controller.searchResultData = categories
+//        controller.delegate = self
+        //self.present(controller, animated: true, completion: nil)
+//        show(controller, sender: self)
     }
     
 

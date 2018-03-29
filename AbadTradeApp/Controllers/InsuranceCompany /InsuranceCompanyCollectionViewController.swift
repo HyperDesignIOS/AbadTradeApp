@@ -12,6 +12,11 @@ import AlamofireImage
 
 class InsuranceCompanyCollectionViewController: UICollectionViewController {
     
+    
+    @IBAction func sideMenuButton(_ sender: Any) {
+        performSegue(withIdentifier: "insuranceSideMenu", sender: self)
+    }
+    
     var insuranceCompanies = [Insurance] ()
     var insuranceDetails = [Insurance]()
     override func viewDidLoad() {
