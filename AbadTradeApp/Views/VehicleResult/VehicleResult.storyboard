@@ -109,7 +109,7 @@
         <!--Vehicle data-->
         <scene sceneID="9GV-Ui-Glo">
             <objects>
-                <viewController storyboardIdentifier="SelectedVehicleData" id="mgJ-mp-7QW" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SelectedVehicleData" id="mgJ-mp-7QW" customClass="VehicleDetailsViewController" customModule="AbadTradeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="52C-ra-B3m">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -120,7 +120,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wKe-SG-FBj">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gfH-GK-huX" customClass="ImageSlideshow" customModule="ImageSlideshow">
+                                            <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="gfH-GK-huX" customClass="ImageSlideshow" customModule="ImageSlideshow">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b79-BM-ldW">
@@ -137,7 +137,7 @@
                                                 <rect key="frame" x="0.0" y="305" width="375" height="298"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Je4-ER-Uds">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="vehicleDetailsCell" id="Je4-ER-Uds" customClass="VehicleDetailsTableViewCell" customModule="AbadTradeApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Je4-ER-Uds" id="HkS-PP-oOS">
@@ -167,6 +167,10 @@
                                                                 <constraint firstItem="IbU-Ig-eBr" firstAttribute="leading" secondItem="HkS-PP-oOS" secondAttribute="leadingMargin" id="raP-tO-d0V"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
+                                                        <connections>
+                                                            <outlet property="vehicleDataKey" destination="IbU-Ig-eBr" id="8l3-Zp-WN9"/>
+                                                            <outlet property="vehicleDtaValue" destination="YdZ-E5-2Nt" id="dOD-Km-NOx"/>
+                                                        </connections>
                                                     </tableViewCell>
                                                 </prototypes>
                                             </tableView>
@@ -203,6 +207,10 @@
                         <viewLayoutGuide key="safeArea" id="2Xx-7w-bM9"/>
                     </view>
                     <navigationItem key="navigationItem" title="Vehicle data" id="Q4d-nX-qIg"/>
+                    <connections>
+                        <outlet property="tabelView" destination="rr4-66-u6p" id="gBq-il-TAV"/>
+                        <outlet property="vehicleSlider" destination="gfH-GK-huX" id="zRe-Yt-bE1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="98M-7x-Cky" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

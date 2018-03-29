@@ -24,7 +24,12 @@ class apiRequests {
     var insuranceDetails =  [Insurance]()
     var showRoomDetailsArray = [showRoomDetail]()
     var showRoomItemArray = [ShowRoomItem]()
-    
+    var vehiclePrices = [VehiclePrice]()
+    var vehicleImages = [VehicleImage]()
+    var vehicleOptions = [VehicleOption]()
+    var vehicleBids : VehicleBid!
+    var vehicleItemDetails : VehicleItemDetails!
+
     //var insuranceCompnies = []()
     let sm = serverManager()
     
@@ -210,8 +215,6 @@ class apiRequests {
         })
     }
     
-    
-    
     func getShowRoomDetails(showRoomId : String ,didDataReady : @escaping([showRoomDetail],[ShowRoomItem])->())->(){
         sm.connectForApiWith(url: ShowRoomDetailsURL  , mType: HTTPServerMethod.post, params: ["id":showRoomId], complation: { (json) in
             self.showRoomDetailsArray.removeAll()
@@ -233,6 +236,51 @@ class apiRequests {
         }, errorHandler: { (error, msg) in
             print("\(String(describing: msg))")
             didDataReady([],[])
+        })
+    }
+    
+    func getVehicleItemDetails(selectedVehicleId : String ,didDataReady : @escaping(VehicleItemDetails,[VehicleImage],[VehicleOption],[VehiclePrice],VehicleBid)->())->(){
+        sm.connectForApiWith(url: VehicleItemDetailsURL  , mType: HTTPServerMethod.post, params: ["id" : selectedVehicleId], complation: { (json) in
+            self.vehicleImages.removeAll()
+            self.vehiclePrices.removeAll()
+            self.vehicleOptions.removeAll()
+
+            if let obj = json {
+                print (obj)
+                let dictionaryOfJson = JSON(json!).dictionaryObject
+                print(dictionaryOfJson)
+                let prices = dictionaryOfJson!["itemprice"] as! [[String : Any]]
+                
+                for price in prices{
+                    let price = VehiclePrice.init(fromJson: price)
+                    self.vehiclePrices.append(price)
+                }
+                let images = dictionaryOfJson!["itemimages"] as! [[String : Any]]
+                
+                for image in images{
+                    let image = VehicleImage.init(fromJson: image)
+                    self.vehicleImages.append(image)
+                }
+                
+                let options = dictionaryOfJson!["itemoptions"] as! [[String : Any]]
+                
+                for option in options{
+                    let option = VehicleOption.init(fromJson: option)
+                    self.vehicleOptions.append(option)
+                }
+                
+                let itemDetails = VehicleItemDetails.init(fromJson: dictionaryOfJson!["item"] as! [String : Any])
+                
+                self.vehicleItemDetails = itemDetails
+                
+                let bids =  VehicleBid.init(fromJson: dictionaryOfJson!["itembids"] as! [String : Any])
+                
+                self.vehicleBids = bids
+            }
+            didDataReady(self.vehicleItemDetails,self.vehicleImages,self.vehicleOptions,self.vehiclePrices,self.vehicleBids)
+        }, errorHandler: { (error, msg) in
+            print("\(String(describing: msg))")
+            didDataReady(self.vehicleItemDetails,[],[],[],self.vehicleBids)
         })
     }
     
