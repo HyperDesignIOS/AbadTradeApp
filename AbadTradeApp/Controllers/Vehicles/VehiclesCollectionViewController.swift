@@ -11,6 +11,11 @@ import AlamofireImage
 
 class VehiclesCollectionViewController: UICollectionViewController ,UICollectionViewDelegateFlowLayout{
     
+    @IBAction func sideMenuButtob(_ sender: Any) {
+        
+        performSegue(withIdentifier:"vehicleSideMenu", sender: self)
+    }
+    
     var vehicles : [Category] = []
     var brands : [Brand]!
 

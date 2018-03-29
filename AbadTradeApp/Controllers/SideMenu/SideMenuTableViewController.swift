@@ -56,7 +56,12 @@ class SideMenuTableViewController: UITableViewController{
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if sideMenuItemNames[indexPath.row] == "Vehicles"{
-            performSegue(withIdentifier: "VehiclesFromSideMenuSegue", sender: self)
+            let storyboard = UIStoryboard(name: "Vehicle", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "vehicleVC") as! VehiclesCollectionViewController
+            controller.vehicles = vehicles
+            
+            //self.present(controller, animated: true, completion: nil)
+            show(controller, sender: self)
         }
         else if
             sideMenuItemNames[indexPath.row] == "Show Rooms"{
@@ -66,7 +71,7 @@ class SideMenuTableViewController: UITableViewController{
             let storyboard = UIStoryboard(name: "ShowRooms", bundle: nil)
             let controller = storyboard.instantiateViewController(withIdentifier: "showRoomVC")
             //self.present(controller, animated: true, completion: nil)
-            show(controller, sender: self)
+           show(controller, sender: self)
         }
         else if
             sideMenuItemNames[indexPath.row] == "Insurance Companies"{
@@ -77,6 +82,14 @@ class SideMenuTableViewController: UITableViewController{
             let controller = storyboard.instantiateViewController(withIdentifier: "insuranceVC")
             //self.present(controller, animated: true, completion: nil)
             show(controller, sender: self)
+        }
+        else if sideMenuItemNames[indexPath.row] == "Home"
+        {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "homeVC")
+            //self.present(controller, animated: true, completion: nil)
+            show(controller, sender: self)
+            
         }
         
     }

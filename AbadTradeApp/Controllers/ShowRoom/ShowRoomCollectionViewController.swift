@@ -12,6 +12,11 @@ import AlamofireImage
 class showRoomCollectionViewController: UICollectionViewController {
     
     
+    @IBAction func sideMenuButton(_ sender: Any) {
+      performSegue(withIdentifier: "showSideMenu", sender: self)
+       
+    }
+    
     var ShowRooms = [ShowRoom]()
     var showRoomDetailsArr = [showRoomDetail]()
     var showRoomitems = [ShowRoomItem]()
