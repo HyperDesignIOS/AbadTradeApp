@@ -12,8 +12,8 @@ import SideMenu
 class SideMenuTableViewController: UITableViewController{
     
     var vehicles : [Category]!
-    var sideMenuItemImages = ["home-icon-silhouette","sports-car","car-insurance","sports-car"]
-    var sideMenuItemNames = ["Home","Vehicles","Insurance Companies","Show Rooms"]
+    var sideMenuItemImages = ["home-icon-silhouette","sports-car","car-insurance","sports-car","login","register"]
+    var sideMenuItemNames = ["Home","Vehicles","Insurance Companies","Show Rooms","Login", "Register"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,6 +87,22 @@ class SideMenuTableViewController: UITableViewController{
         {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let controller = storyboard.instantiateViewController(withIdentifier: "homeVC")
+            //self.present(controller, animated: true, completion: nil)
+            show(controller, sender: self)
+            
+        }
+        else if sideMenuItemNames[indexPath.row] == "Login"
+        {
+            let storyboard = UIStoryboard(name: "Login", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "LoginVC")
+            //self.present(controller, animated: true, completion: nil)
+            show(controller, sender: self)
+            
+        }
+        else if sideMenuItemNames[indexPath.row] == "Register"
+        {
+            let storyboard = UIStoryboard(name: "Register", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "RegisterVC")
             //self.present(controller, animated: true, completion: nil)
             show(controller, sender: self)
             
