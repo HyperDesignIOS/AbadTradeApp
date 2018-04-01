@@ -149,6 +149,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		40285FCA2070DF1800E575DD /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				7DC9221B205809EE00C1705F /* Main.storyboard */,
+				7DC92220205809EE00C1705F /* LaunchScreen.storyboard */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		4028CD85206CF6100067294F /* VehicleDetails */ = {
 			isa = PBXGroup;
 			children = (
@@ -382,6 +391,7 @@
 		7DC92216205809EE00C1705F /* AbadTradeApp */ = {
 			isa = PBXGroup;
 			children = (
+				7DC92217205809EE00C1705F /* AppDelegate.swift */,
 				40FB26D42062C51E00FE2F31 /* AppConstants.swift */,
 				7D6D5F3120626F660038F4E0 /* GeneralMethod .swift */,
 				40FB000B2061373A0095E4A9 /* Enumerations.swift */,
@@ -390,10 +400,7 @@
 				407337302058332900299A0F /* Models */,
 				4073372D205832F100299A0F /* Networking */,
 				7DC9222D20581A6900C1705F /* Views */,
-				7DC92217205809EE00C1705F /* AppDelegate.swift */,
-				7DC9221B205809EE00C1705F /* Main.storyboard */,
 				7DC9221E205809EE00C1705F /* Assets.xcassets */,
-				7DC92220205809EE00C1705F /* LaunchScreen.storyboard */,
 				7DC92223205809EE00C1705F /* Info.plist */,
 			);
 			path = AbadTradeApp;
@@ -402,6 +409,7 @@
 		7DC9222D20581A6900C1705F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				40285FCA2070DF1800E575DD /* Home */,
 				40E79F4C206A681900DBDCA6 /* InsuranceCompany */,
 				40E79F49206A675600DBDCA6 /* ShowRoom */,
 				7DE7EB2F2061627A0014D569 /* VehicleResult */,
