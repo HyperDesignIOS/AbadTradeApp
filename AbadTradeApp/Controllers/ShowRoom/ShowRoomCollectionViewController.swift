@@ -10,29 +10,15 @@ import UIKit
 import AlamofireImage
 
 class showRoomCollectionViewController: UICollectionViewController {
-    
-    
-    @IBAction func sideMenuButton(_ sender: Any) {
-      performSegue(withIdentifier: "showSideMenu", sender: self)
-       
-    }
-    
     var ShowRooms = [ShowRoom]()
     var showRoomDetailsArr = [showRoomDetail]()
     var showRoomitems = [ShowRoomItem]()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         getRooms ()
-        
-        
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Register cell classes
-        //        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        
-        // Do any additional setup after loading the view.
+        //collectionView?.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -87,6 +73,11 @@ class showRoomCollectionViewController: UICollectionViewController {
             
         
         }
+    
+    @IBAction func sideMenuButton(_ sender: Any) {
+        performSegue(withIdentifier: "showSideMenu", sender: self)
+        
+    }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -12,16 +12,13 @@ import AlamofireImage
 
 class InsuranceCompanyCollectionViewController: UICollectionViewController {
     
-    
-    @IBAction func sideMenuButton(_ sender: Any) {
-        performSegue(withIdentifier: "insuranceSideMenu", sender: self)
-    }
-    
     var insuranceCompanies = [Insurance] ()
     var insuranceDetails = [Insurance]()
     override func viewDidLoad() {
         super.viewDidLoad()
         getInsurances()
+        //collectionView?.reloadData()
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
@@ -85,6 +82,10 @@ class InsuranceCompanyCollectionViewController: UICollectionViewController {
         
     }
     
+    @IBAction func sideMenuButton(_ sender: Any) {
+        performSegue(withIdentifier: "insuranceSideMenu", sender: self)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "insuranceDetailsSegue"
@@ -94,12 +95,7 @@ class InsuranceCompanyCollectionViewController: UICollectionViewController {
                 
             }
         }
-        
-        
     }
-    
-    
-    
     // MARK: UICollectionViewDelegate
     
     /*
