@@ -13,7 +13,7 @@
         <!--Login-->
         <scene sceneID="KvI-p5-4jK">
             <objects>
-                <viewController storyboardIdentifier="LoginVC" id="zIa-Av-j90" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" id="zIa-Av-j90" customClass="LoginVC" customModule="AbadTradeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JgG-Rv-QtO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -30,7 +30,7 @@
                                                     <constraint firstAttribute="width" constant="50" id="SWj-jk-HkO"/>
                                                 </constraints>
                                             </imageView>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kNt-Uf-SJA">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kNt-Uf-SJA">
                                                 <rect key="frame" x="73" y="10" width="199" height="40"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -63,7 +63,7 @@
                                                     <constraint firstAttribute="width" constant="50" id="LoD-mq-u2J"/>
                                                 </constraints>
                                             </imageView>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VvX-j5-yfq">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VvX-j5-yfq">
                                                 <rect key="frame" x="73" y="10" width="199" height="40"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -89,18 +89,19 @@
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rZP-0h-sV0">
                                         <rect key="frame" x="90" y="210" width="120" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <state key="normal" title="Login ">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderRdius">
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="15"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="rZP-0h-sV0" firstAttribute="top" secondItem="knN-VH-OkJ" secondAttribute="bottom" constant="30" id="51R-TZ-ALI"/>
                                     <constraint firstItem="rZP-0h-sV0" firstAttribute="leading" secondItem="ZFV-8B-74e" secondAttribute="leading" constant="90" id="5fW-b2-shd"/>
@@ -129,11 +130,28 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sSE-Oc-HEc"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Login" id="bJ4-px-UIU"/>
+                    <navigationItem key="navigationItem" title="Login" id="bJ4-px-UIU">
+                        <barButtonItem key="leftBarButtonItem" image="menuico" id="wMw-aH-YgJ">
+                            <connections>
+                                <action selector="LoginSideMenu:" destination="zIa-Av-j90" id="zMd-jW-dN9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="Wb6-9Y-5Yz" kind="show" identifier="loginSideMenu" id="xkI-zP-Rml"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lYV-vq-2bm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="328.80000000000001" y="38.23088455772114"/>
+            <point key="canvasLocation" x="399" y="37"/>
+        </scene>
+        <!--SideMenu-->
+        <scene sceneID="bi2-Id-fgK">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SideMenu" id="Wb6-9Y-5Yz" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r0b-Vm-OoS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="937" y="271"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="P0I-Ba-TB6">
@@ -158,6 +176,7 @@
     </scenes>
     <resources>
         <image name="mail" width="32" height="32"/>
+        <image name="menuico" width="15" height="11"/>
         <image name="password" width="32" height="32"/>
     </resources>
 </document>

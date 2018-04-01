@@ -29,6 +29,7 @@ class apiRequests {
     var vehicleOptions = [VehicleOption]()
     var vehicleBids : VehicleBid!
     var vehicleItemDetails : VehicleItemDetails!
+    var user :User!
 
     //var insuranceCompnies = []()
     let sm = serverManager()
@@ -307,6 +308,36 @@ class apiRequests {
         }, errorHandler: { (error, msg) in
             print("\(String(describing: msg))")
             didDataReady(self.vehicleItemDetails,[],[],[],self.vehicleBids)
+        })
+    }
+    
+    
+    func register(userName:String,userMail:String,userPassword:String,didDataReady : @escaping(Any)->())->(){
+        
+        sm.connectForApiWith(url: RegisterURL  , mType: HTTPServerMethod.post, params: ["username":userName,"email":userMail,"password":userPassword], complation: { (json) in
+           
+            if let obj = json {
+                print (obj)
+                
+                var dictionaryOfJson = JSON(json!).dictionaryObject
+                let msg = dictionaryOfJson!["msg"] as! String
+                if msg == "Sucess Register"{
+                print(dictionaryOfJson)
+                let items = dictionaryOfJson!["user"] as! [String : Any]
+                
+                    let item = User.init(fromDictionary: items)
+                    self.user = item
+                
+            }
+                else if msg == "E-Mail token"
+                {
+                  print("E-Mail token")
+                }
+            }
+            didDataReady(self.user)
+        }, errorHandler: { (error, msg) in
+            print("\(String(describing: msg))")
+            didDataReady(msg)
         })
     }
     

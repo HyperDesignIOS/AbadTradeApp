@@ -53,6 +53,9 @@
 		7D51DC4C2060149E00D5E107 /* Vehicle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D51DC4B2060149E00D5E107 /* Vehicle.storyboard */; };
 		7D59A8B8207101AD0010DD0E /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D59A8B7207101AD0010DD0E /* Login.storyboard */; };
 		7D59A8BB207101D00010DD0E /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D59A8BA207101D00010DD0E /* Register.storyboard */; };
+		7D59A8BF2071190B0010DD0E /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D59A8BE2071190B0010DD0E /* RegisterVC.swift */; };
+		7D59A8C120711B7C0010DD0E /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D59A8C020711B7C0010DD0E /* LoginVC.swift */; };
+		7D59A8C42071232C0010DD0E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D59A8C32071232C0010DD0E /* User.swift */; };
 		7D637E1F2067BB9100D87672 /* InsuranceCompanyCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D637E1E2067BB9100D87672 /* InsuranceCompanyCollectionViewController.swift */; };
 		7D637E212067BBEB00D87672 /* InsuranceCompanyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D637E202067BBEB00D87672 /* InsuranceCompanyCollectionViewCell.swift */; };
 		7D6D5F3220626F660038F4E0 /* GeneralMethod .swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6D5F3120626F660038F4E0 /* GeneralMethod .swift */; };
@@ -117,6 +120,9 @@
 		7D51DC4B2060149E00D5E107 /* Vehicle.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Vehicle.storyboard; sourceTree = "<group>"; };
 		7D59A8B7207101AD0010DD0E /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		7D59A8BA207101D00010DD0E /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
+		7D59A8BE2071190B0010DD0E /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		7D59A8C020711B7C0010DD0E /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		7D59A8C32071232C0010DD0E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7D637E1E2067BB9100D87672 /* InsuranceCompanyCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceCompanyCollectionViewController.swift; sourceTree = "<group>"; };
 		7D637E202067BBEB00D87672 /* InsuranceCompanyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceCompanyCollectionViewCell.swift; sourceTree = "<group>"; };
 		7D6D5F3120626F660038F4E0 /* GeneralMethod .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GeneralMethod .swift"; sourceTree = "<group>"; };
@@ -191,6 +197,7 @@
 		407337302058332900299A0F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7D59A8C22071230D0010DD0E /* user */,
 				40E79F4F206A684900DBDCA6 /* Insurance */,
 				7DE7EB33206175F40014D569 /* SearchResult */,
 				7DE7EB32206175D40014D569 /* ShowRoom */,
@@ -223,6 +230,8 @@
 		40B039CD2059765A00AAD62A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				7D59A8BD207118C70010DD0E /* RegisterVC */,
+				7D59A8BC207118B40010DD0E /* LoginVC */,
 				40E79F58206A685D00DBDCA6 /* ShowRoom */,
 				7D637E1D2067BAC900D87672 /* InsuranceCompany  */,
 				40F39B8320640516000FE5A2 /* Vehicles */,
@@ -384,6 +393,30 @@
 				7D59A8BA207101D00010DD0E /* Register.storyboard */,
 			);
 			path = Register;
+			sourceTree = "<group>";
+		};
+		7D59A8BC207118B40010DD0E /* LoginVC */ = {
+			isa = PBXGroup;
+			children = (
+				7D59A8C020711B7C0010DD0E /* LoginVC.swift */,
+			);
+			path = LoginVC;
+			sourceTree = "<group>";
+		};
+		7D59A8BD207118C70010DD0E /* RegisterVC */ = {
+			isa = PBXGroup;
+			children = (
+				7D59A8BE2071190B0010DD0E /* RegisterVC.swift */,
+			);
+			path = RegisterVC;
+			sourceTree = "<group>";
+		};
+		7D59A8C22071230D0010DD0E /* user */ = {
+			isa = PBXGroup;
+			children = (
+				7D59A8C32071232C0010DD0E /* User.swift */,
+			);
+			path = user;
 			sourceTree = "<group>";
 		};
 		7D637E1D2067BAC900D87672 /* InsuranceCompany  */ = {
@@ -626,6 +659,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D59A8C42071232C0010DD0E /* User.swift in Sources */,
 				4028CD93206D034A0067294F /* VehicleDetailsViewController.swift in Sources */,
 				4028CD95206D09E70067294F /* VehicleDetailsTableViewCell.swift in Sources */,
 				40E79F5B206A685D00DBDCA6 /* ShowRoomCollectionViewCell.swift in Sources */,
@@ -645,6 +679,7 @@
 				7D20679E206BA0A40048452A /* ShowRoomItem.swift in Sources */,
 				40F39B8720640D65000FE5A2 /* SideMenuTableViewCell.swift in Sources */,
 				4028CD8F206CFFDC0067294F /* VehicleItemDetails.swift in Sources */,
+				7D59A8BF2071190B0010DD0E /* RegisterVC.swift in Sources */,
 				7D637E212067BBEB00D87672 /* InsuranceCompanyCollectionViewCell.swift in Sources */,
 				40FB000C2061373A0095E4A9 /* Enumerations.swift in Sources */,
 				4028CD8D206CF7FB0067294F /* VehicleBid.swift in Sources */,
@@ -663,6 +698,7 @@
 				40E79F55206A684900DBDCA6 /* Country.swift in Sources */,
 				40FB000A206135F50095E4A9 /* Protocols.swift in Sources */,
 				7DE7EB37206176580014D569 /* ShowRoom.swift in Sources */,
+				7D59A8C120711B7C0010DD0E /* LoginVC.swift in Sources */,
 				40E79F5C206A685D00DBDCA6 /* ShowRoomCollectionViewController.swift in Sources */,
 				40B24A91205E8BF700FE00BF /* searchTableViewController.swift in Sources */,
 				4028CD87206CF7200067294F /* VehiclePrice.swift in Sources */,
