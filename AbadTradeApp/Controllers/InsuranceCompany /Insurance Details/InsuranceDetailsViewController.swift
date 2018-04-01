@@ -14,9 +14,6 @@ class InsuranceDetailsViewController: UIViewController{
     
     var insuranceDetails = [Insurance]()
     
-    
-    
-    
     @IBOutlet weak var insuranceDetailsImage: UIImageView!
     
     @IBOutlet weak var insuranceName: UILabel!
@@ -28,6 +25,9 @@ class InsuranceDetailsViewController: UIViewController{
     @IBOutlet weak var insuranceAbout: UILabel!
     
     @IBAction func sendRequestButton(_ sender: Any) {
+        
+        
+        
     }
     
     
