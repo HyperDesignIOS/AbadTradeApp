@@ -11,7 +11,7 @@ import AlamofireImage
 
 class VehiclesCollectionViewController: UICollectionViewController ,UICollectionViewDelegateFlowLayout{
     
-    @IBAction func sideMenuButtob(_ sender: Any) {
+    @IBAction func sideMenuButton(_ sender: Any) {
         
         performSegue(withIdentifier:"vehicleSideMenu", sender: self)
     }
@@ -81,6 +81,7 @@ class VehiclesCollectionViewController: UICollectionViewController ,UICollection
             
             destinationViewController.brands = brands
             destinationViewController.selectedCategory = selectedCategory
+            destinationViewController.collectionView?.reloadData()
             self.show(destinationViewController, sender: self)
         }
     }
