@@ -152,6 +152,29 @@ class apiRequests {
             didDataReady([])
         })
     }
+    
+    func getSearchResultsWithModelId(modelId : String , didDataReady : @escaping ([SearchResultItem]) -> ()) -> () {
+        
+        sm.connectForApiWith(url: SearchWithModelURL, mType: HTTPServerMethod.post, params: ["model" : modelId], complation: { (json) in
+            
+            self.searchResultItems.removeAll()
+            if let obj = json {
+                print (obj)
+                let dictionaryOfJson = JSON(json!).dictionaryObject
+                let items = dictionaryOfJson!["item"] as! [[String : Any]]
+                for item in items {
+                    let item = SearchResultItem.init(fromDictionary: item)
+                    self.searchResultItems.append(item)
+                    print(item.id)
+                }
+            }
+            didDataReady(self.searchResultItems)
+        }, errorHandler: { (error, msg) in
+            print("\(String(describing: msg))")
+            didDataReady([])
+        })
+    }
+    
     func getShowRooms(didDataReady : @escaping([ShowRoom])->())->(){
         
         sm.connectForApiWith(url: ShowRoomsURL , mType: HTTPServerMethod.get, params: [:], complation: { (json) in

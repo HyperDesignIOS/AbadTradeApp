@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40285FCC207109C200E575DD /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40285FCB207109C200E575DD /* TableViewCell.swift */; };
+		40285FCE20710A4C00E575DD /* ModelsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40285FCD20710A4C00E575DD /* ModelsTableViewController.swift */; };
 		4028CD87206CF7200067294F /* VehiclePrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4028CD86206CF7200067294F /* VehiclePrice.swift */; };
 		4028CD89206CF78C0067294F /* VehicleOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4028CD88206CF78C0067294F /* VehicleOptions.swift */; };
 		4028CD8B206CF7C00067294F /* VehicleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4028CD8A206CF7C00067294F /* VehicleImage.swift */; };
@@ -67,6 +69,8 @@
 
 /* Begin PBXFileReference section */
 		11BA69E58BAC6CD88A2058D2 /* Pods-AbadTradeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AbadTradeApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AbadTradeApp/Pods-AbadTradeApp.debug.xcconfig"; sourceTree = "<group>"; };
+		40285FCB207109C200E575DD /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		40285FCD20710A4C00E575DD /* ModelsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsTableViewController.swift; sourceTree = "<group>"; };
 		4028CD86206CF7200067294F /* VehiclePrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclePrice.swift; sourceTree = "<group>"; };
 		4028CD88206CF78C0067294F /* VehicleOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleOptions.swift; sourceTree = "<group>"; };
 		4028CD8A206CF7C00067294F /* VehicleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleImage.swift; sourceTree = "<group>"; };
@@ -295,6 +299,8 @@
 				40F39B88206411DC000FE5A2 /* CollectionViewCell.swift */,
 				40C9E556206917E900516157 /* BrandCollectionViewController.swift */,
 				406228DC206B9AD50020BE0D /* ModelsCollectionViewController.swift */,
+				40285FCB207109C200E575DD /* TableViewCell.swift */,
+				40285FCD20710A4C00E575DD /* ModelsTableViewController.swift */,
 			);
 			path = Vehicles;
 			sourceTree = "<group>";
@@ -629,6 +635,7 @@
 				40FB0011206168B20095E4A9 /* VehicleResultTableViewCell.swift in Sources */,
 				40F39B82206402F3000FE5A2 /* SideMenuTableViewController.swift in Sources */,
 				40C9E557206917E900516157 /* BrandCollectionViewController.swift in Sources */,
+				40285FCC207109C200E575DD /* TableViewCell.swift in Sources */,
 				40E79F55206A684900DBDCA6 /* Country.swift in Sources */,
 				40FB000A206135F50095E4A9 /* Protocols.swift in Sources */,
 				7DE7EB37206176580014D569 /* ShowRoom.swift in Sources */,
@@ -642,6 +649,7 @@
 				7D51DC49205FDF1400D5E107 /* Status.swift in Sources */,
 				40F39B8520640559000FE5A2 /* VehiclesCollectionViewController.swift in Sources */,
 				40FB000F206168970095E4A9 /* VehicleResultTableViewController.swift in Sources */,
+				40285FCE20710A4C00E575DD /* ModelsTableViewController.swift in Sources */,
 				40FB26D52062C51E00FE2F31 /* AppConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

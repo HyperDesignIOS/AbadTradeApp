@@ -39,12 +39,13 @@ class BrandCollectionViewController :  UICollectionViewController {
         apiRequests.apisInstance.getModels(brandId: selectedBrand.id) { (models) in
             
             let storyboard = UIStoryboard.init(name: "Vehicle", bundle: nil)
-            let destinationViewController = storyboard.instantiateViewController(withIdentifier: "ModelsCollectionController") as! ModelsCollectionViewController
+            let destinationViewController = storyboard.instantiateViewController(withIdentifier: "ModelsTableController") as! ModelsTableViewController
             
             destinationViewController.models = models
-            destinationViewController.selectedBrandImageName = selectedBrand.brandImage
+//            destinationViewController.selectedBrandImageName = selectedBrand.brandImage
             destinationViewController.selectedCategory = self.selectedCategory
             destinationViewController.selectedBrand = selectedBrand
+            destinationViewController.tableView.reloadData()
             self.show(destinationViewController, sender: self)
         }
     }
