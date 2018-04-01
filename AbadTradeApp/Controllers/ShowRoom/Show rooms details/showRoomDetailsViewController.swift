@@ -58,7 +58,14 @@ class showRoomDetailsViewController: UIViewController , UITableViewDelegate , UI
     }
     
     
-//    let currentCellImageUrl = "\(ItemImageURL)\(searchResults[indexPath.row].image!)"
+    @IBAction func sendMessageButton(_ sender: Any) {
+        
+        let storyboard = UIStoryboard.init(name: "ShowRooms", bundle: nil)
+        let destinationViewController = storyboard.instantiateViewController(withIdentifier: "SendMessageVC") as! SendMessageViewController
+        destinationViewController.receiverName = showRoomsDetails[0].nameEn
+        show(destinationViewController, sender: self)
+    }
+    //    let currentCellImageUrl = "\(ItemImageURL)\(searchResults[indexPath.row].image!)"
 //    cell.vehicleBrand.text = searchResults[indexPath.row].brand.nameEn
 //    cell.vehicleModel.text = searchResults[indexPath.row].model.nameEn
 //    cell.vehicleShowRoom.text = searchResults[indexPath.row].dealer?.nameEn

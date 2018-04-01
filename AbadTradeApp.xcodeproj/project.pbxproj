@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		40285FCC207109C200E575DD /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40285FCB207109C200E575DD /* TableViewCell.swift */; };
 		40285FCE20710A4C00E575DD /* ModelsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40285FCD20710A4C00E575DD /* ModelsTableViewController.swift */; };
+		40285FD020713FA500E575DD /* SendMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40285FCF20713FA500E575DD /* SendMessageViewController.swift */; };
 		4028CD87206CF7200067294F /* VehiclePrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4028CD86206CF7200067294F /* VehiclePrice.swift */; };
 		4028CD89206CF78C0067294F /* VehicleOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4028CD88206CF78C0067294F /* VehicleOptions.swift */; };
 		4028CD8B206CF7C00067294F /* VehicleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4028CD8A206CF7C00067294F /* VehicleImage.swift */; };
@@ -76,6 +77,7 @@
 		11BA69E58BAC6CD88A2058D2 /* Pods-AbadTradeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AbadTradeApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AbadTradeApp/Pods-AbadTradeApp.debug.xcconfig"; sourceTree = "<group>"; };
 		40285FCB207109C200E575DD /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		40285FCD20710A4C00E575DD /* ModelsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsTableViewController.swift; sourceTree = "<group>"; };
+		40285FCF20713FA500E575DD /* SendMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessageViewController.swift; sourceTree = "<group>"; };
 		4028CD86206CF7200067294F /* VehiclePrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclePrice.swift; sourceTree = "<group>"; };
 		4028CD88206CF78C0067294F /* VehicleOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleOptions.swift; sourceTree = "<group>"; };
 		4028CD8A206CF7C00067294F /* VehicleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleImage.swift; sourceTree = "<group>"; };
@@ -351,6 +353,7 @@
 			isa = PBXGroup;
 			children = (
 				7D2067A2206BAF890048452A /* showRoomDetailsViewController.swift */,
+				40285FCF20713FA500E575DD /* SendMessageViewController.swift */,
 			);
 			path = "Show rooms details";
 			sourceTree = "<group>";
@@ -708,6 +711,7 @@
 				4028CD91206D00170067294F /* VehicleModYear.swift in Sources */,
 				7D51DC49205FDF1400D5E107 /* Status.swift in Sources */,
 				40F39B8520640559000FE5A2 /* VehiclesCollectionViewController.swift in Sources */,
+				40285FD020713FA500E575DD /* SendMessageViewController.swift in Sources */,
 				40FB000F206168970095E4A9 /* VehicleResultTableViewController.swift in Sources */,
 				40285FCE20710A4C00E575DD /* ModelsTableViewController.swift in Sources */,
 				40FB26D52062C51E00FE2F31 /* AppConstants.swift in Sources */,
