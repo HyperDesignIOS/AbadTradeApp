@@ -99,6 +99,9 @@
                                                 <integer key="value" value="15"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="loginButton:" destination="zIa-Av-j90" eventType="touchUpInside" id="bZv-IP-ohY"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -138,6 +141,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="email" destination="kNt-Uf-SJA" id="35g-c1-Ago"/>
+                        <outlet property="password" destination="VvX-j5-yfq" id="4cw-sR-IQ2"/>
                         <segue destination="Wb6-9Y-5Yz" kind="show" identifier="loginSideMenu" id="xkI-zP-Rml"/>
                     </connections>
                 </viewController>

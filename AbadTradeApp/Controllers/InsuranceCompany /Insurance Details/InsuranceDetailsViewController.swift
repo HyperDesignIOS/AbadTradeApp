@@ -26,8 +26,8 @@ class InsuranceDetailsViewController: UIViewController{
     
     @IBAction func sendRequestButton(_ sender: Any) {
         
-        let storyboard = UIStoryboard.init(name: "ShowRooms", bundle: nil)
-        let destinationViewController = storyboard.instantiateViewController(withIdentifier: "SendMessageVC") as! SendMessageViewController
+        let storyboard = UIStoryboard.init(name: "Insurance", bundle: nil)
+        let destinationViewController = storyboard.instantiateViewController(withIdentifier: "insuranceMessageVC") as! insuranceSendMessagVC
         destinationViewController.receiverName = insuranceDetails[0].nameEn
         show(destinationViewController, sender: self)
         

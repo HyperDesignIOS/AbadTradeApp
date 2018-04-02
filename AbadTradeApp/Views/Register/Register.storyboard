@@ -34,7 +34,7 @@
                                                 <rect key="frame" x="73" y="10" width="199" height="40"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -67,7 +67,7 @@
                                                 <rect key="frame" x="73" y="10" width="199" height="40"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -116,7 +116,7 @@
                                                 <rect key="frame" x="73" y="10" width="199" height="40"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" textContentType="email"/>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -149,7 +149,7 @@
                                                 <rect key="frame" x="73" y="10" width="199" height="40"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" textContentType="name"/>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -212,10 +212,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="mailText" destination="aZJ-sD-gLG" id="HlO-2d-euS"/>
-                        <outlet property="nameText" destination="Zly-k1-ZOQ" id="FJf-Sm-REE"/>
-                        <outlet property="passwordConfirmText" destination="Ydx-XT-cjp" id="Kq2-m4-aSu"/>
-                        <outlet property="passwordText" destination="hSy-Jq-TJC" id="exN-X4-S7q"/>
+                        <outlet property="mail" destination="aZJ-sD-gLG" id="sK3-Ie-uLb"/>
+                        <outlet property="name" destination="Zly-k1-ZOQ" id="NBl-pp-02L"/>
+                        <outlet property="password" destination="hSy-Jq-TJC" id="m6T-1j-MbX"/>
+                        <outlet property="passwordConfirm" destination="Ydx-XT-cjp" id="nfl-yT-UW8"/>
                         <segue destination="crh-Gd-1Jy" kind="show" id="vPZ-39-awR"/>
                     </connections>
                 </viewController>

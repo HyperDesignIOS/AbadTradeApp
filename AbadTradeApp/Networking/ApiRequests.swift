@@ -30,6 +30,8 @@ class apiRequests {
     var vehicleBids : VehicleBid!
     var vehicleItemDetails : VehicleItemDetails!
     var user :User!
+    var done :String!
+    var msg : String!
 
     //var insuranceCompnies = []()
     let sm = serverManager()
@@ -312,7 +314,7 @@ class apiRequests {
     }
     
     
-    func register(userName:String,userMail:String,userPassword:String,didDataReady : @escaping(Any)->())->(){
+    func register(userName:String,userMail:String,userPassword:String,didDataReady : @escaping(Any,String,String)->())->(){
         
         sm.connectForApiWith(url: RegisterURL  , mType: HTTPServerMethod.post, params: ["username":userName,"email":userMail,"password":userPassword], complation: { (json) in
            
@@ -320,27 +322,117 @@ class apiRequests {
                 print (obj)
                 
                 var dictionaryOfJson = JSON(json!).dictionaryObject
-                let msg = dictionaryOfJson!["msg"] as! String
-                if msg == "Sucess Register"{
-                print(dictionaryOfJson)
-                let items = dictionaryOfJson!["user"] as! [String : Any]
-                
+                let done = dictionaryOfJson!["done"] as! String
+                if done == "1"{
+                    print(dictionaryOfJson)
+                    let items = dictionaryOfJson!["user"] as! [String : Any]
                     let item = User.init(fromDictionary: items)
                     self.user = item
-                
-            }
-                else if msg == "E-Mail token"
+                    let msg = dictionaryOfJson!["msg"] as! String
+                    self.msg = msg
+                    self.done = done
+                    
+                }
+                else if done == "0"
                 {
-                  print("E-Mail token")
+                    let msg = dictionaryOfJson!["msg"] as! String
+                    self.msg = msg
+                    print("login failed check ")
+                    self.user = nil
+                    self.done = done
+                    
                 }
             }
-            didDataReady(self.user)
+           didDataReady(self.user,self.msg,self.done)
         }, errorHandler: { (error, msg) in
             print("\(String(describing: msg))")
-            didDataReady(msg)
+            didDataReady(msg,msg as! String,self.done)
         })
     }
     
+    
+    func login(userMail:String,userPassword:String,didDataReady : @escaping(Any,String,String)->())->(){
+        
+        sm.connectForApiWith(url: LoginURL  , mType: HTTPServerMethod.post, params: ["email":userMail,"password":userPassword], complation: { (json) in
+            
+            if let obj = json {
+                print (obj)
+                
+                var dictionaryOfJson = JSON(json!).dictionaryObject
+                
+                let done = dictionaryOfJson!["done"] as! String
+                
+                if done == "1"{
+                    print(dictionaryOfJson)
+                    let items = dictionaryOfJson!["user"] as! [String : Any]
+                    let item = User.init(fromDictionary: items)
+                    self.user = item
+                    let msg = dictionaryOfJson!["msg"] as! String
+                    self.msg = msg
+                    self.done = done
+                    
+                }
+                else if done == "0"
+                {
+                    let msg = dictionaryOfJson!["msg"] as! String
+                    self.msg = msg
+                    print("login failed check ")
+                    self.user = nil
+                    self.done = done
+                    
+                }
+            }
+            didDataReady(self.user,self.msg,self.done)
+        }, errorHandler: { (error, msg) in
+            print("\(String(describing: msg))")
+            didDataReady(msg,msg as! String,self.done )
+        })
+    }
+    
+    
+    func sendMessageToShowRoom(message : String, userId:String ,dealerId:String,didDataReady : @escaping(String,String)->())->(){
+        
+        sm.connectForApiWith(url: showRoomMsg  , mType: HTTPServerMethod.post, params: ["message":message,"user_id":userId,"dealer_id":dealerId], complation: { (json) in
+          
+            if let obj = json {
+                print (obj)
+                let dictionaryOfJson = JSON(json!).dictionaryObject
+                print(dictionaryOfJson)
+                let items = dictionaryOfJson!["msg"] as! String
+                let done = dictionaryOfJson!["done"] as! String
+                
+              self.msg = items
+                self.done = done
+                
+            }
+            didDataReady(self.msg,self.done)
+        }, errorHandler: { (error, msg) in
+            print("\(String(describing: msg))")
+            didDataReady(self.msg,self.done)
+        })
+    }
+    
+    func sendMessageToInsurance(phone:String, message : String, userId:String ,insuranceId:String,didDataReady : @escaping(String,String)->())->(){
+        
+        sm.connectForApiWith(url: insuranceMsg  , mType: HTTPServerMethod.post, params: ["phone":phone,"message":message,"user_id":userId,"insurance_id":insuranceId], complation: { (json) in
+            
+            if let obj = json {
+                print (obj)
+                let dictionaryOfJson = JSON(json!).dictionaryObject
+                print(dictionaryOfJson)
+                let items = dictionaryOfJson!["msg"] as! String
+                let done = dictionaryOfJson!["done"] as! String
+                
+                self.msg = items
+                self.done = done
+                
+            }
+            didDataReady(self.msg,self.done)
+        }, errorHandler: { (error, msg) in
+            print("\(String(describing: msg))")
+            didDataReady(self.msg,self.done)
+        })
+    }
     
     
     

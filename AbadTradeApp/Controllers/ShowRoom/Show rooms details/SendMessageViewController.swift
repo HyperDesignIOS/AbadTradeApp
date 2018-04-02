@@ -11,30 +11,48 @@ import UIKit
 class SendMessageViewController: UIViewController {
     
     var receiverName : String!
+    var msg : String!
+    var done : String!
+    var generaMetod = GeneralMethod()
     
     @IBOutlet weak var receiverNameLabel: UILabel!
-    @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var sentMessageTextView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        receiverNameLabel.text = receiverName
-        // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+   
     
     
     @IBAction func sendButton(_ sender: Any) {
-        var message = sentMessageTextView.text
+        let  message = sentMessageTextView.text
         if message != nil && message != ""{
+            apiRequests.apisInstance.sendMessageToShowRoom(message: message!, userId:"1" , dealerId: "4", didDataReady: { (msg,done) in
+                self.msg = msg
+                self.done = done
+                if self.done == "1"
+                {
+                    self.msg = msg
+                    let storyboard = UIStoryboard(name: "ShowRooms", bundle: nil)
+                    let controller = storyboard.instantiateViewController(withIdentifier: "showRoomVC")
+                    //self.present(controller, animated: true, completion: nil)
+                    self.show(controller, sender: self)
+                     self.generaMetod.showAlert(title: "", message:self.msg, vc: self, closure: nil)
+                }
+                else if self.done == "0"
+                {
+                    self.msg = msg
+                     self.generaMetod.showAlert(title: "", message:self.msg, vc: self, closure: nil)
+                }
+            })
             
         }
-        
+        else
+        {
+            self.generaMetod.showAlert(title: "", message:"enter your message", vc: self, closure: nil)
+        }
     }
 
     /*
