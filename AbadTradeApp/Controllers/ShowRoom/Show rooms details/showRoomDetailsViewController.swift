@@ -14,6 +14,8 @@ class showRoomDetailsViewController: UIViewController , UITableViewDelegate , UI
     var showRoomItems = [ShowRoomItem]()
 
     
+    @IBOutlet weak var loginToSendButton: UIButton!
+    @IBOutlet weak var sendMessageButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var showRoomImage: UIImageView!
     @IBOutlet weak var showRoomName: UILabel!
@@ -24,7 +26,14 @@ class showRoomDetailsViewController: UIViewController , UITableViewDelegate , UI
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    
+        if UserDefaults.standard.isLoggedIn(){
+            sendMessageButton.isHidden = false
+            loginToSendButton.isHidden = true
+        }else{
+            loginToSendButton.isHidden = false
+            sendMessageButton.isHidden = true
+        }
+        
         tableView.delegate = self
         tableView.dataSource = self
         showRoomImage.af_setImage(withURL: URL(string: "\(ShowRoomImageURL)\(showRoomsDetails[0].logo!)")!)

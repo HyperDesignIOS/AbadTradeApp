@@ -232,7 +232,7 @@
                                         <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GH8-ST-4EB">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GH8-ST-4EB">
                                         <rect key="frame" x="246" y="74" width="119" height="30"/>
                                         <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
@@ -241,6 +241,17 @@
                                         </state>
                                         <connections>
                                             <action selector="sendMessageButton:" destination="I6y-Ms-LBJ" eventType="touchUpInside" id="AjM-uH-lt7"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ss5-ja-CA7">
+                                        <rect key="frame" x="200" y="109" width="165" height="30"/>
+                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <state key="normal" title="Login to send message">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="sendMessageButton:" destination="I6y-Ms-LBJ" eventType="touchUpInside" id="iMc-zE-Kid"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -255,13 +266,16 @@
                                     <constraint firstAttribute="trailing" secondItem="GH8-ST-4EB" secondAttribute="trailing" constant="10" id="Jnn-bp-Lrn"/>
                                     <constraint firstItem="cA2-9P-swe" firstAttribute="top" secondItem="7wK-73-Yt0" secondAttribute="bottom" constant="10" id="PYr-DC-bPA"/>
                                     <constraint firstItem="zpj-eT-Lhf" firstAttribute="top" secondItem="GH8-ST-4EB" secondAttribute="bottom" constant="40" id="WKM-Qn-78f"/>
+                                    <constraint firstItem="zpj-eT-Lhf" firstAttribute="top" secondItem="ss5-ja-CA7" secondAttribute="bottom" constant="5" id="aXV-B4-AiZ"/>
                                     <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="8FJ-YO-G6p" secondAttribute="trailing" constant="327" id="aij-L7-fnd"/>
                                     <constraint firstItem="7wK-73-Yt0" firstAttribute="top" secondItem="Msm-Yk-g0n" secondAttribute="top" constant="20" id="ecL-OX-0fa"/>
                                     <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="7wK-73-Yt0" secondAttribute="trailing" constant="333" id="g2B-eA-4Fs"/>
                                     <constraint firstAttribute="trailing" secondItem="zpj-eT-Lhf" secondAttribute="trailing" constant="10" id="iPc-S2-KBN"/>
+                                    <constraint firstItem="ss5-ja-CA7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8FJ-YO-G6p" secondAttribute="trailing" constant="10" id="iT4-ai-Qai"/>
                                     <constraint firstItem="cA2-9P-swe" firstAttribute="leading" secondItem="Msm-Yk-g0n" secondAttribute="leading" constant="10" id="jyK-Y8-PcD"/>
                                     <constraint firstItem="GH8-ST-4EB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5DO-BR-Deh" secondAttribute="trailing" constant="150" id="p9P-G0-MIM"/>
                                     <constraint firstItem="7wK-73-Yt0" firstAttribute="leading" secondItem="Msm-Yk-g0n" secondAttribute="leading" constant="10" id="rjo-aJ-cN3"/>
+                                    <constraint firstAttribute="trailing" secondItem="ss5-ja-CA7" secondAttribute="trailing" constant="10" id="sWF-hg-8yn"/>
                                     <constraint firstItem="zpj-eT-Lhf" firstAttribute="top" secondItem="8FJ-YO-G6p" secondAttribute="bottom" constant="10" id="uyt-Uq-r1o"/>
                                     <constraint firstItem="8FJ-YO-G6p" firstAttribute="top" secondItem="5DO-BR-Deh" secondAttribute="bottom" constant="10" id="vRs-Ip-Nwb"/>
                                     <constraint firstItem="47A-1D-i37" firstAttribute="top" secondItem="zpj-eT-Lhf" secondAttribute="bottom" constant="10" id="xDZ-By-9qb"/>
@@ -282,6 +296,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Showroom details" id="7a0-AX-ZT2"/>
                     <connections>
+                        <outlet property="loginToSendButton" destination="ss5-ja-CA7" id="HvM-Qe-z3j"/>
+                        <outlet property="sendMessageButton" destination="GH8-ST-4EB" id="BWn-ra-vCh"/>
                         <outlet property="showRoomAddess" destination="cA2-9P-swe" id="kAP-o7-2zh"/>
                         <outlet property="showRoomImage" destination="wf5-fr-ZUa" id="Fd1-yB-sYl"/>
                         <outlet property="showRoomName" destination="7wK-73-Yt0" id="F39-B2-oBF"/>
