@@ -64,11 +64,12 @@ class VehicleResultTableViewController: UITableViewController{
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        var selectedVehicleResult = searchResults[indexPath.row]
+        let selectedVehicleResult = searchResults[indexPath.row]
         let storyboard = UIStoryboard.init(name: "VehicleResult", bundle: nil)
         let destinationViewController = storyboard.instantiateViewController(withIdentifier: "SelectedVehicleData") as! VehicleDetailsViewController
         print(selectedVehicleResult.id)
         destinationViewController.itemId = selectedVehicleResult.id
+        destinationViewController.priceType = selectedVehicleResult.priceType
         self.show(destinationViewController, sender: self)
     }
 

@@ -19,9 +19,12 @@ class VehicleDetailsViewController: UIViewController,UITableViewDelegate,UITable
     var vehicleBids : VehicleBid!
     var vehicleItemDetails : VehicleItemDetails!
     var counter = Int()
+    var priceType : String!
     
     @IBOutlet weak var vehicleSlider: ImageSlideshow!
     
+    @IBOutlet weak var bidsButton: UIButton!
+    @IBOutlet weak var buyButton: UIButton!
     @IBOutlet weak var tabelView: UITableView!
     
     var itemId : Int!
@@ -32,6 +35,28 @@ class VehicleDetailsViewController: UIViewController,UITableViewDelegate,UITable
         tabelView.delegate = self
         tabelView.dataSource = self
         getItems()
+        if priceType == "bids"{
+            if UserDefaults.standard.isLoggedIn(){
+                bidsButton.isHidden = false
+                buyButton.isHidden = true
+            }
+            else{
+                bidsButton.setTitle("Login to join bid", for: .normal)
+                bidsButton.isHidden = false
+                buyButton.isHidden = true
+            }
+        }
+        else{
+            if UserDefaults.standard.isLoggedIn(){
+                bidsButton.isHidden = true
+                buyButton.isHidden = false
+            }
+            else{
+                bidsButton.setTitle("Login to buy", for: .normal)
+                bidsButton.isHidden = true
+                buyButton.isHidden = false
+            }
+        }
         
         // Do any additional setup after loading the view.
     }
