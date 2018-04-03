@@ -8,7 +8,7 @@
 import UIKit
 import AlamofireImage
 
-class showRoomDetailsViewController: UIViewController , UITableViewDelegate , UITableViewDataSource {
+class ShowRoomDetailsViewController: UIViewController , UITableViewDelegate , UITableViewDataSource {
     
     var showRoomsDetails = [showRoomDetail]()
     var showRoomItems = [ShowRoomItem]()
@@ -72,7 +72,9 @@ class showRoomDetailsViewController: UIViewController , UITableViewDelegate , UI
         let storyboard = UIStoryboard.init(name: "ShowRooms", bundle: nil)
         let destinationViewController = storyboard.instantiateViewController(withIdentifier: "SendMessageVC") as! SendMessageViewController
         destinationViewController.receiverName = showRoomsDetails[0].nameEn
+        destinationViewController.isShowRoom = true
         show(destinationViewController, sender: self)
+        
     }
     @IBAction func loginToSendButton(_ sender: UIButton) {
         

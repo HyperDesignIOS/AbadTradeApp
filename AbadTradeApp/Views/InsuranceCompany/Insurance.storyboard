@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TYA-mc-CDf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TYA-mc-CDf">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -157,8 +157,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lnc-Xm-IoH">
-                                        <rect key="frame" x="10" y="371" width="357" height="32"/>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lnc-Xm-IoH">
+                                        <rect key="frame" x="10" y="371" width="355" height="32"/>
                                         <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                         <state key="normal" title="Send message">
@@ -166,6 +166,17 @@
                                         </state>
                                         <connections>
                                             <action selector="sendRequestButton:" destination="tEr-gY-iwN" eventType="touchUpInside" id="yC1-5V-8IM"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HCG-B8-haD">
+                                        <rect key="frame" x="10" y="329" width="355" height="32"/>
+                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                        <state key="normal" title="Login to send message">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="loginToSendButton:" destination="tEr-gY-iwN" eventType="touchUpInside" id="KWY-C6-R51"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -178,11 +189,14 @@
                                     <constraint firstItem="3ad-Tb-baJ" firstAttribute="top" secondItem="Gij-Es-BP7" secondAttribute="bottom" constant="20" id="BWx-fW-xog"/>
                                     <constraint firstItem="lnc-Xm-IoH" firstAttribute="leading" secondItem="of2-G5-k18" secondAttribute="leading" constant="10" id="D3j-U0-1J1"/>
                                     <constraint firstItem="3ad-Tb-baJ" firstAttribute="leading" secondItem="of2-G5-k18" secondAttribute="leading" constant="10" id="EuM-4f-Buv"/>
-                                    <constraint firstAttribute="trailing" secondItem="lnc-Xm-IoH" secondAttribute="trailing" constant="8" id="Gg6-Cz-GwH"/>
+                                    <constraint firstAttribute="trailing" secondItem="lnc-Xm-IoH" secondAttribute="trailing" constant="10" id="Gg6-Cz-GwH"/>
+                                    <constraint firstAttribute="trailing" secondItem="HCG-B8-haD" secondAttribute="trailing" constant="10" id="NOS-Sn-bNG"/>
+                                    <constraint firstItem="HCG-B8-haD" firstAttribute="leading" secondItem="of2-G5-k18" secondAttribute="leading" constant="10" id="PBZ-0F-mpq"/>
                                     <constraint firstItem="dk6-cB-Dhr" firstAttribute="leading" secondItem="of2-G5-k18" secondAttribute="leading" constant="10" id="Qv3-SG-zli"/>
                                     <constraint firstItem="bpj-Xf-Iq3" firstAttribute="leading" secondItem="of2-G5-k18" secondAttribute="leading" constant="10" id="RqH-zL-8mo"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ov1-L2-Ky2" secondAttribute="trailing" constant="10" id="Vd3-as-IxP"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3ad-Tb-baJ" secondAttribute="trailing" constant="10" id="YCd-HN-TaW"/>
+                                    <constraint firstItem="lnc-Xm-IoH" firstAttribute="top" secondItem="HCG-B8-haD" secondAttribute="bottom" constant="10" id="aLk-rc-uWt"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Gij-Es-BP7" secondAttribute="trailing" constant="10" id="bfn-Yz-b9t"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dk6-cB-Dhr" secondAttribute="trailing" constant="10" id="dBY-4b-q5n"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bpj-Xf-Iq3" secondAttribute="trailing" constant="10" id="dLL-nO-98x"/>
@@ -220,6 +234,8 @@
                         <outlet property="insuranceName" destination="Gij-Es-BP7" id="zkO-e2-ERo"/>
                         <outlet property="insuranceRegion" destination="uGO-Ll-N4Q" id="Fgv-g3-zwE"/>
                         <outlet property="insuranceWorkTime" destination="bpj-Xf-Iq3" id="3an-6b-Lj6"/>
+                        <outlet property="loginToSendButton" destination="HCG-B8-haD" id="Xzl-pG-g9d"/>
+                        <outlet property="sendMessageButton" destination="lnc-Xm-IoH" id="hLf-rc-saK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dg5-dW-in7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -244,110 +260,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tud-nU-oOe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-394" y="-81"/>
-        </scene>
-        <!--Send message-->
-        <scene sceneID="dbs-yY-qiL">
-            <objects>
-                <viewController storyboardIdentifier="insuranceMessageVC" id="Bo1-lc-yAw" customClass="insuranceSendMessagVC" customModule="AbadTradeApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Na5-6Z-M1f">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4fz-pK-xUO">
-                                <rect key="frame" x="0.0" y="40" width="375" height="41"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GIR-7q-n8M">
-                                        <rect key="frame" x="10" y="10" width="27.5" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LabelRRRR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jgy-aZ-tUt">
-                                        <rect key="frame" x="47.5" y="10" width="84.5" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="Jgy-aZ-tUt" secondAttribute="bottom" constant="10" id="4rQ-sw-6hw"/>
-                                    <constraint firstAttribute="bottom" secondItem="GIR-7q-n8M" secondAttribute="bottom" constant="10" id="BPE-oF-VBc"/>
-                                    <constraint firstItem="Jgy-aZ-tUt" firstAttribute="leading" secondItem="GIR-7q-n8M" secondAttribute="trailing" constant="10" id="Ha0-hk-1XD"/>
-                                    <constraint firstItem="GIR-7q-n8M" firstAttribute="leading" secondItem="4fz-pK-xUO" secondAttribute="leading" constant="10" id="IXo-2N-kgs"/>
-                                    <constraint firstItem="Jgy-aZ-tUt" firstAttribute="top" secondItem="4fz-pK-xUO" secondAttribute="top" constant="10" id="lD0-2V-KnQ"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Jgy-aZ-tUt" secondAttribute="trailing" constant="10" id="sJx-LB-UBr"/>
-                                    <constraint firstItem="GIR-7q-n8M" firstAttribute="top" secondItem="4fz-pK-xUO" secondAttribute="top" constant="10" id="zdD-Qc-Mvz"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i2g-RP-nrJ">
-                                <rect key="frame" x="0.0" y="91" width="375" height="41"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aa2-vS-XbX">
-                                        <rect key="frame" x="10" y="10" width="78" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="aa2-vS-XbX" secondAttribute="trailing" constant="10" id="4qR-rE-R6U"/>
-                                    <constraint firstItem="aa2-vS-XbX" firstAttribute="top" secondItem="i2g-RP-nrJ" secondAttribute="top" constant="10" id="OuX-ac-K9J"/>
-                                    <constraint firstItem="aa2-vS-XbX" firstAttribute="leading" secondItem="i2g-RP-nrJ" secondAttribute="leading" constant="10" id="l7o-P5-GCh"/>
-                                    <constraint firstAttribute="bottom" secondItem="aa2-vS-XbX" secondAttribute="bottom" constant="10" id="vRP-hV-Gse"/>
-                                </constraints>
-                            </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7SA-5q-69O">
-                                <rect key="frame" x="10" y="142" width="355" height="361"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                        <integer key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dcg-Q7-PEX">
-                                <rect key="frame" x="10" y="533" width="355" height="34"/>
-                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                <state key="normal" title="Send">
-                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="sendMessagToInsurance:" destination="Bo1-lc-yAw" eventType="touchUpInside" id="Xlh-zg-39c"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="i2g-RP-nrJ" firstAttribute="top" secondItem="4fz-pK-xUO" secondAttribute="bottom" constant="10" id="1XR-UZ-nm1"/>
-                            <constraint firstItem="X7c-kd-bx3" firstAttribute="bottom" secondItem="dcg-Q7-PEX" secondAttribute="bottom" constant="100" id="6jh-tq-F6h"/>
-                            <constraint firstItem="X7c-kd-bx3" firstAttribute="trailing" secondItem="dcg-Q7-PEX" secondAttribute="trailing" constant="10" id="G7O-t7-uEa"/>
-                            <constraint firstItem="i2g-RP-nrJ" firstAttribute="leading" secondItem="X7c-kd-bx3" secondAttribute="leading" id="HUe-Wa-jwt"/>
-                            <constraint firstItem="X7c-kd-bx3" firstAttribute="trailing" secondItem="i2g-RP-nrJ" secondAttribute="trailing" id="IH9-AR-Gbe"/>
-                            <constraint firstItem="4fz-pK-xUO" firstAttribute="leading" secondItem="X7c-kd-bx3" secondAttribute="leading" id="MRz-i3-8Nn"/>
-                            <constraint firstItem="4fz-pK-xUO" firstAttribute="top" secondItem="X7c-kd-bx3" secondAttribute="top" constant="20" id="QqK-pc-hg4"/>
-                            <constraint firstItem="7SA-5q-69O" firstAttribute="top" secondItem="i2g-RP-nrJ" secondAttribute="bottom" constant="10" id="Sck-k7-zfz"/>
-                            <constraint firstItem="X7c-kd-bx3" firstAttribute="trailing" secondItem="4fz-pK-xUO" secondAttribute="trailing" id="TH2-FP-2xd"/>
-                            <constraint firstItem="X7c-kd-bx3" firstAttribute="trailing" secondItem="7SA-5q-69O" secondAttribute="trailing" constant="10" id="W3c-Cm-Jp3"/>
-                            <constraint firstItem="7SA-5q-69O" firstAttribute="leading" secondItem="X7c-kd-bx3" secondAttribute="leading" constant="10" id="dGd-CO-qTa"/>
-                            <constraint firstItem="dcg-Q7-PEX" firstAttribute="top" secondItem="7SA-5q-69O" secondAttribute="bottom" constant="30" id="heO-FB-WOP"/>
-                            <constraint firstItem="dcg-Q7-PEX" firstAttribute="leading" secondItem="X7c-kd-bx3" secondAttribute="leading" constant="10" id="wlc-Xq-CEE"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="X7c-kd-bx3"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Send message" id="e0G-UR-3ed"/>
-                    <connections>
-                        <outlet property="receiverNameLabel" destination="Jgy-aZ-tUt" id="FoQ-Dj-FiX"/>
-                        <outlet property="sentMessageTextView" destination="7SA-5q-69O" id="9AC-VZ-EJc"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uwh-ap-8mb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2114" y="-81"/>
         </scene>
     </scenes>
     <resources>

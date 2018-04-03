@@ -84,7 +84,7 @@ class showRoomCollectionViewController: UICollectionViewController {
         
         if segue.identifier == "showRoomDetailsSegue"
         {
-            if let destination = segue.destination as? showRoomDetailsViewController {
+            if let destination = segue.destination as? ShowRoomDetailsViewController {
                 destination.showRoomsDetails = self.showRoomDetailsArr
                 destination.showRoomItems = self.showRoomitems
                 

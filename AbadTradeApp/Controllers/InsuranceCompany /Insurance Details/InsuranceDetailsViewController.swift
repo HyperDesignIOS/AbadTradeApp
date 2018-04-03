@@ -14,6 +14,8 @@ class InsuranceDetailsViewController: UIViewController{
     
     var insuranceDetails = [Insurance]()
     
+    @IBOutlet weak var sendMessageButton: UIButton!
+    @IBOutlet weak var loginToSendButton: UIButton!
     @IBOutlet weak var insuranceDetailsImage: UIImageView!
     
     @IBOutlet weak var insuranceName: UILabel!
@@ -23,16 +25,6 @@ class InsuranceDetailsViewController: UIViewController{
     @IBOutlet weak var insuranceArea: UILabel!
     @IBOutlet weak var insuranceWorkTime: UILabel!
     @IBOutlet weak var insuranceAbout: UILabel!
-    
-    @IBAction func sendRequestButton(_ sender: Any) {
-        
-        let storyboard = UIStoryboard.init(name: "Insurance", bundle: nil)
-        let destinationViewController = storyboard.instantiateViewController(withIdentifier: "insuranceMessageVC") as! insuranceSendMessagVC
-        destinationViewController.receiverName = insuranceDetails[0].nameEn
-        show(destinationViewController, sender: self)
-        
-    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +38,13 @@ class InsuranceDetailsViewController: UIViewController{
         insuranceWorkTime.text = insuranceDetails[0].workTimes
         insuranceAbout.text = insuranceDetails[0].aboutEn
 
+        if UserDefaults.standard.isLoggedIn(){
+            sendMessageButton.isHidden = false
+            loginToSendButton.isHidden = true
+        }else{
+            loginToSendButton.isHidden = false
+            sendMessageButton.isHidden = true
+        }
         // Do any additional setup after loading the view.
     }
     
@@ -54,8 +53,23 @@ class InsuranceDetailsViewController: UIViewController{
         // Dispose of any resources that can be recreated.
     }
     
-    
+    @IBAction func sendRequestButton(_ sender: Any) {
+        
+        let storyboard = UIStoryboard.init(name: "ShowRooms", bundle: nil)
+        let destinationViewController = storyboard.instantiateViewController(withIdentifier: "SendMessageVC") as! SendMessageViewController
+        destinationViewController.isShowRoom = false
+        destinationViewController.receiverName = insuranceDetails[0].nameEn
+        show(destinationViewController, sender: self)
+        
+    }
   
+    @IBAction func loginToSendButton(_ sender: Any) {
+        
+        let storyboard = UIStoryboard.init(name: "Login", bundle: nil)
+        let destinationViewController = storyboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+        //        destinationViewController.receiverName = showRoomsDetails[0].nameEn
+        show(destinationViewController, sender: self)
+    }
     
     
     /*

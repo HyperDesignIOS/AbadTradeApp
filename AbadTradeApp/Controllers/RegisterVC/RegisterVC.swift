@@ -85,13 +85,4 @@ class RegisterVC: UIViewController {
           }
         
     }
-    
-    
-  
-
-  
-    
-
-   
-
 }
