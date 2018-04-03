@@ -10,8 +10,6 @@ import UIKit
 
 class insuranceSendMessagVC: UIViewController {
     
-    
-    
     var receiverName : String!
 
     var msg : String!
