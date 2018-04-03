@@ -70,6 +70,8 @@ class RegisterVC: UIViewController {
             self.user = user as! User
             self.msg = msg
             print(self.user.name)
+            UserDefaults.standard.setUserID(value: self.user.id)
+            UserDefaults.standard.setLoggedIn(value: true)
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let controller = storyboard.instantiateViewController(withIdentifier: "homeVC")
             //self.present(controller, animated: true, completion: nil)
