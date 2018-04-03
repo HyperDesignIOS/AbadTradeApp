@@ -73,8 +73,7 @@
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="sendButton:" destination="I7P-yB-gBt" eventType="touchUpInside" id="KHw-fM-PXi"/>
-                                    <action selector="sendTenderButton:" destination="I7P-yB-gBt" eventType="touchUpInside" id="vjz-dJ-JqA"/>
+                                    <action selector="sendTenderButton:" destination="I7P-yB-gBt" eventType="touchUpInside" id="fae-IT-i3P"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -98,10 +97,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Send message" id="Lvu-H0-hxq"/>
                     <connections>
-                        <outlet property="receiverNameLabel" destination="NZj-jD-xtR" id="1Au-ih-rCD"/>
-                        <outlet property="sentMessageTextView" destination="2Hm-lg-7I7" id="9a7-IK-8Yy"/>
-                        <outlet property="tenderLabel" destination="NZj-jD-xtR" id="p9o-xH-tjf"/>
-                        <outlet property="tenderMessage" destination="2Hm-lg-7I7" id="nCV-J3-Dj5"/>
+                        <outlet property="tenderLabel" destination="NZj-jD-xtR" id="4K6-75-gSQ"/>
+                        <outlet property="tenderMessage" destination="2Hm-lg-7I7" id="MvS-Zu-exW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PeH-UH-FWw" userLabel="First Responder" sceneMemberID="firstResponder"/>
