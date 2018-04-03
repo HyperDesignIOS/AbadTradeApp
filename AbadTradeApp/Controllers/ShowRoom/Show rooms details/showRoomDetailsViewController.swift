@@ -74,6 +74,13 @@ class showRoomDetailsViewController: UIViewController , UITableViewDelegate , UI
         destinationViewController.receiverName = showRoomsDetails[0].nameEn
         show(destinationViewController, sender: self)
     }
+    @IBAction func loginToSendButton(_ sender: UIButton) {
+        
+        let storyboard = UIStoryboard.init(name: "Login", bundle: nil)
+        let destinationViewController = storyboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+//        destinationViewController.receiverName = showRoomsDetails[0].nameEn
+        show(destinationViewController, sender: self)
+    }
     //    let currentCellImageUrl = "\(ItemImageURL)\(searchResults[indexPath.row].image!)"
 //    cell.vehicleBrand.text = searchResults[indexPath.row].brand.nameEn
 //    cell.vehicleModel.text = searchResults[indexPath.row].model.nameEn
