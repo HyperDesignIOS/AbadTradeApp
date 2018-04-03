@@ -62,13 +62,5 @@ class LoginVC: UIViewController {
                 self.generalMethod.showAlert(title: "", message: self.msg, vc: self, closure: nil)
             }
         }
-        
-        
-       
-        }
-        
-        
-    
- 
-
+    }
 }
