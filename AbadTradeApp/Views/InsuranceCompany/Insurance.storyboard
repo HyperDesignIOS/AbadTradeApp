@@ -317,7 +317,6 @@
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="sendButton:" destination="Bo1-lc-yAw" eventType="touchUpInside" id="WMM-zJ-wVW"/>
                                     <action selector="sendMessagToInsurance:" destination="Bo1-lc-yAw" eventType="touchUpInside" id="Xlh-zg-39c"/>
                                 </connections>
                             </button>
@@ -342,8 +341,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Send message" id="e0G-UR-3ed"/>
                     <connections>
-                        <outlet property="insuranceName" destination="Jgy-aZ-tUt" id="bdt-r3-8wp"/>
-                        <outlet property="message" destination="7SA-5q-69O" id="Hth-H5-qA0"/>
                         <outlet property="receiverNameLabel" destination="Jgy-aZ-tUt" id="FoQ-Dj-FiX"/>
                         <outlet property="sentMessageTextView" destination="7SA-5q-69O" id="9AC-VZ-EJc"/>
                     </connections>
