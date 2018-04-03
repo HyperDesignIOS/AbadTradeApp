@@ -21,6 +21,7 @@ class insuranceSendMessagVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        insuranceName.text = receiverName
         // Do any additional setup after loading the view.
     }
     
