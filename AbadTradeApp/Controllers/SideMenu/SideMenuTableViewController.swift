@@ -12,8 +12,8 @@ import SideMenu
 class SideMenuTableViewController: UITableViewController{
     
     var vehicles : [Category]!
-    var sideMenuItemImages = ["home-icon-silhouette","sports-car","car-insurance","sports-car","msg","login","register"]
-    var sideMenuItemNames = ["Home","Vehicles","Insurance Companies","Show Rooms","Tender","Login", "Register"]
+    var sideMenuItemImages = ["home-icon-silhouette","sports-car","car-insurance","sports-car","msg","login","register","log-out"]
+    var sideMenuItemNames = ["Home","Vehicles","Insurance Companies","Show Rooms","Tender","Login", "Register","Log Out"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -103,6 +103,18 @@ class SideMenuTableViewController: UITableViewController{
         {
             let storyboard = UIStoryboard(name: "Register", bundle: nil)
             let controller = storyboard.instantiateViewController(withIdentifier: "RegisterVC")
+            //self.present(controller, animated: true, completion: nil)
+            show(controller, sender: self)
+            
+        }
+            
+        else if sideMenuItemNames[indexPath.row] == "Log Out"
+        {
+            
+            UserDefaults.standard.setLoggedIn(value: false)
+      
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "homeVC")
             //self.present(controller, animated: true, completion: nil)
             show(controller, sender: self)
             
