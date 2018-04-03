@@ -20,7 +20,7 @@ class SendMessageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        receiverNameLabel.text = receiverName
     }
 
    
