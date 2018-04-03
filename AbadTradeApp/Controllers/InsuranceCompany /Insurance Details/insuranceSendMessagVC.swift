@@ -18,8 +18,8 @@ class insuranceSendMessagVC: UIViewController {
     var done : String!
     var generaMetod = GeneralMethod()
 
-    @IBOutlet weak var insuranceName: UILabel!
-    @IBOutlet weak var message: UITextView!
+    @IBOutlet weak var receiverNameLabel: UILabel!
+    @IBOutlet weak var sentMessageTextView: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,7 +31,7 @@ class insuranceSendMessagVC: UIViewController {
 
     @IBAction func sendMessagToInsurance(_ sender: Any) {
         
-        let  messageSent = self.message.text
+        let  messageSent = self.sentMessageTextView.text
         if messageSent != nil && messageSent != ""{
             apiRequests.apisInstance.sendMessageToInsurance(phone:"011111555",message: messageSent!, userId:"1" , insuranceId: "1", didDataReady: { (msg,done) in
                 self.msg = msg
