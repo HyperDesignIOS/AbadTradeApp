@@ -55,6 +55,7 @@
 		7D5282DE2072524A00A31401 /* Tender.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D5282DD2072524A00A31401 /* Tender.storyboard */; };
 		7D5282E12072535900A31401 /* TenderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5282E02072535900A31401 /* TenderVC.swift */; };
 		7D5282E3207272BE00A31401 /* insuranceSendMessagVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5282E2207272BE00A31401 /* insuranceSendMessagVC.swift */; };
+		7D597BB920739DB30009B957 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D597BB820739DB30009B957 /* Extentions.swift */; };
 		7D59A8B8207101AD0010DD0E /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D59A8B7207101AD0010DD0E /* Login.storyboard */; };
 		7D59A8BB207101D00010DD0E /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D59A8BA207101D00010DD0E /* Register.storyboard */; };
 		7D59A8BF2071190B0010DD0E /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D59A8BE2071190B0010DD0E /* RegisterVC.swift */; };
@@ -126,6 +127,7 @@
 		7D5282DD2072524A00A31401 /* Tender.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tender.storyboard; sourceTree = "<group>"; };
 		7D5282E02072535900A31401 /* TenderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenderVC.swift; sourceTree = "<group>"; };
 		7D5282E2207272BE00A31401 /* insuranceSendMessagVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = insuranceSendMessagVC.swift; sourceTree = "<group>"; };
+		7D597BB820739DB30009B957 /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 		7D59A8B7207101AD0010DD0E /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		7D59A8BA207101D00010DD0E /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 		7D59A8BE2071190B0010DD0E /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
@@ -482,6 +484,7 @@
 				7D6D5F3120626F660038F4E0 /* GeneralMethod .swift */,
 				40FB000B2061373A0095E4A9 /* Enumerations.swift */,
 				40FB0009206135F50095E4A9 /* Protocols.swift */,
+				7D597BB820739DB30009B957 /* Extentions.swift */,
 				40B039CD2059765A00AAD62A /* Controllers */,
 				407337302058332900299A0F /* Models */,
 				4073372D205832F100299A0F /* Networking */,
@@ -708,6 +711,7 @@
 				40B24A96205ED0C100FE00BF /* Model.swift in Sources */,
 				7D20679E206BA0A40048452A /* ShowRoomItem.swift in Sources */,
 				40F39B8720640D65000FE5A2 /* SideMenuTableViewCell.swift in Sources */,
+				7D597BB920739DB30009B957 /* Extentions.swift in Sources */,
 				4028CD8F206CFFDC0067294F /* VehicleItemDetails.swift in Sources */,
 				7D59A8BF2071190B0010DD0E /* RegisterVC.swift in Sources */,
 				7D637E212067BBEB00D87672 /* InsuranceCompanyCollectionViewCell.swift in Sources */,

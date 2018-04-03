@@ -14,3 +14,8 @@ enum FilterType : String{
     case Model = "Model"
     case Year = "Year"
 }
+
+enum UserDefaultsKeys : String {
+    case isLoggedIn
+    case userID
+}

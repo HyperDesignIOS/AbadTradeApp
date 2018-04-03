@@ -54,6 +54,8 @@ class LoginVC: UIViewController {
                 //self.present(controller, animated: true, completion: nil)
                 self.show(controller, sender: self)
                self.user = user as! User
+                UserDefaults.standard.setUserID(value: self.user.id)
+                UserDefaults.standard.setLoggedIn(value: true)
             }
             else if self.done == "0"
             {
