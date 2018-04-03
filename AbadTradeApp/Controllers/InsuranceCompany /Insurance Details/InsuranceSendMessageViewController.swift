@@ -1,37 +1,45 @@
 //
-//  insuranceSendMessagVC.swift
+//  InsuranceSendMessageViewController.swift
 //  AbadTradeApp
 //
-//  Created by AmrObjection on 4/2/18.
+//  Created by Hyper Design on 4/3/18.
 //  Copyright © 2018 AmrObjection. All rights reserved.
 //
 
 import UIKit
 
-class insuranceSendMessagVC: UIViewController {
-    
-    var receiverName : String!
+class InsuranceSendMessageViewController: UIViewController {
 
+    var receiverName : String!
     var msg : String!
     var done : String!
     var generaMetod = GeneralMethod()
-
+    var insurance : Insurance!
+    var loggedinUserId : Int!
+    
+    @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var receiverNameLabel: UILabel!
     @IBOutlet weak var sentMessageTextView: UITextView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         receiverNameLabel.text = receiverName
         // Do any additional setup after loading the view.
     }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
     
 
-
-    @IBAction func sendMessagToInsurance(_ sender: Any) {
+    @IBAction func sendButton(_ sender: Any) {
         
-        let  messageSent = self.sentMessageTextView.text
-        if messageSent != nil && messageSent != ""{
-            apiRequests.apisInstance.sendMessageToInsurance(phone:"011111555",message: messageSent!, userId:"1" , insuranceId: "1", didDataReady: { (msg,done) in
+        let  message = sentMessageTextView.text
+        if message != nil && message != "" && phoneTextField.text != nil && phoneTextField.text != ""{
+            apiRequests.apisInstance.sendMessageToInsurance(phone:phoneTextField.text!,message: message!, userId:"\(loggedinUserId!)" , insuranceId: "\(insurance.id!)", didDataReady: { (msg,done) in
                 self.msg = msg
                 self.done = done
                 if self.done == "1"
@@ -50,13 +58,21 @@ class insuranceSendMessagVC: UIViewController {
                     self.generaMetod.showAlert(title: "", message:self.msg, vc: self, closure: nil)
                 }
             })
-            
         }
         else
         {
-            self.generaMetod.showAlert(title: "", message:"enter your message", vc: self, closure: nil)
+            self.generaMetod.showAlert(title: "", message:"Please enter your message and phone", vc: self, closure: nil)
         }
-        
+}
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
     }
-    
+    */
+
 }

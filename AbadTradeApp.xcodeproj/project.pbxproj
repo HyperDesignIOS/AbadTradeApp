@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		40285FCC207109C200E575DD /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40285FCB207109C200E575DD /* TableViewCell.swift */; };
 		40285FCE20710A4C00E575DD /* ModelsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40285FCD20710A4C00E575DD /* ModelsTableViewController.swift */; };
-		40285FD020713FA500E575DD /* SendMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40285FCF20713FA500E575DD /* SendMessageViewController.swift */; };
+		40285FD020713FA500E575DD /* ShowRoomSendMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40285FCF20713FA500E575DD /* ShowRoomSendMessageViewController.swift */; };
 		4028CD87206CF7200067294F /* VehiclePrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4028CD86206CF7200067294F /* VehiclePrice.swift */; };
 		4028CD89206CF78C0067294F /* VehicleOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4028CD88206CF78C0067294F /* VehicleOptions.swift */; };
 		4028CD8B206CF7C00067294F /* VehicleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4028CD8A206CF7C00067294F /* VehicleImage.swift */; };
@@ -18,6 +18,7 @@
 		4028CD91206D00170067294F /* VehicleModYear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4028CD90206D00170067294F /* VehicleModYear.swift */; };
 		4028CD93206D034A0067294F /* VehicleDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4028CD92206D034A0067294F /* VehicleDetailsViewController.swift */; };
 		4028CD95206D09E70067294F /* VehicleDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4028CD94206D09E70067294F /* VehicleDetailsTableViewCell.swift */; };
+		404520B72073C99A00B45745 /* InsuranceSendMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404520B62073C99A00B45745 /* InsuranceSendMessageViewController.swift */; };
 		406228DD206B9AD50020BE0D /* ModelsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406228DC206B9AD50020BE0D /* ModelsCollectionViewController.swift */; };
 		4073372F2058330A00299A0F /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4073372E2058330A00299A0F /* ServerManager.swift */; };
 		407337322058333E00299A0F /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407337312058333E00299A0F /* Category.swift */; };
@@ -54,7 +55,6 @@
 		7D51DC4C2060149E00D5E107 /* Vehicle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D51DC4B2060149E00D5E107 /* Vehicle.storyboard */; };
 		7D5282DE2072524A00A31401 /* Tender.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D5282DD2072524A00A31401 /* Tender.storyboard */; };
 		7D5282E12072535900A31401 /* TenderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5282E02072535900A31401 /* TenderVC.swift */; };
-		7D5282E3207272BE00A31401 /* insuranceSendMessagVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5282E2207272BE00A31401 /* insuranceSendMessagVC.swift */; };
 		7D597BB920739DB30009B957 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D597BB820739DB30009B957 /* Extentions.swift */; };
 		7D59A8B8207101AD0010DD0E /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D59A8B7207101AD0010DD0E /* Login.storyboard */; };
 		7D59A8BB207101D00010DD0E /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D59A8BA207101D00010DD0E /* Register.storyboard */; };
@@ -81,7 +81,7 @@
 		11BA69E58BAC6CD88A2058D2 /* Pods-AbadTradeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AbadTradeApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AbadTradeApp/Pods-AbadTradeApp.debug.xcconfig"; sourceTree = "<group>"; };
 		40285FCB207109C200E575DD /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		40285FCD20710A4C00E575DD /* ModelsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsTableViewController.swift; sourceTree = "<group>"; };
-		40285FCF20713FA500E575DD /* SendMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessageViewController.swift; sourceTree = "<group>"; };
+		40285FCF20713FA500E575DD /* ShowRoomSendMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowRoomSendMessageViewController.swift; sourceTree = "<group>"; };
 		4028CD86206CF7200067294F /* VehiclePrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclePrice.swift; sourceTree = "<group>"; };
 		4028CD88206CF78C0067294F /* VehicleOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleOptions.swift; sourceTree = "<group>"; };
 		4028CD8A206CF7C00067294F /* VehicleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleImage.swift; sourceTree = "<group>"; };
@@ -90,6 +90,7 @@
 		4028CD90206D00170067294F /* VehicleModYear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleModYear.swift; sourceTree = "<group>"; };
 		4028CD92206D034A0067294F /* VehicleDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetailsViewController.swift; sourceTree = "<group>"; };
 		4028CD94206D09E70067294F /* VehicleDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		404520B62073C99A00B45745 /* InsuranceSendMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceSendMessageViewController.swift; sourceTree = "<group>"; };
 		406228DC206B9AD50020BE0D /* ModelsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsCollectionViewController.swift; sourceTree = "<group>"; };
 		4073372E2058330A00299A0F /* ServerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
 		407337312058333E00299A0F /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -126,7 +127,6 @@
 		7D51DC4B2060149E00D5E107 /* Vehicle.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Vehicle.storyboard; sourceTree = "<group>"; };
 		7D5282DD2072524A00A31401 /* Tender.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tender.storyboard; sourceTree = "<group>"; };
 		7D5282E02072535900A31401 /* TenderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenderVC.swift; sourceTree = "<group>"; };
-		7D5282E2207272BE00A31401 /* insuranceSendMessagVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = insuranceSendMessagVC.swift; sourceTree = "<group>"; };
 		7D597BB820739DB30009B957 /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 		7D59A8B7207101AD0010DD0E /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		7D59A8BA207101D00010DD0E /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
@@ -198,7 +198,6 @@
 		404520B52073B2FB00B45745 /* SendMessage */ = {
 			isa = PBXGroup;
 			children = (
-				40285FCF20713FA500E575DD /* SendMessageViewController.swift */,
 			);
 			path = SendMessage;
 			sourceTree = "<group>";
@@ -312,7 +311,7 @@
 			children = (
 				40E79F60206A6B6600DBDCA6 /* InsuranceDetailsViewController.swift */,
 				7D88C466206A814200774D5A /* insuranceDetailsTableViewCell.swift */,
-				7D5282E2207272BE00A31401 /* insuranceSendMessagVC.swift */,
+				404520B62073C99A00B45745 /* InsuranceSendMessageViewController.swift */,
 			);
 			path = "Insurance Details";
 			sourceTree = "<group>";
@@ -372,6 +371,7 @@
 			isa = PBXGroup;
 			children = (
 				7D2067A2206BAF890048452A /* ShowRoomDetailsViewController.swift */,
+				40285FCF20713FA500E575DD /* ShowRoomSendMessageViewController.swift */,
 			);
 			path = "Show rooms details";
 			sourceTree = "<group>";
@@ -709,7 +709,6 @@
 				7D637E1F2067BB9100D87672 /* InsuranceCompanyCollectionViewController.swift in Sources */,
 				40E79F57206A684900DBDCA6 /* Region.swift in Sources */,
 				4073372F2058330A00299A0F /* ServerManager.swift in Sources */,
-				7D5282E3207272BE00A31401 /* insuranceSendMessagVC.swift in Sources */,
 				406228DD206B9AD50020BE0D /* ModelsCollectionViewController.swift in Sources */,
 				4028CD8B206CF7C00067294F /* VehicleImage.swift in Sources */,
 				40B039C820594A1000AAD62A /* ApiRequests.swift in Sources */,
@@ -749,9 +748,10 @@
 				40B24A93205E8C1200FE00BF /* searchTableViewCell.swift in Sources */,
 				7D5282E12072535900A31401 /* TenderVC.swift in Sources */,
 				4028CD91206D00170067294F /* VehicleModYear.swift in Sources */,
+				404520B72073C99A00B45745 /* InsuranceSendMessageViewController.swift in Sources */,
 				7D51DC49205FDF1400D5E107 /* Status.swift in Sources */,
 				40F39B8520640559000FE5A2 /* VehiclesCollectionViewController.swift in Sources */,
-				40285FD020713FA500E575DD /* SendMessageViewController.swift in Sources */,
+				40285FD020713FA500E575DD /* ShowRoomSendMessageViewController.swift in Sources */,
 				40FB000F206168970095E4A9 /* VehicleResultTableViewController.swift in Sources */,
 				40285FCE20710A4C00E575DD /* ModelsTableViewController.swift in Sources */,
 				40FB26D52062C51E00FE2F31 /* AppConstants.swift in Sources */,

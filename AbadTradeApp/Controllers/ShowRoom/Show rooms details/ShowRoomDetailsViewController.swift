@@ -70,9 +70,10 @@ class ShowRoomDetailsViewController: UIViewController , UITableViewDelegate , UI
     @IBAction func sendMessageButton(_ sender: Any) {
         
         let storyboard = UIStoryboard.init(name: "ShowRooms", bundle: nil)
-        let destinationViewController = storyboard.instantiateViewController(withIdentifier: "SendMessageVC") as! SendMessageViewController
+        let destinationViewController = storyboard.instantiateViewController(withIdentifier: "SendMessageVC") as! ShowRoomSendMessageViewController
+        destinationViewController.showRoom = showRoomsDetails[0]
         destinationViewController.receiverName = showRoomsDetails[0].nameEn
-        destinationViewController.isShowRoom = true
+        destinationViewController.loggedinUserId = UserDefaults.standard.getUserID()
         show(destinationViewController, sender: self)
         
     }
@@ -80,7 +81,6 @@ class ShowRoomDetailsViewController: UIViewController , UITableViewDelegate , UI
         
         let storyboard = UIStoryboard.init(name: "Login", bundle: nil)
         let destinationViewController = storyboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
-//        destinationViewController.receiverName = showRoomsDetails[0].nameEn
         show(destinationViewController, sender: self)
     }
     //    let currentCellImageUrl = "\(ItemImageURL)\(searchResults[indexPath.row].image!)"

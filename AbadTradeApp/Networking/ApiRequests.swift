@@ -314,10 +314,10 @@ class apiRequests {
     }
     
     
-    func register(userName:String,userMail:String,userPassword:String,didDataReady : @escaping(Any,String,String)->())->(){
+    func  register(userName:String,userMail:String,userPassword:String,didDataReady : @escaping(Any,String,String)->())->(){
         
         sm.connectForApiWith(url: RegisterURL  , mType: HTTPServerMethod.post, params: ["username":userName,"email":userMail,"password":userPassword], complation: { (json) in
-           
+            
             if let obj = json {
                 print (obj)
                 
@@ -343,7 +343,7 @@ class apiRequests {
                     
                 }
             }
-           didDataReady(self.user,self.msg,self.done)
+            didDataReady(self.user,self.msg,self.done)
         }, errorHandler: { (error, msg) in
             print("\(String(describing: msg))")
             didDataReady(msg,msg as! String,self.done)

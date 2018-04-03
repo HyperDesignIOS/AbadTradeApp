@@ -55,10 +55,11 @@ class InsuranceDetailsViewController: UIViewController{
     
     @IBAction func sendRequestButton(_ sender: Any) {
         
-        let storyboard = UIStoryboard.init(name: "ShowRooms", bundle: nil)
-        let destinationViewController = storyboard.instantiateViewController(withIdentifier: "SendMessageVC") as! SendMessageViewController
-        destinationViewController.isShowRoom = false
+        let storyboard = UIStoryboard.init(name: "Insurance", bundle: nil)
+        let destinationViewController = storyboard.instantiateViewController(withIdentifier: "InsuranceSendMessageVC") as! InsuranceSendMessageViewController
+        destinationViewController.insurance = insuranceDetails[0]
         destinationViewController.receiverName = insuranceDetails[0].nameEn
+        destinationViewController.loggedinUserId = UserDefaults.standard.getUserID()
         show(destinationViewController, sender: self)
         
     }

@@ -100,7 +100,7 @@
         <!--Showroom details-->
         <scene sceneID="NrM-YJ-zvx">
             <objects>
-                <viewController storyboardIdentifier="showRoomDetailsVC" id="I6y-Ms-LBJ" customClass="showRoomDetailsViewController" customModule="AbadTradeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="showRoomDetailsVC" id="I6y-Ms-LBJ" customClass="ShowRoomDetailsViewController" customModule="AbadTradeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qv7-NT-vIx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -232,8 +232,8 @@
                                         <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GH8-ST-4EB">
-                                        <rect key="frame" x="246" y="74" width="119" height="30"/>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GH8-ST-4EB">
+                                        <rect key="frame" x="260" y="74" width="105" height="30"/>
                                         <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <state key="normal" title="Send message">
@@ -313,7 +313,7 @@
         <!--Send message-->
         <scene sceneID="Med-A2-yL7">
             <objects>
-                <viewController storyboardIdentifier="SendMessageVC" id="px1-IB-eMJ" customClass="SendMessageViewController" customModule="AbadTradeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SendMessageVC" id="px1-IB-eMJ" customClass="ShowRoomSendMessageViewController" customModule="AbadTradeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4ul-OM-Vbc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
