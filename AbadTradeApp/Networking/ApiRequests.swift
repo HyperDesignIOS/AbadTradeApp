@@ -435,6 +435,46 @@ class apiRequests {
     }
     
     
+    func sendTender( message : String, userId:String ,didDataReady : @escaping(String)->())->(){
+        
+        sm.connectForApiWith(url: TenderURL  , mType: HTTPServerMethod.post, params: ["message":message,"id":userId], complation: { (json) in
+            
+            if let obj = json {
+                print (obj)
+                let dictionaryOfJson = JSON(json!).dictionaryObject
+                print(dictionaryOfJson)
+                let items = dictionaryOfJson!["msg"] as! String
+                self.msg = items
+            }
+            didDataReady(self.msg)
+        }, errorHandler: { (error, msg) in
+            print("\(String(describing: msg))")
+            didDataReady(self.msg)
+        })
+    }
+    
+    func getTender( didDataReady : @escaping(String)->())->(){
+        
+        sm.connectForApiWith(url: tenderLabelURL  , mType: HTTPServerMethod.get, params:nil, complation: { (json) in
+            
+            if let obj = json {
+                print (obj)
+                let dictionaryOfJson = JSON(json!).dictionaryObject
+                print(dictionaryOfJson)
+                let items = dictionaryOfJson!["responsive"]as!  [String : Any]
+                let item = items["tendertext"] as! String
+                self.msg = item
+               
+            }
+            didDataReady(self.msg)
+        }, errorHandler: { (error, msg) in
+            print("\(String(describing: msg))")
+            didDataReady(self.msg)
+        })
+    }
+    
+    
+    
     
     
 }

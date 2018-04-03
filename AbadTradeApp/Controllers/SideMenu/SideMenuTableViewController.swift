@@ -10,10 +10,12 @@ import UIKit
 import SideMenu
 
 class SideMenuTableViewController: UITableViewController{
+   
     
     var vehicles : [Category]!
     var sideMenuItemImages = ["home-icon-silhouette","sports-car","car-insurance","sports-car","msg","login","register","log-out"]
     var sideMenuItemNames = ["Home","Vehicles","Insurance Companies","Show Rooms","Tender","Login", "Register","Log Out"]
+    var generalMethod = GeneralMethod()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -122,12 +124,23 @@ class SideMenuTableViewController: UITableViewController{
         
         
         else if sideMenuItemNames[indexPath.row] == "Tender"
-        {
-//            let storyboard = UIStoryboard(name: "ShowRooms", bundle: nil)
-//            let controller = storyboard.instantiateViewController(withIdentifier: "SendMessageVC")
-//            //self.present(controller, animated: true, completion: nil)
-//            show(controller, sender: self)
+        {    if UserDefaults.standard.isLoggedIn(){
+            let storyboard = UIStoryboard(name: "Tender", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "TenderMSGVC")
+            as! TenderVC
+            //self.present(controller, animated: true, completion: nil)
             
+            apiRequests.apisInstance.getTender(didDataReady: { (msg) in
+              
+                controller.label = msg
+                self.show(controller, sender: self)
+                
+            })
+        }
+            else
+         {
+             generalMethod.showAlert(title: "", message: "you need to login ", vc: self, closure: nil)
+            }
         }
         
     }
