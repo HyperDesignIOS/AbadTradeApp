@@ -18,11 +18,13 @@ class VehicleDetailsViewController: UIViewController,UITableViewDelegate,UITable
     var vehicleOptions = [VehicleOption]()
     var vehicleBids : VehicleBid!
     var vehicleItemDetails : VehicleItemDetails!
+    var timer = Timer()
     var counter = Int()
     var priceType : String!
     
     @IBOutlet weak var vehicleSlider: ImageSlideshow!
     
+    @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var bidsButton: UIButton!
     @IBOutlet weak var buyButton: UIButton!
     @IBOutlet weak var tabelView: UITableView!
@@ -140,9 +142,12 @@ class VehicleDetailsViewController: UIViewController,UITableViewDelegate,UITable
     */
     
     @IBAction func buyButton(_ sender: Any) {
+        
     }
     
     @IBAction func bidButton(_ sender: Any) {
+        
+        
     }
     
     

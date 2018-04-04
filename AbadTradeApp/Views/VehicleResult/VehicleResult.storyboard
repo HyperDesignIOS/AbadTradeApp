@@ -177,17 +177,6 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4lH-vO-gaK">
                                                 <rect key="frame" x="10" y="310" width="355" height="50"/>
                                                 <subviews>
-                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rDN-8T-uCN">
-                                                        <rect key="frame" x="87" y="10" width="181" height="30"/>
-                                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                                        <state key="normal" title="Bid">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="bidButton:" destination="mgJ-mp-7QW" eventType="touchUpInside" id="8Sm-Fe-IPO"/>
-                                                        </connections>
-                                                    </button>
                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fhW-YV-V2f">
                                                         <rect key="frame" x="87" y="10" width="181" height="30"/>
                                                         <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -199,19 +188,38 @@
                                                             <action selector="buyButton:" destination="mgJ-mp-7QW" eventType="touchUpInside" id="jBF-PE-DXh"/>
                                                         </connections>
                                                     </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YLj-zq-LFM">
+                                                        <rect key="frame" x="10" y="10" width="42" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rDN-8T-uCN">
+                                                        <rect key="frame" x="72" y="10" width="273" height="30"/>
+                                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                        <state key="normal" title="Bid">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="bidButton:" destination="mgJ-mp-7QW" eventType="touchUpInside" id="8Sm-Fe-IPO"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstItem="YLj-zq-LFM" firstAttribute="leading" secondItem="4lH-vO-gaK" secondAttribute="leading" constant="10" id="7ZR-1b-Ds6"/>
                                                     <constraint firstItem="rDN-8T-uCN" firstAttribute="top" secondItem="4lH-vO-gaK" secondAttribute="top" constant="10" id="C2H-ag-mGI"/>
                                                     <constraint firstAttribute="trailing" secondItem="fhW-YV-V2f" secondAttribute="trailing" constant="87" id="HAj-CI-ogO"/>
+                                                    <constraint firstItem="YLj-zq-LFM" firstAttribute="top" secondItem="4lH-vO-gaK" secondAttribute="top" constant="10" id="HtB-cM-bPA"/>
                                                     <constraint firstItem="fhW-YV-V2f" firstAttribute="centerX" secondItem="4lH-vO-gaK" secondAttribute="centerX" id="Iul-zf-lbY"/>
                                                     <constraint firstItem="fhW-YV-V2f" firstAttribute="leading" secondItem="4lH-vO-gaK" secondAttribute="leading" constant="87" id="NYR-SI-JKo"/>
                                                     <constraint firstAttribute="bottom" secondItem="fhW-YV-V2f" secondAttribute="bottom" constant="10" id="Qbd-uX-fTQ"/>
                                                     <constraint firstAttribute="bottom" secondItem="rDN-8T-uCN" secondAttribute="bottom" constant="10" id="awf-S9-Dxy"/>
-                                                    <constraint firstItem="rDN-8T-uCN" firstAttribute="centerX" secondItem="4lH-vO-gaK" secondAttribute="centerX" id="rpQ-rD-iQz"/>
-                                                    <constraint firstItem="rDN-8T-uCN" firstAttribute="leading" secondItem="4lH-vO-gaK" secondAttribute="leading" constant="87" id="sLt-0y-bV8"/>
+                                                    <constraint firstItem="rDN-8T-uCN" firstAttribute="leading" secondItem="YLj-zq-LFM" secondAttribute="trailing" constant="20" id="bb3-AY-zdh"/>
+                                                    <constraint firstAttribute="trailing" secondItem="rDN-8T-uCN" secondAttribute="trailing" constant="10" id="lW9-y3-hL0"/>
                                                     <constraint firstItem="fhW-YV-V2f" firstAttribute="top" secondItem="4lH-vO-gaK" secondAttribute="top" constant="10" id="vPk-1M-R6F"/>
-                                                    <constraint firstAttribute="trailing" secondItem="rDN-8T-uCN" secondAttribute="trailing" constant="87" id="vgH-EZ-QXl"/>
+                                                    <constraint firstAttribute="bottom" secondItem="YLj-zq-LFM" secondAttribute="bottom" constant="10" id="xdf-5J-5MP"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -254,6 +262,7 @@
                         <outlet property="bidsButton" destination="rDN-8T-uCN" id="qL6-zJ-Lao"/>
                         <outlet property="buyButton" destination="fhW-YV-V2f" id="ndJ-cK-OVu"/>
                         <outlet property="tabelView" destination="rr4-66-u6p" id="gBq-il-TAV"/>
+                        <outlet property="timerLabel" destination="YLj-zq-LFM" id="fZb-aD-lbA"/>
                         <outlet property="vehicleSlider" destination="gfH-GK-huX" id="zRe-Yt-bE1"/>
                     </connections>
                 </viewController>

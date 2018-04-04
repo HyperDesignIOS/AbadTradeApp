@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4000FD862074F6C400E70AAC /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4000FD852074F6C400E70AAC /* TimerManager.swift */; };
 		40285FCC207109C200E575DD /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40285FCB207109C200E575DD /* TableViewCell.swift */; };
 		40285FCE20710A4C00E575DD /* ModelsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40285FCD20710A4C00E575DD /* ModelsTableViewController.swift */; };
 		40285FD020713FA500E575DD /* ShowRoomSendMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40285FCF20713FA500E575DD /* ShowRoomSendMessageViewController.swift */; };
@@ -79,6 +80,7 @@
 
 /* Begin PBXFileReference section */
 		11BA69E58BAC6CD88A2058D2 /* Pods-AbadTradeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AbadTradeApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AbadTradeApp/Pods-AbadTradeApp.debug.xcconfig"; sourceTree = "<group>"; };
+		4000FD852074F6C400E70AAC /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
 		40285FCB207109C200E575DD /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		40285FCD20710A4C00E575DD /* ModelsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsTableViewController.swift; sourceTree = "<group>"; };
 		40285FCF20713FA500E575DD /* ShowRoomSendMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowRoomSendMessageViewController.swift; sourceTree = "<group>"; };
@@ -337,6 +339,7 @@
 				40FB0010206168B20095E4A9 /* VehicleResultTableViewCell.swift */,
 				4028CD92206D034A0067294F /* VehicleDetailsViewController.swift */,
 				4028CD94206D09E70067294F /* VehicleDetailsTableViewCell.swift */,
+				4000FD852074F6C400E70AAC /* TimerManager.swift */,
 			);
 			path = VehicleResult;
 			sourceTree = "<group>";
@@ -709,6 +712,7 @@
 				7D2067A3206BAF890048452A /* ShowRoomDetailsViewController.swift in Sources */,
 				40B24A96205ED0C100FE00BF /* Model.swift in Sources */,
 				7D20679E206BA0A40048452A /* ShowRoomItem.swift in Sources */,
+				4000FD862074F6C400E70AAC /* TimerManager.swift in Sources */,
 				40F39B8720640D65000FE5A2 /* SideMenuTableViewCell.swift in Sources */,
 				7D597BB920739DB30009B957 /* Extentions.swift in Sources */,
 				4028CD8F206CFFDC0067294F /* VehicleItemDetails.swift in Sources */,
