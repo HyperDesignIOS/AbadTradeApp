@@ -167,14 +167,33 @@ class VehicleDetailsViewController: UIViewController,UITableViewDelegate,UITable
             let storyboard = UIStoryboard(name: "Login", bundle: nil)
             let controller = storyboard.instantiateViewController(withIdentifier: "LoginVC")
             generalMethod.showAlert(title: "", message: "login first to buy", vc: self, closure: nil)
-            
-            
         }
         
     }
     
     @IBAction func bidButton(_ sender: Any) {
         
+        if UserDefaults.standard.isLoggedIn(){
+            let userID = UserDefaults.standard.getUserID()
+            let storyboard = UIStoryboard(name: "VehicleResult", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "buyCarVC") as! VehicleBidViewController
+            controller.vehicleBid = self.vehicleBids
+            //self.present(controller, animated: true, completion: nil)
+            
+//            apiRequests.apisInstance.buyCar(id:String(vehicleItemDetails.id), userId:String(userID), didDataReady: { (user, prices) in
+//                self.vehiclePrices = prices
+//                self.user = user
+//                self.show(controller
+//                    , sender: self)
+//                
+//            })
+        }
+        else
+        {
+            let storyboard = UIStoryboard(name: "Login", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "LoginVC")
+            self.show(controller, sender: self)
+        }
         
     }
     
