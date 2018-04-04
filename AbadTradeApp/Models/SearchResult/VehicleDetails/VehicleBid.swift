@@ -20,6 +20,9 @@ class VehicleBid : NSObject, NSCoding{
     var updatedAt : String!
     
     
+    override init() {
+        
+    }
     /**
      * Instantiate the instance using the passed json values to set the properties values
      */

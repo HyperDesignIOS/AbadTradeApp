@@ -54,7 +54,7 @@ class VehicleItemDetails : NSObject, NSCoding{
         if let dealerData = json["dealer"] as? [String:Any]{
             dealer = ShowRoom(fromDictionary: dealerData)
         }
-        dealerId = json["dealer_id"] as! String
+        dealerId = json["dealer_id"] as? String ?? ""
         descriptionAr = json["description_ar"] as! String
         descriptionEn = json["description_en"] as! String
         id = json["id"] as! Int
@@ -187,7 +187,7 @@ class VehicleItemDetails : NSObject, NSCoding{
         categoryId = aDecoder.decodeObject(forKey: "category_id") as? String
         createdAt = aDecoder.decodeObject(forKey: "created_at") as? String
         dealer = aDecoder.decodeObject(forKey: "dealer") as? ShowRoom
-        dealerId = aDecoder.decodeObject(forKey: "dealer_id") as? String
+        dealerId = (aDecoder.decodeObject(forKey: "dealer_id") as? String)!
         descriptionAr = aDecoder.decodeObject(forKey: "description_ar") as? String
         descriptionEn = aDecoder.decodeObject(forKey: "description_en") as? String
         id = aDecoder.decodeObject(forKey: "id") as? Int

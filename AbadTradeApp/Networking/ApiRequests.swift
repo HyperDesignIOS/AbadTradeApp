@@ -303,9 +303,13 @@ class apiRequests {
                 
                 self.vehicleItemDetails = itemDetails
                 
-                let bids =  VehicleBid.init(fromJson: dictionaryOfJson!["itembids"] as! [String : Any])
-                
-                self.vehicleBids = bids
+                if dictionaryOfJson!["itembids"] as? [String : Any] != nil{
+                    let bids =  VehicleBid.init(fromJson: dictionaryOfJson!["itembids"] as! [String : Any])
+                    self.vehicleBids = bids
+                }
+                else {
+                    self.vehicleBids = VehicleBid()
+                }
             }
             didDataReady(self.vehicleItemDetails,self.vehicleImages,self.vehicleOptions,self.vehiclePrices,self.vehicleBids)
         }, errorHandler: { (error, msg) in
@@ -499,6 +503,27 @@ class apiRequests {
     }
     
     
+    
+    func postBuyCar( id : String, userId:String , price:String, phone:String, email:String,addressar: String,addressen:String,didDataReady : @escaping(String,String)->())->(){
+        
+        sm.connectForApiWith(url: postBuyCarURL  , mType: HTTPServerMethod.post, params: ["id":id, "user_id":userId,"price":price,"phone":phone,"email":email,"address_ar":addressar,"address_en":addressen], complation: { (json) in
+            
+            if let obj = json {
+                print (obj)
+                let dictionaryOfJson = JSON(json!).dictionaryObject
+                print(dictionaryOfJson)
+                let done = dictionaryOfJson!["done"] as! String
+                let items = dictionaryOfJson!["msg"] as! String
+                self.msg = items
+                self.done = done
+                
+            }
+            didDataReady(self.msg,self.done)
+        }, errorHandler: { (error, msg) in
+            print("\(String(describing: msg))")
+            didDataReady(self.msg,self.done)
+        })
+    }
     
     
     

@@ -21,6 +21,8 @@ class VehicleDetailsViewController: UIViewController,UITableViewDelegate,UITable
     var timer = Timer()
     var counter = Int()
     var priceType : String!
+    var user : User!
+   var generalMethod = GeneralMethod()
     
     @IBOutlet weak var vehicleSlider: ImageSlideshow!
     
@@ -142,6 +144,31 @@ class VehicleDetailsViewController: UIViewController,UITableViewDelegate,UITable
     */
     
     @IBAction func buyButton(_ sender: Any) {
+        
+        
+        if UserDefaults.standard.isLoggedIn(){
+             let userID = UserDefaults.standard.getUserID()
+            let storyboard = UIStoryboard(name: "VehicleResult", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "buyCarVC")
+                
+            //self.present(controller, animated: true, completion: nil)
+            
+            apiRequests.apisInstance.buyCar(id:String(vehicleItemDetails.id), userId:String(userID), didDataReady: { (user, prices) in
+                self.vehiclePrices = prices
+                self.user = user
+                self.show(controller
+                    , sender: self)
+                
+            })
+        }
+        else
+        {
+            let storyboard = UIStoryboard(name: "Login", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "LoginVC")
+            generalMethod.showAlert(title: "", message: "login first to buy", vc: self, closure: nil)
+            
+            
+        }
         
     }
     
