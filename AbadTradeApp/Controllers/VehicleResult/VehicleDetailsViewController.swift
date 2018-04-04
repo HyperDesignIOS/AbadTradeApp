@@ -18,9 +18,10 @@ class VehicleDetailsViewController: UIViewController,UITableViewDelegate,UITable
     var vehicleOptions = [VehicleOption]()
     var vehicleBids : VehicleBid!
     var vehicleItemDetails : VehicleItemDetails!
-    var timer = Timer()
+    var timer = TimerManager()
     var counter = Int()
     var priceType : String!
+    let formater = DateFormatter()
     
     @IBOutlet weak var vehicleSlider: ImageSlideshow!
     
@@ -34,6 +35,7 @@ class VehicleDetailsViewController: UIViewController,UITableViewDelegate,UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        formater.dateFormat = "yyyy-MM-dd HH:mm:ss"
         tabelView.delegate = self
         tabelView.dataSource = self
         getItems()
@@ -173,6 +175,14 @@ class VehicleDetailsViewController: UIViewController,UITableViewDelegate,UITable
             self.counter = 4
             self.slider()
             self.tabelView.reloadData()
+            if self.priceType == "bids"{
+                self.timer.timeNow = self.formater.date(from: self.vehicleBids.startDate)
+                self.timer.timeEnd = self.formater.date(from: self.vehicleBids.endDate)
+                self.timer.targetViewController = self
+                self.timer.updateView {
+                    self.timerLabel.text = "\(self.timer.dayText)\(self.timer.hourText)\(self.timer.minuteText)\(self.timer.secondText)"
+                }
+            }
         }
         
     }
