@@ -176,8 +176,9 @@ class VehicleDetailsViewController: UIViewController,UITableViewDelegate,UITable
         if UserDefaults.standard.isLoggedIn(){
             let userID = UserDefaults.standard.getUserID()
             let storyboard = UIStoryboard(name: "VehicleResult", bundle: nil)
-            let controller = storyboard.instantiateViewController(withIdentifier: "buyCarVC") as! VehicleBidViewController
+            let controller = storyboard.instantiateViewController(withIdentifier: "bidViewController") as! VehicleBidViewController
             controller.vehicleBid = self.vehicleBids
+            self.show(controller, sender: self)
             //self.present(controller, animated: true, completion: nil)
             
 //            apiRequests.apisInstance.buyCar(id:String(vehicleItemDetails.id), userId:String(userID), didDataReady: { (user, prices) in

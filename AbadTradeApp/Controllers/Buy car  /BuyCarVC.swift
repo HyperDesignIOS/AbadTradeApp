@@ -39,7 +39,7 @@ class BuyCarVC: UIViewController {
         let addressAR = addressarTF.text
         let addressEN = addessenTF.text
         
-        apiRequests.apisInstance.postBuyCar(id: <#T##String#>, userId: <#T##String#>, price: <#T##String#>, phone: <#T##String#>, email: <#T##String#>, addressar: <#T##String#>, addressen: <#T##String#>, didDataReady: <#T##(String, String) -> ()#>)
+//        apiRequests.apisInstance.postBuyCar(id: <#T##String#>, userId: <#T##String#>, price: <#T##String#>, phone: <#T##String#>, email: <#T##String#>, addressar: <#T##String#>, addressen: <#T##String#>, didDataReady: <#T##(String, String) -> ()#>)
         
     }
     
