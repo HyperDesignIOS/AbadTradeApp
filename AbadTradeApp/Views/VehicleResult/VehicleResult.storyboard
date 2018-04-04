@@ -178,30 +178,40 @@
                                                 <rect key="frame" x="10" y="310" width="355" height="50"/>
                                                 <subviews>
                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rDN-8T-uCN">
-                                                        <rect key="frame" x="315" y="10" width="30" height="30"/>
+                                                        <rect key="frame" x="87" y="10" width="181" height="30"/>
                                                         <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                         <state key="normal" title="Bid">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="bidButton:" destination="mgJ-mp-7QW" eventType="touchUpInside" id="8Sm-Fe-IPO"/>
+                                                        </connections>
                                                     </button>
                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fhW-YV-V2f">
-                                                        <rect key="frame" x="10" y="10" width="30" height="30"/>
+                                                        <rect key="frame" x="87" y="10" width="181" height="30"/>
                                                         <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                         <state key="normal" title="Buy">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="buyButton:" destination="mgJ-mp-7QW" eventType="touchUpInside" id="jBF-PE-DXh"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="rDN-8T-uCN" firstAttribute="top" secondItem="4lH-vO-gaK" secondAttribute="top" constant="10" id="C2H-ag-mGI"/>
-                                                    <constraint firstAttribute="trailing" secondItem="rDN-8T-uCN" secondAttribute="trailing" constant="10" id="J67-Is-sPo"/>
+                                                    <constraint firstAttribute="trailing" secondItem="fhW-YV-V2f" secondAttribute="trailing" constant="87" id="HAj-CI-ogO"/>
+                                                    <constraint firstItem="fhW-YV-V2f" firstAttribute="centerX" secondItem="4lH-vO-gaK" secondAttribute="centerX" id="Iul-zf-lbY"/>
+                                                    <constraint firstItem="fhW-YV-V2f" firstAttribute="leading" secondItem="4lH-vO-gaK" secondAttribute="leading" constant="87" id="NYR-SI-JKo"/>
                                                     <constraint firstAttribute="bottom" secondItem="fhW-YV-V2f" secondAttribute="bottom" constant="10" id="Qbd-uX-fTQ"/>
                                                     <constraint firstAttribute="bottom" secondItem="rDN-8T-uCN" secondAttribute="bottom" constant="10" id="awf-S9-Dxy"/>
-                                                    <constraint firstItem="fhW-YV-V2f" firstAttribute="leading" secondItem="4lH-vO-gaK" secondAttribute="leading" constant="10" id="czo-fW-pD7"/>
+                                                    <constraint firstItem="rDN-8T-uCN" firstAttribute="centerX" secondItem="4lH-vO-gaK" secondAttribute="centerX" id="rpQ-rD-iQz"/>
+                                                    <constraint firstItem="rDN-8T-uCN" firstAttribute="leading" secondItem="4lH-vO-gaK" secondAttribute="leading" constant="87" id="sLt-0y-bV8"/>
                                                     <constraint firstItem="fhW-YV-V2f" firstAttribute="top" secondItem="4lH-vO-gaK" secondAttribute="top" constant="10" id="vPk-1M-R6F"/>
+                                                    <constraint firstAttribute="trailing" secondItem="rDN-8T-uCN" secondAttribute="trailing" constant="87" id="vgH-EZ-QXl"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -250,6 +260,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="98M-7x-Cky" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1524" y="168.6656671664168"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Amd-CK-StR">
+            <objects>
+                <viewController id="Gty-hX-fg5" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jfp-wj-Xvl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="FnQ-d3-gkb"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rev-10-Uag" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2279" y="169"/>
         </scene>
     </scenes>
 </document>
