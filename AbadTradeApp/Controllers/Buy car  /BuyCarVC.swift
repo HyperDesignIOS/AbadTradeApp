@@ -10,13 +10,13 @@ import UIKit
 
 class BuyCarVC: UIViewController {
     
-    var id : String!
-    var userid: String!
-    var price : String!
+    var id : Int!
+    var price : [VehiclePrice]!
     var phone : String!
     var email : String!
     var addressar : String!
     var addressen : String!
+    var userName : String!
 
     @IBOutlet weak var nameTF: UITextField!
     @IBOutlet weak var PhonTF: UITextField!
@@ -28,18 +28,22 @@ class BuyCarVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        nameTF.text = userName
+        addressarTF.text = addressar
+        addessenTF.text = addressen
+        PhonTF.text = phone
+        emailTF.text = email
     }
     
 
     @IBAction func BuyButton(_ sender: Any) {
-        let name = nameTF.text
-        let phone = PhonTF.text
-        let email = emailTF.text
-        let addressAR = addressarTF.text
-        let addressEN = addessenTF.text
         
-//        apiRequests.apisInstance.postBuyCar(id: <#T##String#>, userId: <#T##String#>, price: <#T##String#>, phone: <#T##String#>, email: <#T##String#>, addressar: <#T##String#>, addressen: <#T##String#>, didDataReady: <#T##(String, String) -> ()#>)
+        let userId = UserDefaults.standard.getUserID()
+        apiRequests.apisInstance.postBuyCar(id: "\(id)", userId: "\(userId)", price: price[0].price,phone : PhonTF.text!, email: emailTF.text!, addressar: addressarTF.text!, addressen: addessenTF.text!) { (msg, done) in
+            
+            
+            
+        }
         
     }
     
