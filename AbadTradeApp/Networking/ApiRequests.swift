@@ -29,6 +29,7 @@ class apiRequests {
     var vehicleOptions = [VehicleOption]()
     var vehicleBids : VehicleBid!
     var vehicleItemDetails : VehicleItemDetails!
+    var userArray = [User]()
     var user :User!
     var done :String!
     var msg : String!
@@ -470,6 +471,30 @@ class apiRequests {
         }, errorHandler: { (error, msg) in
             print("\(String(describing: msg))")
             didDataReady(self.msg)
+        })
+    }
+    
+    func buyCar(id: String,userId: String ,didDataReady : @escaping(User,[VehiclePrice])->())->(){
+        sm.connectForApiWith(url: buyCarURL  , mType: HTTPServerMethod.post, params: ["id":id,"user_id":userId], complation: { (json) in
+            if let obj = json {
+                print (obj)
+                let dictionaryOfJson = JSON(json!).dictionaryObject
+                print(dictionaryOfJson)
+                let prices = dictionaryOfJson!["itemprice"]as!  [[String : Any]]
+                for price in prices {
+                    let price = VehiclePrice.init(fromJson: price)
+                    self.vehiclePrices.append(price)
+                }
+                let users = dictionaryOfJson!["user"]as! [String : Any]
+               
+                let user = User.init(fromDictionary: users)
+                
+                 self.user = user
+            }
+            didDataReady(self.user,self.vehiclePrices)
+        }, errorHandler: { (error, msg) in
+            print("\(String(describing: msg))")
+            didDataReady(self.user,[])
         })
     }
     

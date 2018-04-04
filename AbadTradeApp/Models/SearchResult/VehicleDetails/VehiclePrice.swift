@@ -8,14 +8,14 @@ import SwiftyJSON
 
 class VehiclePrice : NSObject, NSCoding{
     
-    var createdAt : String!
-    var id : String!
-    var itemId : String!
-    var nameAr : String!
-    var nameEn : String!
-    var price : String!
-    var status : String!
-    var updatedAt : String!
+    var createdAt  = ""
+    var id = ""
+    var itemId = ""
+    var nameAr = ""
+    var nameEn = ""
+    var price = ""
+    var status = ""
+    var updatedAt = ""
     
     
     /**
@@ -74,14 +74,14 @@ class VehiclePrice : NSObject, NSCoding{
      */
     @objc required init(coder aDecoder: NSCoder)
     {
-        createdAt = aDecoder.decodeObject(forKey: "created_at") as? String
-        id = aDecoder.decodeObject(forKey: "id") as? String
-        itemId = aDecoder.decodeObject(forKey: "item_id") as? String
-        nameAr = aDecoder.decodeObject(forKey: "name_ar") as? String
-        nameEn = aDecoder.decodeObject(forKey: "name_en") as? String
-        price = aDecoder.decodeObject(forKey: "price") as? String
-        status = aDecoder.decodeObject(forKey: "status") as? String
-        updatedAt = aDecoder.decodeObject(forKey: "updated_at") as? String
+        createdAt = (aDecoder.decodeObject(forKey: "created_at") as? String)!
+        id = (aDecoder.decodeObject(forKey: "id") as? String)!
+        itemId = (aDecoder.decodeObject(forKey: "item_id") as? String)!
+        nameAr = (aDecoder.decodeObject(forKey: "name_ar") as? String)!
+        nameEn = (aDecoder.decodeObject(forKey: "name_en") as? String)!
+        price = (aDecoder.decodeObject(forKey: "price") as? String)!
+        status = (aDecoder.decodeObject(forKey: "status") as? String)!
+        updatedAt = (aDecoder.decodeObject(forKey: "updated_at") as? String)!
         
     }
     

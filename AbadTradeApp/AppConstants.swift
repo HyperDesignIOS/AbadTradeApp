@@ -33,3 +33,6 @@ let TenderURL = "\(BaseURL)Abad/api/postTender"
 let showRoomMsg = "\(BaseURL)Abad/api/dealerMessage"
 let insuranceMsg = "\(BaseURL)Abad/api/messageInsurance"
 let tenderLabelURL = "\(BaseURL)Abad/api/tenders"
+let buyCarURL = "\(BaseURL)Abad/api/Buycar"
+let postBuyCarURL = "\(BaseURL)Abad/api/postBuycar"
+
