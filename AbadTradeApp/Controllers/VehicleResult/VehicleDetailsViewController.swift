@@ -139,6 +139,13 @@ class VehicleDetailsViewController: UIViewController,UITableViewDelegate,UITable
     }
     */
     
+    @IBAction func buyButton(_ sender: Any) {
+    }
+    
+    @IBAction func bidButton(_ sender: Any) {
+    }
+    
+    
     func slider(){
         var downloadedImages = [InputSource]()
         for var i in (0 ..< vehicleImages.count) {
