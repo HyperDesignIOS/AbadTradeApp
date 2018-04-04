@@ -150,6 +150,7 @@ class VehicleDetailsViewController: UIViewController,UITableViewDelegate,UITable
              let userID = UserDefaults.standard.getUserID()
             let storyboard = UIStoryboard(name: "VehicleResult", bundle: nil)
             let controller = storyboard.instantiateViewController(withIdentifier: "buyCarVC")
+            as! BuyCarVC
                 
             //self.present(controller, animated: true, completion: nil)
             

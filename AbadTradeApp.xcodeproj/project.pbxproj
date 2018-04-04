@@ -51,6 +51,7 @@
 		7D20679E206BA0A40048452A /* ShowRoomItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D20679D206BA0A40048452A /* ShowRoomItem.swift */; };
 		7D2067A0206BA0C30048452A /* ShowRoomDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D20679F206BA0C20048452A /* ShowRoomDetails.swift */; };
 		7D2067A3206BAF890048452A /* ShowRoomDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2067A2206BAF890048452A /* ShowRoomDetailsViewController.swift */; };
+		7D2C26E520752DC6004F8F9B /* BuyCarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C26E420752DC6004F8F9B /* BuyCarVC.swift */; };
 		7D51DC46205FC88000D5E107 /* Year.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D51DC45205FC88000D5E107 /* Year.swift */; };
 		7D51DC49205FDF1400D5E107 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D51DC48205FDF1400D5E107 /* Status.swift */; };
 		7D51DC4C2060149E00D5E107 /* Vehicle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D51DC4B2060149E00D5E107 /* Vehicle.storyboard */; };
@@ -124,6 +125,7 @@
 		7D20679D206BA0A40048452A /* ShowRoomItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowRoomItem.swift; sourceTree = "<group>"; };
 		7D20679F206BA0C20048452A /* ShowRoomDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowRoomDetails.swift; sourceTree = "<group>"; };
 		7D2067A2206BAF890048452A /* ShowRoomDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowRoomDetailsViewController.swift; sourceTree = "<group>"; };
+		7D2C26E420752DC6004F8F9B /* BuyCarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyCarVC.swift; sourceTree = "<group>"; };
 		7D51DC45205FC88000D5E107 /* Year.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Year.swift; sourceTree = "<group>"; };
 		7D51DC48205FDF1400D5E107 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		7D51DC4B2060149E00D5E107 /* Vehicle.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Vehicle.storyboard; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 		40B039CD2059765A00AAD62A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				7D2C26E320752D6A004F8F9B /* Buy car   */,
 				7D5282DF2072533000A31401 /* Tender */,
 				7D59A8BD207118C70010DD0E /* RegisterVC */,
 				7D59A8BC207118B40010DD0E /* LoginVC */,
@@ -369,6 +372,14 @@
 				40285FCF20713FA500E575DD /* ShowRoomSendMessageViewController.swift */,
 			);
 			path = "Show rooms details";
+			sourceTree = "<group>";
+		};
+		7D2C26E320752D6A004F8F9B /* Buy car   */ = {
+			isa = PBXGroup;
+			children = (
+				7D2C26E420752DC6004F8F9B /* BuyCarVC.swift */,
+			);
+			path = "Buy car  ";
 			sourceTree = "<group>";
 		};
 		7D51DC44205FC7B000D5E107 /* Year */ = {
@@ -744,6 +755,7 @@
 				40B24A93205E8C1200FE00BF /* searchTableViewCell.swift in Sources */,
 				7D5282E12072535900A31401 /* TenderVC.swift in Sources */,
 				4028CD91206D00170067294F /* VehicleModYear.swift in Sources */,
+				7D2C26E520752DC6004F8F9B /* BuyCarVC.swift in Sources */,
 				404520B72073C99A00B45745 /* InsuranceSendMessageViewController.swift in Sources */,
 				7D51DC49205FDF1400D5E107 /* Status.swift in Sources */,
 				40F39B8520640559000FE5A2 /* VehiclesCollectionViewController.swift in Sources */,
