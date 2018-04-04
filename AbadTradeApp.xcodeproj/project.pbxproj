@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4000FD862074F6C400E70AAC /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4000FD852074F6C400E70AAC /* TimerManager.swift */; };
+		4000FD882075360B00E70AAC /* VehicleBidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4000FD872075360B00E70AAC /* VehicleBidViewController.swift */; };
 		40285FCC207109C200E575DD /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40285FCB207109C200E575DD /* TableViewCell.swift */; };
 		40285FCE20710A4C00E575DD /* ModelsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40285FCD20710A4C00E575DD /* ModelsTableViewController.swift */; };
 		40285FD020713FA500E575DD /* ShowRoomSendMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40285FCF20713FA500E575DD /* ShowRoomSendMessageViewController.swift */; };
@@ -82,6 +83,7 @@
 /* Begin PBXFileReference section */
 		11BA69E58BAC6CD88A2058D2 /* Pods-AbadTradeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AbadTradeApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AbadTradeApp/Pods-AbadTradeApp.debug.xcconfig"; sourceTree = "<group>"; };
 		4000FD852074F6C400E70AAC /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
+		4000FD872075360B00E70AAC /* VehicleBidViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleBidViewController.swift; sourceTree = "<group>"; };
 		40285FCB207109C200E575DD /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		40285FCD20710A4C00E575DD /* ModelsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsTableViewController.swift; sourceTree = "<group>"; };
 		40285FCF20713FA500E575DD /* ShowRoomSendMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowRoomSendMessageViewController.swift; sourceTree = "<group>"; };
@@ -343,6 +345,7 @@
 				4028CD92206D034A0067294F /* VehicleDetailsViewController.swift */,
 				4028CD94206D09E70067294F /* VehicleDetailsTableViewCell.swift */,
 				4000FD852074F6C400E70AAC /* TimerManager.swift */,
+				4000FD872075360B00E70AAC /* VehicleBidViewController.swift */,
 			);
 			path = VehicleResult;
 			sourceTree = "<group>";
@@ -750,6 +753,7 @@
 				40E79F5C206A685D00DBDCA6 /* ShowRoomCollectionViewController.swift in Sources */,
 				40B24A91205E8BF700FE00BF /* searchTableViewController.swift in Sources */,
 				4028CD87206CF7200067294F /* VehiclePrice.swift in Sources */,
+				4000FD882075360B00E70AAC /* VehicleBidViewController.swift in Sources */,
 				40E79F54206A684900DBDCA6 /* Area.swift in Sources */,
 				40E79F61206A6B6600DBDCA6 /* InsuranceDetailsViewController.swift in Sources */,
 				40B24A93205E8C1200FE00BF /* searchTableViewCell.swift in Sources */,
