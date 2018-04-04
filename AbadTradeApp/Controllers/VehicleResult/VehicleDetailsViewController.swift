@@ -18,10 +18,11 @@ class VehicleDetailsViewController: UIViewController,UITableViewDelegate,UITable
     var vehicleOptions = [VehicleOption]()
     var vehicleBids : VehicleBid!
     var vehicleItemDetails : VehicleItemDetails!
-    var timer = TimerManager()
+    var timer = Timer()
     var counter = Int()
     var priceType : String!
-    let formater = DateFormatter()
+    var user : User!
+   var generalMethod = GeneralMethod()
     
     @IBOutlet weak var vehicleSlider: ImageSlideshow!
     
@@ -35,7 +36,6 @@ class VehicleDetailsViewController: UIViewController,UITableViewDelegate,UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        formater.dateFormat = "yyyy-MM-dd HH:mm:ss"
         tabelView.delegate = self
         tabelView.dataSource = self
         getItems()
@@ -145,6 +145,31 @@ class VehicleDetailsViewController: UIViewController,UITableViewDelegate,UITable
     
     @IBAction func buyButton(_ sender: Any) {
         
+        
+        if UserDefaults.standard.isLoggedIn(){
+             let userID = UserDefaults.standard.getUserID()
+            let storyboard = UIStoryboard(name: "VehicleResult", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "buyCarVC")
+                
+            //self.present(controller, animated: true, completion: nil)
+            
+            apiRequests.apisInstance.buyCar(id:String(vehicleItemDetails.id), userId:String(userID), didDataReady: { (user, prices) in
+                self.vehiclePrices = prices
+                self.user = user
+                self.show(controller
+                    , sender: self)
+                
+            })
+        }
+        else
+        {
+            let storyboard = UIStoryboard(name: "Login", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "LoginVC")
+            generalMethod.showAlert(title: "", message: "login first to buy", vc: self, closure: nil)
+            
+            
+        }
+        
     }
     
     @IBAction func bidButton(_ sender: Any) {
@@ -175,14 +200,6 @@ class VehicleDetailsViewController: UIViewController,UITableViewDelegate,UITable
             self.counter = 4
             self.slider()
             self.tabelView.reloadData()
-            if self.priceType == "bids"{
-                self.timer.timeNow = self.formater.date(from: self.vehicleBids.startDate)
-                self.timer.timeEnd = self.formater.date(from: self.vehicleBids.endDate)
-                self.timer.targetViewController = self
-                self.timer.updateView {
-                    self.timerLabel.text = "\(self.timer.dayText)\(self.timer.hourText)\(self.timer.minuteText)\(self.timer.secondText)"
-                }
-            }
         }
         
     }

@@ -8,14 +8,14 @@ import SwiftyJSON
 
 class VehiclePrice : NSObject, NSCoding{
     
-    var createdAt  = ""
-    var id = ""
-    var itemId = ""
-    var nameAr = ""
-    var nameEn = ""
-    var price = ""
-    var status = ""
-    var updatedAt = ""
+    var createdAt : String!
+    var id : String!
+    var itemId : String!
+    var nameAr : String!
+    var nameEn : String!
+    var price : String!
+    var status : String!
+    var updatedAt : String!
     
     
     /**
@@ -25,14 +25,14 @@ class VehiclePrice : NSObject, NSCoding{
         if json.isEmpty{
             return
         }
-        createdAt = json["created_at"] as! String
-        id = json["id"] as! String
-        itemId = json["item_id"] as! String
-        nameAr = json["name_ar"] as! String
-        nameEn = json["name_en"] as! String
-        price = json["price"] as! String
-        status = json["status"] as! String
-        updatedAt = json["updated_at"] as! String
+        createdAt = json["created_at"] as? String ?? ""
+        id = json["id"] as? String ?? ""
+        itemId = json["item_id"] as? String ?? ""
+        nameAr = json["name_ar"] as? String ?? ""
+        nameEn = json["name_en"] as? String ?? ""
+        price = json["price"] as? String ?? ""
+        status = json["status"] as? String ?? ""
+        updatedAt = json["updated_at"] as? String ?? ""
     }
     
     /**

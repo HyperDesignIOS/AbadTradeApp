@@ -187,7 +187,7 @@ class VehicleItemDetails : NSObject, NSCoding{
         categoryId = aDecoder.decodeObject(forKey: "category_id") as? String
         createdAt = aDecoder.decodeObject(forKey: "created_at") as? String
         dealer = aDecoder.decodeObject(forKey: "dealer") as? ShowRoom
-        dealerId = aDecoder.decodeObject(forKey: "dealer_id") as? String
+        dealerId = (aDecoder.decodeObject(forKey: "dealer_id") as? String)!
         descriptionAr = aDecoder.decodeObject(forKey: "description_ar") as? String
         descriptionEn = aDecoder.decodeObject(forKey: "description_en") as? String
         id = aDecoder.decodeObject(forKey: "id") as? Int
