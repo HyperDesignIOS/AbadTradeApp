@@ -195,13 +195,6 @@
 			path = VehicleDetails;
 			sourceTree = "<group>";
 		};
-		404520B52073B2FB00B45745 /* SendMessage */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SendMessage;
-			sourceTree = "<group>";
-		};
 		4073372D205832F100299A0F /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -247,7 +240,6 @@
 		40B039CD2059765A00AAD62A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				404520B52073B2FB00B45745 /* SendMessage */,
 				7D5282DF2072533000A31401 /* Tender */,
 				7D59A8BD207118C70010DD0E /* RegisterVC */,
 				7D59A8BC207118B40010DD0E /* LoginVC */,
