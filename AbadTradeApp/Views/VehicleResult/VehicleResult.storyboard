@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bKl-Db-7GB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bKl-Db-7GB">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -545,7 +545,7 @@
                                                 <rect key="frame" x="73" y="10" width="279" height="40"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                                <textInputTraits key="textInputTraits" textContentType="street-address"/>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -578,7 +578,7 @@
                                                 <rect key="frame" x="73" y="10" width="279" height="40"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                                <textInputTraits key="textInputTraits" textContentType="address-line1"/>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -666,14 +666,24 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WFE-R7-wf9">
+                                                        <rect key="frame" x="0.0" y="0.0" width="177" height="71"/>
+                                                        <connections>
+                                                            <action selector="priceRadioButton:" destination="bG2-TA-TOU" eventType="touchUpInside" id="kBE-1j-2Ep"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <constraints>
+                                                    <constraint firstItem="WFE-R7-wf9" firstAttribute="leading" secondItem="Tv3-mv-Piq" secondAttribute="leading" id="1Nt-P2-0lV"/>
+                                                    <constraint firstAttribute="trailing" secondItem="WFE-R7-wf9" secondAttribute="trailing" id="AvB-to-XLo"/>
                                                     <constraint firstAttribute="bottom" secondItem="zoq-sg-i1x" secondAttribute="bottom" constant="10" id="Gb0-wH-cKP"/>
                                                     <constraint firstItem="fHe-hz-aaK" firstAttribute="top" secondItem="Tv3-mv-Piq" secondAttribute="top" constant="10" id="L8o-60-bQM"/>
                                                     <constraint firstAttribute="bottom" secondItem="fHe-hz-aaK" secondAttribute="bottom" constant="10" id="NAI-UO-BDO"/>
                                                     <constraint firstAttribute="trailing" secondItem="zoq-sg-i1x" secondAttribute="trailing" constant="5" id="Syz-on-zA9"/>
+                                                    <constraint firstItem="WFE-R7-wf9" firstAttribute="top" secondItem="Tv3-mv-Piq" secondAttribute="top" id="WAZ-VC-WHG"/>
                                                     <constraint firstItem="zoq-sg-i1x" firstAttribute="top" secondItem="Tv3-mv-Piq" secondAttribute="top" constant="10" id="YXj-uz-fxp"/>
                                                     <constraint firstItem="fHe-hz-aaK" firstAttribute="leading" secondItem="Tv3-mv-Piq" secondAttribute="leading" constant="15" id="ZiT-Ut-SJD"/>
+                                                    <constraint firstAttribute="bottom" secondItem="WFE-R7-wf9" secondAttribute="bottom" id="cNc-4Y-l3L"/>
                                                     <constraint firstItem="zoq-sg-i1x" firstAttribute="leading" secondItem="fHe-hz-aaK" secondAttribute="trailing" constant="5" id="pNC-K4-szf"/>
                                                 </constraints>
                                             </view>
@@ -692,15 +702,25 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODU-mp-lCu">
+                                                        <rect key="frame" x="0.0" y="0.0" width="177" height="71"/>
+                                                        <connections>
+                                                            <action selector="priceRadioButton:" destination="bG2-TA-TOU" eventType="touchUpInside" id="TrC-qi-HSx"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="5B2-BU-G4d" firstAttribute="top" secondItem="8UE-Rf-Bf3" secondAttribute="top" constant="10" id="16F-1n-uU4"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ODU-mp-lCu" secondAttribute="trailing" id="1ZU-D1-OQd"/>
                                                     <constraint firstAttribute="bottom" secondItem="5B2-BU-G4d" secondAttribute="bottom" constant="10" id="4xw-Ju-fti"/>
                                                     <constraint firstItem="dMG-eH-0Ml" firstAttribute="leading" secondItem="8UE-Rf-Bf3" secondAttribute="leading" constant="15" id="EuO-6a-8gh"/>
+                                                    <constraint firstItem="ODU-mp-lCu" firstAttribute="top" secondItem="8UE-Rf-Bf3" secondAttribute="top" id="QWz-pW-Bfi"/>
                                                     <constraint firstItem="5B2-BU-G4d" firstAttribute="leading" secondItem="dMG-eH-0Ml" secondAttribute="trailing" constant="5" id="h7r-OD-5b1"/>
+                                                    <constraint firstItem="ODU-mp-lCu" firstAttribute="leading" secondItem="8UE-Rf-Bf3" secondAttribute="leading" id="lNT-Bb-MSL"/>
                                                     <constraint firstAttribute="trailing" secondItem="5B2-BU-G4d" secondAttribute="trailing" constant="5" id="oYs-cv-mlu"/>
                                                     <constraint firstAttribute="bottom" secondItem="dMG-eH-0Ml" secondAttribute="bottom" constant="10" id="wr6-WQ-oR5"/>
                                                     <constraint firstItem="dMG-eH-0Ml" firstAttribute="top" secondItem="8UE-Rf-Bf3" secondAttribute="top" constant="10" id="wyP-X1-hLV"/>
+                                                    <constraint firstAttribute="bottom" secondItem="ODU-mp-lCu" secondAttribute="bottom" id="xUQ-lz-1jV"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -734,7 +754,11 @@
                         <outlet property="addessenTF" destination="j1z-Zq-pcF" id="Ey7-W8-Ztn"/>
                         <outlet property="addressarTF" destination="7zs-lS-np0" id="tEJ-2v-2hT"/>
                         <outlet property="emailTF" destination="WU5-r7-fjf" id="gru-9X-ESn"/>
+                        <outlet property="firstImage" destination="fHe-hz-aaK" id="a5m-BN-wW4"/>
+                        <outlet property="firstPriceLabel" destination="zoq-sg-i1x" id="YPG-3U-X8t"/>
                         <outlet property="nameTF" destination="BD6-1Q-TuM" id="OlX-p6-GiU"/>
+                        <outlet property="secondImage" destination="dMG-eH-0Ml" id="g0d-R3-rOQ"/>
+                        <outlet property="secondPriceLabel" destination="5B2-BU-G4d" id="L5x-2U-2ww"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="00U-2u-fQc" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -481,6 +481,8 @@ class apiRequests {
     func buyCar(id: String,userId: String ,didDataReady : @escaping(User,[VehiclePrice])->())->(){
         sm.connectForApiWith(url: buyCarURL  , mType: HTTPServerMethod.post, params: ["id":id,"user_id":userId], complation: { (json) in
             if let obj = json {
+                
+                self.vehiclePrices.removeAll()
                 print (obj)
                 let dictionaryOfJson = JSON(json!).dictionaryObject
                 print(dictionaryOfJson)

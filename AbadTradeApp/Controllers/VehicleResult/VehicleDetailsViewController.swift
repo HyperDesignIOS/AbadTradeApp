@@ -152,15 +152,16 @@ class VehicleDetailsViewController: UIViewController,UITableViewDelegate,UITable
             //self.present(controller, animated: true, completion: nil)
             
             apiRequests.apisInstance.buyCar(id:String(vehicleItemDetails.id), userId:String(userID), didDataReady: { (user, prices) in
-                self.vehiclePrices = prices
+                //self.vehiclePrices = prices
                 self.user = user
-                controller.email = user.email
-                controller.phone = user.phone as! String!
-                controller.addressar = user.addressAr as! String!
-                controller.addressen = user.addressEn as! String!
+                controller.user = user
+                //controller.email = user.email
+               // controller.phone = user.phone as! String!
+             //   controller.addressar = user.addressAr as! String!
+               // controller.addressen = user.addressEn as! String!
                 controller.price = prices
                 controller.id = self.vehicleItemDetails.id
-                controller.userName = user.name
+               // controller.userName = user.name
                 self.show(controller
                     , sender: self)
                 
