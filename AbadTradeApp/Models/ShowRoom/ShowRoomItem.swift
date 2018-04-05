@@ -44,29 +44,29 @@ class ShowRoomItem : NSObject, NSCoding{
      * Instantiate the instance using the passed dictionary values to set the properties values
      */
     init(fromDictionary dictionary: [String:Any]){
-        brandId = dictionary["brand_id"] as? String
-        categoryId = dictionary["category_id"] as? String
-        createdAt = dictionary["created_at"] as? String
-        dealerId = dictionary["dealer_id"] as? String
-        descriptionAr = dictionary["description_ar"] as? String
-        descriptionEn = dictionary["description_en"] as? String
+        brandId = dictionary["brand_id"] as? String ?? ""
+        categoryId = dictionary["category_id"] as? String ?? ""
+        createdAt = dictionary["created_at"] as? String ?? ""
+        dealerId = dictionary["dealer_id"] as? String ?? ""
+        descriptionAr = dictionary["description_ar"] as? String ?? ""
+        descriptionEn = dictionary["description_en"] as? String ?? ""
         id = dictionary["id"] as? Int
-        image = dictionary["image"] as? String
-        linkAr = dictionary["link_ar"] as? String
-        linkEn = dictionary["link_en"] as? String
-        luxury = dictionary["luxury"] as? String
+        image = dictionary["image"] as? String ?? ""
+        linkAr = dictionary["link_ar"] as? String ?? ""
+        linkEn = dictionary["link_en"] as? String ?? ""
+        luxury = dictionary["luxury"] as? String ?? ""
         metaDesc = dictionary["meta_desc"] as? AnyObject
         metaKey = dictionary["meta_key"] as? AnyObject
-        modelId = dictionary["model_id"] as? String
-        modelYearId = dictionary["model_year_id"] as? String
-        nameAr = dictionary["name_ar"] as? String
-        nameEn = dictionary["name_en"] as? String
-        priceType = dictionary["price_type"] as? String
-        review = dictionary["review"] as? String
-        status = dictionary["status"] as? String
-        type = dictionary["type"] as? String
-        updatedAt = dictionary["updated_at"] as? String
-        userId = dictionary["user_id"] as? String
+        modelId = dictionary["model_id"] as? String ?? ""
+        modelYearId = dictionary["model_year_id"] as? String ?? ""
+        nameAr = dictionary["name_ar"] as? String ?? ""
+        nameEn = dictionary["name_en"] as? String ?? ""
+        priceType = dictionary["price_type"] as? String ?? ""
+        review = dictionary["review"] as? String ?? ""
+        status = dictionary["status"] as? String ?? ""
+        type = dictionary["type"] as? String ?? ""
+        updatedAt = dictionary["updated_at"] as? String ?? ""
+        userId = dictionary["user_id"] as? String ?? ""
         visites = dictionary["visites"] as? AnyObject
     }
     

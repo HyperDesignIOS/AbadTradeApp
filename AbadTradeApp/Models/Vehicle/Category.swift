@@ -20,9 +20,9 @@ class Category : NSObject, NSCoding{
   
     init(fromDictionary dictionary: [String : Any]){
         id = dictionary["id"] as! Int
-        nameAr = dictionary["name_ar"] as! String
-        nameEn = dictionary["name_en"] as! String
-        categoryImage = dictionary["image"] as! String
+        nameAr = dictionary["name_ar"] as? String ?? ""
+        nameEn = dictionary["name_en"] as? String ?? ""
+        categoryImage = dictionary["image"] as? String ?? ""
     }
     
 
@@ -48,8 +48,8 @@ class Category : NSObject, NSCoding{
     @objc required init(coder aDecoder: NSCoder)
     {
         id = aDecoder.decodeObject(forKey: "id") as? Int
-        nameAr = aDecoder.decodeObject(forKey: "name_ar") as? String
-        nameEn = aDecoder.decodeObject(forKey: "name_en") as? String
+        nameAr = aDecoder.decodeObject(forKey: "name_ar") as? String ?? ""
+        nameEn = aDecoder.decodeObject(forKey: "name_en") as? String ?? ""
         
     }
     

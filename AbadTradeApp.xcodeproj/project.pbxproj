@@ -58,6 +58,7 @@
 		7D51DC4C2060149E00D5E107 /* Vehicle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D51DC4B2060149E00D5E107 /* Vehicle.storyboard */; };
 		7D5282DE2072524A00A31401 /* Tender.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D5282DD2072524A00A31401 /* Tender.storyboard */; };
 		7D5282E12072535900A31401 /* TenderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5282E02072535900A31401 /* TenderVC.swift */; };
+		7D570A4420764EEB00CB3F17 /* priceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D570A4320764EEB00CB3F17 /* priceCell.swift */; };
 		7D597BB920739DB30009B957 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D597BB820739DB30009B957 /* Extentions.swift */; };
 		7D59A8B8207101AD0010DD0E /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D59A8B7207101AD0010DD0E /* Login.storyboard */; };
 		7D59A8BB207101D00010DD0E /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D59A8BA207101D00010DD0E /* Register.storyboard */; };
@@ -133,6 +134,7 @@
 		7D51DC4B2060149E00D5E107 /* Vehicle.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Vehicle.storyboard; sourceTree = "<group>"; };
 		7D5282DD2072524A00A31401 /* Tender.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tender.storyboard; sourceTree = "<group>"; };
 		7D5282E02072535900A31401 /* TenderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenderVC.swift; sourceTree = "<group>"; };
+		7D570A4320764EEB00CB3F17 /* priceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = priceCell.swift; sourceTree = "<group>"; };
 		7D597BB820739DB30009B957 /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 		7D59A8B7207101AD0010DD0E /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		7D59A8BA207101D00010DD0E /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
@@ -381,6 +383,7 @@
 			isa = PBXGroup;
 			children = (
 				7D2C26E420752DC6004F8F9B /* BuyCarVC.swift */,
+				7D570A4320764EEB00CB3F17 /* priceCell.swift */,
 			);
 			path = "Buy car  ";
 			sourceTree = "<group>";
@@ -709,6 +712,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D59A8C42071232C0010DD0E /* User.swift in Sources */,
+				7D570A4420764EEB00CB3F17 /* priceCell.swift in Sources */,
 				4028CD93206D034A0067294F /* VehicleDetailsViewController.swift in Sources */,
 				4028CD95206D09E70067294F /* VehicleDetailsTableViewCell.swift in Sources */,
 				40E79F5B206A685D00DBDCA6 /* ShowRoomCollectionViewCell.swift in Sources */,

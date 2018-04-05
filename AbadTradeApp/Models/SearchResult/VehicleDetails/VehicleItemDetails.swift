@@ -48,20 +48,20 @@ class VehicleItemDetails : NSObject, NSCoding{
         if let brandData = json["brand"] as? [String:Any]{
             brand = Brand(fromJson: brandData)
         }
-        brandId = json["brand_id"] as! String
-        categoryId = json["category_id"] as! String
-        createdAt = json["created_at"] as! String
+        brandId = json["brand_id"] as? String ?? ""
+        categoryId = json["category_id"] as? String ?? ""
+        createdAt = json["created_at"] as? String ?? ""
         if let dealerData = json["dealer"] as? [String:Any]{
             dealer = ShowRoom(fromDictionary: dealerData)
         }
         dealerId = json["dealer_id"] as? String ?? ""
-        descriptionAr = json["description_ar"] as! String
-        descriptionEn = json["description_en"] as! String
+        descriptionAr = json["description_ar"] as? String ?? ""
+        descriptionEn = json["description_en"] as? String ?? ""
         id = json["id"] as! Int
-        image = json["image"] as! String
-        linkAr = json["link_ar"]as! String
-        linkEn = json["link_en"]as! String
-        luxury = json["luxury"]as! String
+        image = json["image"] as? String ?? ""
+        linkAr = json["link_ar"]as? String ?? ""
+        linkEn = json["link_en"]as? String ?? ""
+        luxury = json["luxury"]as? String ?? ""
         metaDesc = json["meta_desc"] as AnyObject
         metaKey = json["meta_key"] as AnyObject
         if let modYearJson = json["mod_year"] as? [String:Any]{
@@ -70,16 +70,16 @@ class VehicleItemDetails : NSObject, NSCoding{
         if let modelData = json["model"] as? [String:Any]{
             model = Model(fromJson: modelData)
         }
-        modelId = json["model_id"]as! String
-        modelYearId = json["model_year_id"]as! String
-        nameAr = json["name_ar"]as! String
-        nameEn = json["name_en"]as! String
-        priceType = json["price_type"]as! String
+        modelId = json["model_id"]as? String ?? ""
+        modelYearId = json["model_year_id"]as? String ?? ""
+        nameAr = json["name_ar"]as? String ?? ""
+        nameEn = json["name_en"]as? String ?? ""
+        priceType = json["price_type"]as? String ?? ""
        // review = json["review"]as! String
-        status = json["status"]as! String
-        type = json["type"]as! String
-        updatedAt = json["updated_at"]as! String
-        userId = json["user_id"]as! String
+        status = json["status"]as? String ?? ""
+        type = json["type"]as? String ?? ""
+        updatedAt = json["updated_at"]as? String ?? ""
+        userId = json["user_id"]as? String ?? ""
         visites = json["visites"] as AnyObject
     }
     

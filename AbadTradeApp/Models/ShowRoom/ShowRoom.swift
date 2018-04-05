@@ -33,26 +33,26 @@ class ShowRoom : NSObject, NSCoding{
      * Instantiate the instance using the passed dictionary values to set the properties values
      */
     init(fromDictionary dictionary: [String:Any]){
-        aboutAr = dictionary["about_ar"] as? String
-        aboutEn = dictionary["about_en"] as? String
-        addressAr = dictionary["address_ar"] as? String
-        addressEn = dictionary["address_en"] as? String
-        areaId = dictionary["area_id"] as? String
-        countryId = dictionary["country_id"] as? String
-        createdAt = dictionary["created_at"] as? String
-        id = dictionary["id"] as? String
-        lat = dictionary["lat"] as? String
-        logo = dictionary["logo"] as? String
-        longField = dictionary["long"] as? String
+        aboutAr = dictionary["about_ar"] as? String ?? ""
+        aboutEn = dictionary["about_en"] as? String ?? ""
+        addressAr = dictionary["address_ar"] as? String ?? ""
+        addressEn = dictionary["address_en"] as? String ?? ""
+        areaId = dictionary["area_id"] as? String ?? ""
+        countryId = dictionary["country_id"] as? String ?? ""
+        createdAt = dictionary["created_at"] as? String ?? ""
+        id = dictionary["id"] as? String ?? ""
+        lat = dictionary["lat"] as? String ?? ""
+        logo = dictionary["logo"] as? String ?? ""
+        longField = dictionary["long"] as? String ?? ""
         metaDesc = dictionary["meta_desc"] as AnyObject
         metaKey = dictionary["meta_key"] as AnyObject
-        nameAr = dictionary["name_ar"] as? String
-        nameEn = dictionary["name_en"] as? String
-        phone = dictionary["phone"] as? String
-        regionId = dictionary["region_id"] as? String
-        updatedAt = dictionary["updated_at"] as? String
-        userId = dictionary["user_id"] as? String
-        workTimes = dictionary["work_times"] as? String
+        nameAr = dictionary["name_ar"] as? String ?? ""
+        nameEn = dictionary["name_en"] as? String ?? ""
+        phone = dictionary["phone"] as? String ?? ""
+        regionId = dictionary["region_id"] as? String ?? ""
+        updatedAt = dictionary["updated_at"] as? String ?? ""
+        userId = dictionary["user_id"] as? String ?? ""
+        workTimes = dictionary["work_times"] as? String ?? ""
     }
     
     /**
