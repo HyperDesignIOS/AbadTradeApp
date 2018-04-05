@@ -28,17 +28,18 @@ class VehicleBidViewController: UIViewController {
     @IBOutlet weak var currentOffer: UILabel!
     @IBOutlet weak var endDateLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        formater.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        formater.dateFormat = "yyyy-MM-dd"
         timeNow = formater.date(from: vehicleBid.startDate)
         timeEnd = formater.date(from: vehicleBid.endDate)
         maxBidLabel.text = vehicleBid.maximumBid
         minBidLabel.text = vehicleBid.minimumBid
-        //currentOffer.text = vehicleBid.
+        currentOffer.text = vehicleBid.startBid
         endDateLabel.text = vehicleBid.endDate
-        //updateView()
+        updateView()
         // Do any additional setup after loading the view.
     }
 
@@ -62,16 +63,21 @@ class VehicleBidViewController: UIViewController {
     
     func updateView() {
         // Initialize Label
-        //setTimeLeft()
+        setTimeLeft()
         
         // Start timer
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(setTimeLeft), userInfo: nil, repeats: true)
+//        timer = Timer.scheduledTimer(timeInterval: -1.0, target: self, selector: #selector(self.setTimeLeft), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(withTimeInterval: -1.0, repeats: true, block: { (timer) in
+            //self.timer = timer
+            //self.setTimeLeft()
+        })
     }
     
     @objc func setTimeLeft() {
         
         // Only keep counting if timeEnd is bigger than timeNow
         if timeEnd.compare(timeNow) == ComparisonResult.orderedDescending {
+            
             isEnded = false
             let calendar = NSCalendar.current
             
@@ -89,7 +95,7 @@ class VehicleBidViewController: UIViewController {
             }
             minuteText = "\(components.minute!)m "
             secondText = "\(components.second!)s "
-            timerLabel.text = "\(dayText)\(hourText)\(minuteText)\(secondText)"
+            timerLabel.text = "\(dayText!)\(hourText!)\(minuteText!)\(secondText!)"
             
         } else {
             timerLabel.text = "Ended"
