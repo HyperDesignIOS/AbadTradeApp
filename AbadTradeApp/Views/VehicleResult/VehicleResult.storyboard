@@ -717,7 +717,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ebg-vy-h1V"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Register" id="bVe-97-s8y">
+                    <navigationItem key="navigationItem" title="Buy car" id="bVe-97-s8y">
                         <barButtonItem key="leftBarButtonItem" image="menuico" id="ZED-Sv-OiT"/>
                     </navigationItem>
                     <connections>
