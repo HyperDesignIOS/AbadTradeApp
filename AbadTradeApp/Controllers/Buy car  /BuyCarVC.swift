@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BuyCarVC: UIViewController {
+class BuyCarVC: UIViewController , UICollectionViewDelegate,UICollectionViewDataSource{
     
     var id : Int!
     var price : [VehiclePrice]!
@@ -21,17 +21,21 @@ class BuyCarVC: UIViewController {
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var addressarTF: UITextField!
     @IBOutlet weak var addessenTF: UITextField!
-    @IBOutlet weak var firstImage: UIImageView!
-    @IBOutlet weak var firstPriceLabel: UILabel!
-    @IBOutlet weak var secondImage: UIImageView!
-    @IBOutlet weak var secondPriceLabel: UILabel!
+//    @IBOutlet weak var firstImage: UIImageView!
+//    @IBOutlet weak var firstPriceLabel: UILabel!
+//    @IBOutlet weak var secondImage: UIImageView!
+//    @IBOutlet weak var secondPriceLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
-        firstPriceLabel.text = price[0].price
-        secondPriceLabel.text = price[1].price
+        
+           collectionView.delegate = self
+           collectionView.dataSource = self
+        
+        
+//        firstPriceLabel.text = price[0].price
+//        secondPriceLabel.text = price[1].price
         nameTF.text = user.name
       //  addressarTF.text = addressar
        // addessenTF.text = addressen
@@ -40,22 +44,52 @@ class BuyCarVC: UIViewController {
     }
     
     
-    @IBAction func priceRadioButton(_ sender: UIButton) {
+    
+//    @IBAction func priceRadioButton(_ sender: UIButton) {
+//
+//        switch sender.tag{
+//        case 0:
+//            imageSwap(forfirstimage: firstImage, andSecondImage: secondImage)
+//            selectedPrice = price[0].id
+//
+//        case 1:
+//            imageSwap(forfirstimage: secondImage, andSecondImage: firstImage)
+//            selectedPrice = price[1].id
+//
+//        default:
+//            break
+//        }
+//    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return price.count
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "priceCell", for: indexPath)
+        as! priceCell
+        cell.priceLabel.text = price[indexPath.row].price
+        cell.emptyImage.image = #imageLiteral(resourceName: "empty")
         
-        switch sender.tag{
-        case 0:
-            imageSwap(forfirstimage: firstImage, andSecondImage: secondImage)
-            selectedPrice = price[0].id
-            
-        case 1:
-            imageSwap(forfirstimage: secondImage, andSecondImage: firstImage)
-            selectedPrice = price[1].id
-            
-        default:
-            break
-        }
+        return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        //let cell = collectionView.cellForItem(at: indexPath) as! priceCell
+        selectedPrice = price[indexPath.row].id
+//        cell.emptyImage.image = #imageLiteral(resourceName: "radio-on-button")
+
+//        for i in 0..<price.count {
+//            if i == indexPath.row{
+//                cell.emptyImage.image = #imageLiteral(resourceName: "radio-on-button")
+//            }
+//            else{
+//                let cell = collectionView.cellForItem(at: i as! IndexPath) as! priceCell
+//                cell.emptyImage.image = #imageLiteral(resourceName: "empty")
+//            }
+//        }
+    }
+
 
     @IBAction func BuyButton(_ sender: Any) {
         
@@ -80,6 +114,7 @@ class BuyCarVC: UIViewController {
         }
         
     }
+    
 
     func imageSwap(forfirstimage firstImageView: UIImageView,andSecondImage secondImageView: UIImageView)
     {
@@ -88,4 +123,7 @@ class BuyCarVC: UIViewController {
         
     }
     
+    @IBOutlet weak var collectionView: UICollectionView!
 }
+
+

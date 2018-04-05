@@ -33,18 +33,18 @@ class User : NSObject, NSCoding{
      * Instantiate the instance using the passed dictionary values to set the properties values
      */
     init(fromDictionary dictionary: [String:Any]){
-        addressAr = dictionary["address_ar"] as? AnyObject
-        addressEn = dictionary["address_en"] as? AnyObject
-        admin = dictionary["admin"] as? String
-        areaId = dictionary["area_id"] as? AnyObject
-        createdAt = dictionary["created_at"] as? String
-        email = dictionary["email"] as? String
+        addressAr = dictionary["address_ar"] as AnyObject
+        addressEn = dictionary["address_en"] as AnyObject
+        admin = dictionary["admin"] as? String ?? ""
+        areaId = dictionary["area_id"] as AnyObject
+        createdAt = dictionary["created_at"] as? String ?? ""
+        email = dictionary["email"] as? String ?? ""
         id = dictionary["id"] as? Int
-        name = dictionary["name"] as? String
-        phone = dictionary["phone"] as? AnyObject
-        regionId = dictionary["region_id"] as? AnyObject
-        type = dictionary["type"] as? String
-        updatedAt = dictionary["updated_at"] as? String
+        name = dictionary["name"] as? String ?? ""
+        phone = dictionary["phone"] as AnyObject
+        regionId = dictionary["region_id"] as AnyObject
+        type = dictionary["type"] as? String ?? ""
+        updatedAt = dictionary["updated_at"] as? String ?? ""
     }
     
     /**

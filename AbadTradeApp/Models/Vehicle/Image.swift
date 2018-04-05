@@ -20,9 +20,9 @@ class Image : NSObject, NSCoding{
      * Instantiate the instance using the passed dictionary values to set the properties values
      */
     init(fromDictionary dictionary: [String:Any]){
-        headerPhoto1 = dictionary["header_photo1"] as? String
-        headerPhoto2 = dictionary["header_photo2"] as? String
-        headerPhoto3 = dictionary["header_photo3"] as? String
+        headerPhoto1 = dictionary["header_photo1"] as? String ?? ""
+        headerPhoto2 = dictionary["header_photo2"] as? String ?? ""
+        headerPhoto3 = dictionary["header_photo3"] as? String ?? ""
         lang = dictionary["lang"] as? String
     }
     
