@@ -20,6 +20,7 @@ class VehicleBidViewController: UIViewController {
     var secondText : String!
     var vehicleBid : VehicleBid!
     let formater = DateFormatter()
+    var general = GeneralMethod()
     
 
     @IBOutlet weak var maxBidLabel: UILabel!
@@ -27,7 +28,7 @@ class VehicleBidViewController: UIViewController {
     @IBOutlet weak var userOfferTextField: UITextField!
     @IBOutlet weak var currentOffer: UILabel!
     @IBOutlet weak var endDateLabel: UILabel!
-    @IBOutlet weak var timerLabel: UILabel!
+//    @IBOutlet weak var timerLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +40,7 @@ class VehicleBidViewController: UIViewController {
         minBidLabel.text = vehicleBid.minimumBid
         currentOffer.text = vehicleBid.startBid
         endDateLabel.text = vehicleBid.endDate
-        updateView()
+//        updateView()
         // Do any additional setup after loading the view.
     }
 
@@ -59,47 +60,63 @@ class VehicleBidViewController: UIViewController {
     }
     */
     @IBAction func sendBidButton(_ sender: Any) {
-    }
-    
-    func updateView() {
-        // Initialize Label
-        setTimeLeft()
         
-        // Start timer
-//        timer = Timer.scheduledTimer(timeInterval: -1.0, target: self, selector: #selector(self.setTimeLeft), userInfo: nil, repeats: true)
-        timer = Timer.scheduledTimer(withTimeInterval: -1.0, repeats: true, block: { (timer) in
-            //self.timer = timer
-            //self.setTimeLeft()
-        })
-    }
-    
-    @objc func setTimeLeft() {
-        
-        // Only keep counting if timeEnd is bigger than timeNow
-        if timeEnd.compare(timeNow) == ComparisonResult.orderedDescending {
-            
-            isEnded = false
-            let calendar = NSCalendar.current
-            
-            let components = calendar.dateComponents([.day, .hour, .minute, .second], from: timeNow, to: timeEnd)
-            
-            dayText = "\(components.day!)d "
-            hourText = "\(components.hour!)h "
-            
-            // Hide day and hour if they are zero
-            if components.day! <= 0 {
-                dayText = ""
-                if components.hour! <= 0 {
-                    hourText = ""
-                }
+        let enteredOffer = userOfferTextField.text
+        if enteredOffer != nil && enteredOffer != ""{
+            if enteredOffer! < vehicleBid.minimumBid{
+//                general.showAlert(title: "", message: "Invaild offer , please enter offer bigger than minimum bid", vc: self, closure: nil)
             }
-            minuteText = "\(components.minute!)m "
-            secondText = "\(components.second!)s "
-            timerLabel.text = "\(dayText!)\(hourText!)\(minuteText!)\(secondText!)"
-            
-        } else {
-            timerLabel.text = "Ended"
+            else if enteredOffer! > vehicleBid.maximumBid{
+//                general.showAlert(title: "", message: "Invaild offer , please enter offer less than maximum bid", vc: self, closure: nil)
+            }
+            else{
+                
+            }
+        }
+        else{
+            general.showAlert(title: "", message: "Please enter your offer", vc: self, closure: nil)
         }
     }
+    
+//    func updateView() {
+//        // Initialize Label
+//        setTimeLeft()
+//
+//        // Start timer
+////        timer = Timer.scheduledTimer(timeInterval: -1.0, target: self, selector: #selector(self.setTimeLeft), userInfo: nil, repeats: true)
+//        timer = Timer.scheduledTimer(withTimeInterval: -1.0, repeats: true, block: { (timer) in
+//            //self.timer = timer
+//            //self.setTimeLeft()
+//        })
+//    }
+//
+//    @objc func setTimeLeft() {
+//
+//        // Only keep counting if timeEnd is bigger than timeNow
+//        if timeEnd.compare(timeNow) == ComparisonResult.orderedDescending {
+//
+//            isEnded = false
+//            let calendar = NSCalendar.current
+//
+//            let components = calendar.dateComponents([.day, .hour, .minute, .second], from: timeNow, to: timeEnd)
+//
+//            dayText = "\(components.day!)d "
+//            hourText = "\(components.hour!)h "
+//
+//            // Hide day and hour if they are zero
+//            if components.day! <= 0 {
+//                dayText = ""
+//                if components.hour! <= 0 {
+//                    hourText = ""
+//                }
+//            }
+//            minuteText = "\(components.minute!)m "
+//            secondText = "\(components.second!)s "
+//            timerLabel.text = "\(dayText!)\(hourText!)\(minuteText!)\(secondText!)"
+//
+//        } else {
+//            timerLabel.text = "Ended"
+//        }
+//    }
 
 }

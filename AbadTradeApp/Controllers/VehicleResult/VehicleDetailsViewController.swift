@@ -28,8 +28,12 @@ class VehicleDetailsViewController: UIViewController,UITableViewDelegate,UITable
     @IBOutlet weak var buyButton: UIButton!
     @IBOutlet weak var tabelView: UITableView!
     
+    @IBOutlet weak var endDateLabel: UILabel!
+    @IBOutlet weak var currentOfferLabel: UILabel!
     var itemId : Int!
     
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var currentLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,6 +41,10 @@ class VehicleDetailsViewController: UIViewController,UITableViewDelegate,UITable
         tabelView.dataSource = self
         getItems()
         if priceType == "bids"{
+            currentOfferLabel.isHidden = false
+            endDateLabel.isHidden = false
+            currentLabel.isHidden = false
+            dateLabel.isHidden = false
             if UserDefaults.standard.isLoggedIn(){
                 bidsButton.isHidden = false
                 buyButton.isHidden = true
@@ -48,6 +56,10 @@ class VehicleDetailsViewController: UIViewController,UITableViewDelegate,UITable
             }
         }
         else{
+            currentOfferLabel.isHidden = true
+            endDateLabel.isHidden = true
+            currentLabel.isHidden = true
+            dateLabel.isHidden = true
             if UserDefaults.standard.isLoggedIn(){
                 bidsButton.isHidden = true
                 buyButton.isHidden = false
@@ -225,6 +237,9 @@ class VehicleDetailsViewController: UIViewController,UITableViewDelegate,UITable
             self.vehicleOptions = options
             self.counter = 4
             self.slider()
+            self.endDateLabel.text = self.vehicleBids.endDate
+            self.currentOfferLabel.text = self.vehicleBids.startBid
+            //print("bid : \(self.vehicleBids.id!)")
             self.tabelView.reloadData()
         }
         
