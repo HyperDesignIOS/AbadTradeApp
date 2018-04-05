@@ -19,6 +19,8 @@ class VehicleBidViewController: UIViewController {
     var minuteText : String!
     var secondText : String!
     var vehicleBid : VehicleBid!
+    let formater = DateFormatter()
+    
 
     @IBOutlet weak var maxBidLabel: UILabel!
     @IBOutlet weak var minBidLabel: UILabel!
@@ -29,6 +31,14 @@ class VehicleBidViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        formater.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        timeNow = formater.date(from: vehicleBid.startDate)
+        timeEnd = formater.date(from: vehicleBid.endDate)
+        maxBidLabel.text = vehicleBid.maximumBid
+        minBidLabel.text = vehicleBid.minimumBid
+        //currentOffer.text = vehicleBid.
+        endDateLabel.text = vehicleBid.endDate
+        //updateView()
         // Do any additional setup after loading the view.
     }
 

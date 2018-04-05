@@ -260,7 +260,7 @@
             </objects>
             <point key="canvasLocation" x="1524" y="168.6656671664168"/>
         </scene>
-        <!--Vehicle Bid View Controller-->
+        <!--Vehicle bid-->
         <scene sceneID="Amd-CK-StR">
             <objects>
                 <viewController storyboardIdentifier="bidViewController" id="Gty-hX-fg5" customClass="VehicleBidViewController" customModule="AbadTradeApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -300,26 +300,26 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UtQ-M6-GLn" userLabel="second">
                                 <rect key="frame" x="0.0" y="267" width="375" height="400"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XzV-fr-d1d">
-                                        <rect key="frame" x="10" y="10" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current offer :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XzV-fr-d1d">
+                                        <rect key="frame" x="10" y="10" width="128" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NKx-T8-DWc">
-                                        <rect key="frame" x="62" y="10" width="42" height="21"/>
+                                        <rect key="frame" x="148" y="10" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Offer" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AZ7-Hs-scU">
-                                        <rect key="frame" x="10" y="61" width="355" height="30"/>
+                                        <rect key="frame" x="10" y="64" width="355" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0vq-x9-ttm">
-                                        <rect key="frame" x="10" y="121" width="355" height="30"/>
+                                        <rect key="frame" x="10" y="124" width="355" height="30"/>
                                         <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <state key="normal" title="Send offer">
@@ -330,28 +330,28 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZBr-Y7-Ngk">
-                                        <rect key="frame" x="10" y="181" width="355" height="82"/>
+                                        <rect key="frame" x="10" y="184" width="355" height="88"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2mz-XV-uzJ">
-                                                <rect key="frame" x="10" y="10" width="42" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minimum bid :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2mz-XV-uzJ">
+                                                <rect key="frame" x="10" y="10" width="128" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SN2-1P-RNB">
-                                                <rect key="frame" x="62" y="10" width="42" height="21"/>
+                                                <rect key="frame" x="148" y="10" width="42" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OVX-Y0-8Rc">
-                                                <rect key="frame" x="10" y="51" width="42" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maximum bid :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OVX-Y0-8Rc">
+                                                <rect key="frame" x="10" y="54" width="133" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H2v-tY-XaV">
-                                                <rect key="frame" x="62" y="51" width="42" height="21"/>
+                                                <rect key="frame" x="153" y="54" width="42" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -364,10 +364,12 @@
                                             <constraint firstItem="2mz-XV-uzJ" firstAttribute="top" secondItem="ZBr-Y7-Ngk" secondAttribute="top" constant="10" id="G0A-0d-Hpi"/>
                                             <constraint firstItem="2mz-XV-uzJ" firstAttribute="leading" secondItem="ZBr-Y7-Ngk" secondAttribute="leading" constant="10" id="Kjo-Aj-z9i"/>
                                             <constraint firstItem="OVX-Y0-8Rc" firstAttribute="leading" secondItem="ZBr-Y7-Ngk" secondAttribute="leading" constant="10" id="QAF-uq-2YC"/>
+                                            <constraint firstItem="H2v-tY-XaV" firstAttribute="centerY" secondItem="OVX-Y0-8Rc" secondAttribute="centerY" id="bH0-I2-iLx"/>
                                             <constraint firstItem="H2v-tY-XaV" firstAttribute="leading" secondItem="OVX-Y0-8Rc" secondAttribute="trailing" constant="10" id="cxx-vq-ANs"/>
                                             <constraint firstItem="SN2-1P-RNB" firstAttribute="leading" secondItem="2mz-XV-uzJ" secondAttribute="trailing" constant="10" id="dGa-qe-ODt"/>
                                             <constraint firstItem="H2v-tY-XaV" firstAttribute="top" secondItem="SN2-1P-RNB" secondAttribute="bottom" constant="20" id="dbE-cn-UrK"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="H2v-tY-XaV" secondAttribute="trailing" constant="10" id="dza-hg-Jqh"/>
+                                            <constraint firstItem="SN2-1P-RNB" firstAttribute="centerY" secondItem="2mz-XV-uzJ" secondAttribute="centerY" id="eFX-WU-7Bd"/>
                                             <constraint firstItem="SN2-1P-RNB" firstAttribute="top" secondItem="ZBr-Y7-Ngk" secondAttribute="top" constant="10" id="kCQ-qf-y1d"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="SN2-1P-RNB" secondAttribute="trailing" constant="10" id="n4t-y9-E8D"/>
                                         </constraints>
@@ -406,6 +408,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FnQ-d3-gkb"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Vehicle bid" id="aFF-4G-Wy5"/>
                     <connections>
                         <outlet property="currentOffer" destination="NKx-T8-DWc" id="Cuq-DU-TVG"/>
                         <outlet property="endDateLabel" destination="Bw6-SC-vMl" id="vi3-5b-xHn"/>
@@ -417,7 +420,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rev-10-Uag" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2277.5999999999999" y="168.6656671664168"/>
+            <point key="canvasLocation" x="2404" y="169"/>
         </scene>
         <!--buy vehicle -->
         <scene sceneID="gcO-8n-VNK">
@@ -736,7 +739,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="00U-2u-fQc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2985" y="169"/>
+            <point key="canvasLocation" x="3324" y="168.6656671664168"/>
         </scene>
     </scenes>
     <resources>
