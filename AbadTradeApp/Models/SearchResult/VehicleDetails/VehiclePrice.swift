@@ -16,6 +16,7 @@ class VehiclePrice : NSObject, NSCoding{
     var price : String!
     var status : String!
     var updatedAt : String!
+//    var isPlaying = false
     
     
     /**

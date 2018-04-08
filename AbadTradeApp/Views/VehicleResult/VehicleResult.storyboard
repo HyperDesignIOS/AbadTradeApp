@@ -393,8 +393,8 @@
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="SN2-1P-RNB" secondAttribute="trailing" constant="10" id="n4t-y9-E8D"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0vq-x9-ttm">
-                                        <rect key="frame" x="8" y="146" width="355" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0vq-x9-ttm">
+                                        <rect key="frame" x="10" y="124" width="355" height="30"/>
                                         <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <state key="normal" title="Send offer">
@@ -746,9 +746,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ebg-vy-h1V"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Buy car" id="bVe-97-s8y">
-                        <barButtonItem key="leftBarButtonItem" image="menuico" id="ZED-Sv-OiT"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Buy car" id="bVe-97-s8y"/>
                     <connections>
                         <outlet property="PhonTF" destination="cXU-qo-hgP" id="w9T-IR-Vbm"/>
                         <outlet property="addessenTF" destination="j1z-Zq-pcF" id="Ey7-W8-Ztn"/>
@@ -760,13 +758,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="00U-2u-fQc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3324" y="168.6656671664168"/>
+            <point key="canvasLocation" x="3204" y="169"/>
         </scene>
     </scenes>
     <resources>
         <image name="location" width="32" height="32"/>
         <image name="mail" width="32" height="32"/>
-        <image name="menuico" width="15" height="11"/>
         <image name="phone" width="32" height="32"/>
         <image name="user" width="32" height="32"/>
     </resources>

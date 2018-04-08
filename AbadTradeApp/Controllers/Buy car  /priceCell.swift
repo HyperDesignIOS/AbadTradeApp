@@ -15,4 +15,8 @@ class priceCell: UICollectionViewCell {
     
     @IBOutlet weak var priceLabel: UILabel!
     
+//    func setup(item: VehiclePrice) {
+//        emptyImage.image = item.isPlaying ? UIImage(named: "empty") : UIImage(named: "radio-on-button")
+//    }
+    
 }

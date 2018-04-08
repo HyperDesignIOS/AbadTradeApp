@@ -67,6 +67,8 @@ class BuyCarVC: UIViewController , UICollectionViewDelegate,UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "priceCell", for: indexPath)
         as! priceCell
+//        let item = price[indexPath.row]
+//        cell.setup(item: item)
         cell.priceLabel.text = price[indexPath.row].price
         cell.emptyImage.image = #imageLiteral(resourceName: "empty")
         
@@ -75,19 +77,29 @@ class BuyCarVC: UIViewController , UICollectionViewDelegate,UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        //let cell = collectionView.cellForItem(at: indexPath) as! priceCell
-        selectedPrice = price[indexPath.row].id
+//        let cell = collectionView.cellForItem(at: indexPath) as! priceCell
+        print(indexPath.row)
+//        selectedPrice = price[indexPath.row]
+//        selectedPrice.isPlaying = !selectedPrice.isPlaying
+//
+//        for cell in tableView.visibleCells {
+//            guard let visibleCell = cell as? RadioTableViewCell else { return }
+//            let path = tableView.indexPathForCell(visibleCell)
+//            let item = items[path.row]
+//            item.isPlaying = visibleCell == selectedCell
+//            visibleCell.setup(item: item)
+//        }
 //        cell.emptyImage.image = #imageLiteral(resourceName: "radio-on-button")
 
-//        for i in 0..<price.count {
-//            if i == indexPath.row{
-//                cell.emptyImage.image = #imageLiteral(resourceName: "radio-on-button")
-//            }
-//            else{
-//                let cell = collectionView.cellForItem(at: i as! IndexPath) as! priceCell
-//                cell.emptyImage.image = #imageLiteral(resourceName: "empty")
-//            }
-//        }
+        for cell in collectionView.visibleCells {
+            let visiableCell = cell as! priceCell
+            if collectionView.indexPath(for: visiableCell)?.row == indexPath.row{
+                visiableCell.emptyImage.image = #imageLiteral(resourceName: "radio-on-button")
+            }
+            else{
+                visiableCell.emptyImage.image = #imageLiteral(resourceName: "empty")
+            }
+        }
     }
 
 
