@@ -33,6 +33,7 @@ class apiRequests {
     var user :User!
     var done :String!
     var msg : String!
+    var totalBid : String!
 
     //var insuranceCompnies = []()
     let sm = serverManager()
@@ -397,7 +398,7 @@ class apiRequests {
     
     func sendMessageToShowRoom(message : String, userId:String ,dealerId:String,didDataReady : @escaping(String,String)->())->(){
         
-        sm.connectForApiWith(url: showRoomMsg  , mType: HTTPServerMethod.post, params: ["message":message,"user_id":userId,"dealer_id":dealerId], complation: { (json) in
+        sm.connectForApiWith(url: ShowRoomMsg  , mType: HTTPServerMethod.post, params: ["message":message,"user_id":userId,"dealer_id":dealerId], complation: { (json) in
           
             if let obj = json {
                 print (obj)
@@ -419,7 +420,7 @@ class apiRequests {
     
     func sendMessageToInsurance(phone:String, message : String, userId:String ,insuranceId:String,didDataReady : @escaping(String,String)->())->(){
         
-        sm.connectForApiWith(url: insuranceMsg  , mType: HTTPServerMethod.post, params: ["phone":phone,"message":message,"user_id":userId,"insurance_id":insuranceId], complation: { (json) in
+        sm.connectForApiWith(url: InsuranceMsg  , mType: HTTPServerMethod.post, params: ["phone":phone,"message":message,"user_id":userId,"insurance_id":insuranceId], complation: { (json) in
             
             if let obj = json {
                 print (obj)
@@ -460,7 +461,7 @@ class apiRequests {
     
     func getTender( didDataReady : @escaping(String)->())->(){
         
-        sm.connectForApiWith(url: tenderLabelURL  , mType: HTTPServerMethod.get, params:nil, complation: { (json) in
+        sm.connectForApiWith(url: TenderLabelURL  , mType: HTTPServerMethod.get, params:nil, complation: { (json) in
             
             if let obj = json {
                 print (obj)
@@ -479,7 +480,7 @@ class apiRequests {
     }
     
     func buyCar(id: String,userId: String ,didDataReady : @escaping(User,[VehiclePrice])->())->(){
-        sm.connectForApiWith(url: buyCarURL  , mType: HTTPServerMethod.post, params: ["id":id,"user_id":userId], complation: { (json) in
+        sm.connectForApiWith(url: BuyCarURL  , mType: HTTPServerMethod.post, params: ["id":id,"user_id":userId], complation: { (json) in
             if let obj = json {
                 
                 self.vehiclePrices.removeAll()
@@ -504,11 +505,9 @@ class apiRequests {
         })
     }
     
-    
-    
     func postBuyCar( id : String, userId:String , price:String, phone:String, email:String,addressar: String,addressen:String,didDataReady : @escaping(String,String)->())->(){
         
-        sm.connectForApiWith(url: postBuyCarURL  , mType: HTTPServerMethod.post, params: ["id":id, "user_id":userId,"price":price,"phone":phone,"email":email,"address_ar":addressar,"address_en":addressen], complation: { (json) in
+        sm.connectForApiWith(url: PostBuyCarURL  , mType: HTTPServerMethod.post, params: ["id":id, "user_id":userId,"price":price,"phone":phone,"email":email,"address_ar":addressar,"address_en":addressen], complation: { (json) in
             
             if let obj = json {
                 print (obj)
@@ -527,6 +526,26 @@ class apiRequests {
         })
     }
     
+    func addAuctionForCarBid( id : String, userId : String , value : String ,didDataReady : @escaping(String,String)->())->(){
+        
+        sm.connectForApiWith(url: AddBidOfferURL  , mType: HTTPServerMethod.post, params: ["id" : id, "user_id":userId , "value" : value], complation: { (json) in
+            
+            if let obj = json {
+                print (obj)
+                let dictionaryOfJson = JSON(json!).dictionaryObject
+                print(dictionaryOfJson)
+                let msg = dictionaryOfJson!["msg"] as! String
+                self.msg = msg
+                
+                let total = dictionaryOfJson!["total"] as! String
+                self.totalBid = total
+            }
+            didDataReady(self.msg,self.totalBid)
+        }, errorHandler: { (error, msg) in
+            print("\(String(describing: error))")
+            didDataReady("","")
+        })
+    }
     
     
 }

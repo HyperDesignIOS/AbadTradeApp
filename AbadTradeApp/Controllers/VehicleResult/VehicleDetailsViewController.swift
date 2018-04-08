@@ -191,10 +191,10 @@ class VehicleDetailsViewController: UIViewController,UITableViewDelegate,UITable
     @IBAction func bidButton(_ sender: Any) {
         
         if UserDefaults.standard.isLoggedIn(){
-            let userID = UserDefaults.standard.getUserID()
             let storyboard = UIStoryboard(name: "VehicleResult", bundle: nil)
             let controller = storyboard.instantiateViewController(withIdentifier: "bidViewController") as! VehicleBidViewController
             controller.vehicleBid = self.vehicleBids
+            controller.currentItemId = "\(vehicleItemDetails.id!)"
             self.show(controller, sender: self)
             //self.present(controller, animated: true, completion: nil)
             

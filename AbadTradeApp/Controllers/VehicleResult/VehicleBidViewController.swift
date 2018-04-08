@@ -19,6 +19,7 @@ class VehicleBidViewController: UIViewController {
     var minuteText : String!
     var secondText : String!
     var vehicleBid : VehicleBid!
+    var currentItemId = String()
     let formater = DateFormatter()
     var general = GeneralMethod()
     
@@ -63,14 +64,22 @@ class VehicleBidViewController: UIViewController {
         
         let enteredOffer = userOfferTextField.text
         if enteredOffer != nil && enteredOffer != ""{
-            if enteredOffer! < vehicleBid.minimumBid{
-//                general.showAlert(title: "", message: "Invaild offer , please enter offer bigger than minimum bid", vc: self, closure: nil)
+            if Int(enteredOffer!)! < Int(vehicleBid.startBid)!
+            {
+                general.showAlert(title: "", message: "Invaild offer , please enter offer bigger than current offer", vc: self, closure: nil)
             }
-            else if enteredOffer! > vehicleBid.maximumBid{
-//                general.showAlert(title: "", message: "Invaild offer , please enter offer less than maximum bid", vc: self, closure: nil)
+            if Int(enteredOffer!)! < Int(vehicleBid.minimumBid)!{
+                general.showAlert(title: "", message: "Invaild offer , please enter offer bigger than minimum bid", vc: self, closure: nil)
+            }
+            else if Int(enteredOffer!)! > Int(vehicleBid.maximumBid)!{
+                general.showAlert(title: "", message: "Invaild offer , please enter offer less than maximum bid", vc: self, closure: nil)
             }
             else{
-                
+                apiRequests.apisInstance.addAuctionForCarBid(id: currentItemId, userId: "\(UserDefaults.standard.getUserID())", value: enteredOffer!, didDataReady: { (msg, total) in
+                    self.general.showAlert(title: "", message: "\(msg)", vc: self, closure: nil)
+                    self.currentOffer.text = total
+                    self.userOfferTextField.text = ""
+                })
             }
         }
         else{
