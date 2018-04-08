@@ -79,12 +79,14 @@ class VehicleDetailsViewController: UIViewController,UITableViewDelegate,UITable
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        updateView()
+        if priceType == "bids"{
+            updateView()}
     }
     
     override func viewDidDisappear(_ animated: Bool) {
 //        generalMethod.timerInvalidate()
-        timer.invalidate()
+        if priceType == "bids"{
+            timer.invalidate()}
     }
 
     override func didReceiveMemoryWarning() {
