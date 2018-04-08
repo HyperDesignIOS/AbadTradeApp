@@ -18,9 +18,12 @@ class VehicleDetailsViewController: UIViewController,UITableViewDelegate,UITable
     var vehicleOptions = [VehicleOption]()
     var vehicleBids : VehicleBid!
     var vehicleItemDetails : VehicleItemDetails!
+    var itemTotalAmount : Double!
     var counter = Int()
+    var timer = Timer()
     var priceType : String!
     var user : User!
+    var currency = "SAR"
    var generalMethod = GeneralMethod()
     
     @IBOutlet weak var vehicleSlider: ImageSlideshow!
@@ -71,7 +74,17 @@ class VehicleDetailsViewController: UIViewController,UITableViewDelegate,UITable
             }
         }
         
+        
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        updateView()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+//        generalMethod.timerInvalidate()
+        timer.invalidate()
     }
 
     override func didReceiveMemoryWarning() {
@@ -195,6 +208,7 @@ class VehicleDetailsViewController: UIViewController,UITableViewDelegate,UITable
             let controller = storyboard.instantiateViewController(withIdentifier: "bidViewController") as! VehicleBidViewController
             controller.vehicleBid = self.vehicleBids
             controller.currentItemId = "\(vehicleItemDetails.id!)"
+            controller.itemCurrentAmount = self.itemTotalAmount
             self.show(controller, sender: self)
             //self.present(controller, animated: true, completion: nil)
             
@@ -228,21 +242,43 @@ class VehicleDetailsViewController: UIViewController,UITableViewDelegate,UITable
     }
 
     func getItems(){
-        apiRequests.apisInstance.getVehicleItemDetails(selectedVehicleId: String(itemId)) { (item, images, options, prices, bids) in
+        apiRequests.apisInstance.getVehicleItemDetails(selectedVehicleId: String(itemId)) { (item, images, options, prices, bids, itemTotalAmount) in
             
             self.vehicleItemDetails = item
             self.vehiclePrices = prices
             self.vehicleBids = bids
             self.vehicleImages = images
             self.vehicleOptions = options
+            self.itemTotalAmount = itemTotalAmount
             self.counter = 4
             self.slider()
             self.endDateLabel.text = self.vehicleBids.endDate
-            self.currentOfferLabel.text = self.vehicleBids.startBid
+            self.currentOfferLabel.text = "\(self.itemTotalAmount!) \(self.currency)"
+//            self.generalMethod.updateView(id: "\(self.vehicleBids.id!)", update: {(total) in
+//                self.currentLabel.text = "\(total) \(self.currency)"
+//                })
             //print("bid : \(self.vehicleBids.id!)")
             self.tabelView.reloadData()
         }
         
+    }
+    
+    
+    func updateView() {
+        // Initialize Label
+        //        setTimeLeft()
+        
+        // Start timer
+        timer = Timer.scheduledTimer(timeInterval: 20, target: self, selector: #selector(self.setTimeLeft), userInfo: nil, repeats: true)
+
+    }
+
+    @objc func setTimeLeft() {
+        
+        // Only keep counting if timeEnd is bigger than timeNow
+        apiRequests.apisInstance.updateCurrentBid(id: "\(itemId!)") { (total) in
+            self.currentOfferLabel.text = "\(total) \(self.currency)"
+        }
     }
     
 }

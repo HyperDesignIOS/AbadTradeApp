@@ -29,11 +29,13 @@ class apiRequests {
     var vehicleOptions = [VehicleOption]()
     var vehicleBids : VehicleBid!
     var vehicleItemDetails : VehicleItemDetails!
+    var itemTotalAmount : Double!
     var userArray = [User]()
     var user :User!
     var done :String!
     var msg : String!
     var totalBid : String!
+    var updatedTotalBid : Float!
 
     //var insuranceCompnies = []()
     let sm = serverManager()
@@ -270,7 +272,7 @@ class apiRequests {
         })
     }
     
-    func getVehicleItemDetails(selectedVehicleId : String ,didDataReady : @escaping(VehicleItemDetails,[VehicleImage],[VehicleOption],[VehiclePrice],VehicleBid)->())->(){
+    func getVehicleItemDetails(selectedVehicleId : String ,didDataReady : @escaping(VehicleItemDetails,[VehicleImage],[VehicleOption],[VehiclePrice],VehicleBid,Double)->())->(){
         sm.connectForApiWith(url: VehicleItemDetailsURL  , mType: HTTPServerMethod.post, params: ["id" : selectedVehicleId], complation: { (json) in
             self.vehicleImages.removeAll()
             self.vehiclePrices.removeAll()
@@ -311,11 +313,15 @@ class apiRequests {
                 else {
                     self.vehicleBids = VehicleBid()
                 }
+                
+                let itemTotalAmount = dictionaryOfJson!["totalamount"] as! Double
+                
+                self.itemTotalAmount = itemTotalAmount
             }
-            didDataReady(self.vehicleItemDetails,self.vehicleImages,self.vehicleOptions,self.vehiclePrices,self.vehicleBids)
+            didDataReady(self.vehicleItemDetails,self.vehicleImages,self.vehicleOptions,self.vehiclePrices,self.vehicleBids,self.itemTotalAmount)
         }, errorHandler: { (error, msg) in
             print("\(String(describing: msg))")
-            didDataReady(self.vehicleItemDetails,[],[],[],self.vehicleBids)
+            didDataReady(self.vehicleItemDetails,[],[],[],self.vehicleBids,0.0)
         })
     }
     
@@ -547,5 +553,22 @@ class apiRequests {
         })
     }
     
+    func updateCurrentBid( id : String , didDataReady : @escaping(String)->())->(){
+        
+        sm.connectForApiWith(url: UpdateBidURL  , mType: HTTPServerMethod.post, params: ["id" : id], complation: { (json) in
+            
+            if let obj = json {
+                print (obj)
+                let dictionaryOfJson = JSON(json!).dictionaryObject
+                print(dictionaryOfJson)
+                let total = dictionaryOfJson!["total"] as! String
+                self.totalBid = total
+            }
+            didDataReady(self.totalBid)
+        }, errorHandler: { (error, msg) in
+            print("\(String(describing: error))")
+            didDataReady("")
+        })
+    }
     
 }

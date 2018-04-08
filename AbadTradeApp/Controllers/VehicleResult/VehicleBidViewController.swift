@@ -19,9 +19,11 @@ class VehicleBidViewController: UIViewController {
     var minuteText : String!
     var secondText : String!
     var vehicleBid : VehicleBid!
+    var itemCurrentAmount : Double!
     var currentItemId = String()
     let formater = DateFormatter()
     var general = GeneralMethod()
+    var currency = "SAR"
     
 
     @IBOutlet weak var maxBidLabel: UILabel!
@@ -34,15 +36,24 @@ class VehicleBidViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        formater.dateFormat = "yyyy-MM-dd"
-        timeNow = formater.date(from: vehicleBid.startDate)
-        timeEnd = formater.date(from: vehicleBid.endDate)
+//        formater.dateFormat = "yyyy-MM-dd"
+//        timeNow = formater.date(from: vehicleBid.startDate)
+//        timeEnd = formater.date(from: vehicleBid.endDate)
         maxBidLabel.text = vehicleBid.maximumBid
         minBidLabel.text = vehicleBid.minimumBid
-        currentOffer.text = vehicleBid.startBid
+        currentOffer.text = "\(itemCurrentAmount!) \(currency)"
         endDateLabel.text = vehicleBid.endDate
-//        updateView()
+//        self.general.updateView(id: "\(self.vehicleBid.id!)", update: {(total) in
+//            self.currentOffer.text = "\(total) \(self.currency)"
+//        })
+        updateView()
         // Do any additional setup after loading the view.
+    }
+    
+    
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        timer.invalidate()
     }
 
     override func didReceiveMemoryWarning() {
@@ -86,22 +97,25 @@ class VehicleBidViewController: UIViewController {
             general.showAlert(title: "", message: "Please enter your offer", vc: self, closure: nil)
         }
     }
-    
-//    func updateView() {
-//        // Initialize Label
+
+    func updateView() {
+        // Initialize Label
 //        setTimeLeft()
-//
-//        // Start timer
-////        timer = Timer.scheduledTimer(timeInterval: -1.0, target: self, selector: #selector(self.setTimeLeft), userInfo: nil, repeats: true)
+
+        // Start timer
+        timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(self.setTimeLeft), userInfo: nil, repeats: true)
 //        timer = Timer.scheduledTimer(withTimeInterval: -1.0, repeats: true, block: { (timer) in
 //            //self.timer = timer
 //            //self.setTimeLeft()
 //        })
-//    }
+    }
 //
-//    @objc func setTimeLeft() {
-//
-//        // Only keep counting if timeEnd is bigger than timeNow
+    @objc func setTimeLeft() {
+
+        // Only keep counting if timeEnd is bigger than timeNow
+        apiRequests.apisInstance.updateCurrentBid(id: currentItemId) { (total) in
+            self.currentOffer.text = "\(total) \(self.currency)"
+        }
 //        if timeEnd.compare(timeNow) == ComparisonResult.orderedDescending {
 //
 //            isEnded = false
@@ -126,6 +140,6 @@ class VehicleBidViewController: UIViewController {
 //        } else {
 //            timerLabel.text = "Ended"
 //        }
-//    }
+    }
 
 }

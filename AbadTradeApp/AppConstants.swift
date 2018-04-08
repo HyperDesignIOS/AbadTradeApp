@@ -36,4 +36,5 @@ let TenderLabelURL = "\(BaseURL)/tenders"
 let BuyCarURL = "\(BaseURL)/Buycar"
 let PostBuyCarURL = "\(BaseURL)/postBuycar"
 let AddBidOfferURL = "\(BaseURL)/addoffer"
+let UpdateBidURL = "\(BaseURL)/reloadBids"
 

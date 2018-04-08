@@ -11,6 +11,8 @@ import UIKit
 
   class GeneralMethod
   {
+    var timer = Timer()
+    
     func showAlert(title:String, message:String, vc:UIViewController, closure:(()->())?)
     {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
@@ -30,6 +32,28 @@ import UIKit
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailTest.evaluate(with: testStr)
     }
+    
+    func updateView(id : String , update : @escaping (String)->()) {
+        
+        // Start timer
+        timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(self.setTimeLeft(id:update:)), userInfo: nil, repeats: true)
+
+    }
+    
+    @objc func setTimeLeft(id : String , update : @escaping (String)->()) {
+        
+        // Only keep counting if timeEnd is bigger than timeNow
+        apiRequests.apisInstance.updateCurrentBid(id: id) { (total) in
+            update(total)
+        }
+    }
+    
+    func timerInvalidate(){
+        timer.invalidate()
+    }
+    
+    
+    
     
 
 }
