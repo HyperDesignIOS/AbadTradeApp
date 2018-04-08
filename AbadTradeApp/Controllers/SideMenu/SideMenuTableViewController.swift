@@ -20,6 +20,7 @@ class SideMenuTableViewController: UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
@@ -50,6 +51,13 @@ class SideMenuTableViewController: UITableViewController{
         
         cell.sideMenuItemImage.image = UIImage.init(named: sideMenuItemImages[indexPath.row])
         cell.sideMenuItemName.text = sideMenuItemNames[indexPath.row]
+        
+        if UserDefaults.standard.isLoggedIn() && (sideMenuItemNames[indexPath.row] == "Login" || sideMenuItemNames[indexPath.row] == "Register"){
+            
+            cell.isUserInteractionEnabled = false
+            cell.sideMenuItemName.textColor = UIColor.lightGray
+            
+        }
         // Configure the cell...
         
         return cell

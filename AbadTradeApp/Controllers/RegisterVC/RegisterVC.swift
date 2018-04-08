@@ -11,11 +11,7 @@ import UIKit
 
 class RegisterVC: UIViewController {
     
-     var generalMethod = GeneralMethod()
-
-    @IBAction func SideMenuButton(_ sender: Any) {
-         performSegue(withIdentifier: "registerSideMenu", sender: self)
-    }
+    var generalMethod = GeneralMethod()
     var user : User!
     var msg: String!
     var done : String!
@@ -29,6 +25,10 @@ class RegisterVC: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func SideMenuButton(_ sender: Any) {
+        performSegue(withIdentifier: "registerSideMenu", sender: self)
     }
     
     @IBAction func RegisterButton(_ sender: UIButton) {
@@ -74,6 +74,8 @@ class RegisterVC: UIViewController {
             UserDefaults.standard.setLoggedIn(value: true)
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let controller = storyboard.instantiateViewController(withIdentifier: "homeVC")
+            UserDefaults.standard.setUserID(value: self.user.id)
+            UserDefaults.standard.setLoggedIn(value: true)
             //self.present(controller, animated: true, completion: nil)
             self.show(controller, sender: self)
             }
