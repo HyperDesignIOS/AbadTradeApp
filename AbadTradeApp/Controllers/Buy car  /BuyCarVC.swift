@@ -37,6 +37,7 @@ class BuyCarVC: UIViewController , UICollectionViewDelegate,UICollectionViewData
 //        firstPriceLabel.text = price[0].price
 //        secondPriceLabel.text = price[1].price
         nameTF.text = user.name
+        nameTF.isEnabled = false
       //  addressarTF.text = addressar
        // addessenTF.text = addressen
        // PhonTF.text = phone

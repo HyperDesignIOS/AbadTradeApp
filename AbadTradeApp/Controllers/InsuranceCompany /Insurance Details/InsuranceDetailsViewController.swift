@@ -36,7 +36,7 @@ class InsuranceDetailsViewController: UIViewController{
         insuranceCountry.text = insuranceDetails[0].country.nameEn
         insuranceRegion.text = insuranceDetails[0].region.nameEn
         insuranceWorkTime.text = insuranceDetails[0].workTimes
-        insuranceAbout.text = insuranceDetails[0].aboutEn
+        insuranceAbout.text = insuranceDetails[0].aboutEn.html2String
 
         if UserDefaults.standard.isLoggedIn(){
             sendMessageButton.isHidden = false

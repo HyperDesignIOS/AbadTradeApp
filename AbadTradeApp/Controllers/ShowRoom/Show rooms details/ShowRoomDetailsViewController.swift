@@ -10,7 +10,7 @@ import AlamofireImage
 
 class ShowRoomDetailsViewController: UIViewController , UITableViewDelegate , UITableViewDataSource {
     
-    var showRoomsDetails = [showRoomDetail]()
+    var showRoomsDetails = [ShowRoomDetails]()
     var showRoomItems = [ShowRoomItem]()
 
     
@@ -59,11 +59,23 @@ class ShowRoomDetailsViewController: UIViewController , UITableViewDelegate , UI
         let currentCellImageUrl = "\(ItemImageURL)\(showRoomItems[indexPath.row].image!)"
         cell.vehicleBrand.text = showRoomItems[indexPath.row].nameEn
         
-        cell.vehicleModel.text = showRoomItems[indexPath.row].descriptionEn
-        cell.vehicleImage.af_setImage(withURL: URL(string: currentCellImageUrl)!)        
-        
+        cell.vehicleModel.text = showRoomItems[indexPath.row].descriptionEn.html2String
+        cell.vehicleImage.af_setImage(withURL: URL(string: currentCellImageUrl)!)
+        cell.vehicleShowRoom.isHidden = true
+        cell.vehiclePrice.text = showRoomItems[indexPath.row].price
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let selectedVehicle = showRoomItems[indexPath.row]
+        let storyboard = UIStoryboard.init(name: "VehicleResult", bundle: nil)
+        let destinationViewController = storyboard.instantiateViewController(withIdentifier: "SelectedVehicleData") as! VehicleDetailsViewController
+        print(selectedVehicle.id)
+        destinationViewController.itemId = selectedVehicle.id
+        destinationViewController.priceType = selectedVehicle.priceType
+        self.show(destinationViewController, sender: self)
     }
     
     

@@ -22,7 +22,7 @@ class apiRequests {
     var showRooms = [ShowRoom]()
     var insuranceCompanies = [Insurance]()
     var insuranceDetails =  [Insurance]()
-    var showRoomDetailsArray = [showRoomDetail]()
+    var showRoomDetailsArray = [ShowRoomDetails]()
     var showRoomItemArray = [ShowRoomItem]()
     var vehiclePrices = [VehiclePrice]()
     var vehicleImages = [VehicleImage]()
@@ -248,7 +248,7 @@ class apiRequests {
         })
     }
     
-    func getShowRoomDetails(showRoomId : String ,didDataReady : @escaping([showRoomDetail],[ShowRoomItem])->())->(){
+    func getShowRoomDetails(showRoomId : String ,didDataReady : @escaping([ShowRoomDetails],[ShowRoomItem])->())->(){
         sm.connectForApiWith(url: ShowRoomDetailsURL  , mType: HTTPServerMethod.post, params: ["id":showRoomId], complation: { (json) in
             self.showRoomDetailsArray.removeAll()
             if let obj = json {
@@ -256,7 +256,7 @@ class apiRequests {
                 let dictionaryOfJson = JSON(json!).dictionaryObject
                 print(dictionaryOfJson)
                 let items = dictionaryOfJson!["dealer"] as! [String : Any]
-                let item = showRoomDetail.init(fromDictionary: items)
+                let item = ShowRoomDetails.init(fromDictionary: items)
                 self.showRoomDetailsArray.append(item)
                 print(item.id)
                 let secondItems = dictionaryOfJson!["items"] as! [[String : Any]]

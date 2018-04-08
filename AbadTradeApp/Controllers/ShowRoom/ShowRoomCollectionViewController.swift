@@ -11,7 +11,7 @@ import AlamofireImage
 
 class showRoomCollectionViewController: UICollectionViewController {
     var ShowRooms = [ShowRoom]()
-    var showRoomDetailsArr = [showRoomDetail]()
+    var showRoomDetailsArr = [ShowRoomDetails]()
     var showRoomitems = [ShowRoomItem]()
     
     

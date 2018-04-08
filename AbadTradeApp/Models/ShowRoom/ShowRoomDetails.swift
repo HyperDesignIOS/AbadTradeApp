@@ -10,7 +10,7 @@
 import Foundation
 
 
-class showRoomDetail : NSObject, NSCoding{
+class ShowRoomDetails : NSObject, NSCoding{
     
     var aboutAr : String!
     var aboutEn : String!

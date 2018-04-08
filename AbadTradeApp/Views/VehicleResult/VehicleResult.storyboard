@@ -90,8 +90,8 @@
                                     <outlet property="vehicleBrand" destination="kiH-0A-eB0" id="dDp-2x-GLz"/>
                                     <outlet property="vehicleImage" destination="0k9-cA-5Xo" id="i9r-cw-x1T"/>
                                     <outlet property="vehicleModel" destination="WRa-Bk-gMb" id="jgk-eo-ZXD"/>
-                                    <outlet property="vehiclePrice" destination="rwN-tY-AkG" id="akl-4v-8yo"/>
-                                    <outlet property="vehicleShowRoom" destination="5lA-Lc-4Ph" id="ncl-y6-m2Z"/>
+                                    <outlet property="vehiclePrice" destination="5lA-Lc-4Ph" id="f8s-GC-asy"/>
+                                    <outlet property="vehicleShowRoom" destination="rwN-tY-AkG" id="hXj-QE-K3w"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

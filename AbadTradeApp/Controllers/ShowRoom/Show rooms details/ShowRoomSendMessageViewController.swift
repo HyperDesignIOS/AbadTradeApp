@@ -14,7 +14,7 @@ class ShowRoomSendMessageViewController: UIViewController {
     var msg : String!
     var done : String!
     var generaMetod = GeneralMethod()
-    var showRoom : showRoomDetail!
+    var showRoom : ShowRoomDetails!
     var insurance : Insurance!
     var loggedinUserId : Int!
     

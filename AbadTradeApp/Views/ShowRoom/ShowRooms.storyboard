@@ -220,8 +220,8 @@
                                                     <outlet property="vehicleBrand" destination="nhD-bF-xbk" id="vNv-VB-iyO"/>
                                                     <outlet property="vehicleImage" destination="Sf5-T6-SrL" id="Wgp-hH-Jml"/>
                                                     <outlet property="vehicleModel" destination="Hyz-6T-LVQ" id="brK-RF-qAq"/>
-                                                    <outlet property="vehiclePrice" destination="QhF-6n-xkB" id="k4M-dP-MK3"/>
-                                                    <outlet property="vehicleShowRoom" destination="YJ4-8P-MSm" id="XZO-KB-cxZ"/>
+                                                    <outlet property="vehiclePrice" destination="YJ4-8P-MSm" id="xCa-an-kB7"/>
+                                                    <outlet property="vehicleShowRoom" destination="QhF-6n-xkB" id="3Zd-oT-XBw"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>

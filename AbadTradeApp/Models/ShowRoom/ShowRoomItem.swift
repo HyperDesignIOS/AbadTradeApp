@@ -37,6 +37,7 @@ class ShowRoomItem : NSObject, NSCoding{
     var type : String!
     var updatedAt : String!
     var userId : String!
+    var price : String!
     var visites : AnyObject!
     
     
@@ -44,6 +45,7 @@ class ShowRoomItem : NSObject, NSCoding{
      * Instantiate the instance using the passed dictionary values to set the properties values
      */
     init(fromDictionary dictionary: [String:Any]){
+        price = dictionary["price"] as? String ?? ""
         brandId = dictionary["brand_id"] as? String ?? ""
         categoryId = dictionary["category_id"] as? String ?? ""
         createdAt = dictionary["created_at"] as? String ?? ""
