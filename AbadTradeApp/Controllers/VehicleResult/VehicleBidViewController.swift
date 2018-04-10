@@ -74,7 +74,7 @@ class VehicleBidViewController: UIViewController {
     @IBAction func sendBidButton(_ sender: Any) {
         
         let enteredOffer = userOfferTextField.text
-        if enteredOffer != nil && enteredOffer != ""{
+        if (enteredOffer?.isEmpty)! || (enteredOffer?.containsWhiteSpace())!{
             if Int(enteredOffer!)! < Int(vehicleBid.startBid)!
             {
                 general.showAlert(title: "", message: "Invaild offer , please enter offer bigger than current offer", vc: self, closure: nil)

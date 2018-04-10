@@ -25,9 +25,12 @@ class TenderVC: UIViewController {
     @IBAction func sendTenderButton(_ sender: Any) {
         
         let message = tenderMessage.text
-        if (message != nil || message != ""){
+        if ((message?.isEmpty)! || (message?.containsWhiteSpace())!){
        
-        
+            generalMethod.showAlert(title: "", message: "please enter your message", vc: self, closure: nil)
+        }
+        else
+        {
             let user_id = UserDefaults.standard.getUserID()
             apiRequests.apisInstance.sendTender(message: tenderMessage.text, userId: String(user_id), didDataReady: { (msg) in
                 self.msg = msg
@@ -38,20 +41,8 @@ class TenderVC: UIViewController {
                     //self.present(controller, animated: true, completion: nil)
                     self.show(controller, sender: self)
                     self.generalMethod.showAlert(title: "", message: "message sent successfully", vc: self, closure: nil)
-                    
                 }
-                
             })
-           
-      
-       
         }
-        else
-        {
-          generalMethod.showAlert(title: "", message: "please enter your password", vc: self, closure: nil)
-        }
-        
     }
-    
-
 }

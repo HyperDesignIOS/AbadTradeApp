@@ -363,7 +363,7 @@ class apiRequests {
     }
     
     
-    func login(userMail:String,userPassword:String,didDataReady : @escaping(Any,String,String)->())->(){
+    func login(userMail:String,userPassword:String,didDataReady : @escaping(User,String,String)->())->(){
         
         sm.connectForApiWith(url: LoginURL  , mType: HTTPServerMethod.post, params: ["email":userMail,"password":userPassword], complation: { (json) in
             
@@ -397,7 +397,7 @@ class apiRequests {
             didDataReady(self.user,self.msg,self.done)
         }, errorHandler: { (error, msg) in
             print("\(String(describing: msg))")
-            didDataReady(msg,msg as! String,self.done )
+            didDataReady(self.user, msg as! String,self.done)
         })
     }
     

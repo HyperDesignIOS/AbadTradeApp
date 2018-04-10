@@ -33,35 +33,39 @@ class RegisterVC: UIViewController {
     
     @IBAction func RegisterButton(_ sender: UIButton) {
        let name = self.name.text!
-        if name.isEmpty {
+        if name.isEmpty || name.containsWhiteSpace() {
             generalMethod.showAlert(title: "", message: "please enter your name ", vc: self, closure: nil)
             return
             
         }
         let mail = self.mail.text!
-        if mail.isEmpty {
-            generalMethod.showAlert(title: "", message: "please enter your mail", vc: self, closure: nil)
+        if mail.isEmpty || mail.containsWhiteSpace()  {
+            generalMethod.showAlert(title: "", message: "please enter your e-mail", vc: self, closure: nil)
             return
         }
-             else if !generalMethod.isValidEmail(testStr: mail) {
-                  generalMethod.showAlert(title: "", message: "invalid mail", vc: self, closure: nil)
+        else if !mail.isValidEmail() {
+                  generalMethod.showAlert(title: "", message: "invalid e-mail", vc: self, closure: nil)
                  return
-               }
+        }
         let password = self.password.text!
-        if password.isEmpty {
+        if password.isEmpty || password.containsWhiteSpace()  {
             generalMethod.showAlert(title: "", message: "please enter your password", vc: self, closure: nil)
             return
             
         }
+//        else if !password.isValidPassword() {
+//            generalMethod.showAlert(title: "", message: "invalid password", vc: self, closure: nil)
+//            return
+//        }
         let confirmpass = self.passwordConfirm.text!
-        if confirmpass.isEmpty {
+        if confirmpass.isEmpty || confirmpass.containsWhiteSpace() {
             generalMethod.showAlert(title: "", message: "please enter your password confirmation", vc: self, closure: nil)
             return
         }
-        if password != confirmpass {
-                 generalMethod.showAlert(title: "", message: " pssword confirmation failed", vc: self, closure: nil)
+        else if password != confirmpass {
+                 generalMethod.showAlert(title: "", message: " password confirmation failed", vc: self, closure: nil)
                 return
-            }
+        }
  
         apiRequests.apisInstance.register(userName:name, userMail:mail , userPassword:password) { (user,msg,done) in
             

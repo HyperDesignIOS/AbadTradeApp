@@ -31,13 +31,13 @@ class LoginVC: UIViewController {
     @IBAction func loginButton(_ sender: UIButton) {
         
         let mail = self.email.text!
-        if mail.isEmpty {
+        if mail.isEmpty || mail.containsWhiteSpace(){
             generalMethod.showAlert(title: "", message: "please enter your mail", vc: self, closure: nil)
             return
         }
         
         let password = self.password.text!
-        if password.isEmpty {
+        if password.isEmpty || password.containsWhiteSpace(){
             generalMethod.showAlert(title: "", message: "please enter your password", vc: self, closure: nil)
             return
             

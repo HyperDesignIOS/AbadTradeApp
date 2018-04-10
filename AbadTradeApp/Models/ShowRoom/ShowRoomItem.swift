@@ -57,8 +57,8 @@ class ShowRoomItem : NSObject, NSCoding{
         linkAr = dictionary["link_ar"] as? String ?? ""
         linkEn = dictionary["link_en"] as? String ?? ""
         luxury = dictionary["luxury"] as? String ?? ""
-        metaDesc = dictionary["meta_desc"] as? AnyObject
-        metaKey = dictionary["meta_key"] as? AnyObject
+        metaDesc = dictionary["meta_desc"] as AnyObject
+        metaKey = dictionary["meta_key"] as AnyObject
         modelId = dictionary["model_id"] as? String ?? ""
         modelYearId = dictionary["model_year_id"] as? String ?? ""
         nameAr = dictionary["name_ar"] as? String ?? ""
@@ -69,7 +69,7 @@ class ShowRoomItem : NSObject, NSCoding{
         type = dictionary["type"] as? String ?? ""
         updatedAt = dictionary["updated_at"] as? String ?? ""
         userId = dictionary["user_id"] as? String ?? ""
-        visites = dictionary["visites"] as? AnyObject
+        visites = dictionary["visites"] as AnyObject
     }
     
     /**
@@ -170,8 +170,8 @@ class ShowRoomItem : NSObject, NSCoding{
         linkAr = aDecoder.decodeObject(forKey: "link_ar") as? String
         linkEn = aDecoder.decodeObject(forKey: "link_en") as? String
         luxury = aDecoder.decodeObject(forKey: "luxury") as? String
-        metaDesc = aDecoder.decodeObject(forKey: "meta_desc") as? AnyObject
-        metaKey = aDecoder.decodeObject(forKey: "meta_key") as? AnyObject
+        metaDesc = aDecoder.decodeObject(forKey: "meta_desc") as AnyObject
+        metaKey = aDecoder.decodeObject(forKey: "meta_key") as AnyObject
         modelId = aDecoder.decodeObject(forKey: "model_id") as? String
         modelYearId = aDecoder.decodeObject(forKey: "model_year_id") as? String
         nameAr = aDecoder.decodeObject(forKey: "name_ar") as? String
@@ -182,7 +182,7 @@ class ShowRoomItem : NSObject, NSCoding{
         type = aDecoder.decodeObject(forKey: "type") as? String
         updatedAt = aDecoder.decodeObject(forKey: "updated_at") as? String
         userId = aDecoder.decodeObject(forKey: "user_id") as? String
-        visites = aDecoder.decodeObject(forKey: "visites") as? AnyObject
+        visites = aDecoder.decodeObject(forKey: "visites") as AnyObject
         
     }
     

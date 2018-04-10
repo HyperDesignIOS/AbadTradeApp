@@ -28,7 +28,7 @@ class ShowRoomSendMessageViewController: UIViewController {
 
     @IBAction func sendButton(_ sender: Any) {
         let  message = sentMessageTextView.text
-        if message != nil && message != ""{
+        if !(message?.isEmpty)! && !(message?.containsWhiteSpace())!{
             apiRequests.apisInstance.sendMessageToShowRoom(message: message!, userId:"\(loggedinUserId!)" , dealerId: showRoom.id, didDataReady: { (msg,done) in
                 self.msg = msg
                 self.done = done

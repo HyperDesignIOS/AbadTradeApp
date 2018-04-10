@@ -13,7 +13,7 @@ class InsuranceSendMessageViewController: UIViewController {
     var receiverName : String!
     var msg : String!
     var done : String!
-    var generaMetod = GeneralMethod()
+    var generalMethod = GeneralMethod()
     var insurance : Insurance!
     var loggedinUserId : Int!
     
@@ -38,32 +38,40 @@ class InsuranceSendMessageViewController: UIViewController {
     @IBAction func sendButton(_ sender: Any) {
         
         let  message = sentMessageTextView.text
-        if message != nil && message != "" && phoneTextField.text != nil && phoneTextField.text != ""{
-            apiRequests.apisInstance.sendMessageToInsurance(phone:phoneTextField.text!,message: message!, userId:"\(loggedinUserId!)" , insuranceId: "\(insurance.id!)", didDataReady: { (msg,done) in
+        if (message?.isEmpty)! || (message?.containsWhiteSpace())!  {
+            generalMethod.showAlert(title: "", message: "please enter your message", vc: self, closure: nil)
+            return
+        }
+        if (phoneTextField.text?.isEmpty)! || (phoneTextField.text?.containsWhiteSpace())!  {
+            generalMethod.showAlert(title: "", message: "please enter your phone", vc: self, closure: nil)
+            return
+            
+        }
+        else if !(phoneTextField.text?.isValidPhone())! {
+            generalMethod.showAlert(title: "", message: "invalid phone", vc: self, closure: nil)
+            return
+        }
+        apiRequests.apisInstance.sendMessageToInsurance(phone:phoneTextField.text!,message: message!, userId:"\(loggedinUserId!)" , insuranceId: "\(insurance.id!)", didDataReady: { (msg,done) in
+            self.msg = msg
+            self.done = done
+            if self.done == "1"
+            {
                 self.msg = msg
-                self.done = done
-                if self.done == "1"
-                {
-                    self.msg = msg
-                    print (self.msg)
-                    let storyboard = UIStoryboard(name: "Insurance", bundle: nil)
-                    let controller = storyboard.instantiateViewController(withIdentifier: "insuranceVC")
-                    //self.present(controller, animated: true, completion: nil)
-                    self.show(controller, sender: self)
-                    self.generaMetod.showAlert(title: "", message:self.msg, vc: self, closure: nil)
-                }
-                else if self.done == "0"
-                {
-                    self.msg = msg
-                    self.generaMetod.showAlert(title: "", message:self.msg, vc: self, closure: nil)
-                }
-            })
-        }
-        else
-        {
-            self.generaMetod.showAlert(title: "", message:"Please enter your message and phone", vc: self, closure: nil)
-        }
-}
+                print (self.msg)
+                let storyboard = UIStoryboard(name: "Insurance", bundle: nil)
+                let controller = storyboard.instantiateViewController(withIdentifier: "insuranceVC")
+                //self.present(controller, animated: true, completion: nil)
+                self.show(controller, sender: self)
+                self.generalMethod.showAlert(title: "", message:self.msg, vc: self, closure: nil)
+            }
+            else if self.done == "0"
+            {
+                self.msg = msg
+                self.generalMethod.showAlert(title: "", message:self.msg, vc: self, closure: nil)
+            }
+        })
+        
+    }
 
     /*
     // MARK: - Navigation

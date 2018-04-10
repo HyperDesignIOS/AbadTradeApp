@@ -8,8 +8,8 @@
 
 import Foundation
 
-let BaseURL = "http://hyper-design.com/Abad/api"
-let ImageBaseURL = "http://hyper-design.com/Abad/uploads"
+let BaseURL = "http://alabbadauto.com/api"
+let ImageBaseURL = "http://alabbadauto.com/uploads"
 let ItemImageURL = "\(ImageBaseURL)/item/resize200/"
 let CategoryImageURL = "\(ImageBaseURL)/category/resize200/"
 let BrandImageURL = "\(ImageBaseURL)/brand/resize200/"

@@ -198,7 +198,8 @@ class VehicleDetailsViewController: UIViewController,UITableViewDelegate,UITable
         {
             let storyboard = UIStoryboard(name: "Login", bundle: nil)
             let controller = storyboard.instantiateViewController(withIdentifier: "LoginVC")
-            generalMethod.showAlert(title: "", message: "login first to buy", vc: self, closure: nil)
+//            generalMethod.showAlert(title: "", message: "login first to buy", vc: self, closure: nil)
+            show(controller, sender: self)
         }
         
     }

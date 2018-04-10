@@ -106,7 +106,40 @@ class BuyCarVC: UIViewController , UICollectionViewDelegate,UICollectionViewData
 
     @IBAction func BuyButton(_ sender: Any) {
         
-        let userId = UserDefaults.standard.getUserID()
+        let email = emailTF.text
+        let phone = PhonTF.text
+        let addressAr = addessenTF.text
+        let addressEn = addessenTF.text
+        
+        if (email?.isEmpty)! || (email?.containsWhiteSpace())!{
+            general.showAlert(title: "", message: "please enter your e-mail", vc: self, closure: nil)
+            return
+        }
+        else if !(email?.isValidEmail())!{
+            general.showAlert(title: "", message: "invalid e-mail", vc: self, closure: nil)
+            return
+        }
+        
+        if (phone?.isEmpty)! || (phone?.containsWhiteSpace())!{
+            general.showAlert(title: "", message: "please enter your phone", vc: self, closure: nil)
+            return
+        }
+        else if !(phone?.isValidPhone())!{
+            general.showAlert(title: "", message: "invalid phone", vc: self, closure: nil)
+            return
+        }
+        
+        if (addressAr?.isEmpty)! || (addressAr?.containsWhiteSpace())!{
+            general.showAlert(title: "", message: "please enter your address in Arabic", vc: self, closure: nil)
+            return
+        }
+        
+        if (addressEn?.isEmpty)! || (addressEn?.containsWhiteSpace())!{
+            general.showAlert(title: "", message: "please enter your address in English", vc: self, closure: nil)
+            return
+        }
+        
+        
         apiRequests.apisInstance.postBuyCar(id: "\(id!)", userId: "\(user.id!)", price: selectedPrice!,phone : PhonTF.text!, email: emailTF.text!, addressar: addressarTF.text!, addressen: addessenTF.text!) { (msg, done) in
             
             if done == "1"
