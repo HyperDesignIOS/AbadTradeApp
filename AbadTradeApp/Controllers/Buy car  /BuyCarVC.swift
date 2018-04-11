@@ -42,8 +42,16 @@ class BuyCarVC: UIViewController , UICollectionViewDelegate,UICollectionViewData
        // addessenTF.text = addressen
        // PhonTF.text = phone
         emailTF.text = user.email
+        //PhonTF.becomeFirstResponder()
+        
+         self.hideKeyboardWhenTappedAround()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        PhonTF.becomeFirstResponder()
+    }
     
     
 //    @IBAction func priceRadioButton(_ sender: UIButton) {
@@ -96,6 +104,7 @@ class BuyCarVC: UIViewController , UICollectionViewDelegate,UICollectionViewData
             let visiableCell = cell as! priceCell
             if collectionView.indexPath(for: visiableCell)?.row == indexPath.row{
                 visiableCell.emptyImage.image = #imageLiteral(resourceName: "radio-on-button")
+                selectedPrice = price[indexPath.row].price
             }
             else{
                 visiableCell.emptyImage.image = #imageLiteral(resourceName: "empty")
