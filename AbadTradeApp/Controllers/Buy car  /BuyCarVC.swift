@@ -16,6 +16,7 @@ class BuyCarVC: UIViewController , UICollectionViewDelegate,UICollectionViewData
     var selectedPrice : String!
     var general = GeneralMethod()
 
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var nameTF: UITextField!
     @IBOutlet weak var PhonTF: UITextField!
     @IBOutlet weak var emailTF: UITextField!
@@ -29,22 +30,14 @@ class BuyCarVC: UIViewController , UICollectionViewDelegate,UICollectionViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-           collectionView.delegate = self
-           collectionView.dataSource = self
-        
-        
-//        firstPriceLabel.text = price[0].price
-//        secondPriceLabel.text = price[1].price
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        collectionView.delegate = self
+        collectionView.dataSource = self
         nameTF.text = user.name
         nameTF.isEnabled = false
-      //  addressarTF.text = addressar
-       // addessenTF.text = addressen
-       // PhonTF.text = phone
         emailTF.text = user.email
-        //PhonTF.becomeFirstResponder()
-        
-         self.hideKeyboardWhenTappedAround()
+        self.hideKeyboardWhenTappedAround()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -104,7 +97,7 @@ class BuyCarVC: UIViewController , UICollectionViewDelegate,UICollectionViewData
             let visiableCell = cell as! priceCell
             if collectionView.indexPath(for: visiableCell)?.row == indexPath.row{
                 visiableCell.emptyImage.image = #imageLiteral(resourceName: "radio-on-button")
-                selectedPrice = price[indexPath.row].price
+                selectedPrice = price[indexPath.row].id
             }
             else{
                 visiableCell.emptyImage.image = #imageLiteral(resourceName: "empty")
@@ -120,6 +113,10 @@ class BuyCarVC: UIViewController , UICollectionViewDelegate,UICollectionViewData
         let addressAr = addessenTF.text
         let addressEn = addessenTF.text
         
+        if selectedPrice == nil {
+            general.showAlert(title: "", message: "please select your price", vc: self, closure: nil)
+            return
+        }
         if (email?.isEmpty)! || (email?.containsWhiteSpace())!{
             general.showAlert(title: "", message: "please enter your e-mail", vc: self, closure: nil)
             return

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bKl-Db-7GB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bKl-Db-7GB">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -509,7 +509,7 @@
                                                 <rect key="frame" x="73" y="10" width="279" height="40"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="phonePad" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="tel"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="tel"/>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -752,6 +752,7 @@
                         <outlet property="PhonTF" destination="cXU-qo-hgP" id="w9T-IR-Vbm"/>
                         <outlet property="addessenTF" destination="j1z-Zq-pcF" id="Ey7-W8-Ztn"/>
                         <outlet property="addressarTF" destination="7zs-lS-np0" id="tEJ-2v-2hT"/>
+                        <outlet property="bottomConstraint" destination="Ghu-g6-Ogh" id="Fme-bO-Tkv"/>
                         <outlet property="collectionView" destination="cO2-HD-wmm" id="R0u-OY-Wo2"/>
                         <outlet property="emailTF" destination="WU5-r7-fjf" id="gru-9X-ESn"/>
                         <outlet property="nameTF" destination="BD6-1Q-TuM" id="OlX-p6-GiU"/>
