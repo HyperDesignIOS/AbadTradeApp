@@ -53,7 +53,7 @@ class LoginVC: UIViewController {
                 let controller = storyboard.instantiateViewController(withIdentifier: "homeVC")
                 //self.present(controller, animated: true, completion: nil)
                 self.show(controller, sender: self)
-               self.user = user as! User
+               self.user = user
                 UserDefaults.standard.setUserID(value: self.user.id)
                 UserDefaults.standard.setLoggedIn(value: true)
             }

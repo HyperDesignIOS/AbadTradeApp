@@ -119,17 +119,15 @@ extension UIViewController {
         self.view.frame.origin.y = 0
     }
     
-    @objc func keyboardWillShow(notification: NSNotification) {
-//        let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue
-//        kbHeight = keyboardSize?.height
-//        self.animateTextField(up: true)
+    @objc func keyboardWillShow(notification: NSNotification){
+        
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0{
-                self.view.frame.origin.y -= keyboardSize.height-(self.view.constraints.last?.constant)!
+                self.view.frame.origin.y -= keyboardSize.height - (self.view.constraints.last?.constant)!
             }
         }
     }
-    
+        
     @objc func keyboardWillHide(notification: NSNotification){
         
 //        self.animateTextField(up: false)
@@ -141,11 +139,4 @@ extension UIViewController {
 //        }
     }
     
-//    func animateTextField(up: Bool) {
-//        let movement = (up ? -kbHeight : kbHeight)
-//
-//        UIView.animate(withDuration: 0.2, animations: {
-//            self.view.frame = self.view.frame.offsetBy(dx: 0, dy: movement!)
-//        })
-//    }
 }

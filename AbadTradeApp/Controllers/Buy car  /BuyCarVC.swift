@@ -16,7 +16,7 @@ class BuyCarVC: UIViewController , UICollectionViewDelegate,UICollectionViewData
     var selectedPrice : String!
     var general = GeneralMethod()
 
-    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+
     @IBOutlet weak var nameTF: UITextField!
     @IBOutlet weak var PhonTF: UITextField!
     @IBOutlet weak var emailTF: UITextField!

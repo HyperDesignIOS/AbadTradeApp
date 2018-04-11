@@ -20,7 +20,15 @@ class TenderVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        tenderLabel.text = label
+//        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        self.hideKeyboardWhenTappedAround()
     }
+    
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//        
+//        tenderMessage.becomeFirstResponder()
+//    }
     
     @IBAction func sendTenderButton(_ sender: Any) {
         

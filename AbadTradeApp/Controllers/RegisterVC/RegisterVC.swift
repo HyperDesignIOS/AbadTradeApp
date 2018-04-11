@@ -78,9 +78,6 @@ class RegisterVC: UIViewController {
             UserDefaults.standard.setLoggedIn(value: true)
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let controller = storyboard.instantiateViewController(withIdentifier: "homeVC")
-            UserDefaults.standard.setUserID(value: self.user.id)
-            UserDefaults.standard.setLoggedIn(value: true)
-            //self.present(controller, animated: true, completion: nil)
             self.show(controller, sender: self)
             }
             else if self.done == "0"

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -55,7 +55,7 @@
                                 </constraints>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2Hm-lg-7I7">
-                                <rect key="frame" x="10" y="125.5" width="355" height="377.5"/>
+                                <rect key="frame" x="10" y="126" width="355" height="327"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -66,7 +66,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zl2-zO-11O">
-                                <rect key="frame" x="10" y="533" width="355" height="34"/>
+                                <rect key="frame" x="10" y="483" width="355" height="34"/>
                                 <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <state key="normal" title="Send">
@@ -79,18 +79,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Zl2-zO-11O" firstAttribute="top" secondItem="2Hm-lg-7I7" secondAttribute="bottom" constant="30" id="3Vr-XY-tDF"/>
+                            <constraint firstItem="kq8-4S-Xfe" firstAttribute="bottom" secondItem="Zl2-zO-11O" secondAttribute="bottom" constant="150" id="4Pw-L2-8lN"/>
                             <constraint firstItem="ELW-u8-NTj" firstAttribute="top" secondItem="kq8-4S-Xfe" secondAttribute="top" constant="20" id="5ZQ-z2-I3v"/>
                             <constraint firstItem="2Hm-lg-7I7" firstAttribute="leading" secondItem="kq8-4S-Xfe" secondAttribute="leading" constant="10" id="7Cz-5E-Yub"/>
-                            <constraint firstItem="kq8-4S-Xfe" firstAttribute="trailing" secondItem="Zl2-zO-11O" secondAttribute="trailing" constant="10" id="BzY-ft-xZ4"/>
+                            <constraint firstItem="kq8-4S-Xfe" firstAttribute="trailing" secondItem="Zl2-zO-11O" secondAttribute="trailing" constant="10" id="Cd6-mG-Ror"/>
+                            <constraint firstItem="Zl2-zO-11O" firstAttribute="top" secondItem="2Hm-lg-7I7" secondAttribute="bottom" constant="30" id="Lci-MT-dXk"/>
                             <constraint firstItem="wuh-uF-D0c" firstAttribute="top" secondItem="ELW-u8-NTj" secondAttribute="bottom" constant="10" id="Oh7-w8-E3F"/>
                             <constraint firstItem="kq8-4S-Xfe" firstAttribute="trailing" secondItem="2Hm-lg-7I7" secondAttribute="trailing" constant="10" id="P5d-MX-iz4"/>
                             <constraint firstItem="wuh-uF-D0c" firstAttribute="leading" secondItem="kq8-4S-Xfe" secondAttribute="leading" id="PBg-sH-uCY"/>
                             <constraint firstItem="ELW-u8-NTj" firstAttribute="leading" secondItem="kq8-4S-Xfe" secondAttribute="leading" id="SJk-I8-QDz"/>
-                            <constraint firstItem="kq8-4S-Xfe" firstAttribute="bottom" secondItem="Zl2-zO-11O" secondAttribute="bottom" constant="100" id="eh3-W8-PVC"/>
                             <constraint firstItem="kq8-4S-Xfe" firstAttribute="trailing" secondItem="wuh-uF-D0c" secondAttribute="trailing" id="k39-Am-fxh"/>
-                            <constraint firstItem="Zl2-zO-11O" firstAttribute="leading" secondItem="kq8-4S-Xfe" secondAttribute="leading" constant="10" id="lBV-hS-25K"/>
                             <constraint firstItem="2Hm-lg-7I7" firstAttribute="top" secondItem="wuh-uF-D0c" secondAttribute="bottom" constant="10" id="qLh-Fp-rnU"/>
+                            <constraint firstItem="Zl2-zO-11O" firstAttribute="leading" secondItem="kq8-4S-Xfe" secondAttribute="leading" constant="10" id="t2S-8s-ZMl"/>
                             <constraint firstItem="kq8-4S-Xfe" firstAttribute="trailing" secondItem="ELW-u8-NTj" secondAttribute="trailing" id="xrl-8D-XJy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kq8-4S-Xfe"/>
@@ -103,7 +103,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PeH-UH-FWw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2486" y="81"/>
+            <point key="canvasLocation" x="2485.5999999999999" y="80.50974512743629"/>
         </scene>
     </scenes>
 </document>
