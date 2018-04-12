@@ -36,6 +36,8 @@ class VehicleBidViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.hideKeyboardWhenTappedAround()
+
 //        formater.dateFormat = "yyyy-MM-dd"
 //        timeNow = formater.date(from: vehicleBid.startDate)
 //        timeEnd = formater.date(from: vehicleBid.endDate)

@@ -40,11 +40,11 @@ class BuyCarVC: UIViewController , UICollectionViewDelegate,UICollectionViewData
         self.hideKeyboardWhenTappedAround()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
-        PhonTF.becomeFirstResponder()
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//
+//        PhonTF.becomeFirstResponder()
+//    }
     
     
 //    @IBAction func priceRadioButton(_ sender: UIButton) {

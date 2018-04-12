@@ -24,6 +24,8 @@ class RegisterVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        self.hideKeyboardWhenTappedAround()
         // Do any additional setup after loading the view.
     }
     

@@ -26,6 +26,8 @@ class InsuranceSendMessageViewController: UIViewController {
         super.viewDidLoad()
 
         receiverNameLabel.text = receiverName
+        self.hideKeyboardWhenTappedAround()
+
         // Do any additional setup after loading the view.
     }
 

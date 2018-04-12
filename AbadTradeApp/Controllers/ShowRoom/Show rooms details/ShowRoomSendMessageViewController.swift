@@ -24,6 +24,8 @@ class ShowRoomSendMessageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         receiverNameLabel.text = receiverName
+        self.hideKeyboardWhenTappedAround()
+
     }
 
     @IBAction func sendButton(_ sender: Any) {
