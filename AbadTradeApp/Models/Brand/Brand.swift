@@ -26,10 +26,10 @@ class Brand : NSObject, NSCoding{
         if json.isEmpty{
             return
         } 
-        id = json["id"] as! String
-        nameAr = json["name_ar"] as! String
-        nameEn = json["name_en"] as! String
-        brandImage = json["logo"] as! String
+        id = json["id"] as? String ?? ""
+        nameAr = json["name_ar"] as? String ?? ""
+        nameEn = json["name_en"] as? String ?? ""
+        brandImage = json["logo"] as? String ?? ""
     }
     
     /**
