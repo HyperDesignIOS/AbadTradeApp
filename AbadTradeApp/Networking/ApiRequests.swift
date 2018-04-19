@@ -350,7 +350,7 @@ class apiRequests {
                     let msg = dictionaryOfJson!["msg"] as! String
                     self.msg = msg
                     print("login failed check ")
-                    self.user = nil
+                    self.user = User()
                     self.done = done
                     
                 }
@@ -389,7 +389,7 @@ class apiRequests {
                     let msg = dictionaryOfJson!["msg"] as! String
                     self.msg = msg
                     print("login failed check ")
-                    self.user = nil
+                    self.user = User()
                     self.done = done
                     
                 }

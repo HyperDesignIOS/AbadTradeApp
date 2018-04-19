@@ -28,6 +28,9 @@ class User : NSObject, NSCoding{
     var type : String!
     var updatedAt : String!
     
+    override init(){
+        
+    }
     
     /**
      * Instantiate the instance using the passed dictionary values to set the properties values
