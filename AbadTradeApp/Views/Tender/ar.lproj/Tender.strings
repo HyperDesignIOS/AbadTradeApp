@@ -1,0 +1,12 @@
+
+/* Class = "UINavigationItem"; title = "Send message"; ObjectID = "Lvu-H0-hxq"; */
+"Lvu-H0-hxq.title" = "Send message";
+
+/* Class = "UIButton"; normalTitle = "Send"; ObjectID = "Zl2-zO-11O"; */
+"Zl2-zO-11O.normalTitle" = "Send";
+
+/* Class = "UILabel"; text = "Message :"; ObjectID = "lKH-jj-AwR"; */
+"lKH-jj-AwR.text" = "Message :";
+
+/* Class = "UILabel"; text = "label"; ObjectID = "v2G-gU-QDn"; */
+"v2G-gU-QDn.text" = "label";

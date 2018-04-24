@@ -1,0 +1,12 @@
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "VvX-j5-yfq"; */
+"VvX-j5-yfq.placeholder" = "كلمة المرور";
+
+/* Class = "UINavigationItem"; title = "Login"; ObjectID = "bJ4-px-UIU"; */
+"bJ4-px-UIU.title" = "تسجيل الدخول";
+
+/* Class = "UITextField"; placeholder = "Mail"; ObjectID = "kNt-Uf-SJA"; */
+"kNt-Uf-SJA.placeholder" = "البريد الالكتروني";
+
+/* Class = "UIButton"; normalTitle = "Login "; ObjectID = "rZP-0h-sV0"; */
+"rZP-0h-sV0.normalTitle" = "تسجيل الدخول ";

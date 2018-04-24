@@ -1,0 +1,33 @@
+
+/* Class = "UILabel"; text = "Search "; ObjectID = "1of-ck-9Ry"; */
+"1of-ck-9Ry.text" = "البحث ";
+
+/* Class = "UIButton"; normalTitle = "Search"; ObjectID = "2lk-hB-yMI"; */
+"2lk-hB-yMI.normalTitle" = "بحث";
+
+/* Class = "UITextField"; placeholder = "Category Type"; ObjectID = "Gh6-VR-hXR"; */
+"Gh6-VR-hXR.placeholder" = "نوع المركبة";
+
+/* Class = "UINavigationItem"; title = "Home "; ObjectID = "KjN-x6-EZX"; */
+"KjN-x6-EZX.title" = "الصفحة الرئيسية";
+
+/* Class = "UITextField"; placeholder = "Year"; ObjectID = "N3x-ic-yUn"; */
+"N3x-ic-yUn.placeholder" = "سنة الصنع";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "aea-CK-MNe"; */
+"aea-CK-MNe.text" = "Label";
+
+/* Class = "UILabel"; text = "Used"; ObjectID = "jaP-8d-ceu"; */
+"jaP-8d-ceu.text" = "مستعمل";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "lRQ-X4-WeF"; */
+"lRQ-X4-WeF.title" = "Item";
+
+/* Class = "UITextField"; placeholder = "Model Name "; ObjectID = "nGn-au-wb5"; */
+"nGn-au-wb5.placeholder" = "اسم الموديل";
+
+/* Class = "UILabel"; text = "New"; ObjectID = "pBQ-qy-x06"; */
+"pBQ-qy-x06.text" = "جديد";
+
+/* Class = "UITextField"; placeholder = "Brand Name "; ObjectID = "yYi-BV-W3g"; */
+"yYi-BV-W3g.placeholder" = "اسم الماركة";
