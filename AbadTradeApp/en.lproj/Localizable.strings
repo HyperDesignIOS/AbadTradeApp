@@ -31,6 +31,8 @@
 "VEHICLEPRICES" = "Vehicle prices:";
 "VEHICLEFEATURES" = "Vehicle features:";
 
+//showroom
+"LOGINTOSENDMESSAGE" = "Login to send message";
 
 //alerts
 "NOCATEGORYSELECTED" = "Select category first";

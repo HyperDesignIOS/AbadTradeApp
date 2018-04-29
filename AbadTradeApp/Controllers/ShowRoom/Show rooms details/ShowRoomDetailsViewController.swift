@@ -7,6 +7,7 @@
 
 import UIKit
 import AlamofireImage
+import MOLH
 
 class ShowRoomDetailsViewController: UIViewController , UITableViewDelegate , UITableViewDataSource {
     
@@ -27,9 +28,11 @@ class ShowRoomDetailsViewController: UIViewController , UITableViewDelegate , UI
         super.viewDidLoad()
         
         if UserDefaults.standard.isLoggedIn(){
+            sendMessageButton.setTitle(NSLocalizedString("SENDMESSAGENAVITEM", comment: ""), for: .normal)
             sendMessageButton.isHidden = false
             loginToSendButton.isHidden = true
         }else{
+            loginToSendButton.setTitle(NSLocalizedString("LOGINTOSENDMESSAGE", comment: ""), for: .normal)
             loginToSendButton.isHidden = false
             sendMessageButton.isHidden = true
         }
@@ -37,10 +40,18 @@ class ShowRoomDetailsViewController: UIViewController , UITableViewDelegate , UI
         tableView.delegate = self
         tableView.dataSource = self
         showRoomImage.af_setImage(withURL: URL(string: "\(ShowRoomImageURL)\(showRoomsDetails[0].logo!)")!)
-        showRoomName.text = showRoomsDetails[0].nameEn
-        showRoomAddess.text = showRoomsDetails[0].addressEn
         showRoomphone.text = showRoomsDetails[0].phone
         showRoomWorkTimes.text = showRoomsDetails[0].workTimes
+
+        if MOLHLanguage.currentAppleLanguage() == "en"{
+            showRoomName.text = showRoomsDetails[0].nameEn
+            showRoomAddess.text = showRoomsDetails[0].addressEn
+        }
+        else{
+            showRoomName.text = showRoomsDetails[0].nameAr
+            showRoomAddess.text = showRoomsDetails[0].addressAr
+        }
+        
 
         // Do any additional setup after loading the view.
     }
@@ -57,9 +68,16 @@ class ShowRoomDetailsViewController: UIViewController , UITableViewDelegate , UI
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "vehicleResultCell") as!VehicleResultTableViewCell
         let currentCellImageUrl = "\(ItemImageURL)\(showRoomItems[indexPath.row].image!)"
-        cell.vehicleBrand.text = showRoomItems[indexPath.row].nameEn
-        
-        cell.vehicleModel.text = showRoomItems[indexPath.row].descriptionEn.html2String
+        if MOLHLanguage.currentAppleLanguage() == "en"{
+            cell.vehicleBrand.text = showRoomItems[indexPath.row].nameEn
+            
+            cell.vehicleModel.text = showRoomItems[indexPath.row].descriptionEn.html2String
+        }
+        else{
+            cell.vehicleBrand.text = showRoomItems[indexPath.row].nameAr
+            
+            cell.vehicleModel.text = showRoomItems[indexPath.row].descriptionAr.html2String
+        }
         cell.vehicleImage.af_setImage(withURL: URL(string: currentCellImageUrl)!)
         cell.vehicleShowRoom.isHidden = true
         cell.vehiclePrice.text = showRoomItems[indexPath.row].price
@@ -84,7 +102,14 @@ class ShowRoomDetailsViewController: UIViewController , UITableViewDelegate , UI
         let storyboard = UIStoryboard.init(name: "ShowRooms", bundle: nil)
         let destinationViewController = storyboard.instantiateViewController(withIdentifier: "SendMessageVC") as! ShowRoomSendMessageViewController
         destinationViewController.showRoom = showRoomsDetails[0]
-        destinationViewController.receiverName = showRoomsDetails[0].nameEn
+        if MOLHLanguage.currentAppleLanguage() == "en"{
+            destinationViewController.receiverName = showRoomsDetails[0].nameEn
+
+        }
+        else{
+            destinationViewController.receiverName = showRoomsDetails[0].nameAr
+
+        }
         destinationViewController.loggedinUserId = UserDefaults.standard.getUserID()
         show(destinationViewController, sender: self)
         

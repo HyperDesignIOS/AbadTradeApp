@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4000FD882075360B00E70AAC /* VehicleBidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4000FD872075360B00E70AAC /* VehicleBidViewController.swift */; };
+		401AD472209625F2001DB7EB /* ShowRooms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 401AD474209625F2001DB7EB /* ShowRooms.storyboard */; };
 		40285FCC207109C200E575DD /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40285FCB207109C200E575DD /* TableViewCell.swift */; };
 		40285FCE20710A4C00E575DD /* ModelsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40285FCD20710A4C00E575DD /* ModelsTableViewController.swift */; };
 		40285FD020713FA500E575DD /* ShowRoomSendMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40285FCF20713FA500E575DD /* ShowRoomSendMessageViewController.swift */; };
@@ -30,7 +31,6 @@
 		40B24A93205E8C1200FE00BF /* searchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B24A92205E8C1200FE00BF /* searchTableViewCell.swift */; };
 		40B24A96205ED0C100FE00BF /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B24A95205ED0C100FE00BF /* Model.swift */; };
 		40C9E557206917E900516157 /* BrandCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C9E556206917E900516157 /* BrandCollectionViewController.swift */; };
-		40E79F4B206A675600DBDCA6 /* ShowRooms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40E79F4A206A675600DBDCA6 /* ShowRooms.storyboard */; };
 		40E79F4E206A681900DBDCA6 /* Insurance.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40E79F4D206A681900DBDCA6 /* Insurance.storyboard */; };
 		40E79F54206A684900DBDCA6 /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E79F50206A684900DBDCA6 /* Area.swift */; };
 		40E79F55206A684900DBDCA6 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E79F51206A684900DBDCA6 /* Country.swift */; };
@@ -84,6 +84,9 @@
 /* Begin PBXFileReference section */
 		11BA69E58BAC6CD88A2058D2 /* Pods-AbadTradeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AbadTradeApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AbadTradeApp/Pods-AbadTradeApp.debug.xcconfig"; sourceTree = "<group>"; };
 		4000FD872075360B00E70AAC /* VehicleBidViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleBidViewController.swift; sourceTree = "<group>"; };
+		401AD473209625F2001DB7EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ShowRooms.storyboard; sourceTree = "<group>"; };
+		401AD476209625F5001DB7EB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ShowRooms.strings; sourceTree = "<group>"; };
+		401AD478209625FA001DB7EB /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/ShowRooms.strings; sourceTree = "<group>"; };
 		40285FCB207109C200E575DD /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		40285FCD20710A4C00E575DD /* ModelsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsTableViewController.swift; sourceTree = "<group>"; };
 		40285FCF20713FA500E575DD /* ShowRoomSendMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowRoomSendMessageViewController.swift; sourceTree = "<group>"; };
@@ -106,7 +109,6 @@
 		40B24A92205E8C1200FE00BF /* searchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchTableViewCell.swift; sourceTree = "<group>"; };
 		40B24A95205ED0C100FE00BF /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		40C9E556206917E900516157 /* BrandCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandCollectionViewController.swift; sourceTree = "<group>"; };
-		40E79F4A206A675600DBDCA6 /* ShowRooms.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ShowRooms.storyboard; sourceTree = "<group>"; };
 		40E79F4D206A681900DBDCA6 /* Insurance.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Insurance.storyboard; sourceTree = "<group>"; };
 		40E79F50206A684900DBDCA6 /* Area.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Area.swift; sourceTree = "<group>"; };
 		40E79F51206A684900DBDCA6 /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
@@ -267,8 +269,8 @@
 				7D637E1D2067BAC900D87672 /* InsuranceCompany  */,
 				40F39B8320640516000FE5A2 /* Vehicles */,
 				40F39B8020640255000FE5A2 /* SideMenu */,
-				40FB000D206168580095E4A9 /* VehicleResult */,
 				40FCE0DD205D70BA002F2291 /* Home */,
+				40FB000D206168580095E4A9 /* VehicleResult */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -284,7 +286,7 @@
 		40E79F49206A675600DBDCA6 /* ShowRoom */ = {
 			isa = PBXGroup;
 			children = (
-				40E79F4A206A675600DBDCA6 /* ShowRooms.storyboard */,
+				401AD474209625F2001DB7EB /* ShowRooms.storyboard */,
 			);
 			path = ShowRoom;
 			sourceTree = "<group>";
@@ -644,7 +646,7 @@
 				40F57D5A2090DBCF008F32A9 /* VehicleResult.storyboard in Resources */,
 				40E79F4E206A681900DBDCA6 /* Insurance.storyboard in Resources */,
 				7DC9221F205809EE00C1705F /* Assets.xcassets in Resources */,
-				40E79F4B206A675600DBDCA6 /* ShowRooms.storyboard in Resources */,
+				401AD472209625F2001DB7EB /* ShowRooms.storyboard in Resources */,
 				40EF390F208F92FC00296926 /* SideMenu.storyboard in Resources */,
 				40EF3910208F986400296926 /* Login.storyboard in Resources */,
 				7D51DC4C2060149E00D5E107 /* Vehicle.storyboard in Resources */,
@@ -790,6 +792,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		401AD474209625F2001DB7EB /* ShowRooms.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				401AD473209625F2001DB7EB /* Base */,
+				401AD476209625F5001DB7EB /* en */,
+				401AD478209625FA001DB7EB /* ar */,
+			);
+			name = ShowRooms.storyboard;
+			sourceTree = "<group>";
+		};
 		40EF38F9208F87C300296926 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

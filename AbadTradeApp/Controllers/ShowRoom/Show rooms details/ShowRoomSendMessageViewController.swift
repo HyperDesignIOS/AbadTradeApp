@@ -18,12 +18,19 @@ class ShowRoomSendMessageViewController: UIViewController {
     var insurance : Insurance!
     var loggedinUserId : Int!
     
+    @IBOutlet weak var sendButton: UIButton!
+    @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var receiverNameLabel: UILabel!
     @IBOutlet weak var sentMessageTextView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         receiverNameLabel.text = receiverName
+        sendButton.setTitle(NSLocalizedString("SENDBUTTON", comment: ""), for: .normal)
+        
+        messageLabel.text = NSLocalizedString("MESSAGELABEL", comment: "")
+        self.navigationItem.title = NSLocalizedString("SENDMESSAGENAVITEM", comment: "")
+        
         self.hideKeyboardWhenTappedAround()
 
     }
@@ -52,7 +59,7 @@ class ShowRoomSendMessageViewController: UIViewController {
         }
         else
         {
-            self.generaMetod.showAlert(title: "", message:"enter your message", vc: self, closure: nil)
+            self.generaMetod.showAlert(title: "", message: NSLocalizedString("NOMESSAGEENTERED", comment: ""), vc: self, closure: nil)
         }
     }
 

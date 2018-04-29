@@ -1,0 +1,63 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "24w-iF-pHH"; */
+"24w-iF-pHH.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "3b7-Ql-3H3"; */
+"3b7-Ql-3H3.text" = "Label";
+
+/* Class = "UILabel"; text = "Items :"; ObjectID = "47A-1D-i37"; */
+"47A-1D-i37.text" = "محتويات المعرض :";
+
+/* Class = "UICollectionViewController"; title = "ShowRoom"; ObjectID = "4Im-D1-zx4"; */
+"4Im-D1-zx4.title" = "ShowRoom";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "5DO-BR-Deh"; */
+"5DO-BR-Deh.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "Showroom details"; ObjectID = "7a0-AX-ZT2"; */
+"7a0-AX-ZT2.title" = "التفاصيل عن المعرض";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "7wK-73-Yt0"; */
+"7wK-73-Yt0.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "8FJ-YO-G6p"; */
+"8FJ-YO-G6p.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Send message"; ObjectID = "GH8-ST-4EB"; */
+"GH8-ST-4EB.normalTitle" = "Send message";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Hyz-6T-LVQ"; */
+"Hyz-6T-LVQ.text" = "Label";
+
+/* Class = "UILabel"; text = "Message :"; ObjectID = "P4x-hU-tIe"; */
+"P4x-hU-tIe.text" = "Message :";
+
+/* Class = "UINavigationItem"; title = "ShowRooms"; ObjectID = "PvE-lh-uxG"; */
+"PvE-lh-uxG.title" = "المعارض";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "QhF-6n-xkB"; */
+"QhF-6n-xkB.text" = "Label";
+
+/* Class = "UILabel"; text = "To :"; ObjectID = "V18-jg-rhg"; */
+"V18-jg-rhg.text" = "الي :";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "YJ4-8P-MSm"; */
+"YJ4-8P-MSm.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "cA2-9P-swe"; */
+"cA2-9P-swe.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Send"; ObjectID = "eIQ-X3-3Fk"; */
+"eIQ-X3-3Fk.normalTitle" = "Send";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "edc-Se-bJh"; */
+"edc-Se-bJh.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "nhD-bF-xbk"; */
+"nhD-bF-xbk.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "Send message"; ObjectID = "skW-l2-XFe"; */
+"skW-l2-XFe.title" = "Send message";
+
+/* Class = "UIButton"; normalTitle = "Login to send message"; ObjectID = "ss5-ja-CA7"; */
+"ss5-ja-CA7.normalTitle" = "Login to send message";

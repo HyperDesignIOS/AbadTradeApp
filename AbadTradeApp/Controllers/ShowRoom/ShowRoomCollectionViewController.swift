@@ -8,7 +8,7 @@
 
 import UIKit
 import AlamofireImage
-
+import MOLH
 class showRoomCollectionViewController: UICollectionViewController {
     var ShowRooms = [ShowRoom]()
     var showRoomDetailsArr = [ShowRoomDetails]()
@@ -53,7 +53,13 @@ class showRoomCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ShowRoomCell", for: indexPath) as! showRoomCollectionViewCell
         
         cell.roomImage.af_setImage(withURL: URL(string: "\(ShowRoomImageURL)\(ShowRooms[indexPath.row].logo!)")!)
-        cell.roomName.text = ShowRooms[indexPath.row].nameEn
+        if MOLHLanguage.currentAppleLanguage() == "en"{
+            cell.roomName.text = ShowRooms[indexPath.row].nameEn
+        }
+        else{
+            cell.roomName.text = ShowRooms[indexPath.row].nameAr
+
+        }
         cell.roomNumberOfVehicles.text = "5"
         
         return cell
@@ -72,7 +78,7 @@ class showRoomCollectionViewController: UICollectionViewController {
         })
             
         
-        }
+    }
     
     @IBAction func sideMenuButton(_ sender: Any) {
         performSegue(withIdentifier: "showSideMenu", sender: self)
@@ -128,7 +134,6 @@ class showRoomCollectionViewController: UICollectionViewController {
      */
     
     func getRooms (){
-        
         apiRequests.apisInstance.getShowRooms{ (showRooms) in
             self.ShowRooms = showRooms
             self.collectionView?.reloadData()

@@ -406,7 +406,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Send message" id="skW-l2-XFe"/>
                     <connections>
+                        <outlet property="messageLabel" destination="P4x-hU-tIe" id="Ru2-Ae-xZ7"/>
                         <outlet property="receiverNameLabel" destination="3b7-Ql-3H3" id="E6p-RG-hgM"/>
+                        <outlet property="sendButton" destination="eIQ-X3-3Fk" id="e1N-ff-IVn"/>
                         <outlet property="sentMessageTextView" destination="D5O-39-tRp" id="oDI-Dw-9Ty"/>
                     </connections>
                 </viewController>

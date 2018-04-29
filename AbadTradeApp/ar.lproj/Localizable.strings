@@ -31,6 +31,9 @@
 "SENDBUTTON" = "ارسال";
 "SENDMESSAGENAVITEM" = "ارسال رسالة";
 
+//showroom
+"LOGINTOSENDMESSAGE" = "سجل الدخول لارسال رسالة";
+
 //alerts
 "NOCATEGORYSELECTED" = "قم بإختيار نوع المركبة اولا";
 "NOBRANDSELECTED" = "قم بإختيار الماركة اولا";
