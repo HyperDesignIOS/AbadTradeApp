@@ -73,3 +73,5 @@
 "BIGGERTHANMAXOFFERENTERED" = "Invaild offer , please enter offer less than maximum bid";
 
 "NOOFFERENTERED" = "Please enter your offer";
+
+"LOGINTOOPENTENDER" = "You need to login first";

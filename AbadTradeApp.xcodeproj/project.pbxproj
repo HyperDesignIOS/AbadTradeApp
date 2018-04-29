@@ -225,7 +225,7 @@
 		407337302058332900299A0F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				7D59A8C22071230D0010DD0E /* user */,
+				7D59A8C22071230D0010DD0E /* User */,
 				40E79F4F206A684900DBDCA6 /* Insurance */,
 				4028CD85206CF6100067294F /* VehicleDetails */,
 				7DE7EB33206175F40014D569 /* SearchResult */,
@@ -470,12 +470,12 @@
 			path = RegisterVC;
 			sourceTree = "<group>";
 		};
-		7D59A8C22071230D0010DD0E /* user */ = {
+		7D59A8C22071230D0010DD0E /* User */ = {
 			isa = PBXGroup;
 			children = (
 				7D59A8C32071232C0010DD0E /* User.swift */,
 			);
-			path = user;
+			path = User;
 			sourceTree = "<group>";
 		};
 		7D637E1D2067BAC900D87672 /* InsuranceCompany  */ = {

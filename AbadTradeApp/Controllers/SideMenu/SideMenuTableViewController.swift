@@ -132,22 +132,22 @@ class SideMenuTableViewController: UITableViewController{
         
         
         else if sideMenuItemNames[indexPath.row] == "Tender"
-        {    if UserDefaults.standard.isLoggedIn(){
-            let storyboard = UIStoryboard(name: "Tender", bundle: nil)
-            let controller = storyboard.instantiateViewController(withIdentifier: "TenderMSGVC")
-            as! TenderVC
-            //self.present(controller, animated: true, completion: nil)
-            
-            apiRequests.apisInstance.getTender(didDataReady: { (msg) in
-              
-                controller.label = msg
-                self.show(controller, sender: self)
+        {
+            if UserDefaults.standard.isLoggedIn(){
+                let storyboard = UIStoryboard(name: "Tender", bundle: nil)
+                let controller = storyboard.instantiateViewController(withIdentifier: "TenderMSGVC")
+                    as! TenderVC
+                //self.present(controller, animated: true, completion: nil)
                 
-            })
-        }
-            else
-         {
-             generalMethod.showAlert(title: "", message: "you need to login ", vc: self, closure: nil)
+                apiRequests.apisInstance.getTender(didDataReady: { (msg) in
+                    
+                    controller.label = msg
+                    self.show(controller, sender: self)
+                    
+                })
+            }
+            else{
+             generalMethod.showAlert(title: "", message: NSLocalizedString("LOGINTOOPENTENDER", comment: ""), vc: self, closure: nil)
             }
         }
         
