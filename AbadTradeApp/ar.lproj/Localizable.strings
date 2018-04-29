@@ -13,6 +13,19 @@
 "BRAND" = "الماركات";
 "MODEL" = "الموديلات";
 
+//vehicle result
+"BUY" = "شراء";
+"BID" = "قدم عرضك";
+"LOGINTOBID" = "سجل الدخول للانضمام للمزاد";
+"LOGINTOBUY" = "سجل الدخول للشراء";
+"BRANDLBL" = "الماركة";
+"MODELLBL" = "الموديل";
+"YEARLBL" = "سنة الصنع";
+"STATUSLBL" = "الحالة";
+"VEHICLEDESCRIPTION" = "الوصف :";
+"VEHICLEPRICES" = "الاسعار :";
+"VEHICLEFEATURES" = "الامكانيات :";
+
 //Tender
 "MESSAGELABEL" = "نص الرسالة :";
 "SENDBUTTON" = "ارسال";
@@ -40,3 +53,23 @@
 
 "NOUSERNAMEENTERED" = "من فضلك قم بإدخال اسم المستخدم";
 
+"NOMESSAGEENTERED" = "من فضلك قم بإدخال رسالتك";
+
+"NOPRICESELECTED" = "من فضلك قم بإختيار السعر";
+
+"NOPHONEENTERED" = "من فضلك قم بإدخال رقم الموبايل";
+
+"INVALIDPHONE" = "رقم تليفون غير صحيح";
+
+"NOARADDRESSENTERED" = "من فضلك قم بإدخال العنوان بالعربي";
+
+"NOENADDRESSENTERED" = "من فضلك قم بإدخال العنوان بالانجليزي";
+
+"SMALLERTHANCURRENTOFFERENTERED" = "عرض غير مقبول ، قم بإدخال عرض اعلي من العرض الحالي";
+
+"SMALLERTHANMINOFFERENTERED" = "عرض غير مقبول ، قم بإدخال عرض اعلي من اقل عرض";
+
+
+"BIGGERTHANMAXOFFERENTERED" = "عرض غير مقبول ، قم بإدخال عرض اقل من اعلي عرض";
+
+"NOOFFERENTERED" = "من فضلك قم بإدخال عرضك";

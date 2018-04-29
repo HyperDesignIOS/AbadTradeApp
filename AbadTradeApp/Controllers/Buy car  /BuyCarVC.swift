@@ -17,6 +17,8 @@ class BuyCarVC: UIViewController , UICollectionViewDelegate,UICollectionViewData
     var general = GeneralMethod()
 
 
+    @IBOutlet weak var buyButton: UIButton!
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var nameTF: UITextField!
     @IBOutlet weak var PhonTF: UITextField!
     @IBOutlet weak var emailTF: UITextField!
@@ -30,39 +32,17 @@ class BuyCarVC: UIViewController , UICollectionViewDelegate,UICollectionViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         collectionView.delegate = self
         collectionView.dataSource = self
         nameTF.text = user.name
         nameTF.isEnabled = false
         emailTF.text = user.email
+        buyButton.setTitle(NSLocalizedString("BUY", comment: ""), for: .normal)
         self.hideKeyboardWhenTappedAround()
     }
-    
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//
-//        PhonTF.becomeFirstResponder()
-//    }
-    
-    
-//    @IBAction func priceRadioButton(_ sender: UIButton) {
-//
-//        switch sender.tag{
-//        case 0:
-//            imageSwap(forfirstimage: firstImage, andSecondImage: secondImage)
-//            selectedPrice = price[0].id
-//
-//        case 1:
-//            imageSwap(forfirstimage: secondImage, andSecondImage: firstImage)
-//            selectedPrice = price[1].id
-//
-//        default:
-//            break
-//        }
-//    }
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return price.count
     }
@@ -79,20 +59,7 @@ class BuyCarVC: UIViewController , UICollectionViewDelegate,UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-//        let cell = collectionView.cellForItem(at: indexPath) as! priceCell
         print(indexPath.row)
-//        selectedPrice = price[indexPath.row]
-//        selectedPrice.isPlaying = !selectedPrice.isPlaying
-//
-//        for cell in tableView.visibleCells {
-//            guard let visibleCell = cell as? RadioTableViewCell else { return }
-//            let path = tableView.indexPathForCell(visibleCell)
-//            let item = items[path.row]
-//            item.isPlaying = visibleCell == selectedCell
-//            visibleCell.setup(item: item)
-//        }
-//        cell.emptyImage.image = #imageLiteral(resourceName: "radio-on-button")
-
         for cell in collectionView.visibleCells {
             let visiableCell = cell as! priceCell
             if collectionView.indexPath(for: visiableCell)?.row == indexPath.row{
@@ -110,38 +77,38 @@ class BuyCarVC: UIViewController , UICollectionViewDelegate,UICollectionViewData
         
         let email = emailTF.text
         let phone = PhonTF.text
-        let addressAr = addessenTF.text
+        let addressAr = addressarTF.text
         let addressEn = addessenTF.text
         
         if selectedPrice == nil {
-            general.showAlert(title: "", message: "please select your price", vc: self, closure: nil)
+            general.showAlert(title: "", message: NSLocalizedString("NOPRICESELECTED", comment: ""), vc: self, closure: nil)
             return
         }
         if (email?.isEmpty)! || (email?.containsWhiteSpace())!{
-            general.showAlert(title: "", message: "please enter your e-mail", vc: self, closure: nil)
+            general.showAlert(title: "", message: NSLocalizedString("NOEMAILENTERED", comment: ""), vc: self, closure: nil)
             return
         }
         else if !(email?.isValidEmail())!{
-            general.showAlert(title: "", message: "invalid e-mail", vc: self, closure: nil)
+            general.showAlert(title: "", message: NSLocalizedString("INVALIDEMAIL", comment: ""), vc: self, closure: nil)
             return
         }
         
         if (phone?.isEmpty)! || (phone?.containsWhiteSpace())!{
-            general.showAlert(title: "", message: "please enter your phone", vc: self, closure: nil)
+            general.showAlert(title: "", message: NSLocalizedString("NOPHONEENTERED", comment: ""), vc: self, closure: nil)
             return
         }
         else if !(phone?.isValidPhone())!{
-            general.showAlert(title: "", message: "invalid phone", vc: self, closure: nil)
+            general.showAlert(title: "", message: NSLocalizedString("INVALIDPHONE", comment: ""), vc: self, closure: nil)
             return
         }
         
         if (addressAr?.isEmpty)! || (addressAr?.containsWhiteSpace())!{
-            general.showAlert(title: "", message: "please enter your address in Arabic", vc: self, closure: nil)
+            general.showAlert(title: "", message: NSLocalizedString("NOARADDRESSENTERED", comment: ""), vc: self, closure: nil)
             return
         }
         
         if (addressEn?.isEmpty)! || (addressEn?.containsWhiteSpace())!{
-            general.showAlert(title: "", message: "please enter your address in English", vc: self, closure: nil)
+            general.showAlert(title: "", message: NSLocalizedString("NOENADDRESSENTERED", comment: ""), vc: self, closure: nil)
             return
         }
         
@@ -174,8 +141,6 @@ class BuyCarVC: UIViewController , UICollectionViewDelegate,UICollectionViewData
         secondImageView.image = UIImage(named: "empty")
         
     }
-    
-    @IBOutlet weak var collectionView: UICollectionView!
 }
 
 

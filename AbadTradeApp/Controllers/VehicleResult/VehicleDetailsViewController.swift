@@ -9,6 +9,7 @@
 import UIKit
 import ImageSlideshow
 import AlamofireImage
+import MOLH
 
 
 class VehicleDetailsViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
@@ -49,11 +50,12 @@ class VehicleDetailsViewController: UIViewController,UITableViewDelegate,UITable
             currentLabel.isHidden = false
             dateLabel.isHidden = false
             if UserDefaults.standard.isLoggedIn(){
+                bidsButton.setTitle(NSLocalizedString("BID", comment: ""), for: .normal)
                 bidsButton.isHidden = false
                 buyButton.isHidden = true
             }
             else{
-                bidsButton.setTitle("Login to join bid", for: .normal)
+                bidsButton.setTitle(NSLocalizedString("LOGINTOBID", comment: ""), for: .normal)
                 bidsButton.isHidden = false
                 buyButton.isHidden = true
             }
@@ -64,11 +66,12 @@ class VehicleDetailsViewController: UIViewController,UITableViewDelegate,UITable
             currentLabel.isHidden = true
             dateLabel.isHidden = true
             if UserDefaults.standard.isLoggedIn(){
+                buyButton.setTitle(NSLocalizedString("BUY", comment: ""), for: .normal)
                 bidsButton.isHidden = true
                 buyButton.isHidden = false
             }
             else{
-                bidsButton.setTitle("Login to buy", for: .normal)
+                buyButton.setTitle(NSLocalizedString("LOGINTOBUY", comment: ""), for: .normal)
                 bidsButton.isHidden = true
                 buyButton.isHidden = false
             }
@@ -114,38 +117,56 @@ class VehicleDetailsViewController: UIViewController,UITableViewDelegate,UITable
         case 0:
             switch indexPath.row {
             case 0:
-                cell.vehicleDataKey.text = "Brand"
+                cell.vehicleDataKey.text = NSLocalizedString("BRANDLBL", comment: "")
+                if MOLHLanguage.currentAppleLanguage() == "en"{
                 cell.vehicleDtaValue.text = vehicleItemDetails.brand.nameEn
+                }
+                else{
+                     cell.vehicleDtaValue.text = vehicleItemDetails.brand.nameAr
+                }
             case 1:
-                cell.vehicleDataKey.text = "Model"
+                cell.vehicleDataKey.text = NSLocalizedString("MODELLBL", comment: "")
+                 if MOLHLanguage.currentAppleLanguage() == "en"{
                 cell.vehicleDtaValue.text = vehicleItemDetails.model.nameEn
+                }
+                 else{
+                     cell.vehicleDtaValue.text = vehicleItemDetails.model.nameAr
+                }
             case 2:
-                cell.vehicleDataKey.text = "Year"
+                cell.vehicleDataKey.text = NSLocalizedString("YEARLBL", comment: "")
                 cell.vehicleDtaValue.text = vehicleItemDetails.modYear.year
             default:
-                cell.vehicleDataKey.text = "Status"
+                cell.vehicleDataKey.text = NSLocalizedString("STATUSLBL", comment: "")
                 cell.vehicleDtaValue.text = vehicleItemDetails.status
             }
 //            cell.vehicleDataKey.text = "lesa"
 //            cell.vehicleDtaValue.text = "api"
         case 1:
-            cell.vehicleDataKey.text = vehiclePrices[indexPath.row].nameEn
+            if MOLHLanguage.currentAppleLanguage() == "en"{
+                cell.vehicleDataKey.text = vehiclePrices[indexPath.row].nameEn
+            }else{
+                cell.vehicleDataKey.text = vehiclePrices[indexPath.row].nameAr
+            }
             cell.vehicleDtaValue.text = vehiclePrices[indexPath.row].price
         default:
-            cell.vehicleDataKey.text = vehicleOptions[indexPath.row].nameEn
-            cell.vehicleDtaValue.text = vehicleOptions[indexPath.row].valueEn
+            if MOLHLanguage.currentAppleLanguage() == "en"{
+                cell.vehicleDataKey.text = vehicleOptions[indexPath.row].nameEn
+                cell.vehicleDtaValue.text = vehicleOptions[indexPath.row].valueEn
+            }else{
+                cell.vehicleDataKey.text = vehicleOptions[indexPath.row].nameAr
+                cell.vehicleDtaValue.text = vehicleOptions[indexPath.row].valueAr
+            }
         }
-        
         return cell
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:
-            return "Vehicle description: "
+            return NSLocalizedString("VEHICLEDESCRIPTION", comment: "")
         case 1:
-            return "Vehicle prices:"
+            return NSLocalizedString("VEHICLEPRICES", comment: "")
         default:
-            return "Vehicle features:"
+            return NSLocalizedString("VEHICLEFEATURES", comment: "")
         }
     }
     
@@ -198,7 +219,6 @@ class VehicleDetailsViewController: UIViewController,UITableViewDelegate,UITable
         {
             let storyboard = UIStoryboard(name: "Login", bundle: nil)
             let controller = storyboard.instantiateViewController(withIdentifier: "LoginVC")
-//            generalMethod.showAlert(title: "", message: "login first to buy", vc: self, closure: nil)
             show(controller, sender: self)
         }
         
@@ -240,8 +260,6 @@ class VehicleDetailsViewController: UIViewController,UITableViewDelegate,UITable
         }
         vehicleSlider.setImageInputs(downloadedImages)
         vehicleSlider.slideshowInterval = 2
-        //        slideShow.zoomEnabled = true
-        //    slideShow.activityIndicator = DefaultActivityIndicator(style: .white, color: nil)
     }
 
     func getItems(){
@@ -257,10 +275,6 @@ class VehicleDetailsViewController: UIViewController,UITableViewDelegate,UITable
             self.slider()
             self.endDateLabel.text = self.vehicleBids.endDate
             self.currentOfferLabel.text = "\(self.itemTotalAmount!) \(self.currency)"
-//            self.generalMethod.updateView(id: "\(self.vehicleBids.id!)", update: {(total) in
-//                self.currentLabel.text = "\(total) \(self.currency)"
-//                })
-            //print("bid : \(self.vehicleBids.id!)")
             self.tabelView.reloadData()
         }
         

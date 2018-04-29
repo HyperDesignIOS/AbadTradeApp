@@ -54,7 +54,7 @@
 "X0d-Ys-qQg.text" = "Label";
 
 /* Class = "UILabel"; text = "End date"; ObjectID = "Xn3-AT-wKh"; */
-"Xn3-AT-wKh.text" = "End date";
+"Xn3-AT-wKh.text" = "تاريخ الانتهاء";
 
 /* Class = "UILabel"; text = "Current offer :"; ObjectID = "XzV-fr-d1d"; */
 "XzV-fr-d1d.text" = "العرض الحالي :";

@@ -76,17 +76,18 @@ class VehicleBidViewController: UIViewController {
     @IBAction func sendBidButton(_ sender: Any) {
         
         let enteredOffer = userOfferTextField.text
-        if (enteredOffer?.isEmpty)! || (enteredOffer?.containsWhiteSpace())!{
-            if Int(enteredOffer!)! < Int(vehicleBid.startBid)!
-            {
-                general.showAlert(title: "", message: "Invaild offer , please enter offer bigger than current offer", vc: self, closure: nil)
+        if !(enteredOffer?.isEmpty)! || (enteredOffer?.containsWhiteSpace())!{
+            if Int(enteredOffer!)! <= Int(vehicleBid.minimumBid)!{
+                general.showAlert(title: "", message: NSLocalizedString("SMALLERTHANMINOFFERENTERED", comment: ""), vc: self, closure: nil)
             }
-            if Int(enteredOffer!)! < Int(vehicleBid.minimumBid)!{
-                general.showAlert(title: "", message: "Invaild offer , please enter offer bigger than minimum bid", vc: self, closure: nil)
+            else if Int(enteredOffer!)! >= Int(vehicleBid.maximumBid)!{
+                general.showAlert(title: "", message: NSLocalizedString("BIGGERTHANMAXOFFERENTERED", comment: ""), vc: self, closure: nil)
             }
-            else if Int(enteredOffer!)! > Int(vehicleBid.maximumBid)!{
-                general.showAlert(title: "", message: "Invaild offer , please enter offer less than maximum bid", vc: self, closure: nil)
-            }
+//            else if Int(enteredOffer!)! < Int(itemCurrentAmount)
+//            {
+//                general.showAlert(title: "", message: NSLocalizedString("SMALLERTHANCURRENTOFFERENTERED", comment: ""), vc: self, closure: nil)
+//            }
+//
             else{
                 apiRequests.apisInstance.addAuctionForCarBid(id: currentItemId, userId: "\(UserDefaults.standard.getUserID())", value: enteredOffer!, didDataReady: { (msg, total) in
                     self.general.showAlert(title: "", message: "\(msg)", vc: self, closure: nil)
@@ -96,52 +97,23 @@ class VehicleBidViewController: UIViewController {
             }
         }
         else{
-            general.showAlert(title: "", message: "Please enter your offer", vc: self, closure: nil)
+            general.showAlert(title: "", message: NSLocalizedString("NOOFFERENTERED", comment: ""), vc: self, closure: nil)
         }
     }
 
     func updateView() {
-        // Initialize Label
-//        setTimeLeft()
 
         // Start timer
         timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(self.setTimeLeft), userInfo: nil, repeats: true)
-//        timer = Timer.scheduledTimer(withTimeInterval: -1.0, repeats: true, block: { (timer) in
-//            //self.timer = timer
-//            //self.setTimeLeft()
-//        })
+
     }
-//
+
     @objc func setTimeLeft() {
 
         // Only keep counting if timeEnd is bigger than timeNow
         apiRequests.apisInstance.updateCurrentBid(id: currentItemId) { (total) in
             self.currentOffer.text = "\(total) \(self.currency)"
         }
-//        if timeEnd.compare(timeNow) == ComparisonResult.orderedDescending {
-//
-//            isEnded = false
-//            let calendar = NSCalendar.current
-//
-//            let components = calendar.dateComponents([.day, .hour, .minute, .second], from: timeNow, to: timeEnd)
-//
-//            dayText = "\(components.day!)d "
-//            hourText = "\(components.hour!)h "
-//
-//            // Hide day and hour if they are zero
-//            if components.day! <= 0 {
-//                dayText = ""
-//                if components.hour! <= 0 {
-//                    hourText = ""
-//                }
-//            }
-//            minuteText = "\(components.minute!)m "
-//            secondText = "\(components.second!)s "
-//            timerLabel.text = "\(dayText!)\(hourText!)\(minuteText!)\(secondText!)"
-//
-//        } else {
-//            timerLabel.text = "Ended"
-//        }
     }
 
 }

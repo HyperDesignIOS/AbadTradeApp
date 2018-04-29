@@ -136,7 +136,7 @@
                                                     <constraint firstAttribute="height" constant="300" id="fCE-Nm-655"/>
                                                 </constraints>
                                             </view>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rr4-66-u6p">
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rr4-66-u6p">
                                                 <rect key="frame" x="0.0" y="376" width="375" height="271"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <prototypes>
@@ -192,7 +192,7 @@
                                                         </connections>
                                                     </button>
                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rDN-8T-uCN">
-                                                        <rect key="frame" x="248" y="10" width="102" height="36"/>
+                                                        <rect key="frame" x="248" y="10" width="102" height="30"/>
                                                         <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                         <state key="normal" title="Place your bid">
@@ -241,7 +241,7 @@
                                                     <constraint firstItem="p1f-OC-rtu" firstAttribute="top" secondItem="Xn3-AT-wKh" secondAttribute="bottom" constant="5" id="OFF-8D-ufI"/>
                                                     <constraint firstAttribute="bottom" secondItem="fhW-YV-V2f" secondAttribute="bottom" constant="10" id="Qbd-uX-fTQ"/>
                                                     <constraint firstItem="p1f-OC-rtu" firstAttribute="centerX" secondItem="Xn3-AT-wKh" secondAttribute="centerX" id="Tqh-2t-gCD"/>
-                                                    <constraint firstAttribute="bottom" secondItem="rDN-8T-uCN" secondAttribute="bottom" constant="10" id="awf-S9-Dxy"/>
+                                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="rDN-8T-uCN" secondAttribute="bottom" constant="10" id="awf-S9-Dxy"/>
                                                     <constraint firstAttribute="bottom" secondItem="X0d-Ys-qQg" secondAttribute="bottom" constant="5" id="dvk-ip-uXj"/>
                                                     <constraint firstItem="X0d-Ys-qQg" firstAttribute="leading" secondItem="4lH-vO-gaK" secondAttribute="leading" constant="10" id="f4z-ew-JSI"/>
                                                     <constraint firstItem="2ww-cG-eLu" firstAttribute="top" secondItem="4lH-vO-gaK" secondAttribute="top" constant="5" id="fcw-tN-0Lt"/>
@@ -755,6 +755,7 @@
                         <outlet property="PhonTF" destination="cXU-qo-hgP" id="w9T-IR-Vbm"/>
                         <outlet property="addessenTF" destination="j1z-Zq-pcF" id="Ey7-W8-Ztn"/>
                         <outlet property="addressarTF" destination="7zs-lS-np0" id="tEJ-2v-2hT"/>
+                        <outlet property="buyButton" destination="roi-oL-bLl" id="DVT-Xa-U5l"/>
                         <outlet property="collectionView" destination="cO2-HD-wmm" id="R0u-OY-Wo2"/>
                         <outlet property="emailTF" destination="WU5-r7-fjf" id="gru-9X-ESn"/>
                         <outlet property="nameTF" destination="BD6-1Q-TuM" id="OlX-p6-GiU"/>

@@ -20,6 +20,16 @@
 
 //vehicle result
 "BUY" = "Buy";
+"BID" = "Place your bid";
+"LOGINTOBID" = "Login to join bid";
+"LOGINTOBUY" = "Login to buy";
+"BRANDLBL" = "Brand";
+"MODELLBL" = "Model";
+"YEARLBL" = "Year" ;
+"STATUSLBL" = "Status";
+"VEHICLEDESCRIPTION" = "Vehicle description:";
+"VEHICLEPRICES" = "Vehicle prices:";
+"VEHICLEFEATURES" = "Vehicle features:";
 
 
 //alerts
@@ -45,3 +55,21 @@
 "NOUSERNAMEENTERED" = "Please enter your name";
 
 "NOMESSAGEENTERED" = "Please enter your message";
+
+"NOPRICESELECTED" = "Please select your price";
+
+"NOPHONEENTERED" = "Please enter your phone";
+
+"INVALIDPHONE" = "Invalid phone";
+
+"NOARADDRESSENTERED" = "Please enter your address in Arabic";
+
+"NOENADDRESSENTERED" = "Please enter your address in English";
+
+"SMALLERTHANCURRENTOFFERENTERED" = "Invaild offer , please enter offer bigger than current offer";
+
+"SMALLERTHANMINOFFERENTERED" = "Invaild offer , please enter offer bigger than minimum offer";
+
+"BIGGERTHANMAXOFFERENTERED" = "Invaild offer , please enter offer less than maximum bid";
+
+"NOOFFERENTERED" = "Please enter your offer";
