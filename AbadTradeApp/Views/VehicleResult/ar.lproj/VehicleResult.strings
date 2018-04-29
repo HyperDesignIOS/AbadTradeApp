@@ -1,0 +1,99 @@
+
+/* Class = "UIButton"; normalTitle = "Send offer"; ObjectID = "0vq-x9-ttm"; */
+"0vq-x9-ttm.normalTitle" = "ارسال العرض";
+
+/* Class = "UINavigationItem"; title = "Vehicle result"; ObjectID = "1sU-LU-ucj"; */
+"1sU-LU-ucj.title" = "النتائج";
+
+/* Class = "UILabel"; text = "Minimum bid :"; ObjectID = "2mz-XV-uzJ"; */
+"2mz-XV-uzJ.text" = "اقل عرض :";
+
+/* Class = "UILabel"; text = "Current offer"; ObjectID = "2ww-cG-eLu"; */
+"2ww-cG-eLu.text" = "العرض الحالي";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "5lA-Lc-4Ph"; */
+"5lA-Lc-4Ph.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "العنوان"; ObjectID = "7zs-lS-np0"; */
+"7zs-lS-np0.placeholder" = "العنوان";
+
+/* Class = "UITextField"; placeholder = "Your Offer"; ObjectID = "AZ7-Hs-scU"; */
+"AZ7-Hs-scU.placeholder" = "عرضك";
+
+/* Class = "UITextField"; placeholder = "Name"; ObjectID = "BD6-1Q-TuM"; */
+"BD6-1Q-TuM.placeholder" = "الاسم";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Bw6-SC-vMl"; */
+"Bw6-SC-vMl.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "H2v-tY-XaV"; */
+"H2v-tY-XaV.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "IbU-Ig-eBr"; */
+"IbU-Ig-eBr.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "NKx-T8-DWc"; */
+"NKx-T8-DWc.text" = "Label";
+
+/* Class = "UILabel"; text = "Maximum bid :"; ObjectID = "OVX-Y0-8Rc"; */
+"OVX-Y0-8Rc.text" = "اعلي عرض :";
+
+/* Class = "UINavigationItem"; title = "Vehicle data"; ObjectID = "Q4d-nX-qIg"; */
+"Q4d-nX-qIg.title" = "بيانات السيارة";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "SN2-1P-RNB"; */
+"SN2-1P-RNB.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "WRa-Bk-gMb"; */
+"WRa-Bk-gMb.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Mail"; ObjectID = "WU5-r7-fjf"; */
+"WU5-r7-fjf.placeholder" = "البريد الالكتروني";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "X0d-Ys-qQg"; */
+"X0d-Ys-qQg.text" = "Label";
+
+/* Class = "UILabel"; text = "End date"; ObjectID = "Xn3-AT-wKh"; */
+"Xn3-AT-wKh.text" = "End date";
+
+/* Class = "UILabel"; text = "Current offer :"; ObjectID = "XzV-fr-d1d"; */
+"XzV-fr-d1d.text" = "العرض الحالي :";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "YdZ-E5-2Nt"; */
+"YdZ-E5-2Nt.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "Vehicle bid"; ObjectID = "aFF-4G-Wy5"; */
+"aFF-4G-Wy5.title" = "المزاد";
+
+/* Class = "UIViewController"; title = "Buy "; ObjectID = "bG2-TA-TOU"; */
+"bG2-TA-TOU.title" = "Buy ";
+
+/* Class = "UINavigationItem"; title = "Buy car"; ObjectID = "bVe-97-s8y"; */
+"bVe-97-s8y.title" = "الشراء";
+
+/* Class = "UITextField"; placeholder = "Phone"; ObjectID = "cXU-qo-hgP"; */
+"cXU-qo-hgP.placeholder" = "رقم الموبايل";
+
+/* Class = "UIButton"; normalTitle = "Buy"; ObjectID = "fhW-YV-V2f"; */
+"fhW-YV-V2f.normalTitle" = "Buy";
+
+/* Class = "UITextField"; placeholder = "address"; ObjectID = "j1z-Zq-pcF"; */
+"j1z-Zq-pcF.placeholder" = "العنوان بالانجليزي";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "kiH-0A-eB0"; */
+"kiH-0A-eB0.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "lNl-5G-Hxa"; */
+"lNl-5G-Hxa.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "p1f-OC-rtu"; */
+"p1f-OC-rtu.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Place your bid"; ObjectID = "rDN-8T-uCN"; */
+"rDN-8T-uCN.normalTitle" = "قدم عرضك";
+
+/* Class = "UIButton"; normalTitle = "Buy"; ObjectID = "roi-oL-bLl"; */
+"roi-oL-bLl.normalTitle" = "Buy";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "rwN-tY-AkG"; */
+"rwN-tY-AkG.text" = "Label";

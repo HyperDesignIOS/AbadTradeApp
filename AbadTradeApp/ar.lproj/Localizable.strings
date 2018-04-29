@@ -5,3 +5,38 @@
   Created by Hyper Design on 4/24/18.
   Copyright © 2018 AmrObjection. All rights reserved.
 */
+//home
+"HOME" = "الصفحة الرئيسية";
+
+// vehicles
+"VEHICLE" = "المركبات";
+"BRAND" = "الماركات";
+"MODEL" = "الموديلات";
+
+//Tender
+"MESSAGELABEL" = "نص الرسالة :";
+"SENDBUTTON" = "ارسال";
+"SENDMESSAGENAVITEM" = "ارسال رسالة";
+
+//alerts
+"NOCATEGORYSELECTED" = "قم بإختيار نوع المركبة اولا";
+"NOBRANDSELECTED" = "قم بإختيار الماركة اولا";
+
+"NOMODELSELECTED" = "قم بإختيار الموديل اولا";
+
+"NOTHINGSELECTED" = "من فضلك قم بإختيار بيانات البحث";
+
+"NOEMAILENTERED" = "من فضلك قم بإدخال البريد الالكتروني";
+
+"INVALIDEMAIL" = "بريد الكتروني غير صحيح";
+
+"NOPASSWORDENTERED" = "من فضلك قم بإدخال كلمة المرور";
+
+"SHORTPASSWORD" = "كلمة المرور يجب الا تقل عن ٦ احرف";
+
+"NOCONFIRMATIONPASSWORDENTERED" = "من فضلك قم بإدخال تاكيد كلمة المرور";
+
+"PASSWORDCONFIRMATIONFAILD" = "كلمتا المرور غير متماثلتين";
+
+"NOUSERNAMEENTERED" = "من فضلك قم بإدخال اسم المستخدم";
+

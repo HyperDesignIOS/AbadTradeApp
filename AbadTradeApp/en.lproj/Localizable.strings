@@ -5,3 +5,43 @@
   Created by Hyper Design on 4/24/18.
   Copyright © 2018 AmrObjection. All rights reserved.
 */
+//home
+"HOME" = "Home";
+
+// vehicles
+"VEHICLE" = "Vehicles";
+"BRAND" = "Brands";
+"MODEL" = "Models";
+
+//Tender
+"MESSAGELABEL" = "Message :";
+"SENDBUTTON" = "Send";
+"SENDMESSAGENAVITEM" = "Send message";
+
+//vehicle result
+"BUY" = "Buy";
+
+
+//alerts
+"NOCATEGORYSELECTED" = "Select category first";
+"NOBRANDSELECTED" = "Select brand first";
+
+"NOMODELSELECTED" = "Select model first";
+
+"NOTHINGSELECTED" = "Please select search data";
+
+"NOEMAILENTERED" = "Please enter your e-mail";
+
+"INVALIDEMAIL" = "Invalid e-mail";
+
+"NOPASSWORDENTERED" = "Please enter your password";
+
+"SHORTPASSWORD" = "Password must be at least 6 charachters";
+
+"NOCONFIRMATIONPASSWORDENTERED" = "please enter your password confirmation";
+
+"PASSWORDCONFIRMATIONFAILD" = "password confirmation failed";
+
+"NOUSERNAMEENTERED" = "Please enter your name";
+
+"NOMESSAGEENTERED" = "Please enter your message";

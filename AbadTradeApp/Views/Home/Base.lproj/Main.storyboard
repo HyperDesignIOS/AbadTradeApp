@@ -409,12 +409,16 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="brandArrowImageView" destination="cCY-4A-sHn" id="dSf-oT-qg6"/>
                         <outlet property="brandTextField" destination="yYi-BV-W3g" id="jcW-ub-wDF"/>
+                        <outlet property="categoryArrowImageView" destination="Ojq-lx-Uc4" id="4cu-RZ-fgH"/>
                         <outlet property="categoryTextField" destination="Gh6-VR-hXR" id="DvZ-7C-sJ9"/>
+                        <outlet property="modelArrowImageView" destination="NHM-vo-dbD" id="fxw-Oq-Ozb"/>
                         <outlet property="modelTextField" destination="nGn-au-wb5" id="jYr-QI-v9i"/>
                         <outlet property="newRadioButton" destination="lOm-yE-9sy" id="T7b-tV-eb5"/>
                         <outlet property="slideShow" destination="1J8-Fr-adT" id="pSz-E4-stj"/>
                         <outlet property="usedRdioButton" destination="Nvs-zf-l7t" id="Ikz-rS-wXu"/>
+                        <outlet property="yearArrowImageView" destination="tHY-qL-72l" id="pmt-rH-Vqy"/>
                         <outlet property="yearTextField" destination="N3x-ic-yUn" id="wdR-Ik-Kzo"/>
                         <segue destination="nyD-OO-H2L" kind="show" identifier="vehicleResultSegue" id="RGz-1i-HTw"/>
                         <segue destination="aa0-kZ-WV9" kind="show" identifier="sideMenuSegue" id="pPl-B5-tDs"/>
@@ -459,8 +463,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="64.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aea-CK-MNe">
-                                            <rect key="frame" x="10" y="10" width="580" height="44.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aea-CK-MNe">
+                                            <rect key="frame" x="10" y="10" width="355" height="44.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -487,7 +491,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5ze-YS-Nwy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1254" y="133"/>
+            <point key="canvasLocation" x="1254" y="116"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LE7-BR-Vku">

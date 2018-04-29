@@ -8,6 +8,7 @@
 
 import UIKit
 import AlamofireImage
+import MOLH
 
 class VehiclesCollectionViewController: UICollectionViewController ,UICollectionViewDelegateFlowLayout{
     
@@ -23,6 +24,8 @@ class VehiclesCollectionViewController: UICollectionViewController ,UICollection
         super.viewDidLoad()
         
         getVehicles()
+        
+        self.navigationItem.title = NSLocalizedString("VEHICLE", comment: "")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -66,7 +69,7 @@ class VehiclesCollectionViewController: UICollectionViewController ,UICollection
     
         // Configure the cell
         cell.cellImage.af_setImage(withURL: URL(string: "\(CategoryImageURL)\(vehicles[indexPath.row].categoryImage!)")!)
-        cell.cellName.text = vehicles[indexPath.row].nameEn
+        cell.cellName.text = MOLHLanguage.currentAppleLanguage() == "en" ? vehicles[indexPath.row].nameEn : vehicles[indexPath.row].nameAr 
         return cell
     }
     
@@ -85,15 +88,6 @@ class VehiclesCollectionViewController: UICollectionViewController ,UICollection
             self.show(destinationViewController, sender: self)
         }
     }
-    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        let screenSize = UIScreen.main.bounds
-//        let cellWidth = screenSize.width / 3.0
-//        var cellSize = CGSize()
-//        cellSize.width = cellWidth
-//        cellSize.height = cellWidth
-//        return cellSize
-//    }
 
     // MARK: UICollectionViewDelegate
 

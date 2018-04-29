@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import AlamofireImage
+import MOLH
 
 class BrandCollectionViewController :  UICollectionViewController {
     
@@ -18,6 +19,7 @@ class BrandCollectionViewController :  UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.title = NSLocalizedString("BRAND", comment: "")
     }
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return brands.count
@@ -28,7 +30,7 @@ class BrandCollectionViewController :  UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionCell", for: indexPath) as! CollectionViewCell
         
         cell.cellImage.af_setImage(withURL: URL(string: "\(BrandImageURL)\(brands[indexPath.row].brandImage!)")!)
-        cell.cellName.text = brands[indexPath.row].nameEn
+        cell.cellName.text = MOLHLanguage.currentAppleLanguage() == "en" ? brands[indexPath.row].nameEn : brands[indexPath.row].nameAr
         
         return cell
     }

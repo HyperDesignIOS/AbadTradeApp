@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MOLH
 
 class ModelsTableViewController: UITableViewController {
     
@@ -17,6 +18,7 @@ class ModelsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.navigationItem.title = NSLocalizedString("MODEL", comment: "")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -45,7 +47,7 @@ class ModelsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TabelCell", for: indexPath) as! TableViewCell
         
-        cell.cellName.text = models[indexPath.row].nameEn
+        cell.cellName.text = MOLHLanguage.currentAppleLanguage() == "en" ? models[indexPath.row].nameEn : models[indexPath.row].nameAr
         // Configure the cell
 
         return cell

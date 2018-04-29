@@ -34,13 +34,13 @@ class LoginVC: UIViewController {
         
         let mail = self.email.text!
         if mail.isEmpty || mail.containsWhiteSpace(){
-            generalMethod.showAlert(title: "", message: "please enter your mail", vc: self, closure: nil)
+            generalMethod.showAlert(title: "", message: NSLocalizedString("NOEMAILENTERED", comment: ""), vc: self, closure: nil)
             return
         }
         
         let password = self.password.text!
         if password.isEmpty || password.containsWhiteSpace(){
-            generalMethod.showAlert(title: "", message: "please enter your password", vc: self, closure: nil)
+            generalMethod.showAlert(title: "", message: NSLocalizedString("NOPASSWORDENTERED", comment: ""), vc: self, closure: nil)
             return
             
         }
@@ -49,11 +49,9 @@ class LoginVC: UIViewController {
        
             self.msg = msg
             self.done = done
-          //  print(self.user.name)
             if self.done == "1"{
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let controller = storyboard.instantiateViewController(withIdentifier: "homeVC")
-                //self.present(controller, animated: true, completion: nil)
                 self.show(controller, sender: self)
                self.user = user
                 UserDefaults.standard.setUserID(value: self.user.id)

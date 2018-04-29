@@ -12,43 +12,51 @@ class TenderVC: UIViewController {
     
     var msg: String!
     var label :String!
-    var  generalMethod = GeneralMethod()
+    var generalMethod = GeneralMethod()
    
+    @IBOutlet weak var sendButton: UIButton!
+    @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var tenderLabel: UILabel!
     
     @IBOutlet weak var tenderMessage: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
-       tenderLabel.text = label
-//        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        self.hideKeyboardWhenTappedAround()
+        
+        tenderLabel.text = label
+   
+        setStyle()
+    self.hideKeyboardWhenTappedAround()
     }
     
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//        
-//        tenderMessage.becomeFirstResponder()
-//    }
+    func setStyle(){
+        
+        messageLabel.text = NSLocalizedString("MESSAGELABEL", comment: "")
+    sendButton.setTitle(NSLocalizedString("SENDBUTTON", comment: ""), for: .normal)
+        
+    self.navigationItem.title = NSLocalizedString("SENDMESSAGENAVITEM", comment: "")
+        
+    }
+    
     
     @IBAction func sendTenderButton(_ sender: Any) {
         
         let message = tenderMessage.text
         if ((message?.isEmpty)! || (message?.containsWhiteSpace())!){
        
-            generalMethod.showAlert(title: "", message: "please enter your message", vc: self, closure: nil)
+            generalMethod.showAlert(title: "", message: NSLocalizedString("NOMESSAGEENTERED", comment: ""), vc: self, closure: nil)
         }
         else
         {
             let user_id = UserDefaults.standard.getUserID()
-            apiRequests.apisInstance.sendTender(message: tenderMessage.text, userId: String(user_id), didDataReady: { (msg) in
+            apiRequests.apisInstance.sendTender(message: tenderMessage.text, userId: String(user_id), didDataReady: { (msg,done) in
                 self.msg = msg
-                if self.msg == "Sucess Message Send"
+                if done == "1"
                 {
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let controller = storyboard.instantiateViewController(withIdentifier: "homeVC")
-                    //self.present(controller, animated: true, completion: nil)
-                    self.show(controller, sender: self)
-                    self.generalMethod.showAlert(title: "", message: "message sent successfully", vc: self, closure: nil)
+                    self.generalMethod.showAlert(title: "", message: msg, vc: self, closure: {
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let controller = storyboard.instantiateViewController(withIdentifier: "homeVC")
+                        self.show(controller, sender: self)
+                    })
                 }
             })
         }

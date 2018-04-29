@@ -12,6 +12,7 @@ import SwiftyJSON
 import Alamofire
 import ImageSlideshow
 import AlamofireImage
+import MOLH
 
 class ViewController: UIViewController , searchVCProtocol{
     
@@ -21,6 +22,10 @@ class ViewController: UIViewController , searchVCProtocol{
     @IBOutlet weak var brandTextField: UITextField!
     @IBOutlet weak var modelTextField: UITextField!
     @IBOutlet weak var yearTextField: UITextField!
+    @IBOutlet weak var categoryArrowImageView: UIImageView!
+    @IBOutlet weak var brandArrowImageView: UIImageView!
+    @IBOutlet weak var modelArrowImageView: UIImageView!
+    @IBOutlet weak var yearArrowImageView: UIImageView!
     
     let statuses = [Status(name: "Used"),Status(name: "New")]
     var statusOfVehicle = String()
@@ -46,24 +51,33 @@ class ViewController: UIViewController , searchVCProtocol{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
+        setStyle()
+    
         apiRequests.apisInstance.loadCategoriesAndImages { (categories, images) in
             self.categories = categories
             print(categories.count)
             self.images = images
             self.slider()
         }
-   
         customizeNavigationBar ()
-       // SideMenuManager.default.menuLeftNavigationController
-        // to control the slide menu by touch
-      //  SideMenuManager.default.menuAddPanGestureToPresent(toView: self.navigationController!.navigationBar)
-//        SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
- }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    }
+    
+    func setStyle(){
+        
+        self.navigationItem.title = NSLocalizedString("HOME", comment: "")
+        if MOLHLanguage.currentAppleLanguage() == "en"{
+            categoryArrowImageView.image = #imageLiteral(resourceName: "right-arrow")
+            brandArrowImageView.image = #imageLiteral(resourceName: "right-arrow")
+            modelArrowImageView.image = #imageLiteral(resourceName: "right-arrow")
+            yearArrowImageView.image = #imageLiteral(resourceName: "right-arrow")
+        }
+        else{
+            categoryArrowImageView.image = #imageLiteral(resourceName: "left-arrow")
+            brandArrowImageView.image = #imageLiteral(resourceName: "left-arrow")
+            modelArrowImageView.image = #imageLiteral(resourceName: "left-arrow")
+            yearArrowImageView.image = #imageLiteral(resourceName: "left-arrow")
+        }
+        
     }
     
     func customizeNavigationBar ()
@@ -81,12 +95,6 @@ class ViewController: UIViewController , searchVCProtocol{
         
         filterType = FilterType.Category
         performSegue(withIdentifier: "categorySegue", sender: sender)
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let controller = storyboard.instantiateViewController(withIdentifier: "homeTableVC") as! searchTableViewController
-//        controller.searchResultData = categories
-//        controller.delegate = self
-        //self.present(controller, animated: true, completion: nil)
-//        show(controller, sender: self)
     }
     
 
@@ -97,7 +105,7 @@ class ViewController: UIViewController , searchVCProtocol{
         }
         else
         {
-            showAlert.showAlert(title: "", message: "Select category first", vc: self, closure: nil)
+            showAlert.showAlert(title: "", message: NSLocalizedString("NOCATEGORYSELECTED", comment: "String"), vc: self, closure: nil)
         }
     }
     
@@ -110,12 +118,12 @@ class ViewController: UIViewController , searchVCProtocol{
             }
             else
             {
-                showAlert.showAlert(title: "", message: "Select brand first", vc: self, closure: nil)
+                showAlert.showAlert(title: "", message: NSLocalizedString("NOBRANDSELECTED", comment: ""), vc: self, closure: nil)
             }
             
         }
         else{
-              showAlert.showAlert(title: "", message: "Select category first", vc: self, closure: nil)
+              showAlert.showAlert(title: "", message: NSLocalizedString("NOCATEGORYSELECTED", comment: ""), vc: self, closure: nil)
         }
         
     }
@@ -128,17 +136,17 @@ class ViewController: UIViewController , searchVCProtocol{
                 if selectedModel.id != "0" {
                 performSegue(withIdentifier: "categorySegue", sender: sender)
                 }else{
-                    showAlert.showAlert(title: "", message: "Select model first", vc: self, closure: nil)
+                    showAlert.showAlert(title: "", message: NSLocalizedString("NOMODELSELECTED", comment: ""), vc: self, closure: nil)
                 }
             }
             else
             {
-                showAlert.showAlert(title: "", message: "Select brand first", vc: self, closure: nil)
+                showAlert.showAlert(title: "", message: NSLocalizedString("NOBRANDSELECTED", comment: ""), vc: self, closure: nil)
             }
             
         }
         else{
-            showAlert.showAlert(title: "", message: "Select category first", vc: self, closure: nil)
+            showAlert.showAlert(title: "", message: NSLocalizedString("NOCATEGORYSELECTED", comment: ""), vc: self, closure: nil)
             
         }
     }
@@ -149,7 +157,7 @@ class ViewController: UIViewController , searchVCProtocol{
             != nil {
                 self.performSegue(withIdentifier: "vehicleResultSegue", sender: self)
         }else{
-            showAlert.showAlert(title: "", message: "Please select search data", vc: self, closure: nil)
+            showAlert.showAlert(title: "", message: NSLocalizedString("NOTHINGSELECTED", comment: ""), vc: self, closure: nil)
         }
     }
     func slider(){
@@ -157,8 +165,6 @@ class ViewController: UIViewController , searchVCProtocol{
             AlamofireSource(urlString: "\(SliderImagesURL)\(images[0].headerPhoto1!)")!,AlamofireSource(urlString: "\(SliderImagesURL)\(images[0].headerPhoto2!)")!,AlamofireSource(urlString: "\(SliderImagesURL)\(images[0].headerPhoto3!)")!
             ])
         slideShow.slideshowInterval = 2
-    //        slideShow.zoomEnabled = true
-   //    slideShow.activityIndicator = DefaultActivityIndicator(style: .white, color: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -205,13 +211,6 @@ class ViewController: UIViewController , searchVCProtocol{
                 destination.search()
             }
         }
-//        else if segue.identifier == "sideMenuSegue"{
-//            if let navigation = segue.destination as? UISideMenuNavigationController {
-//                if let destination = navigation.topViewController as? SideMenuTableViewController{
-//                    //destination.vehicles = self.categories
-//                }
-//            }
-//        }
     }
     
     @IBAction func changeRadioButton(_ sender: UIButton) {
@@ -245,12 +244,10 @@ class ViewController: UIViewController , searchVCProtocol{
                 
                 selectedCategory = selectedValue as! Category
                 print(selectedCategory.id)
-                categoryTextField.text = selectedCategory.nameEn
-                /*(Localize.currentLanguage() == "en" ? selectedCat?.nameEn : selectedCat?.nameAr)*/
+                categoryTextField.text = MOLHLanguage.currentAppleLanguage() == "en" ? selectedCategory.nameEn : selectedCategory.nameAr
                 brandTextField.text = ""
                 modelTextField.text = ""
                 yearTextField.text = ""
-                //self.selectedBrand = nil
                 apiRequests.apisInstance.getBrands(vehicleId:  selectedCategory.id, didDataReady: { (brands) in
                     self.brands = brands
                 })
@@ -258,16 +255,15 @@ class ViewController: UIViewController , searchVCProtocol{
             }else if ft == FilterType.Brand{
                 
                 selectedBrand = selectedValue as! Brand
-                brandTextField.text = selectedBrand.nameEn
+                brandTextField.text = MOLHLanguage.currentAppleLanguage() == "en" ? selectedBrand.nameEn : selectedBrand.nameAr
                 modelTextField.text = ""
-                //self.selectedModel = nil
                 apiRequests.apisInstance.getModels(brandId: selectedBrand.id, didDataReady: { (models) in
                     self.models = models
                 })
             }else if ft == FilterType.Model{
                 
                 selectedModel = selectedValue as! Model
-                modelTextField.text = selectedModel.nameEn
+                modelTextField.text = MOLHLanguage.currentAppleLanguage() == "en" ? selectedModel.nameEn : selectedModel.nameAr
                 apiRequests.apisInstance.getYears(modelId: Int(selectedModel.id)!, didDataReady: { (years) in
                     self.years = years
                 })

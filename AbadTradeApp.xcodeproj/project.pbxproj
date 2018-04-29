@@ -48,6 +48,7 @@
 		40F39B8520640559000FE5A2 /* VehiclesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F39B8420640559000FE5A2 /* VehiclesCollectionViewController.swift */; };
 		40F39B8720640D65000FE5A2 /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F39B8620640D65000FE5A2 /* SideMenuTableViewCell.swift */; };
 		40F39B89206411DC000FE5A2 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F39B88206411DC000FE5A2 /* CollectionViewCell.swift */; };
+		40F57D5A2090DBCF008F32A9 /* VehicleResult.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40F57D5C2090DBCF008F32A9 /* VehicleResult.storyboard */; };
 		40FB000A206135F50095E4A9 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FB0009206135F50095E4A9 /* Protocols.swift */; };
 		40FB000C2061373A0095E4A9 /* Enumerations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FB000B2061373A0095E4A9 /* Enumerations.swift */; };
 		40FB000F206168970095E4A9 /* VehicleResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FB000E206168970095E4A9 /* VehicleResultTableViewController.swift */; };
@@ -75,7 +76,6 @@
 		7DC9221D205809EE00C1705F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DC9221B205809EE00C1705F /* Main.storyboard */; };
 		7DC9221F205809EE00C1705F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DC9221E205809EE00C1705F /* Assets.xcassets */; };
 		7DC92222205809EE00C1705F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DC92220205809EE00C1705F /* LaunchScreen.storyboard */; };
-		7DE7EB31206162F20014D569 /* VehicleResult.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DE7EB30206162F20014D569 /* VehicleResult.storyboard */; };
 		7DE7EB35206176440014D569 /* SearchResultItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE7EB34206176440014D569 /* SearchResultItem.swift */; };
 		7DE7EB37206176580014D569 /* ShowRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE7EB36206176580014D569 /* ShowRoom.swift */; };
 		906140AD261CF4A657737AD8 /* Pods_AbadTradeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83DC198F3043453F98950711 /* Pods_AbadTradeApp.framework */; };
@@ -132,6 +132,9 @@
 		40F39B8420640559000FE5A2 /* VehiclesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesCollectionViewController.swift; sourceTree = "<group>"; };
 		40F39B8620640D65000FE5A2 /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
 		40F39B88206411DC000FE5A2 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		40F57D5B2090DBCF008F32A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/VehicleResult.storyboard; sourceTree = "<group>"; };
+		40F57D5E2090DBD3008F32A9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/VehicleResult.strings; sourceTree = "<group>"; };
+		40F57D602090DBD5008F32A9 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/VehicleResult.strings; sourceTree = "<group>"; };
 		40FB0009206135F50095E4A9 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		40FB000B2061373A0095E4A9 /* Enumerations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enumerations.swift; sourceTree = "<group>"; };
 		40FB000E206168970095E4A9 /* VehicleResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleResultTableViewController.swift; sourceTree = "<group>"; };
@@ -161,7 +164,6 @@
 		7DC9221E205809EE00C1705F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7DC92221205809EE00C1705F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7DC92223205809EE00C1705F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7DE7EB30206162F20014D569 /* VehicleResult.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VehicleResult.storyboard; sourceTree = "<group>"; };
 		7DE7EB34206176440014D569 /* SearchResultItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultItem.swift; sourceTree = "<group>"; };
 		7DE7EB36206176580014D569 /* ShowRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowRoom.swift; sourceTree = "<group>"; };
 		83DC198F3043453F98950711 /* Pods_AbadTradeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AbadTradeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -551,7 +553,7 @@
 		7DE7EB2F2061627A0014D569 /* VehicleResult */ = {
 			isa = PBXGroup;
 			children = (
-				7DE7EB30206162F20014D569 /* VehicleResult.storyboard */,
+				40F57D5C2090DBCF008F32A9 /* VehicleResult.storyboard */,
 			);
 			path = VehicleResult;
 			sourceTree = "<group>";
@@ -639,7 +641,7 @@
 			files = (
 				40EF38F7208F87C300296926 /* Localizable.strings in Resources */,
 				7DC92222205809EE00C1705F /* LaunchScreen.storyboard in Resources */,
-				7DE7EB31206162F20014D569 /* VehicleResult.storyboard in Resources */,
+				40F57D5A2090DBCF008F32A9 /* VehicleResult.storyboard in Resources */,
 				40E79F4E206A681900DBDCA6 /* Insurance.storyboard in Resources */,
 				7DC9221F205809EE00C1705F /* Assets.xcassets in Resources */,
 				40E79F4B206A675600DBDCA6 /* ShowRooms.storyboard in Resources */,
@@ -815,6 +817,16 @@
 				40EF391D208F98EC00296926 /* ar */,
 			);
 			name = Register.storyboard;
+			sourceTree = "<group>";
+		};
+		40F57D5C2090DBCF008F32A9 /* VehicleResult.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				40F57D5B2090DBCF008F32A9 /* Base */,
+				40F57D5E2090DBD3008F32A9 /* en */,
+				40F57D602090DBD5008F32A9 /* ar */,
+			);
+			name = VehicleResult.storyboard;
 			sourceTree = "<group>";
 		};
 		7DC9221B205809EE00C1705F /* Main.storyboard */ = {

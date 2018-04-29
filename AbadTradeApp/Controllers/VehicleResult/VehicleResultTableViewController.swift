@@ -8,6 +8,7 @@
 
 import UIKit
 import AlamofireImage
+import MOLH
 
 class VehicleResultTableViewController: UITableViewController{
     
@@ -53,9 +54,15 @@ class VehicleResultTableViewController: UITableViewController{
         let cell = tableView.dequeueReusableCell(withIdentifier: "vehicleResultCell", for: indexPath) as! VehicleResultTableViewCell
 
         let currentCellImageUrl = "\(ItemImageURL)\(searchResults[indexPath.row].image!)"
-        cell.vehicleBrand.text = searchResults[indexPath.row].brand.nameEn
-        cell.vehicleModel.text = searchResults[indexPath.row].model.nameEn
-        cell.vehicleShowRoom.text = searchResults[indexPath.row].dealer?.nameEn
+        cell.vehicleBrand.text =
+            MOLHLanguage.currentAppleLanguage() == "en" ? searchResults[indexPath.row].brand.nameEn : searchResults[indexPath.row].brand.nameAr
+        
+        cell.vehicleModel.text =
+            MOLHLanguage.currentAppleLanguage() == "en" ? searchResults[indexPath.row].model.nameEn : searchResults[indexPath.row].model.nameAr
+        
+        cell.vehicleShowRoom.text =
+            MOLHLanguage.currentAppleLanguage() == "en" ? searchResults[indexPath.row].dealer?.nameEn : searchResults[indexPath.row].dealer?.nameAr
+            
         cell.vehiclePrice.text = searchResults[indexPath.row].price
         cell.vehicleImage.af_setImage(withURL: URL(string: currentCellImageUrl)!)
         // Configure the cell...

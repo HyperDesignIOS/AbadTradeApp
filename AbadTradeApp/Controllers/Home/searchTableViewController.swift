@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MOLH
 
 //enum Type : String {
 //    case Category = "Category"
@@ -53,15 +54,15 @@ class searchTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "searchResultCell", for: indexPath) as! searchTableViewCell
 
         if let categories = searchResultData as? [Category] {
-            cell.searchResultLabel.text = categories[indexPath.row].nameEn
+            cell.searchResultLabel.text = MOLHLanguage.currentAppleLanguage() == "en" ? categories[indexPath.row].nameEn : categories[indexPath.row].nameAr
         }
         else if let brands = searchResultData as? [Brand]
         {
-            cell.searchResultLabel.text = brands[indexPath.row].nameEn
+            cell.searchResultLabel.text = MOLHLanguage.currentAppleLanguage() == "en" ? brands[indexPath.row].nameEn : brands[indexPath.row].nameAr
         }
         else if let models = searchResultData as? [Model]
         {
-            cell.searchResultLabel.text = models[indexPath.row].nameEn
+            cell.searchResultLabel.text = MOLHLanguage.currentAppleLanguage() == "en" ? models[indexPath.row].nameEn : models[indexPath.row].nameAr
         }
         //******
         else if let years = searchResultData as? [Year]

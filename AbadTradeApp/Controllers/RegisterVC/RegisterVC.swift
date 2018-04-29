@@ -36,36 +36,36 @@ class RegisterVC: UIViewController {
     @IBAction func RegisterButton(_ sender: UIButton) {
        let name = self.name.text!
         if name.isEmpty || name.containsWhiteSpace() {
-            generalMethod.showAlert(title: "", message: "please enter your name ", vc: self, closure: nil)
+            generalMethod.showAlert(title: "", message: NSLocalizedString("NOUSERNAMEENTERED", comment: ""), vc: self, closure: nil)
             return
             
         }
         let mail = self.mail.text!
         if mail.isEmpty || mail.containsWhiteSpace()  {
-            generalMethod.showAlert(title: "", message: "please enter your e-mail", vc: self, closure: nil)
+            generalMethod.showAlert(title: "", message: NSLocalizedString("NOEMAILENTERED", comment: ""), vc: self, closure: nil)
             return
         }
         else if !mail.isValidEmail() {
-                  generalMethod.showAlert(title: "", message: "invalid e-mail", vc: self, closure: nil)
+                  generalMethod.showAlert(title: "", message: NSLocalizedString("INVALIDEMAIL", comment: ""), vc: self, closure: nil)
                  return
         }
         let password = self.password.text!
         if password.isEmpty || password.containsWhiteSpace()  {
-            generalMethod.showAlert(title: "", message: "please enter your password", vc: self, closure: nil)
+            generalMethod.showAlert(title: "", message: NSLocalizedString("NOPASSWORDENTERED", comment: ""), vc: self, closure: nil)
             return
             
         }
-//        else if !password.isValidPassword() {
-//            generalMethod.showAlert(title: "", message: "invalid password", vc: self, closure: nil)
-//            return
-//        }
+        else if password.count < 6 {
+            generalMethod.showAlert(title: "", message: NSLocalizedString("SHORTPASSWORD", comment: ""), vc: self, closure: nil)
+            return
+        }
         let confirmpass = self.passwordConfirm.text!
         if confirmpass.isEmpty || confirmpass.containsWhiteSpace() {
-            generalMethod.showAlert(title: "", message: "please enter your password confirmation", vc: self, closure: nil)
+            generalMethod.showAlert(title: "", message: NSLocalizedString("NOCONFIRMATIONPASSWORDENTERED", comment: ""), vc: self, closure: nil)
             return
         }
         else if password != confirmpass {
-                 generalMethod.showAlert(title: "", message: " password confirmation failed", vc: self, closure: nil)
+                 generalMethod.showAlert(title: "", message: NSLocalizedString("PASSWORDCONFIRMATIONFAILD", comment: ""), vc: self, closure: nil)
                 return
         }
  

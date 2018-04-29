@@ -447,7 +447,7 @@ class apiRequests {
     }
     
     
-    func sendTender( message : String, userId:String ,didDataReady : @escaping(String)->())->(){
+    func sendTender( message : String, userId:String ,didDataReady : @escaping(String,String)->())->(){
         
         sm.connectForApiWith(url: TenderURL  , mType: HTTPServerMethod.post, params: ["message":message,"id":userId], complation: { (json) in
             
@@ -455,13 +455,15 @@ class apiRequests {
                 print (obj)
                 let dictionaryOfJson = JSON(json!).dictionaryObject
                 print(dictionaryOfJson)
-                let items = dictionaryOfJson!["msg"] as! String
-                self.msg = items
+                let msg = dictionaryOfJson!["msg"] as! String
+                self.msg = msg
+                let done = dictionaryOfJson!["done"] as! String
+                self.done = done
             }
-            didDataReady(self.msg)
+            didDataReady(self.msg, self.done)
         }, errorHandler: { (error, msg) in
             print("\(String(describing: msg))")
-            didDataReady(self.msg)
+            didDataReady(self.msg,"")
         })
     }
     
