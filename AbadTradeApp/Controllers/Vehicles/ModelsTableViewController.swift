@@ -8,6 +8,7 @@
 
 import UIKit
 import MOLH
+import SwiftSpinner
 
 class ModelsTableViewController: UITableViewController {
     
@@ -57,12 +58,13 @@ class ModelsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let selectedModel = models[indexPath.row]
-        
+        SwiftSpinner.show(NSLocalizedString("LOADING", comment: ""))
         apiRequests.apisInstance.getSearchResults(categoryId: selectedCategory.id, brandId: selectedBrand.id, modelId: selectedModel.id, yearId: "0", status: "") { (searchResults) in
             let storyboard = UIStoryboard.init(name: "VehicleResult", bundle: nil)
             let destinationViewController = storyboard.instantiateViewController(withIdentifier: "SearchResultViewController") as! VehicleResultTableViewController
             destinationViewController.searchResults = searchResults
             destinationViewController.tableView.reloadData()
+            SwiftSpinner.hide()
             self.show(destinationViewController, sender: self)
         }
     }

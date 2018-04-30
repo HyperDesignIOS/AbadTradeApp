@@ -9,6 +9,7 @@
 import UIKit
 import AlamofireImage
 import MOLH
+import SwiftSpinner
 
 class VehicleResultTableViewController: UITableViewController{
     
@@ -125,9 +126,12 @@ class VehicleResultTableViewController: UITableViewController{
     }
     */
     func search() {
+        
+        SwiftSpinner.show(NSLocalizedString("LOADING", comment: ""))
     apiRequests.apisInstance.getSearchResults(categoryId: selectedCategory.id, brandId: selectedBrand?.id ?? "0", modelId: selectedModel?.id ?? "0", yearId: selectedYear?.id ?? "0", status: statusOfVehicle) { (searchResults) in
             self.searchResults = searchResults
             self.tableView.reloadData()
+            SwiftSpinner.hide()
         }
 //        self.noResultsLabel.text = (self.searchResults.count > 0 ? "" : "NO_RESULTS")
     }

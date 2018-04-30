@@ -9,6 +9,7 @@
 import UIKit
 import AlamofireImage
 import MOLH
+import SwiftSpinner
 
 class VehiclesCollectionViewController: UICollectionViewController ,UICollectionViewDelegateFlowLayout{
     
@@ -23,6 +24,7 @@ class VehiclesCollectionViewController: UICollectionViewController ,UICollection
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        SwiftSpinner.show(NSLocalizedString("LOADING", comment: ""))
         getVehicles()
         
         self.navigationItem.title = NSLocalizedString("VEHICLE", comment: "")
@@ -76,6 +78,7 @@ class VehiclesCollectionViewController: UICollectionViewController ,UICollection
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let selectedCategory = vehicles[indexPath.row]
+        SwiftSpinner.show(NSLocalizedString("LOADING", comment: ""))
         apiRequests.apisInstance.getBrands(vehicleId: selectedCategory.id) { (brands) in
             self.brands = brands
             
@@ -85,6 +88,7 @@ class VehiclesCollectionViewController: UICollectionViewController ,UICollection
             destinationViewController.brands = brands
             destinationViewController.selectedCategory = selectedCategory
             destinationViewController.collectionView?.reloadData()
+            SwiftSpinner.hide()
             self.show(destinationViewController, sender: self)
         }
     }
@@ -124,6 +128,7 @@ class VehiclesCollectionViewController: UICollectionViewController ,UICollection
         apiRequests.apisInstance.loadCategoriesAndImages { (vehicles, images) in
             self.vehicles = vehicles
             self.collectionView?.reloadData()
+            SwiftSpinner.hide()
         }
     }
 }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LIi-Sd-YJ9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LIi-Sd-YJ9">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -88,7 +88,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rZP-0h-sV0">
-                                        <rect key="frame" x="90" y="210" width="120" height="30"/>
+                                        <rect key="frame" x="70" y="210" width="160" height="40"/>
                                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <state key="normal" title="Login ">
@@ -107,11 +107,11 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="rZP-0h-sV0" firstAttribute="top" secondItem="knN-VH-OkJ" secondAttribute="bottom" constant="30" id="51R-TZ-ALI"/>
-                                    <constraint firstItem="rZP-0h-sV0" firstAttribute="leading" secondItem="ZFV-8B-74e" secondAttribute="leading" constant="90" id="5fW-b2-shd"/>
-                                    <constraint firstAttribute="trailing" secondItem="rZP-0h-sV0" secondAttribute="trailing" constant="90" id="ARm-b7-I14"/>
+                                    <constraint firstItem="rZP-0h-sV0" firstAttribute="leading" secondItem="ZFV-8B-74e" secondAttribute="leading" constant="70" id="5fW-b2-shd"/>
+                                    <constraint firstAttribute="trailing" secondItem="rZP-0h-sV0" secondAttribute="trailing" constant="70" id="ARm-b7-I14"/>
                                     <constraint firstAttribute="width" constant="300" id="M5u-l2-UsJ"/>
                                     <constraint firstItem="knN-VH-OkJ" firstAttribute="leading" secondItem="ZFV-8B-74e" secondAttribute="leading" constant="10" id="TGD-4e-xiI"/>
-                                    <constraint firstAttribute="bottom" secondItem="rZP-0h-sV0" secondAttribute="bottom" constant="60" id="TfW-WL-IKF"/>
+                                    <constraint firstAttribute="bottom" secondItem="rZP-0h-sV0" secondAttribute="bottom" constant="50" id="TfW-WL-IKF"/>
                                     <constraint firstItem="knN-VH-OkJ" firstAttribute="top" secondItem="oo6-qU-dNJ" secondAttribute="bottom" constant="10" id="WmO-0q-m5G"/>
                                     <constraint firstAttribute="trailing" secondItem="oo6-qU-dNJ" secondAttribute="trailing" constant="10" id="apm-7F-2J5"/>
                                     <constraint firstAttribute="trailing" secondItem="knN-VH-OkJ" secondAttribute="trailing" constant="10" id="djx-FE-vsl"/>

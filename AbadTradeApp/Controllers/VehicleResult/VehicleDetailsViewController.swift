@@ -10,6 +10,7 @@ import UIKit
 import ImageSlideshow
 import AlamofireImage
 import MOLH
+import SwiftSpinner
 
 
 class VehicleDetailsViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
@@ -263,6 +264,8 @@ class VehicleDetailsViewController: UIViewController,UITableViewDelegate,UITable
     }
 
     func getItems(){
+        
+        SwiftSpinner.show(NSLocalizedString("LOADING", comment: ""))
         apiRequests.apisInstance.getVehicleItemDetails(selectedVehicleId: String(itemId)) { (item, images, options, prices, bids, itemTotalAmount) in
             
             self.vehicleItemDetails = item
@@ -276,6 +279,7 @@ class VehicleDetailsViewController: UIViewController,UITableViewDelegate,UITable
             self.endDateLabel.text = self.vehicleBids.endDate
             self.currentOfferLabel.text = "\(self.itemTotalAmount!) \(self.currency)"
             self.tabelView.reloadData()
+            SwiftSpinner.hide()
         }
         
     }

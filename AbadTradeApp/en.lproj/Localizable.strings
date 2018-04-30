@@ -5,6 +5,10 @@
   Created by Hyper Design on 4/24/18.
   Copyright © 2018 AmrObjection. All rights reserved.
 */
+//loader
+"LOADING" = "Loading...";
+
+
 //sideMenu
 "INSURANCE" = "Insurance companies";
 "SHOWROOM" = "Show rooms";

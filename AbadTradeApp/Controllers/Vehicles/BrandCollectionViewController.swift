@@ -21,6 +21,7 @@ class BrandCollectionViewController :  UICollectionViewController {
         
         self.navigationItem.title = NSLocalizedString("BRAND", comment: "")
     }
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return brands.count
     }

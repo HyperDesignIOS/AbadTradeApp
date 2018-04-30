@@ -5,6 +5,8 @@
   Created by Hyper Design on 4/24/18.
   Copyright © 2018 AmrObjection. All rights reserved.
 */
+//loader
+"LOADING" = "جاري التحميل...";
 
 //sideMenu
 "INSURANCE" = "شركات التامين";

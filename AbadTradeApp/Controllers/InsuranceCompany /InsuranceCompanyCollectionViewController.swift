@@ -9,6 +9,7 @@
 import UIKit
 import AlamofireImage
 import MOLH
+import SwiftSpinner
 
 
 class InsuranceCompanyCollectionViewController: UICollectionViewController {
@@ -136,9 +137,11 @@ class InsuranceCompanyCollectionViewController: UICollectionViewController {
      */
     
     func getInsurances(){
+        SwiftSpinner.show(NSLocalizedString("LOADING", comment: ""))
         apiRequests.apisInstance.getInsuranceCompany { (insuranceCO) in
             self.insuranceCompanies = insuranceCO
             self.collectionView?.reloadData()
+            SwiftSpinner.hide()
         }
     }
     

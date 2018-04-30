@@ -9,6 +9,7 @@
 import UIKit
 import AlamofireImage
 import MOLH
+import SwiftSpinner
 
 class showRoomCollectionViewController: UICollectionViewController {
     var ShowRooms = [ShowRoom]()
@@ -135,9 +136,11 @@ class showRoomCollectionViewController: UICollectionViewController {
      */
     
     func getRooms (){
+        SwiftSpinner.show(NSLocalizedString("LOADING", comment: ""))
         apiRequests.apisInstance.getShowRooms{ (showRooms) in
             self.ShowRooms = showRooms
             self.collectionView?.reloadData()
+            SwiftSpinner.hide()
         }
     }
     

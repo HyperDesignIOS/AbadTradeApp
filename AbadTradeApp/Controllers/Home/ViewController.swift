@@ -152,7 +152,6 @@ class ViewController: UIViewController , searchVCProtocol{
     }
     
     @IBAction func searchButton(_ sender: Any) {
-        
         if selectedCategory
             != nil {
                 self.performSegue(withIdentifier: "vehicleResultSegue", sender: self)
