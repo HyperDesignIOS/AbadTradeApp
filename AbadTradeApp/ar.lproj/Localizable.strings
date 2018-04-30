@@ -5,6 +5,15 @@
   Created by Hyper Design on 4/24/18.
   Copyright © 2018 AmrObjection. All rights reserved.
 */
+
+//sideMenu
+"INSURANCE" = "شركات التامين";
+"SHOWROOM" = "المعارض";
+"TENDER" = "مناقصة";
+"LOGIN" = "تسجيل الدخول";
+"REGISTER" = "التسجيل";
+"LOGOUT" = "تسجيل الخروج";
+
 //home
 "HOME" = "الصفحة الرئيسية";
 

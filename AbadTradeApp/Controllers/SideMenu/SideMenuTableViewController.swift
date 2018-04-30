@@ -8,18 +8,28 @@
 
 import UIKit
 import SideMenu
+import MOLH
 
 class SideMenuTableViewController: UITableViewController{
    
     
     var vehicles : [Category]!
-    var sideMenuItemImages = ["home-icon-silhouette","sports-car","car-insurance","sports-car","msg","login","register","log-out"]
-    var sideMenuItemNames = ["Home","Vehicles","Insurance Companies","Show Rooms","Tender","Login", "Register","Log Out"]
+    var sideMenuItemImages : [String]!
+    var sideMenuItemNames : [String]!
     var generalMethod = GeneralMethod()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        sideMenuItemNames = [NSLocalizedString("HOME", comment: ""),NSLocalizedString("VEHICLE", comment: ""),NSLocalizedString("INSURANCE", comment: ""),NSLocalizedString("SHOWROOM", comment: ""),NSLocalizedString("TENDER", comment: ""),NSLocalizedString("LOGIN", comment: ""), NSLocalizedString("REGISTER", comment: ""),NSLocalizedString("LOGOUT", comment: "")]
+
+        if MOLHLanguage.currentAppleLanguage() == "en"{
+            sideMenuItemImages = ["home-icon-silhouette","sports-car","car-insurance","sports-car","msg","login","register","log-out"]
+            
+        }
+        else{
+            sideMenuItemImages = ["home-icon-silhouette","sports-car","car-insurance","sports-car","msg","login","register","log-out4AR"]
+        }
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -52,7 +62,7 @@ class SideMenuTableViewController: UITableViewController{
         cell.sideMenuItemImage.image = UIImage.init(named: sideMenuItemImages[indexPath.row])
         cell.sideMenuItemName.text = sideMenuItemNames[indexPath.row]
         
-        if UserDefaults.standard.isLoggedIn() && (sideMenuItemNames[indexPath.row] == "Login" || sideMenuItemNames[indexPath.row] == "Register"){
+        if UserDefaults.standard.isLoggedIn() && (sideMenuItemNames[indexPath.row] == NSLocalizedString("LOGIN", comment: "") || sideMenuItemNames[indexPath.row] == NSLocalizedString("REGISTER", comment: "")){
             
             cell.isUserInteractionEnabled = false
             cell.sideMenuItemName.textColor = UIColor.lightGray
@@ -65,7 +75,7 @@ class SideMenuTableViewController: UITableViewController{
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if sideMenuItemNames[indexPath.row] == "Vehicles"{
+        if sideMenuItemNames[indexPath.row] == NSLocalizedString("VEHICLE", comment: ""){
             let storyboard = UIStoryboard(name: "Vehicle", bundle: nil)
             let controller = storyboard.instantiateViewController(withIdentifier: "vehicleVC") as! VehiclesCollectionViewController
             //controller.vehicles = vehicles
@@ -74,7 +84,7 @@ class SideMenuTableViewController: UITableViewController{
             show(controller, sender: self)
         }
         else if
-            sideMenuItemNames[indexPath.row] == "Show Rooms"{
+            sideMenuItemNames[indexPath.row] == NSLocalizedString("SHOWROOM", comment: ""){
             
             //performSegue(withIdentifier: "showRoomSegue", sender: self)
             
@@ -84,7 +94,7 @@ class SideMenuTableViewController: UITableViewController{
            show(controller, sender: self)
         }
         else if
-            sideMenuItemNames[indexPath.row] == "Insurance Companies"{
+            sideMenuItemNames[indexPath.row] == NSLocalizedString("INSURANCE", comment: ""){
             
             //performSegue(withIdentifier: "showRoomSegue", sender: self)
             
@@ -93,7 +103,7 @@ class SideMenuTableViewController: UITableViewController{
             //self.present(controller, animated: true, completion: nil)
             show(controller, sender: self)
         }
-        else if sideMenuItemNames[indexPath.row] == "Home"
+        else if sideMenuItemNames[indexPath.row] == NSLocalizedString("HOME", comment: "")
         {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let controller = storyboard.instantiateViewController(withIdentifier: "homeVC")
@@ -101,7 +111,7 @@ class SideMenuTableViewController: UITableViewController{
             show(controller, sender: self)
             
         }
-        else if sideMenuItemNames[indexPath.row] == "Login"
+        else if sideMenuItemNames[indexPath.row] == NSLocalizedString("LOGIN", comment: "")
         {
             let storyboard = UIStoryboard(name: "Login", bundle: nil)
             let controller = storyboard.instantiateViewController(withIdentifier: "LoginVC")
@@ -109,7 +119,7 @@ class SideMenuTableViewController: UITableViewController{
             show(controller, sender: self)
             
         }
-        else if sideMenuItemNames[indexPath.row] == "Register"
+        else if sideMenuItemNames[indexPath.row] == NSLocalizedString("REGISTER", comment: "")
         {
             let storyboard = UIStoryboard(name: "Register", bundle: nil)
             let controller = storyboard.instantiateViewController(withIdentifier: "RegisterVC")
@@ -118,7 +128,7 @@ class SideMenuTableViewController: UITableViewController{
             
         }
             
-        else if sideMenuItemNames[indexPath.row] == "Log Out"
+        else if sideMenuItemNames[indexPath.row] == NSLocalizedString("LOGOUT", comment: "")
         {
             
             UserDefaults.standard.setLoggedIn(value: false)
@@ -131,7 +141,7 @@ class SideMenuTableViewController: UITableViewController{
         }
         
         
-        else if sideMenuItemNames[indexPath.row] == "Tender"
+        else if sideMenuItemNames[indexPath.row] == NSLocalizedString("TENDER", comment: "")
         {
             if UserDefaults.standard.isLoggedIn(){
                 let storyboard = UIStoryboard(name: "Tender", bundle: nil)

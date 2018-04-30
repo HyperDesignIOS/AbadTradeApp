@@ -33,7 +33,7 @@ class TenderVC: UIViewController {
         messageLabel.text = NSLocalizedString("MESSAGELABEL", comment: "")
     sendButton.setTitle(NSLocalizedString("SENDBUTTON", comment: ""), for: .normal)
         
-    self.navigationItem.title = NSLocalizedString("SENDMESSAGENAVITEM", comment: "")
+    self.navigationItem.title = NSLocalizedString("TENDER", comment: "")
         
     }
     
