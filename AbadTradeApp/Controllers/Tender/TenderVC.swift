@@ -28,6 +28,14 @@ class TenderVC: UIViewController {
     self.hideKeyboardWhenTappedAround()
     }
     
+    @IBAction func tenderSideMenuButton(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "SideMenu", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "SideMenuNavID")
+        show(controller, sender: self)
+
+    }
+    
     func setStyle(){
         
         messageLabel.text = NSLocalizedString("MESSAGELABEL", comment: "")
