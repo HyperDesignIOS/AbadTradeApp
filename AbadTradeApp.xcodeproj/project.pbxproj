@@ -31,7 +31,7 @@
 		40B24A93205E8C1200FE00BF /* searchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B24A92205E8C1200FE00BF /* searchTableViewCell.swift */; };
 		40B24A96205ED0C100FE00BF /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B24A95205ED0C100FE00BF /* Model.swift */; };
 		40C9E557206917E900516157 /* BrandCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C9E556206917E900516157 /* BrandCollectionViewController.swift */; };
-		40E79F4E206A681900DBDCA6 /* Insurance.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40E79F4D206A681900DBDCA6 /* Insurance.storyboard */; };
+		40D9A9AC20971B8B00BBE336 /* Insurance.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40D9A9AE20971B8B00BBE336 /* Insurance.storyboard */; };
 		40E79F54206A684900DBDCA6 /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E79F50206A684900DBDCA6 /* Area.swift */; };
 		40E79F55206A684900DBDCA6 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E79F51206A684900DBDCA6 /* Country.swift */; };
 		40E79F56206A684900DBDCA6 /* InsuranceCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E79F52206A684900DBDCA6 /* InsuranceCompany.swift */; };
@@ -109,7 +109,9 @@
 		40B24A92205E8C1200FE00BF /* searchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchTableViewCell.swift; sourceTree = "<group>"; };
 		40B24A95205ED0C100FE00BF /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		40C9E556206917E900516157 /* BrandCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandCollectionViewController.swift; sourceTree = "<group>"; };
-		40E79F4D206A681900DBDCA6 /* Insurance.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Insurance.storyboard; sourceTree = "<group>"; };
+		40D9A9AD20971B8B00BBE336 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Insurance.storyboard; sourceTree = "<group>"; };
+		40D9A9B020971B8D00BBE336 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Insurance.strings; sourceTree = "<group>"; };
+		40D9A9B220971B8F00BBE336 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Insurance.strings; sourceTree = "<group>"; };
 		40E79F50206A684900DBDCA6 /* Area.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Area.swift; sourceTree = "<group>"; };
 		40E79F51206A684900DBDCA6 /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		40E79F52206A684900DBDCA6 /* InsuranceCompany.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceCompany.swift; sourceTree = "<group>"; };
@@ -266,10 +268,10 @@
 				7D59A8BD207118C70010DD0E /* RegisterVC */,
 				7D59A8BC207118B40010DD0E /* LoginVC */,
 				40E79F58206A685D00DBDCA6 /* ShowRoom */,
-				7D637E1D2067BAC900D87672 /* InsuranceCompany  */,
 				40F39B8320640516000FE5A2 /* Vehicles */,
-				40F39B8020640255000FE5A2 /* SideMenu */,
+				7D637E1D2067BAC900D87672 /* InsuranceCompany  */,
 				40FCE0DD205D70BA002F2291 /* Home */,
+				40F39B8020640255000FE5A2 /* SideMenu */,
 				40FB000D206168580095E4A9 /* VehicleResult */,
 			);
 			path = Controllers;
@@ -294,7 +296,7 @@
 		40E79F4C206A681900DBDCA6 /* InsuranceCompany */ = {
 			isa = PBXGroup;
 			children = (
-				40E79F4D206A681900DBDCA6 /* Insurance.storyboard */,
+				40D9A9AE20971B8B00BBE336 /* Insurance.storyboard */,
 			);
 			path = InsuranceCompany;
 			sourceTree = "<group>";
@@ -356,10 +358,10 @@
 			isa = PBXGroup;
 			children = (
 				40FB000E206168970095E4A9 /* VehicleResultTableViewController.swift */,
-				40FB0010206168B20095E4A9 /* VehicleResultTableViewCell.swift */,
 				4028CD92206D034A0067294F /* VehicleDetailsViewController.swift */,
 				4028CD94206D09E70067294F /* VehicleDetailsTableViewCell.swift */,
 				4000FD872075360B00E70AAC /* VehicleBidViewController.swift */,
+				40FB0010206168B20095E4A9 /* VehicleResultTableViewCell.swift */,
 			);
 			path = VehicleResult;
 			sourceTree = "<group>";
@@ -644,7 +646,7 @@
 				40EF38F7208F87C300296926 /* Localizable.strings in Resources */,
 				7DC92222205809EE00C1705F /* LaunchScreen.storyboard in Resources */,
 				40F57D5A2090DBCF008F32A9 /* VehicleResult.storyboard in Resources */,
-				40E79F4E206A681900DBDCA6 /* Insurance.storyboard in Resources */,
+				40D9A9AC20971B8B00BBE336 /* Insurance.storyboard in Resources */,
 				7DC9221F205809EE00C1705F /* Assets.xcassets in Resources */,
 				401AD472209625F2001DB7EB /* ShowRooms.storyboard in Resources */,
 				40EF390F208F92FC00296926 /* SideMenu.storyboard in Resources */,
@@ -800,6 +802,16 @@
 				401AD478209625FA001DB7EB /* ar */,
 			);
 			name = ShowRooms.storyboard;
+			sourceTree = "<group>";
+		};
+		40D9A9AE20971B8B00BBE336 /* Insurance.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				40D9A9AD20971B8B00BBE336 /* Base */,
+				40D9A9B020971B8D00BBE336 /* en */,
+				40D9A9B220971B8F00BBE336 /* ar */,
+			);
+			name = Insurance.storyboard;
 			sourceTree = "<group>";
 		};
 		40EF38F9208F87C300296926 /* Localizable.strings */ = {

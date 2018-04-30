@@ -34,6 +34,9 @@
 //showroom
 "LOGINTOSENDMESSAGE" = "Login to send message";
 
+//insurance
+"PHONE" = "phone :";
+
 //alerts
 "NOCATEGORYSELECTED" = "Select category first";
 "NOBRANDSELECTED" = "Select brand first";

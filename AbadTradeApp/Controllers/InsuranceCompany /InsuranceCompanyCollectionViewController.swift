@@ -8,6 +8,7 @@
 
 import UIKit
 import AlamofireImage
+import MOLH
 
 
 class InsuranceCompanyCollectionViewController: UICollectionViewController {
@@ -62,9 +63,16 @@ class InsuranceCompanyCollectionViewController: UICollectionViewController {
             as! InsuranceCompanyCollectionViewCell
         
         cell.InsuranceImage.af_setImage(withURL: URL(string: "\(InsuranceImageURL)\(insuranceCompanies[indexPath.row].logo!)")!)
+        if MOLHLanguage.currentAppleLanguage() == "en"{
+            cell.insuranceAddress.text = insuranceCompanies[indexPath.row].addressEn
+            cell.insuranceName.text = insuranceCompanies[indexPath.row].nameEn
+        }
         
-        cell.insuranceAddress.text = insuranceCompanies[indexPath.row].addressEn
-        cell.insuranceName.text = insuranceCompanies[indexPath.row].nameEn
+        else{
+            cell.insuranceAddress.text = insuranceCompanies[indexPath.row].addressAr
+            cell.insuranceName.text = insuranceCompanies[indexPath.row].nameAr
+
+        }
         // Configure the cell
         // let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! InsuranceCompanyCollectionViewCell
         

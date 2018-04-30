@@ -349,7 +349,7 @@
                                 <rect key="frame" x="0.0" y="151" width="375" height="41"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dkw-wx-DUY">
-                                        <rect key="frame" x="10" y="10" width="78" height="21"/>
+                                        <rect key="frame" x="10" y="10" width="355" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -360,6 +360,7 @@
                                     <constraint firstAttribute="bottom" secondItem="dkw-wx-DUY" secondAttribute="bottom" constant="10" id="9Gr-vj-Ebz"/>
                                     <constraint firstItem="dkw-wx-DUY" firstAttribute="top" secondItem="OeF-sS-mKp" secondAttribute="top" constant="10" id="BnF-h7-xIs"/>
                                     <constraint firstItem="dkw-wx-DUY" firstAttribute="leading" secondItem="OeF-sS-mKp" secondAttribute="leading" constant="10" id="XKP-Y1-lub"/>
+                                    <constraint firstAttribute="trailing" secondItem="dkw-wx-DUY" secondAttribute="trailing" constant="10" id="oKS-nl-t5M"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -386,8 +387,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Send message" id="mzb-Tc-FRG"/>
                     <connections>
+                        <outlet property="messageLabel" destination="dkw-wx-DUY" id="f7K-lE-3HY"/>
+                        <outlet property="phoneLabel" destination="zKK-19-EXL" id="qF2-hc-W4C"/>
                         <outlet property="phoneTextField" destination="iUq-XU-77L" id="ckn-yF-U3p"/>
                         <outlet property="receiverNameLabel" destination="4c2-IB-kE9" id="z6Z-ba-vik"/>
+                        <outlet property="sendButton" destination="zvs-tj-2Ew" id="cde-DI-VDa"/>
                         <outlet property="sentMessageTextView" destination="r04-eM-774" id="IcQ-c6-lJ4"/>
                     </connections>
                 </viewController>

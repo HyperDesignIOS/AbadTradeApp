@@ -1,0 +1,57 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "3ad-Tb-baJ"; */
+"3ad-Tb-baJ.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "4c2-IB-kE9"; */
+"4c2-IB-kE9.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Gij-Es-BP7"; */
+"Gij-Es-BP7.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Login to send message"; ObjectID = "HCG-B8-haD"; */
+"HCG-B8-haD.normalTitle" = "Login to send message";
+
+/* Class = "UINavigationItem"; title = "Insurance details"; ObjectID = "KYD-Oi-rni"; */
+"KYD-Oi-rni.title" = "تفاصيل عن شركة التامين";
+
+/* Class = "UINavigationItem"; title = "Insurance Co."; ObjectID = "VF2-J6-mMI"; */
+"VF2-J6-mMI.title" = "شركات التامين";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ZR2-ZU-GFj"; */
+"ZR2-ZU-GFj.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "bpj-Xf-Iq3"; */
+"bpj-Xf-Iq3.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "dk6-cB-Dhr"; */
+"dk6-cB-Dhr.text" = "Label";
+
+/* Class = "UILabel"; text = "Message :"; ObjectID = "dkw-wx-DUY"; */
+"dkw-wx-DUY.text" = "Message :";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "gvv-XR-U0F"; */
+"gvv-XR-U0F.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Send message"; ObjectID = "lnc-Xm-IoH"; */
+"lnc-Xm-IoH.normalTitle" = "Send message";
+
+/* Class = "UINavigationItem"; title = "Send message"; ObjectID = "mzb-Tc-FRG"; */
+"mzb-Tc-FRG.title" = "Send message";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ov1-L2-Ky2"; */
+"ov1-L2-Ky2.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "uGO-Ll-N4Q"; */
+"uGO-Ll-N4Q.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "wp4-g4-6xS"; */
+"wp4-g4-6xS.text" = "Label";
+
+/* Class = "UILabel"; text = "To :"; ObjectID = "yKD-EV-0TP"; */
+"yKD-EV-0TP.text" = "الي :";
+
+/* Class = "UILabel"; text = "Phone :"; ObjectID = "zKK-19-EXL"; */
+"zKK-19-EXL.text" = "Phone :";
+
+/* Class = "UIButton"; normalTitle = "Send"; ObjectID = "zvs-tj-2Ew"; */
+"zvs-tj-2Ew.normalTitle" = "Send";

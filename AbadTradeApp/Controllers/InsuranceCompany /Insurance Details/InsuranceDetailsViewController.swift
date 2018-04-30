@@ -8,6 +8,7 @@
 
 import UIKit
 import AlamofireImage
+import MOLH
 
 class InsuranceDetailsViewController: UIViewController{
     
@@ -30,18 +31,31 @@ class InsuranceDetailsViewController: UIViewController{
         super.viewDidLoad()
         
         insuranceDetailsImage.af_setImage(withURL: URL(string: "\(InsuranceImageURL)\(insuranceDetails[0].logo!)")!)
-         insuranceName.text = insuranceDetails[0].nameEn
-        insuranceAddress.text = insuranceDetails[0].addressEn
-        insuranceArea.text = insuranceDetails[0].area.nameEn
-        insuranceCountry.text = insuranceDetails[0].country.nameEn
-        insuranceRegion.text = insuranceDetails[0].region.nameEn
+        if MOLHLanguage.currentAppleLanguage() == "en"{
+            insuranceName.text = insuranceDetails[0].nameEn
+            insuranceAddress.text = insuranceDetails[0].addressEn
+            insuranceArea.text = insuranceDetails[0].area.nameEn
+            insuranceCountry.text = insuranceDetails[0].country.nameEn
+            insuranceRegion.text = insuranceDetails[0].region.nameEn
+            insuranceAbout.text = insuranceDetails[0].aboutEn.html2String
+        }
+        else{
+            insuranceName.text = insuranceDetails[0].nameAr
+            insuranceAddress.text = insuranceDetails[0].addressAr
+            insuranceArea.text = insuranceDetails[0].area.nameAr
+            insuranceCountry.text = insuranceDetails[0].country.nameAr
+            insuranceRegion.text = insuranceDetails[0].region.nameAr
+            insuranceAbout.text = insuranceDetails[0].aboutAr.html2String
+
+        }
         insuranceWorkTime.text = insuranceDetails[0].workTimes
-        insuranceAbout.text = insuranceDetails[0].aboutEn.html2String
 
         if UserDefaults.standard.isLoggedIn(){
+            sendMessageButton.setTitle(NSLocalizedString("SENDMESSAGENAVITEM", comment: ""), for: .normal)
             sendMessageButton.isHidden = false
             loginToSendButton.isHidden = true
         }else{
+            loginToSendButton.setTitle(NSLocalizedString("LOGINTOSENDMESSAGE", comment: ""), for: .normal)
             loginToSendButton.isHidden = false
             sendMessageButton.isHidden = true
         }
@@ -58,7 +72,13 @@ class InsuranceDetailsViewController: UIViewController{
         let storyboard = UIStoryboard.init(name: "Insurance", bundle: nil)
         let destinationViewController = storyboard.instantiateViewController(withIdentifier: "InsuranceSendMessageVC") as! InsuranceSendMessageViewController
         destinationViewController.insurance = insuranceDetails[0]
-        destinationViewController.receiverName = insuranceDetails[0].nameEn
+        if MOLHLanguage.currentAppleLanguage() == "en"{
+            destinationViewController.receiverName = insuranceDetails[0].nameEn
+        }
+        else{
+            destinationViewController.receiverName = insuranceDetails[0].nameAr
+
+        }
         destinationViewController.loggedinUserId = UserDefaults.standard.getUserID()
         show(destinationViewController, sender: self)
         
@@ -68,7 +88,6 @@ class InsuranceDetailsViewController: UIViewController{
         
         let storyboard = UIStoryboard.init(name: "Login", bundle: nil)
         let destinationViewController = storyboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
-        //        destinationViewController.receiverName = showRoomsDetails[0].nameEn
         show(destinationViewController, sender: self)
     }
     

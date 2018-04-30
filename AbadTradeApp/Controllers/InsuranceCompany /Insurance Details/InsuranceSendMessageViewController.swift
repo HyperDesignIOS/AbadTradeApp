@@ -20,12 +20,21 @@ class InsuranceSendMessageViewController: UIViewController {
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var receiverNameLabel: UILabel!
     @IBOutlet weak var sentMessageTextView: UITextView!
+    @IBOutlet weak var phoneLabel: UILabel!
+    @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var sendButton: UIButton!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         receiverNameLabel.text = receiverName
+        phoneLabel.text = NSLocalizedString("PHONE", comment: "")
+        messageLabel.text = NSLocalizedString("MESSAGELABEL", comment: "")
+        sendButton.setTitle(NSLocalizedString("SENDBUTTON", comment: ""), for: .normal)
+        
+        self.navigationItem.title = NSLocalizedString("SENDMESSAGENAVITEM", comment: "")
+        
         self.hideKeyboardWhenTappedAround()
 
         // Do any additional setup after loading the view.
@@ -41,16 +50,16 @@ class InsuranceSendMessageViewController: UIViewController {
         
         let  message = sentMessageTextView.text
         if (message?.isEmpty)! || (message?.containsWhiteSpace())!  {
-            generalMethod.showAlert(title: "", message: "please enter your message", vc: self, closure: nil)
+            generalMethod.showAlert(title: "", message: NSLocalizedString("NOMESSAGEENTERED", comment: ""), vc: self, closure: nil)
             return
         }
         if (phoneTextField.text?.isEmpty)! || (phoneTextField.text?.containsWhiteSpace())!  {
-            generalMethod.showAlert(title: "", message: "please enter your phone", vc: self, closure: nil)
+            generalMethod.showAlert(title: "", message: NSLocalizedString("NOPHONEENTERED", comment: ""), vc: self, closure: nil)
             return
             
         }
         else if !(phoneTextField.text?.isValidPhone())! {
-            generalMethod.showAlert(title: "", message: "invalid phone", vc: self, closure: nil)
+            generalMethod.showAlert(title: "", message: NSLocalizedString("INVALIDPHONE", comment: ""), vc: self, closure: nil)
             return
         }
         apiRequests.apisInstance.sendMessageToInsurance(phone:phoneTextField.text!,message: message!, userId:"\(loggedinUserId!)" , insuranceId: "\(insurance.id!)", didDataReady: { (msg,done) in
