@@ -28,8 +28,7 @@ class SideMenuTableViewController: UITableViewController{
             
         }
         else{
-            sideMenuItemImages = ["home-icon-silhouette","sports-car","car-insurance","sports-car","msg","login","register","log-out4AR"]
-        }
+         }
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
